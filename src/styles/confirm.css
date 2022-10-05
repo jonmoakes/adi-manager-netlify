@@ -1,0 +1,37 @@
+.confirm {
+  border-radius: 15px;
+  width: 600px;
+  padding: "20px";
+}
+
+.confirm .swal2-title {
+  text-shadow: none;
+  color: whitesmoke;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+
+.confirm .swal2-question {
+  border-color: lightskyblue;
+  color: lightskyblue;
+  margin: 20px auto 0px auto;
+}
+
+.confirm .swal2-html-container {
+  color: yellow;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.confirm .swal2-confirm {
+  border-radius: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.confirm .swal2-cancel {
+  border-radius: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
