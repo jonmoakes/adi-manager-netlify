@@ -3,12 +3,14 @@ import styled from "styled-components";
 import { ReactComponent as LoaderSVG } from "../../assets/tl.svg";
 
 export const LoaderDiv = styled.div`
-  position: fixed;
+ position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 300;
+  z-index: 30;
+  background-color: black;
+  opacity: 0.8;
 `;
 
 export const LoaderIcon = styled(LoaderSVG)`

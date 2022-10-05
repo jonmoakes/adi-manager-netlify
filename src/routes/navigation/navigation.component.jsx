@@ -1,20 +1,20 @@
 import { Outlet } from "react-router-dom";
 
-import NavLogo from "./nav-logo.component";
-
-import { Nav } from "../../styles/div/div.styles";
 import SignedOutLinks from "./signed-out-links.component";
 
-const Navigation = () => {
-  return (
+import { Nav } from "../../styles/div/div.styles";
+import { LogoImage } from "../../styles/image/image.styles";
+import Logo from "../../assets/header/adi-logo.png";
+
+const Navigation = () =>  (
     <>
       <Nav>
-        <NavLogo />
+      <LogoImage src={Logo} alt="logo" />
         <SignedOutLinks />
       </Nav>
       <Outlet />
     </>
   );
-};
+
 
 export default Navigation;

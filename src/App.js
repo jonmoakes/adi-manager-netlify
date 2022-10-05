@@ -6,6 +6,7 @@ import { GlobalStyle } from "./global-styles";
 
 import ErrorFallback from "./components/error-fallback/error-fallback.component";
 import Loader from "./components/loader/loader.component";
+import Footer from "./components/footer/footer.component";
 
 const Navigation = lazy(() =>
   import("./routes/navigation/navigation.component")
@@ -24,7 +25,7 @@ const App = () => {
               <Route index element={<Home />} />
             </Route>
           </Routes>
-         
+          <Footer />
         </Suspense>
       </ErrorBoundary>
     </>

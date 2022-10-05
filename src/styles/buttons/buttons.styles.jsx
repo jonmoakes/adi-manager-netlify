@@ -1,8 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import { slideInLeft, bounceInDown, pulse } from "react-animations";
+import { slideInLeft, slideInRight, bounceInDown, pulse } from "react-animations";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
 const slideInLeftAnimation = keyframes`${slideInLeft}`;
+const slideInRightAnimation = keyframes`${slideInRight}`;
+
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
 const PulseAnimation = keyframes`${pulse}`;
 
@@ -13,7 +15,7 @@ export const Button = styled.button`
   letter-spacing: 0.5px;
   line-height: 50px;
   font-size: 25px;
-  background-color: #b9d1e5;
+  background-color: #247afc;
   text-transform: capitalize;
   cursor: pointer;
   border-radius: 15px;
@@ -55,36 +57,16 @@ export const Button = styled.button`
   }
 `;
 
-export const OrdersTableHideHelpButton = styled.button`
-  height: 50px;
-  width: 300px;
-  margin: 20px auto;
-  border-radius: 10px;
-  border: 2px solid black;
-  background-color: yellow;
-  cursor: pointer;
-  text-transform: capitalize;
-  color: black;
-  font-weight: bold;
-  fon-family: inherit;
-  font-size: 16px;
-  animation: 1s ${slideInLeftAnimation};
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-
-    @media screen and (max-width: 1366px) {
-      transform: none;
-      transition: none;
-      box-shadow: none;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 80%;
-  }
+export const FeaturesButton = styled(CustomButton)`
+  margin-top: 20px;
+  animation: 2s ${slideInLeftAnimation};
 `;
+
+export const SignUpLinkButton = styled(CustomButton)`
+  animation: 2s ${slideInRightAnimation};
+`;
+
+
 
 export const HelpButton = styled.button`
   height: 50px;
@@ -97,7 +79,7 @@ export const HelpButton = styled.button`
   text-transform: capitalize;
   color: black;
   font-weight: bold;
-  fon-family: inherit;
+  font-family: inherit;
   font-size: 16px;
   animation: 1s ${slideInLeftAnimation};
   transition: all 0.2s ease-in-out;
@@ -155,7 +137,7 @@ export const ErrorBoundaryReloadPageButton = styled(CustomButton)`
 `;
 
 export const InstructionsButton = styled.button`
-  background-color: #b9d1e5;
+  background-color: #247afc;
   border: 2px solid black;
   margin: 0px 5px;
   border-radius: 10px;
@@ -168,7 +150,8 @@ export const InstructionsButton = styled.button`
   transition: all 0.5s ease-in-out;
   font-family: inherit;
   text-transform: capitalize;
-  color: black;
+  color: whitesmoke;
+  text-shadow:0.5px 0.5px 0.5px black;
   font-size: 18px;
 
   &:active {
@@ -205,6 +188,8 @@ export const InstructionsButton = styled.button`
 
 export const CloseInstructionsButton = styled(InstructionsButton)`
   background-color: yellow;
+  color:black;
+  text-shadow:none;
 `;
 
 export const ChooseOptionsButton = styled.button`

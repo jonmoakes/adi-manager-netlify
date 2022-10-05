@@ -1,33 +1,28 @@
-import { Link } from "react-router-dom";
-
 import { HeaderNavigationItems } from "../../styles/div/div.styles";
 import { LoginIcon, SignUpIcon } from "../../styles/svg/svg.styles";
 import { LoginIconText, SignUpIconText } from "../../styles/text/text.styles";
-
+import { ImageLink } from "../../styles/link/link.styles";
 
 const SignedOutLinks = () => {
 
   return (
-    <>
-     
+
         <HeaderNavigationItems>
           <ul>
             <li>
-              <Link to="/log-in">
+              <ImageLink to="/log-in">
                 <LoginIcon />
                 <LoginIconText>Login</LoginIconText>
-              </Link>
+              </ImageLink>
             </li>
             <li>
-              <Link to="/sign-up">
+              <ImageLink to="/sign-up">
                 <SignUpIcon />
                 <SignUpIconText>Sign Up</SignUpIconText>
-              </Link>
+              </ImageLink>
             </li>
           </ul>
         </HeaderNavigationItems>
-  
-    </>
   );
 };
 

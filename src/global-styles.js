@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
         font-weight:bold;
         width:100%;
         text-align:center;
-        text-shadow: 1px 1px 1px black;
         text-transform:capitalize;
         position: relative;
         &:before {
@@ -36,27 +35,15 @@ export const GlobalStyle = createGlobalStyle`
               -o-background-size: center;
               background-size: contain;
         }
-        h2 {
-            color:white;
-            text-decoration:underline;
-        }
+        
         p {
             font-size:18px;
-            text-shadow:none;
 
             @media screen and (max-width:320px) {
                 font-size:16px;
             }
         }
-        a {
-            color:#247AFD;
-            text-decoration: none;
-            text-shadow:1px 1px 1px black;
-            &:hover {
-                color:white;
-               
-            }
-        }
+       
         ul {
             padding-left: unset;
             display: table;
@@ -67,13 +54,10 @@ export const GlobalStyle = createGlobalStyle`
             }
         }
           
-        li {
-            margin-bottom: 10px;
-            text-shadow:none;
-            color:#cc1616;
-        }
+
         hr {
-            border-top:6px solid black;
+            border-top:4px solid black;
+            border-bottom:none;
             border-radius: 5px;
             width:70%;
         }

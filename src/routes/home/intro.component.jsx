@@ -1,6 +1,10 @@
+import { Div  } from "../../styles/div/div.styles";
+import { H2 } from "../../styles/h2/h2.styles";
+import { RedLi } from "../../styles/li/li.styles";
+
 const Intro = () => (
-  <>
-    <h2>for the UK based ADI</h2>
+  <Div>
+    <H2>for the UK based ADI</H2>
     <p>the new version of the successful ADI Manager iOS app!</p>
     <p>
       now available for all devices and includes data synching between your
@@ -9,12 +13,12 @@ const Intro = () => (
 
     <p>Safely & securely store:</p>
     <ul>
-      <li>Appointments</li>
-      <li>Lesson Information</li>
-      <li>Income / Expenses Information</li>
-      <li>Pupil Information</li>
+      <RedLi>Appointments</RedLi>
+      <RedLi>Lesson Information</RedLi>
+      <RedLi>Income / Expenses Information</RedLi>
+      <RedLi>Pupil Information</RedLi>
     </ul>
-  </>
+  </Div>
 );
 
 export default Intro;

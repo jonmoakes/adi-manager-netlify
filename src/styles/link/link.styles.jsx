@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
-  color: red;
+  color: #247AFC;
   text-decoration: none;
   text-transform: capitalize;
 
@@ -10,21 +10,21 @@ export const StyledLink = styled(Link)`
     color: blue;
 
     @media screen and (max-width: 1366px) {
-      color: red;
+      color: #247AFC;
     }
   }
 `;
 
 export const FooterPageLink = styled(Link)`
   padding: 10px;
-  color: #b9d1e5;
+  color: black;
   text-decoration: none;
 
   &:hover {
     color: blue;
 
     @media screen and (max-width: 1366px) {
-      color: #b9d1e5;
+      color: black;
     }
   }
 `;
@@ -41,4 +41,8 @@ export const PageLink = styled(Link)`
       text-decortation: none;
     }
   }
+`;
+
+export const ImageLink = styled(Link) ` 
+  text-decoration:none;
 `;

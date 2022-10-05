@@ -1,16 +1,26 @@
 import styled from "styled-components";
 
 export const A = styled.a`
-  color: blue;
+  color: whitesmoke;
 `;
 
 export const LowercaseA = styled.a`
+  color:whitesmoke;
   text-transform: lowercase;
+  text-shadow: 0.5px 0.5px 0.5px black;
+  &:hover {
+    color: blue;
+
+    @media screen and (max-width:1366px) {
+      color:whitesmoke;
+    }
+  }
 `;
 
 export const SolarisLink = styled.a`
-  color: #b9d1e5;
+  color: #247afc;
   text-decoration: none;
+  text-shadow:0.5px 0.5px 0.5px black;
 
   &:hover {
     color: blue;

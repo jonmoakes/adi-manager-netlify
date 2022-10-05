@@ -12,7 +12,7 @@ export const SignInUpHr = styled.hr`
 `;
 
 export const PwaTopHr = styled.hr`
-  border-color: #b9d1e5;
+  /* border-color: #b9d1e5; */
 `;
 
 export const PwaBottomHr = styled(PwaTopHr)`

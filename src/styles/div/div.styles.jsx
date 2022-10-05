@@ -1,7 +1,8 @@
 import styled, { keyframes } from "styled-components";
-import { bounceInDown, slideInLeft } from "react-animations";
+import { bounceInDown, slideInLeft, slideInRight } from "react-animations";
 
 const slideInLeftAnimation = keyframes`${slideInLeft}`;
+const slideInRightAnimation = keyframes`${slideInRight}`;
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
 
 export const Div = styled.div`
@@ -65,6 +66,24 @@ export const Div = styled.div`
     padding: 20px 10px 20px 10px;
   }
 `;
+
+export const SlideInDiv = styled.div`
+  animation: 2s ${slideInLeftAnimation};
+`;
+
+export const FeaturesDiv = styled(Div)`
+  &.features {
+    animation: 2s ${slideInLeftAnimation};
+  }
+  &.sign-in {
+    animation: 2s ${slideInRightAnimation};
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 20px 5px 20px 10px;
+  }
+`;
+
 
 export const NoSearchResultDiv = styled.div`
   width: 50%;
@@ -713,30 +732,6 @@ export const RelativePositionDiv = styled.div`
   position: relative;
 `;
 
-export const HomePagePwaDiv = styled.div`
-  width: 50%;
-  margin: 50px auto 0px auto;
-  height: auto;
-  padding: 0px 0px 100px 0px;
-  font-size: 20px;
-
-  @media screen and (max-width: 1366px) {
-    width: 70%;
-  }
-
-  @media screen and (max-width: 450px) {
-    width: 85%;
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 0px 10px 60px 10px;
-  }
-`;
-
-export const OtherPagesPwaDiv = styled(HomePagePwaDiv)`
-  margin: -70px auto 0px auto;
-`;
-
 export const InstructionsDiv = styled.div`
   width: 100%;
   height: auto;
@@ -745,7 +740,7 @@ export const InstructionsDiv = styled.div`
   border: 2px solid black;
   border-radius: 15px;
   margin: 20px auto 20px auto;
-  background-color: #b9d1e5;
+  background-color: #2099EF;
 
   @media screen and (max-width: 1024px) {
     padding: 20px 20px;

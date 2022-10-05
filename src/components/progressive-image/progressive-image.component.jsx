@@ -20,6 +20,7 @@ const ProgressiveImg = ({ placeholderSrc, src, ...props }) => {
       {...{ src: imgSrc, ...props }}
       alt={props.alt || ""}
       className={`image ${customClass}`}
+      loading="lazy"
     />
   );
 };
