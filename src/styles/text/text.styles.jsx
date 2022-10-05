@@ -124,3 +124,150 @@ export const SignUpIconText = styled.p`
     margin-top: -5px;
   }
 `;
+
+export const LoggedInContactIconText = styled.p`
+  font-size: 10px;
+  text-align: center;
+  width: 40px;
+  color: black;
+  margin-top: -4px;
+
+  @media screen and (max-width: 450px) {
+    margin-top: -3px;
+  }
+`;
+
+export const LinksIconText = styled.p`
+  font-size: 10px;
+  text-align: center;
+  width: 40px;
+  color: black;
+  margin-top: -6px;
+
+  @media screen and (max-width: 600px) {
+    margin-top: -5px;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: -3px;
+  }
+`;
+
+export const AccountIconText = styled.p`
+  font-size: 10px;
+  text-align: center;
+  width: 40px;
+  color: black;
+  margin-top: -6px;
+
+  &.about {
+    margin-top: -2px;
+
+    @media screen and (max-width: 1024px) {
+      margin-top: -3px;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin-top: -4.5px;
+    }
+
+    @media screen and (max-width: 450px) {
+      margin-top: -2px;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 30px;
+      margin-top: -4.5px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: -4px;
+  }
+
+  @media screen and (max-width: 320px) {
+    margin-top: -3px;
+  }
+`;
+
+export const LogoutIconText = styled.p`
+  font-size: 10px;
+  text-align: center;
+  width: 40px;
+  color: black;
+  margin-top: -6px;
+
+  @media screen and (max-width: 600px) {
+    margin-top: -4px;
+  }
+
+  @media screen and (max-width: 320px) {
+    margin-top: -3px;
+  }
+`;
+
+export const FeaturesIconText = styled.p`
+  text-align: center;
+  font-size: 10px;
+  margin-top: -4px;
+  color: black;
+  width: 40px;
+
+  @media screen and (max-width: 450px) {
+    margin-top: -5px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 30px;
+    margin-top: -5px;
+    margin-right: 13px;
+  }
+
+  @media screen and (max-width: 280px) {
+    margin-top: -4px;
+  }
+`;
+
+export const PricingIconText = styled.p`
+  text-align: center;
+  font-size: 10px;
+  margin-top: -5px;
+  color: black;
+  width: 40px;
+
+  @media screen and (max-width: 450px) {
+    margin-top: -2.5px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 30px;
+    margin-top: -4px;
+    margin-right: 6px;
+  }
+
+  @media screen and (max-width: 280px) {
+    margin-top: -3px;
+  }
+`;
+
+export const LoggedOutContactIconText = styled.p`
+  text-align: center;
+  font-size: 10px;
+  margin-top: -4px;
+  color: black;
+  width: 40px;
+
+  @media screen and (max-width: 450px) {
+    margin-top: -5px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 31px;
+    margin-top: -5px;
+    margin-right: 9px;
+  }
+
+  @media screen and (max-width: 280px) {
+    margin-top: -5px;
+  }
+`;

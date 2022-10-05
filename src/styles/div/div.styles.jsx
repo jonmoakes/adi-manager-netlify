@@ -827,6 +827,50 @@ export const HeaderNavigationItems = styled.div`
   }
 `;
 
+export const FooterNavigationItems = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffab0f;
+  z-index: 3;
+  height: 80px;
+  border-top: 5px solid black;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+
+    @media screen and (max-width: 450px) {
+      justify-content: space-evenly;
+    }
+  }
+
+  li {
+    padding: 0 2rem;
+    transition: all 0.5s ease-in-out;
+
+    @media screen and (max-width: 450px) {
+      padding: 0 1.2rem;
+    }
+
+    @media screen and (max-width: 450px) {
+      padding: 0 0rem;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+
+      @media screen and (max-width: 1024px) {
+        transform: unset;
+      }
+    }
+  }
+`;
+
 
 
 
