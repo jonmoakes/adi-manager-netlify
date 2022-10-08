@@ -231,14 +231,14 @@ export const ChooseOptionsButton = styled.button`
 
 export const SignInButton = styled(CustomButton)`
   margin: 30px auto 0px auto;
-  background-color: salmon;
+  background-color: #2099ef;
   height: 75px;
 
   &:hover {
     background-color: whitesmoke;
 
     @media screen and (max-width: 1366px) {
-      background-color: salmon;
+      background-color: #2099ef;
     }
   }
 
@@ -253,40 +253,19 @@ export const SignInButton = styled(CustomButton)`
 
 export const SignUpButton = styled(CustomButton)`
   margin: 50px auto 50px auto;
-  background-color: salmon;
+  background-color: #2099ef;
   height: 75px;
 
   &:hover {
     background-color: whitesmoke;
 
     @media screen and (max-width: 1366px) {
-      background-color: salmon;
+      background-color: #2099ef;
     }
   }
 
   @media screen and (max-width: 450px) {
     height: 50px;
-  }
-`;
-
-export const GoogleButton = styled(CustomButton)`
-  background-color: #fabb02;
-  height: 75px;
-
-  &:hover {
-    background-color: #e94234;
-  }
-
-  @media screen and (max-width: 1366px) {
-    width: 100%;
-  }
-
-  @media screen and (max-width: 450px) {
-    height: 50px;
-  }
-
-  @media screen and (max-width: 300px) {
-    width: 100%;
   }
 `;
 

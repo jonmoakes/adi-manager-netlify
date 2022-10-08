@@ -31,6 +31,30 @@ export const Div = styled.div`
   }
 `;
 
+export const LoginDiv = styled.div`
+  margin: 0px auto 75px auto;
+  background-color: #ffab0f;
+  width: 50%;
+  border-radius: 15px;
+  padding: 20px 20px 50px 20px;
+  box-shadow: 10px 10px 10px black;
+  border: 2px solid black;
+
+  @media screen and (max-width: 1024px) {
+    box-shadow: none;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 0px auto 50px auto;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 85%;
+    padding: 20px 10px 50px 10px;
+  }
+`;
+
 export const FooterDiv = styled.div`
   margin: -100px auto 150px auto;
   background-color: #ffab0f;

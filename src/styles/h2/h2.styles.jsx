@@ -5,6 +5,9 @@ export const H2 = styled.h2 `
   text-decoration:underline;
 `;
 
+export const SubHeading = styled.h2`
+  color: #247afd;
+`;
 
 export const RedH2Underline = styled.h2`
   color: #cc1616;

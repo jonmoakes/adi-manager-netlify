@@ -10,7 +10,7 @@ const SignedOutLinks = () => {
         <HeaderNavigationItems>
           <ul>
             <li>
-              <ImageLink to="/log-in">
+              <ImageLink to="/login">
                 <LoginIcon />
                 <LoginIconText>Login</LoginIconText>
               </ImageLink>
