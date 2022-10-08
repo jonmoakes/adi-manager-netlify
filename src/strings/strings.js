@@ -13,6 +13,7 @@ export const messageSent = "Thank you! Your Message Has Been Sent!";
 export const cookieThanksMessage = "Thank You For Allowing Cookies! :)";
 export const signOutSuccessMessage =
   "You Have Successfully Signed Out From Your Account!";
+  export const successMessage = "success!"
 
 //infos
 export const loggingInMessage = "Logging You In - Please Wait...";
@@ -23,6 +24,8 @@ export const needToLogOutMessage =
 export const placeholderInfiniteSpaceMessage =
   "Type Here - You Have Infinite Space...";
 export const enterEmailMessage = "Enter Email then tap button below";
+export const emailResponseTimeMessage =
+  "Your Message Has Been Message Sent! We Aim To Respond Within 24 Hours.";
 
 //confirms
 export const confirmAddEntryMessage =
@@ -94,6 +97,11 @@ export const leavingLoginFormMessage =
   "Are You Sure You Want To Leave The Page? You Will Lose Any Details You Have Entered Into The Form.";
 export const couldntGetCustomerPortalLinkMessage =
   "We Couldn't find your customer portal link.";
+  export const errorSendingMessage = "error sending message.";
+  export const invalidEmailErrorMessage =
+  "you entered and invalid email address. please try again.";
+  export const missingEmailFieldsErrorMessage =
+  "please make sure that the name, email and message fields have all been entered.";
 
 //strings
 export const diary = "diary";

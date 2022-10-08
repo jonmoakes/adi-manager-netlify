@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
-import { LoaderDiv, LoaderIcon } from "./loader.styles";
+import { LoaderDiv } from "../../styles/div/div.styles";
+import { LoaderIcon } from "../../styles/svg/svg.styles";
 
 const Loader = () => {
   useEffect(() => {

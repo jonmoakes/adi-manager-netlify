@@ -9,6 +9,7 @@ import { ReactComponent as PricingSVG } from "../../assets/toolbar/bank-card-ico
 import { ReactComponent as ContactSVG } from "../../assets/toolbar/message-icon.svg";
 import { ReactComponent as FeaturesSVG } from "../../assets/toolbar/features-icon.svg";
 import { ReactComponent as StripeSVG } from "../../assets/stripe-logo.svg";
+import { ReactComponent as LoaderSVG } from "../../assets/tl.svg";
 
 
 export const LoginIcon = styled(LoginSVG)`
@@ -208,6 +209,16 @@ export const Stripe = styled(StripeSVG)`
   @media screen and (max-width: 280px) {
     width: 150px;
   }
+`;
+
+export const LoaderIcon = styled(LoaderSVG)`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* below makes the image in the centre not the top left in the center */
+  transform: translate(-50%, -50%);
+  height: 30%;
+  width: 30%;
 `;
 
 

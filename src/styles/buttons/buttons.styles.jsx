@@ -109,7 +109,6 @@ export const ShowAllEntriesButton = styled(HelpButton)`
 `;
 
 export const ContactFormButton = styled(CustomButton)`
-  background-color: yellow;
   margin-bottom: 50px;
 
   @media screen and (max-width: 850px) {

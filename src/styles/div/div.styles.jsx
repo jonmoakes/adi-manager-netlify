@@ -762,17 +762,6 @@ export const PrivacyDiv = styled.div`
   margin: 30px 0px;
 `;
 
-export const LoaderDiv = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 30;
-  background-color: black;
-  opacity: 0.8;
-`;
-
 export const ImageDiv = styled.div`
   width: auto;
   height: auto;
@@ -879,6 +868,17 @@ export const RotateDiv = styled(Div)`
   span {
     text-shadow: 1px 1px 1px black;
   }
+`;
+
+export const LoaderDiv = styled.div`
+ position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background-color: black;
+  opacity: 0.8;
 `;
 
 

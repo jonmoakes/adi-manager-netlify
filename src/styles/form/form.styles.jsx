@@ -289,9 +289,6 @@ export const OptionsForm = styled.form`
   animation: 1s ${bounceInDownAnimation};
   border: 2px solid black;
 
-  input {
-    accent-color: #d62424;
-  }
 
   input[type="number"] {
     font-size: 25px;

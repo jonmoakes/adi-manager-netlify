@@ -31,7 +31,7 @@ const IncomeExpensesSection = () => (
       </a>
     </ImageDiv>
 
-    <h2>expenses:</h2>
+    <H2>expenses:</H2>
     <p>in this section, you can keep track of your business expenditure.</p>
     <p>enter in the:</p>
     <ul>
@@ -74,7 +74,7 @@ const IncomeExpensesSection = () => (
       which will automatically add their amounts together, making it easy for
       you to use that data in the next step which is:
     </p>
-    <h2>total expenses</h2>
+    <H2>total expenses</H2>
     <p>
       you can also add the results of your expenses to a weekly, monthly or even
       yearly table for you to easily see your data.

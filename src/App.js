@@ -16,6 +16,7 @@ const Home = lazy(() => import("./routes/home/home.component"));
 const Features = lazy(() => import("./routes/features/features.component"));
 const Pricing = lazy(() => import("./routes/pricing/pricing.component"));
 const AboutMe = lazy(() => import("./routes/about-me/about-me.component"))
+const ContactMe = lazy(() => import("./routes/contact-me/contact-me.component"))
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
               <Route path="features" element={<Features />} />
               <Route path="pricing" element={<Pricing />} />
               <Route path="about-me" element={<AboutMe />} />
+              <Route path="contact" element={<ContactMe />} />
             </Route>
           </Routes>
           <Footer />

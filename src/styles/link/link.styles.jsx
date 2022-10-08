@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export const StyledLink = styled(Link)`
   color: #247AFC;
   text-decoration: none;
+  text-shadow:0.5px 0.5px 0.5px black;
   text-transform: capitalize;
 
   &:hover {

@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const H2 = styled.h2 `
   color:black;
   text-decoration:underline;
-  text-shadow:1px 1px 1px black;      
 `;
 
 
