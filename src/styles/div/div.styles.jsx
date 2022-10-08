@@ -1,9 +1,11 @@
 import styled, { keyframes } from "styled-components";
-import { bounceInDown, slideInLeft, slideInRight } from "react-animations";
+import { bounceInDown, slideInLeft, slideInRight, rotateInUpRight } from "react-animations";
 
 const slideInLeftAnimation = keyframes`${slideInLeft}`;
 const slideInRightAnimation = keyframes`${slideInRight}`;
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
+const rotateInUpRightAnimation = keyframes`${rotateInUpRight}`;
+
 
 export const Div = styled.div`
   margin: 0px auto 75px auto;
@@ -868,6 +870,14 @@ export const FooterNavigationItems = styled.div`
         transform: unset;
       }
     }
+  }
+`;
+
+export const RotateDiv = styled(Div)`
+  animation: 1s ${rotateInUpRightAnimation};
+
+  span {
+    text-shadow: 1px 1px 1px black;
   }
 `;
 

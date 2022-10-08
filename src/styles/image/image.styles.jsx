@@ -72,3 +72,15 @@ export const HomePageLogoImage = styled.img`
     width: 200px;
   }
 `;
+
+export const MeImage = styled.img`
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 15px;
+
+  @media screen and (max-width: 600px) {
+    width: 100px;
+    height: 100px;
+  }
+`;
