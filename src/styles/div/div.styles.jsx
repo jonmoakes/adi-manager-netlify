@@ -16,44 +16,6 @@ export const Div = styled.div`
   box-shadow: 10px 10px 10px black;
   border: 2px solid black;
 
-  span {
-    &.highlight {
-      color: #cc1616;
-    }
-
-    &.lowercase {
-      text-transform: lowercase;
-    }
-  }
-
-  &.account {
-    ul {
-      list-style-type: none;
-    }
-  }
-
-  &.sign-in {
-    padding-bottom: 50px;
-  }
-
-  &.too-many-entries {
-    background-color: #cc1616;
-    p {
-      color: whitesmoke;
-      text-shadow: 1px 1px 1px black;
-    }
-  }
-
-  &.no-entries-found {
-    background-color: #cc1616;
-    p,
-    h2 {
-      color: whitesmoke;
-      text-shadow: 1px 1px 1px black;
-      text-decoration: none;
-    }
-  }
-
   @media screen and (max-width: 1024px) {
     box-shadow: none;
     width: 70%;
@@ -61,6 +23,30 @@ export const Div = styled.div`
 
   @media screen and (max-width: 600px) {
     margin: 0px auto 50px auto;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 85%;
+    padding: 20px 10px 20px 10px;
+  }
+`;
+
+export const FooterDiv = styled.div`
+  margin: -100px auto 150px auto;
+  background-color: #ffab0f;
+  width: 50%;
+  border-radius: 15px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 10px 10px 10px black;
+  border: 2px solid black;
+
+  @media screen and (max-width: 1024px) {
+    box-shadow: none;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: -50px auto 150px auto;
   }
 
   @media screen and (max-width: 450px) {
