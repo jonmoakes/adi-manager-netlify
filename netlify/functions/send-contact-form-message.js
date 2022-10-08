@@ -18,7 +18,7 @@ const sendEmail = (client, emailToSend) => {
   });
 };
 
-exports.handler = (event, callback) => {
+exports.handler = (event, context, callback) => {
   const body = JSON.parse(event.body);
   const message = body.message;
 

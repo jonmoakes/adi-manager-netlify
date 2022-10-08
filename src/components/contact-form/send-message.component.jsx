@@ -30,7 +30,7 @@ const SendMessage = ({ formDetails }) => {
   const { fireSwal } = useFireSwal();
   const navigate = useNavigate();
 
-  const { name, email, orderRef, message } = formDetails;
+  const { name, email, message } = formDetails;
 
   const handleSuccess = () => {
     return [
@@ -54,7 +54,7 @@ const SendMessage = ({ formDetails }) => {
     startIsProcessing();
     await axios
       .post("/.netlify/functions/send-contact-form-message", {
-        message: emailToSend(name, email, orderRef, message),
+        message: emailToSend(name, email, message),
       })
       .then(
         (response) => {
