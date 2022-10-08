@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const HighlightText = styled.span`
+  color: #cc1616;
+`;
+
 export const OptionsDetail = styled.span`
   color: #d62424;
 `;

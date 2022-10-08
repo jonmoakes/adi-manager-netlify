@@ -4,6 +4,8 @@ export const A = styled.a`
   color: whitesmoke;
 `;
 
+
+
 export const LowercaseA = styled.a`
   color:whitesmoke;
   text-transform: lowercase;
@@ -27,14 +29,17 @@ export const SolarisLink = styled.a`
   }
 `;
 
+
 export const Href = styled.a`
-  color: red;
+  color: #247AFC;
+  text-shadow:0.5px 0.5px 0.5px black;
+  text-decoration:none;
 
   &:hover {
     color: blue;
 
     @media screen and (max-width: 1366px) {
-      color: red;
+      color: #247AFC;
     }
   }
 `;

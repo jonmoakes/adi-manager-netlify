@@ -5,6 +5,7 @@ import ImagePlaceHolder from "../../assets/image-placeholder.jpeg";
 import { Div } from "../../styles/div/div.styles";
 import { ImageDiv } from "../../styles/image/image.styles";
 import { H2 } from "../../styles/h2/h2.styles";
+import { Href } from "../../styles/a/a.styles";
 
 import { incomeTable } from "../../image-links/image-links";
 
@@ -32,7 +33,7 @@ const ImageAndDataSyncInfo = () => (
     <H2>PWA Compliant:</H2>
     <p>
       the ADI Manager is a Fully{" "}
-      <a href="https://web.dev/what-are-pwas/">Progressive Web App</a> ( PWA )
+      <Href href="https://web.dev/what-are-pwas/">Progressive Web App</Href> ( PWA )
       allowing you to install the app on your phone / tablet's home screen,
       eliminating the need for the app store!
       <br />( see the bottom of the page for the simple instructions ).

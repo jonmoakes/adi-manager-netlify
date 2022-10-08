@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 import SignedOutLinks from "./signed-out-links.component";
 
@@ -9,7 +9,7 @@ import Logo from "../../assets/header/adi-logo.png";
 const Navigation = () =>  (
     <>
       <Nav>
-      <LogoImage src={Logo} alt="logo" />
+      <Link to="/"><LogoImage src={Logo} alt="logo" /></Link>
         <SignedOutLinks />
       </Nav>
       <Outlet />

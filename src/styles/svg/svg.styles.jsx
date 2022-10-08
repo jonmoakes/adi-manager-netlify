@@ -8,6 +8,7 @@ import { ReactComponent as LogoutSVG } from "../../assets/toolbar/logout.svg";
 import { ReactComponent as PricingSVG } from "../../assets/toolbar/bank-card-icon.svg";
 import { ReactComponent as ContactSVG } from "../../assets/toolbar/message-icon.svg";
 import { ReactComponent as FeaturesSVG } from "../../assets/toolbar/features-icon.svg";
+import { ReactComponent as StripeSVG } from "../../assets/stripe-logo.svg";
 
 
 export const LoginIcon = styled(LoginSVG)`
@@ -182,6 +183,30 @@ export const LoggedOutContactIcon = styled(ContactSVG)`
     height: 31px;
     width: 31px;
     margin-top: 21px;
+  }
+`;
+
+export const Stripe = styled(StripeSVG)`
+  width: 300px;
+  height: auto;
+
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+
+    @media screen and (max-width: 1024px) {
+      transition: none;
+      transform: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 200px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 150px;
   }
 `;
 

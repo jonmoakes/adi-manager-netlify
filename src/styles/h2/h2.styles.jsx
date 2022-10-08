@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 export const H2 = styled.h2 `
-  color:white;
+  color:black;
   text-decoration:underline;
   text-shadow:1px 1px 1px black;      
 `;
 
 
 export const RedH2Underline = styled.h2`
-  color: red;
-  text-shadow: 0.5px 0.5px 0.5px black;
-  font-weight: 700;
+  color: #cc1616;
   text-decoration: underline;
 
   @media screen and (max-width: 450px) {
