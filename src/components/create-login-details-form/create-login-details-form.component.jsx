@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
-// import { useBeforeunload } from 'react-beforeunload';
-
-import { selectErrorMessage } from "../../store/error/error.selector";
 
 import useHandleCreateLoginDetailsSubmit from "../../hooks/login/use-handle-create-login-details-submit";
+
+import { selectErrorMessage } from "../../store/error/error.selector";
 
 import Loader from "../loader/loader.component";
 import FetchError from "../fetch-error/fetch-error.component";
@@ -18,16 +17,9 @@ const CreateLoginDetailsForm = () => {
     handleCreateDetailsChange,
     handleCreateDetailsSubmit,
     userCredentials,
-    // prompt
   } = useHandleCreateLoginDetailsSubmit();
 
   const errorMessage = useSelector(selectErrorMessage);
-
-  // useBeforeunload(() => {
-  // if (prompt) {
-  //   alert("arghhh")
-  // }
-  // });
 
   return (
     <>

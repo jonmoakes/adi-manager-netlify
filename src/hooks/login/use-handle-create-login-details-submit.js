@@ -53,7 +53,6 @@ const useHandleCreateLoginDetailsSubmit = () => {
 
     await axios.post("/.netlify/functions/fetch-customers-list").then(
       (response) => {
-        console.log("loipouio ", response)
         setIsLoading(false);
         const { data } = response.data;
         const customerList = data;
@@ -91,7 +90,6 @@ const useHandleCreateLoginDetailsSubmit = () => {
     handleCreateDetailsChange,
     handleCreateDetailsSubmit,
     userCredentials,
-    prompt,
   };
 };
 
