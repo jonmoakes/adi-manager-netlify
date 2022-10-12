@@ -19,12 +19,19 @@ const Navigation = lazy(() =>
 const Home = lazy(() => import("./routes/home/home.component"));
 const Features = lazy(() => import("./routes/features/features.component"));
 const Pricing = lazy(() => import("./routes/pricing/pricing.component"));
-const AboutMe = lazy(() => import("./routes/about-me/about-me.component"))
-const ContactMe = lazy(() => import("./routes/contact-me/contact-me.component"))
-const Account = lazy(() => import("./routes/account/account.component"))
-const Login = lazy(() => import("./routes/login/login.component"))
-const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"))
-const CreateLoginDetails = lazy(() => import("./routes/create-login-details/create-login-details.component"))
+const AboutMe = lazy(() => import("./routes/about-me/about-me.component"));
+const ContactMe = lazy(() =>
+  import("./routes/contact-me/contact-me.component")
+);
+const Account = lazy(() => import("./routes/account/account.component"));
+const Login = lazy(() => import("./routes/login/login.component"));
+const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"));
+const CreateLoginDetails = lazy(() =>
+  import("./routes/create-login-details/create-login-details.component")
+);
+const CustomerCreation = lazy(() =>
+  import("./routes/customer-creation/customer-creation.component")
+);
 
 const App = () => {
   useCheckUserSession();
@@ -32,7 +39,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Toolbar/>
+      <Toolbar />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Suspense fallback={<Loader />}>
           <Routes>
@@ -43,7 +50,7 @@ const App = () => {
               <Route path="about-me" element={<AboutMe />} />
               <Route path="contact" element={<ContactMe />} />
               <Route path="my-account" element={<Account />} />
-         
+
               <Route
                 path="login"
                 element={
@@ -57,15 +64,28 @@ const App = () => {
               <Route
                 path="sign-up"
                 element={
-                  !currentUser ? <SignUp /> : <Navigate replace to="my-account" />
+                  !currentUser ? (
+                    <SignUp />
+                  ) : (
+                    <Navigate replace to="my-account" />
+                  )
                 }
               />
 
               <Route
                 path="create-login-details"
                 element={
-                  !currentUser ? <CreateLoginDetails /> : <Navigate replace to="/my-account" />
+                  !currentUser ? (
+                    <CreateLoginDetails />
+                  ) : (
+                    <Navigate replace to="/my-account" />
+                  )
                 }
+              />
+
+              <Route
+                path="customer-creation"
+                element={!currentUser && <CustomerCreation />}
               />
             </Route>
           </Routes>

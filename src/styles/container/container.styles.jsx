@@ -8,3 +8,9 @@ export const Container = styled.div`
     padding-bottom: 50px;
   }
 `;
+
+export const NoHeaderFooterContainer = styled.div`
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 300px;
+`;
