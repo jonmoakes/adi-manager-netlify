@@ -1,10 +1,14 @@
-import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
+import Intro from "./intro.component";
+import TermsAndConditionsConfirm from "./terms-and-coditions-confirm.component";
+import  ChooseMonthOrYear from "./choose-month-or-year.component";
 
 import { Container } from "../../styles/container/container.styles";
 
 const SignUp = () => (
   <Container>
-    <SignUpForm />
+    <Intro />
+    <TermsAndConditionsConfirm />
+    <ChooseMonthOrYear />
   </Container>
 );
 

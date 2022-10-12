@@ -24,6 +24,7 @@ const ContactMe = lazy(() => import("./routes/contact-me/contact-me.component"))
 const Account = lazy(() => import("./routes/account/account.component"))
 const Login = lazy(() => import("./routes/login/login.component"))
 const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"))
+const CreateLoginDetails = lazy(() => import("./routes/create-login-details/create-login-details.component"))
 
 const App = () => {
   useCheckUserSession();
@@ -56,7 +57,14 @@ const App = () => {
               <Route
                 path="sign-up"
                 element={
-                  !currentUser ? <SignUp /> : <Navigate replace to="/my-account" />
+                  !currentUser ? <SignUp /> : <Navigate replace to="my-account" />
+                }
+              />
+
+              <Route
+                path="create-login-details"
+                element={
+                  !currentUser ? <CreateLoginDetails /> : <Navigate replace to="/my-account" />
                 }
               />
             </Route>

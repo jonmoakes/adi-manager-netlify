@@ -1,50 +1,36 @@
 import styled, { keyframes } from "styled-components";
 import { slideInLeft, slideInRight, bounceInDown, pulse } from "react-animations";
+
+import { ReactComponent as SearchInfoSVG } from "../../assets/info.svg";
+
 import CustomButton from "../../components/custom-button/custom-button.component";
 
 const slideInLeftAnimation = keyframes`${slideInLeft}`;
 const slideInRightAnimation = keyframes`${slideInRight}`;
-
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
 const PulseAnimation = keyframes`${pulse}`;
 
 export const Button = styled.button`
-  min-width: 165px;
   width: 400px;
-  height: 100px;
-  letter-spacing: 0.5px;
-  line-height: 50px;
-  font-size: 25px;
-  background-color: #247afc;
+  height: 75px;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px black;
   text-transform: capitalize;
+  font-size: 18px;
+  font-weight: bolder;
   cursor: pointer;
+  background-color: #247afd;
   border-radius: 15px;
   border: 2px solid black;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   outline: none;
-  font-family: inherit;
-  font-weight: bold;
-  color: black;
-
-  @media screen and (max-width: 1366px) {
-    width: 80%;
-  }
-
-  @media screen and (max-width: 850px) {
-    padding: 5px 5px;
-    font-size: 25px;
-    line-height: 10px;
-  }
-
-  @media screen and (max-width: 600px) {
-    height: 50px;
-    font-size: 18px;
-  }
 
   &:hover {
+    background-color: #00975f;
     transform: scale(1.05);
+    box-shadow: 12px 12px 12px black;
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1024px) {
       transform: none;
       transition: none;
       box-shadow: none;
@@ -53,8 +39,42 @@ export const Button = styled.button`
 
   :active {
     transform: translate(0, 0.5rem);
-    box-shadow: 0 0.1rem black;
+    box-shadow: 6px 6px 6px black;
+
+    @media screen and (max-width: 1024px) {
+      transform: none;
+      box-shadow: none;
+    }
   }
+
+  @media screen and (max-width: 600px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 250px;
+    height: 65px;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 16px;
+    width: 200px;
+    height: 60px;
+  }
+`;
+
+export const TermsReadButton = styled(CustomButton) ` 
+  font-size:16px;
+`;
+
+export const ChoosePaymentMethodButton = styled(CustomButton) ` 
+    background-color: #fe46a5;
+    text-shadow:none;
+    color:black;
+
+    &:hover {
+      background-color: yellow;
+    }
 `;
 
 export const FeaturesButton = styled(CustomButton)`
@@ -64,48 +84,6 @@ export const FeaturesButton = styled(CustomButton)`
 
 export const SignUpLinkButton = styled(CustomButton)`
   animation: 2s ${slideInRightAnimation};
-`;
-
-
-
-export const HelpButton = styled.button`
-  height: 50px;
-  width: 300px;
-  margin: 0px auto 20px auto;
-  border-radius: 10px;
-  border: 2px solid black;
-  background-color: yellow;
-  cursor: pointer;
-  text-transform: capitalize;
-  color: black;
-  font-weight: bold;
-  font-family: inherit;
-  font-size: 16px;
-  animation: 1s ${slideInLeftAnimation};
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-
-    @media screen and (max-width: 1366px) {
-      transform: none;
-      transition: none;
-      box-shadow: none;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 80%;
-  }
-`;
-
-export const UserTableHelpButton = styled(HelpButton)`
-  margin: -20px auto 0px auto;
-`;
-
-export const ShowAllEntriesButton = styled(HelpButton)`
-  background-color: salmon;
-  font-family: inherit;
 `;
 
 export const ContactFormButton = styled(CustomButton)`
@@ -191,56 +169,9 @@ export const CloseInstructionsButton = styled(InstructionsButton)`
   text-shadow:none;
 `;
 
-export const ChooseOptionsButton = styled.button`
-  width: 50%;
-  height: 50px;
-  background-color: salmon;
-  cursor: pointer;
-  border: 2px solid black;
-  border-radius: 15px;
-  font-family: inherit;
-  font-weight: bold;
-  color: black;
-  font-size: 16px;
-  text-transform: capitalize;
-  outline: none;
-  transition: all 0.2s ease-in-out;
-
-  @media screen and (max-width: 1377px) {
-    width: 60%;
-  }
-  @media screen and (max-width: 850px) {
-    width: 70%;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 90%;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 5px 5px 5px black;
-
-    @media screen and (max-width: 1366px) {
-      transform: none;
-      transition: none;
-      box-shadow: none;
-    }
-  }
-`;
-
 export const SignInButton = styled(CustomButton)`
   margin: 30px auto 0px auto;
-  background-color: #2099ef;
   height: 75px;
-
-  &:hover {
-    background-color: whitesmoke;
-
-    @media screen and (max-width: 1366px) {
-      background-color: #2099ef;
-    }
-  }
 
   @media screen and (max-width: 600px) {
     margin: 25px auto 0px auto;
@@ -248,6 +179,10 @@ export const SignInButton = styled(CustomButton)`
 
   @media screen and (max-width: 450px) {
     height: 50px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 150px;
   }
 `;
 
@@ -275,82 +210,21 @@ export const ForgotPasswordButton = styled(CustomButton)`
   text-shadow: 1px 1px 1px black;
   margin: 0 auto;
 
-  @media screen and (max-width: 1366px) {
-    width: 50%;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 60%;
+  &:hover {
+    background-color:red;
   }
 `;
 
-export const ShowTableOrderChoiceButton = styled.button`
-  width: 350px;
-  font-size: 20px;
-  color: black;
-  height: auto;
-  padding: 10px;
-  display: inline;
-  margin: 0px auto 0px auto;
-  border-radius: 15px;
+export const InfoButton = styled(SearchInfoSVG)`
+  margin: 10px 0px 0px 0px;
+  width: 35px;
+  height: 35px;
   border: 2px solid black;
-  text-transform: capitalize;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  font-family: inherit;
-  font-weight: bold;
+  border-radius: 50px;
+  animation: infinite 1s ${PulseAnimation};
 
   &:hover {
-    transform: scale(1.05);
-    background-color: whitesmoke;
-  }
-
-  @media screen and (max-width: 450px) {
-    width: 250px;
-    font-size: 16px;
-  }
-
-  @media screen and (max-width: 280px) {
-    width: 200px;
-  }
-`;
-
-export const HideTableOrderChoiceButton = styled(ShowTableOrderChoiceButton)`
-  width: 250px;
-  background-color: yellow;
-  margin: 10px auto 10px auto;
-
-  &:hover {
-    background-color: yellow;
-  }
-
-  @media screen and (max-width: 320px) {
-    width: 200px;
-  }
-`;
-
-export const TableOrderSelectButton = styled.button`
-  width: 200px;
-  height: auto;
-  padding: 10px;
-  display: inline;
-  margin: 10px;
-  border-radius: 15px;
-  border: 2px solid black;
-  text-transform: capitalize;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  font-family: inherit;
-  font-weight: bold;
-  color: black;
-
-  &:hover {
-    transform: scale(1.05);
-    background-color: #0afe76;
-
-    @media screen and (max-width: 1366px) {
-      transform: none;
-    }
+    cursor: pointer;
   }
 `;
 
@@ -460,59 +334,6 @@ export const DisabledButton = styled(PayButton)`
   pointer-events: none;
 `;
 
-export const AddToOrderButtonContainer = styled.button`
-  font-family: inherit;
-  font-weight: bold;
-  background-color: #00ff2a;
-  border-radius: 15px;
-  width: 90%;
-  height: 80px;
-  font-size: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  vertical-align: middle;
-  outline: none;
-  cursor: pointer;
-  text-transform: capitalize;
-  border: 2px solid black;
-  color: black;
-  animation: 1s ${bounceInDownAnimation};
-  margin: 30px auto;
-
-  &:hover {
-    background-color: whitesmoke;
-
-    @media screen and (max-width: 1366px) {
-      background-color: #00ff2a;
-    }
-  }
-
-  :active {
-    transform: translate(0, 0.5rem);
-
-    @media screen and (max-width: 1366px) {
-      transform: none;
-    }
-  }
-
-  @media screen and (max-width: 1366px) {
-    width: 60%;
-  }
-
-  @media screen and (max-width: 850px) {
-    width: 70%;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 80%;
-  }
-
-  @media screen and (max-width: 280px) {
-    width: 90%;
-    height: 70px;
-  }
-`;
-
 export const BackButton = styled.button`
   width: 40px;
   height: 40px;
@@ -538,71 +359,3 @@ export const BackButton = styled.button`
   }
 `;
 
-export const AddProductButton = styled.button`
-  width: 70px;
-  height: 70px;
-  position: fixed;
-  right: 30px;
-  top: 125px;
-  background-color: #0afe76;
-  color: black;
-  border: 2px solid black;
-  border-radius: 50px;
-  font-weight: bold;
-  z-index: 10;
-  outline: none;
-  cursor: pointer;
-  text-transform: capitalize;
-  font-family: inherit;
-  animation: infinite 1s ${PulseAnimation};
-  font-size: 30px;
-
-  @media screen and (max-width: 1366px) {
-    right: 13px;
-  }
-
-  @media screen and (max-width: 850px) {
-    right: 15px;
-    top: 115px;
-  }
-
-  @media screen and (max-width: 768px) {
-    right: 13px;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 50px;
-    height: 50px;
-    top: 110px;
-    right: 23px;
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 450px) {
-    width: 50px;
-    height: 50px;
-    right: 23px;
-  }
-
-  @media screen and (max-width: 280px) {
-    right: 10px;
-  }
-`;
-
-export const AddNewProductButton = styled(CustomButton)`
-  background-color: yellow;
-  margin-top: 20px;
-
-  @media screen and (max-width: 600px) {
-    margin-top: 10px;
-  }
-
-  @media screen and (max-width: 450px) {
-    margin-bottom: 20px;
-  }
-`;
-
-export const AccountPageButton = styled(CustomButton)`
-  margin: 20px auto;
-  background-color: salmon;
-`;

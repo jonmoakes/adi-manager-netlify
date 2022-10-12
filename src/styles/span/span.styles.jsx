@@ -4,6 +4,10 @@ export const HighlightText = styled.span`
   color: #cc1616;
 `;
 
+export const MonthlyPriceSpan = styled.span ` 
+  color:yellow;
+`;
+
 export const OptionsDetail = styled.span`
   color: #d62424;
 `;

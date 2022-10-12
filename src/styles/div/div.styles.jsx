@@ -121,6 +121,10 @@ export const ErrorDiv = styled.div`
   border-radius: 15px;
 `;
 
+export const BounceInDiv = styled.div`
+  animation: 1s ${bounceInDownAnimation};
+`;
+
 export const WarningDiv = styled(ErrorDiv)`
   background-color: orange;
 `;
@@ -502,6 +506,36 @@ export const ForgotPasswordSelectDiv = styled.div`
 
   @media screen and (max-width: 600px) {
     width: 90%;
+  }
+`;
+
+export const MonthlyPriceOptionDiv = styled.div`
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 0px 5px 20px 5px;
+  width: 85%;
+  background-color: #247afd;
+`;
+
+export const YearPriceOptionDiv = styled(MonthlyPriceOptionDiv)`
+  background-color: #3ec43e;
+`;
+
+export const ConfirmDiv = styled.div`
+  width: 70%;
+  margin: -10px auto 30px auto;
+
+  p {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+
+    p {
+      font-size: 14px;
+    }
   }
 `;
 

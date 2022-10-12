@@ -18,12 +18,12 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBosAHMRjyMgSm6O2ln5xsFqxV1loFj4So",
-  authDomain: "adi-manager-netlify.firebaseapp.com",
-  projectId: "adi-manager-netlify",
-  storageBucket: "adi-manager-netlify.appspot.com",
-  messagingSenderId: "506457580377",
-  appId: "1:506457580377:web:7c605e9cec4f0a1a7be248"
+  apiKey: "AIzaSyC1s14KSIZosY5rHrREbNDWxH2mB3DDPgQ",
+  authDomain: "ad-manager-pwa.firebaseapp.com",
+  projectId: "ad-manager-pwa",
+  storageBucket: "ad-manager-pwa.appspot.com",
+  messagingSenderId: "497240375713",
+  appId: "1:497240375713:web:c4bba1898d6a0557a18be0"
 };
 
 initializeApp(firebaseConfig);

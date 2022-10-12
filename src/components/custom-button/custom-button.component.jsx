@@ -1,4 +1,4 @@
-import { Button } from "./custom-button.styles";
+import { Button } from "../../styles/buttons/buttons.styles";
 
 const CustomButton = ({ children, ...otherProps }) => (
   <Button {...otherProps}>{children}</Button>

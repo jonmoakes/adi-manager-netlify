@@ -17,6 +17,10 @@ export const Form = styled.form`
   }
 `;
 
+export const CreateDetailsForm = styled(Form)`
+  padding: 15px 0px;
+`;
+
 export const StyledTextArea = styled.textarea`
   width: 100%;
   padding: 12px;
