@@ -4,7 +4,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { selectErrorMessage } from "../../store/error/error.selector";
-import { clearErrorMessage } from "../../store/error/error.action";
+import {
+  clearErrorMessage,
+  setErrorMessage,
+} from "../../store/error/error.action";
 import { addCustomerDetails } from "../../store/customer/customer.action";
 
 import useFireSwal from "../swals/use-fire-swal";
@@ -12,8 +15,9 @@ import useFireSwal from "../swals/use-fire-swal";
 import {
   passwordsDontMatchMessage,
   emailsDontMatchMessage,
-  customerCreationPath,
+  createCustomerPath,
   emailAlreadyInUse,
+  passwordLengthError,
 } from "../../strings/strings";
 
 const useHandleCreateLoginDetailsSubmit = () => {
@@ -33,11 +37,11 @@ const useHandleCreateLoginDetailsSubmit = () => {
   const { displayName, email, confirmEmail, password, confirmPassword } =
     userCredentials;
 
-    const customerDetails = {
-      displayName,
-      email,
-      password,
-    }
+  const customerDetails = {
+    displayName,
+    email,
+    password,
+  };
 
   const handleCreateDetailsChange = (event) => {
     const { name, value } = event.target;
@@ -47,7 +51,7 @@ const useHandleCreateLoginDetailsSubmit = () => {
   const handleCreateDetailsSubmit = async (e) => {
     e.preventDefault();
     if (errorMessage) {
-      dispatch(clearErrorMessage())
+      dispatch(clearErrorMessage());
     }
     setIsLoading(true);
 
@@ -67,19 +71,21 @@ const useHandleCreateLoginDetailsSubmit = () => {
             return;
           }
 
-          if (password !== confirmPassword) {
+          if (password.length < 6) {
+            fireSwal("error", passwordLengthError, "", 0, true, false);
+          } else if (password !== confirmPassword) {
             fireSwal("error", passwordsDontMatchMessage, "", 0, true, false);
           } else if (email !== confirmEmail) {
             fireSwal("error", emailsDontMatchMessage, "", 0, true, false);
           } else {
             dispatch(addCustomerDetails(customerDetails));
-           navigate(customerCreationPath);
+            navigate(createCustomerPath);
           }
         }
       },
       (error) => {
         setIsLoading(false);
-        selectErrorMessage(error.message)
+        setErrorMessage(error.message);
         return;
       }
     );

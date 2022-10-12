@@ -29,8 +29,11 @@ const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"));
 const CreateLoginDetails = lazy(() =>
   import("./routes/create-login-details/create-login-details.component")
 );
-const CustomerCreation = lazy(() =>
-  import("./routes/customer-creation/customer-creation.component")
+const CreateCustomer = lazy(() =>
+  import("./routes/create-customer/create-customer.component")
+);
+const CreateSubscription = lazy(() =>
+  import("./routes/create-subscription/create-subscription.component")
 );
 
 const App = () => {
@@ -84,8 +87,13 @@ const App = () => {
               />
 
               <Route
-                path="customer-creation"
-                element={!currentUser && <CustomerCreation />}
+                path="create-customer"
+                element={!currentUser && <CreateCustomer />}
+              />
+
+              <Route
+                path="create-subscription"
+                element={!currentUser && <CreateSubscription />}
               />
             </Route>
           </Routes>

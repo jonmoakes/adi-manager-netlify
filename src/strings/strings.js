@@ -13,10 +13,9 @@ export const messageSent = "Thank you! Your Message Has Been Sent!";
 export const cookieThanksMessage = "Thank You For Allowing Cookies! :)";
 export const signOutSuccessMessage =
   "You Have Successfully Signed Out From Your Account!";
-  export const successMessage = "success!"
-  export const passwordResetSuccessText =
+export const successMessage = "success!";
+export const passwordResetSuccessText =
   " If You Don't Receive It, Please Check Your Spam Folder Or Wait A Few More Minutes. :)";
-
 
 //infos
 export const loggingInMessage = "Logging You In - Please Wait...";
@@ -29,7 +28,7 @@ export const placeholderInfiniteSpaceMessage =
 export const enterEmailMessage = "Enter Email then tap button below";
 export const emailResponseTimeMessage =
   "Your Message Has Been Message Sent! We Aim To Respond Within 24 Hours.";
-  export const pleaseTryAgain = "please try again.";
+export const pleaseTryAgain = "please try again.";
 
 //confirms
 export const confirmAddEntryMessage =
@@ -101,24 +100,24 @@ export const leavingLoginFormMessage =
   "Are You Sure You Want To Leave The Page? You Will Lose Any Details You Have Entered Into The Form.";
 export const couldntGetCustomerPortalLinkMessage =
   "We Couldn't find your customer portal link.";
-  export const errorSendingMessage = "error sending message.";
-  export const invalidEmailErrorMessage =
+export const errorSendingMessage = "error sending message.";
+export const invalidEmailErrorMessage =
   "you entered and invalid email address. please try again.";
-  export const missingEmailFieldsErrorMessage =
+export const missingEmailFieldsErrorMessage =
   "please make sure that the name, email and message fields have all been entered.";
-  export const emailAddressNotFound =
+export const emailAddressNotFound =
   "email address not found, please try again.";
-  export const networkRequestFailedError = "network-request-failed";
-  export const noNetworkDetected =
+export const networkRequestFailedError = "network-request-failed";
+export const noNetworkDetected =
   "internet connection not detected. Please check your connection";
-  export const errorSigningInTitle = "error signing in.";
+export const errorSigningInTitle = "error signing in.";
 export const errorSigningInText =
   "please check your login details and try again.\nif you have forgot your password, tap the forgot password button at the bottom of the page. if you have forgot your sign in email, please contact us using the contact form link in the header so we can help!";
-  export const displayNameTooLongMessage =
+export const displayNameTooLongMessage =
   "please make sure your display name is a maximum of 8 characters in length.";
-  export const emailAlreadyInUse =
+export const emailAlreadyInUse =
   "this email is already in use. Please try another email address.";
-  export const weakPassword =
+export const weakPassword =
   "for security reasons, please make sure your password is at least 6 characters long.";
 
 //strings
@@ -186,7 +185,7 @@ export const pupilOptionsPath = "/pupil-options";
 export const pupilsPath = "/pupils";
 export const blockBookingPath = "/block-bookings";
 export const pupilProgressPath = "/pupil-progress";
-export const customerCreationPath = "/customer-creation";
+export const createCustomerPath = "/create-customer";
 export const subscriptionStatusPath = "/subscription-status";
 export const subscriptionStatusCurrentUserPath =
   "/subscription-status-current-user";

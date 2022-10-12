@@ -1,6 +1,10 @@
-import CustomButton from "../custom-button/custom-button.component";
+import CustomButton from "../../components/custom-button/custom-button.component";
 
-import { CreateDetailsForm, StyledInput, Label } from "../../styles/form/form.styles";
+import {
+  CreateDetailsForm,
+  StyledInput,
+  Label,
+} from "../../styles/form/form.styles";
 
 import {
   passwordLengthPlaceholder,
@@ -14,11 +18,9 @@ const FormElement = ({
 }) => {
   const { displayName, email, confirmEmail, password, confirmPassword } =
     userCredentials;
-    
 
   return (
-    <CreateDetailsForm  onSubmit={handleCreateDetailsSubmit}>
-    
+    <CreateDetailsForm onSubmit={handleCreateDetailsSubmit}>
       <Label>Name:</Label>
 
       <StyledInput

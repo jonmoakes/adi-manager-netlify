@@ -4,7 +4,7 @@ import useHandleSignInFormChange from "../../hooks/handlers/use-handle-sign-in-f
 
 import { selectIsSignInLoading } from "../../store/user/user.selector";
 
-import Loader from "../loader/loader.component";
+import Loader from "../../components/loader/loader.component";
 import SignIn from "./sign-in.component";
 import NoAccount from "./no-account.component";
 import ForgotPasswordForm from "./forgot-password-form.component";

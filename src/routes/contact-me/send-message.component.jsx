@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import useHandleIsProcessing from "../../hooks/handlers/use-handle-is-processing";
+import useHandleIsProcessing from "../../hooks/handlers/use-handle-is-processing.js";
 import useFireSwal from "../../hooks/swals/use-fire-swal";
 
-import Loader from "../loader/loader.component";
+import Loader from "../../components/loader/loader.component";
 
 import {
   ContactFormButton,
@@ -34,7 +34,14 @@ const SendMessage = ({ formDetails }) => {
 
   const handleSuccess = () => {
     return [
-      fireSwal("success", successMessage, emailResponseTimeMessage, 4000, false, true),
+      fireSwal(
+        "success",
+        successMessage,
+        emailResponseTimeMessage,
+        4000,
+        false,
+        true
+      ),
       navigate("/"),
     ];
   };

@@ -4,8 +4,8 @@ import useHandleCreateLoginDetailsSubmit from "../../hooks/login/use-handle-crea
 
 import { selectErrorMessage } from "../../store/error/error.selector";
 
-import Loader from "../loader/loader.component";
-import FetchError from "../fetch-error/fetch-error.component";
+import Loader from "../../components/loader/loader.component";
+import FetchError from "../../components/fetch-error/fetch-error.component";
 import StrongPasswordAdvice from "./strong-password-advice.component";
 import FormElement from "./form-element.component";
 
@@ -28,18 +28,19 @@ const CreateLoginDetailsForm = () => {
         <FetchError />
       ) : (
         <>
-        <Div>
-          <StrongPasswordAdvice />
-        </Div>
-        <Div>
-          <FormElement
-            {...{
-              userCredentials,
-              handleCreateDetailsChange,
-              handleCreateDetailsSubmit,
-            }}
-          />
-        </Div></>
+          <Div>
+            <StrongPasswordAdvice />
+          </Div>
+          <Div>
+            <FormElement
+              {...{
+                userCredentials,
+                handleCreateDetailsChange,
+                handleCreateDetailsSubmit,
+              }}
+            />
+          </Div>
+        </>
       )}
     </>
   );

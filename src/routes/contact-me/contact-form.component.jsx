@@ -8,7 +8,7 @@ import {
   CapitalizedInput,
   LowercasedInput,
   StyledTextArea,
-} from "../../styles/form/form.styles";
+} from "../../styles/form/form.styles.jsx";
 import { Div } from "../../styles/div/div.styles";
 
 const defaultFormDetails = {

@@ -1,11 +1,12 @@
 require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-exports.handler = async (req, res) => {
+exports.handler = async (event) => {
+  const { email, name } = JSON.parse(event.body);
   try {
     const customer = await stripe.customers.create({
-      email: req.body.email,
-      description: req.body.description,
+      email,
+      name,
     });
     return {
       statusCode: 200,

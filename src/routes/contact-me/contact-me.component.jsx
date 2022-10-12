@@ -1,4 +1,4 @@
-import ContactForm from "../../components/contact-form/contact-form.component";
+import ContactForm from "./contact-form.component";
 
 import { Container } from "../../styles/container/container.styles";
 import { Div } from "../../styles/div/div.styles";

@@ -1,16 +1,16 @@
-import SignInForm from "./sign-in-form.component";
+// import PaymentForm from "../../components/checkout/payment-form.component";
 
 import { Container } from "../../styles/container/container.styles";
 import { Div } from "../../styles/div/div.styles";
 import { Heading } from "../../styles/h1/h1.styles";
 
-const Login = () => (
+const CreateSubscription = () => (
   <Container>
     <Div>
-      <Heading>Log In</Heading>
+      <Heading>create Subscription</Heading>
     </Div>
-    <SignInForm />
+    {/* <PaymentForm /> */}
   </Container>
 );
 
-export default Login;
+export default CreateSubscription;

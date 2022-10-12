@@ -3,7 +3,7 @@ import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 import useFireSwal from "../../hooks/swals/use-fire-swal";
 
-import Loader from "../loader/loader.component";
+import Loader from "../../components/loader/loader.component";
 
 import {
   SignInUpForm,

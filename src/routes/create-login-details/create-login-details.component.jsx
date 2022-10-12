@@ -1,4 +1,4 @@
-import CreateLoginDetailsForm from "../../components/create-login-details-form/create-login-details-form.component";
+import CreateLoginDetailsForm from "./create-login-details-form.component";
 
 import { Container } from "../../styles/container/container.styles";
 import { Div } from "../../styles/div/div.styles";

@@ -18,15 +18,13 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-     <Provider store={store}>
-     
-        <BrowserRouter>
-          {/* <Elements stripe={stripePromise}> */}
-            <App />
-          {/* </Elements> */}
-        </BrowserRouter>
-    
-     </Provider> 
+    <Provider store={store}>
+      <BrowserRouter>
+        {/* <Elements stripe={stripePromise}> */}
+        <App />
+        {/* </Elements> */}
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
