@@ -24,7 +24,7 @@ const useFireSwal = () => {
       confirmButtonColor: "#3085d6",
       background: "black",
       backdrop: `
-            rgba(185, 209, 229, 0.8)`,
+      rgba(36, 122, 252, 0.8)`,
       customClass: "confirm",
     });
   };

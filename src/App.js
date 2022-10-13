@@ -60,7 +60,7 @@ const App = () => {
                   !currentUser ? (
                     <Login />
                   ) : (
-                    <Navigate replace to="/dashboard" />
+                    <Navigate replace to="dashboard" />
                   )
                 }
               />
@@ -81,7 +81,7 @@ const App = () => {
                   !currentUser ? (
                     <CreateLoginDetails />
                   ) : (
-                    <Navigate replace to="/my-account" />
+                    <Navigate replace to="my-account" />
                   )
                 }
               />

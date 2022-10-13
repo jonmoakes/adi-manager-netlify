@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { selectErrorMessage } from "../../store/error/error.selector";
-import {
-  clearErrorMessage,
-  setErrorMessage,
-} from "../../store/error/error.action";
+import { clearErrorMessage} from "../../store/error/error.action";
 import { addCustomerDetails } from "../../store/customer/customer.action";
 
 import useFireSwal from "../swals/use-fire-swal";
@@ -43,12 +40,12 @@ const useHandleCreateLoginDetailsSubmit = () => {
     password,
   };
 
-  const handleCreateDetailsChange = (event) => {
+  const handleCreateLoginDetailsChange = (event) => {
     const { name, value } = event.target;
     setUserCredentials({ ...userCredentials, [name]: value });
   };
 
-  const handleCreateDetailsSubmit = async (e) => {
+  const handleCreateLoginDetailsSubmit = async (e) => {
     e.preventDefault();
     if (errorMessage) {
       dispatch(clearErrorMessage());
@@ -85,7 +82,7 @@ const useHandleCreateLoginDetailsSubmit = () => {
       },
       (error) => {
         setIsLoading(false);
-        setErrorMessage(error.message);
+        alert(error.message)
         return;
       }
     );
@@ -93,8 +90,8 @@ const useHandleCreateLoginDetailsSubmit = () => {
 
   return {
     isLoading,
-    handleCreateDetailsChange,
-    handleCreateDetailsSubmit,
+    handleCreateLoginDetailsChange,
+    handleCreateLoginDetailsSubmit,
     userCredentials,
   };
 };

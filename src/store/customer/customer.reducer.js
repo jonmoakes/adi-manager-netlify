@@ -5,7 +5,6 @@ const INITIAL_STATE = {
   customerDetails: {},
   subscriptionData: {},
   customerId: "",
-  loader: false,
 };
 
 export const customerReducer = (state = INITIAL_STATE, action) => {
@@ -54,16 +53,6 @@ export const customerReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         subscriptionData: action.payload,
-      };
-    case CUSTOMER_ACTION_TYPES.START_LOADER:
-      return {
-        ...state,
-        loader: true,
-      };
-    case CUSTOMER_ACTION_TYPES.STOP_LOADER:
-      return {
-        ...state,
-        loader: false,
       };
     default:
       return state;

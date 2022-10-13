@@ -22,7 +22,3 @@ export const selectCustomerId = createSelector(
   (customer) => customer.customerId
 );
 
-export const selectLoader = createSelector(
-  [selectCustomer],
-  (customer) => customer.loader
-);

@@ -9,3 +9,7 @@ export const addCustomerDetails = (customerDetails) =>
 
 export const addCustomerId = (payload) =>
   createAction(CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_ID, payload);
+
+  export const clearCustomerDetails = () =>
+  createAction(CUSTOMER_ACTION_TYPES.CLEAR_CUSTOMER_DETAILS);
+

@@ -1,52 +1,53 @@
-import { useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { selectCustomerDetails } from "../../store/customer/customer.selector";
-import { addCustomerId } from "../../store/customer/customer.action";
+import useHandleCreateCustomer from "../../hooks/sign-up/use-handle-create-customer";
+
+import { selectIsLoading } from "../../store/loader/loader.selector";
+import { selectErrorMessage} from "../../store/error/error.selector";
+import { clearCustomerDetails } from "../../store/customer/customer.action";
+
+import Loader from "../../components/loader/loader.component";
+import CustomButton from "../../components/custom-button/custom-button.component";
 
 import { NoHeaderFooterContainer } from "../../styles/container/container.styles";
 import { Div } from "../..//styles/div/div.styles";
 import { Heading } from "../../styles/h1/h1.styles";
+import { StyledLink } from "../../styles/link/link.styles";
 
-import { createSubscriptionPath } from "../../strings/strings";
+import { createLoginDetailsPath, contactPath } from "../../strings/strings";
 
 const CreateCustomer = () => {
-  const customerDetails = useSelector(selectCustomerDetails);
-  const dispatch = useDispatch();
+  useHandleCreateCustomer();
+  const isLoading = useSelector(selectIsLoading);
+  const errorMessage = useSelector(selectErrorMessage);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const { email, displayName } = customerDetails;
-
-  const shouldCreate = useRef(true);
-  useEffect(() => {
-    async function createCustomer() {
-      if (shouldCreate.current) {
-        shouldCreate.current = false;
-        const response = await fetch("/.netlify/functions/create-customer", {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: email, name: displayName }),
-        })
-          .then((response) => response.json())
-          .catch((error) => {
-            console.error("There was an error!", error);
-          });
-        dispatch(addCustomerId(response.id));
-        navigate(createSubscriptionPath);
-      }
-    }
-    createCustomer();
-  }, [dispatch, displayName, email, navigate]);
+  const tryAgain = () => {
+    dispatch(clearCustomerDetails());
+    navigate(createLoginDetailsPath);
+  }
 
   return (
-    <NoHeaderFooterContainer>
-      <Div>
-        <Heading>creating customer.... please wait</Heading>
-      </Div>
-    </NoHeaderFooterContainer>
+    <>
+      {isLoading && <Loader />}
+      <NoHeaderFooterContainer>
+        {!errorMessage ?
+          <Div>
+            <Heading>creating customer.... please wait</Heading>
+          </Div>
+        : 
+          <Div>
+            <Heading>sorry, there was an error.</Heading>
+            <p>please tap the button below to try again or <StyledLink to={contactPath}>contact us</StyledLink> if the problem persists.</p>
+            <p>the error message received was:</p>
+            <p>{errorMessage}</p>
+            <CustomButton onClick={tryAgain}>tap to try again</CustomButton>
+          </Div> 
+        }
+      </NoHeaderFooterContainer>
+    </>
   );
 };
 

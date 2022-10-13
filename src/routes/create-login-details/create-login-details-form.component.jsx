@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import useHandleCreateLoginDetailsSubmit from "../../hooks/login/use-handle-create-login-details-submit";
+import useHandleCreateLoginDetailsSubmit from "../../hooks/sign-up/use-handle-create-login-details-submit";
 
 import { selectErrorMessage } from "../../store/error/error.selector";
 
@@ -14,8 +14,8 @@ import { Div } from "../../styles/div/div.styles";
 const CreateLoginDetailsForm = () => {
   const {
     isLoading,
-    handleCreateDetailsChange,
-    handleCreateDetailsSubmit,
+    handleCreateLoginDetailsChange,
+    handleCreateLoginDetailsSubmit,
     userCredentials,
   } = useHandleCreateLoginDetailsSubmit();
 
@@ -35,8 +35,8 @@ const CreateLoginDetailsForm = () => {
             <FormElement
               {...{
                 userCredentials,
-                handleCreateDetailsChange,
-                handleCreateDetailsSubmit,
+                handleCreateLoginDetailsChange,
+                handleCreateLoginDetailsSubmit,
               }}
             />
           </Div>
