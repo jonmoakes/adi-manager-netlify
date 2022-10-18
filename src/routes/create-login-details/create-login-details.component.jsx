@@ -1,4 +1,4 @@
-import CreateLoginDetailsForm from "./create-login-details-form.component";
+import CreateDetailsForm from "./create-details-form.component";
 
 import { Container } from "../../styles/container/container.styles";
 import { Div } from "../../styles/div/div.styles";
@@ -9,7 +9,7 @@ const CreateLoginDetails = () => (
     <Div>
       <Heading>create login details</Heading>
     </Div>
-    <CreateLoginDetailsForm />
+    <CreateDetailsForm />
   </Container>
 );
 

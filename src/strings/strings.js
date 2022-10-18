@@ -16,6 +16,7 @@ export const signOutSuccessMessage =
 export const successMessage = "success!";
 export const passwordResetSuccessText =
   " If You Don't Receive It, Please Check Your Spam Folder Or Wait A Few More Minutes. :)";
+export const paymentSuccessfulMessage = "payment successful!";
 
 //infos
 export const loggingInMessage = "Logging You In - Please Wait...";
@@ -29,6 +30,11 @@ export const enterEmailMessage = "Enter Email then tap button below";
 export const emailResponseTimeMessage =
   "Your Message Has Been Message Sent! We Aim To Respond Within 24 Hours.";
 export const pleaseTryAgain = "please try again.";
+export const subscriptionNotStartedMessage =
+  "Your Subscription Was Not Placed & Your Card Has Not Been Charged.";
+export const cancelledMessage = "Cancelled";
+export const youWillReceiveAnEmailMessage =
+  "you will receive an email confirming your purchase. Thank you for subscribing!";
 
 //confirms
 export const confirmAddEntryMessage =
@@ -46,6 +52,9 @@ export const cancelAndReturnMessage =
 export const confirmPurchaseMessage =
   "Are you sure you'd like to purchase this product?";
 export const confirmLogoutMessage = "Are You Sure You Want To Log Out?";
+export const areYouSureYouWishToSubscribeMessage =
+  "are you sure you wish to purchase this subscription?";
+export const confirmSubscribeMessage = "yes, subscribe!";
 
 //errors
 export const needDateErrorMessage = "Please Enter The Date For Your Entry.";
@@ -119,6 +128,11 @@ export const emailAlreadyInUse =
   "this email is already in use. Please try another email address.";
 export const weakPassword =
   "for security reasons, please make sure your password is at least 6 characters long.";
+export const pleaseEnterYourCardDetails = "please enter your card details";
+export const formNotCompleteWarning =
+  "the pay button will show when the form is complete";
+export const errorProcessingPaymentMessage =
+  "sorry, there was a problem processing the payment. Your card has not been charged.";
 
 //strings
 export const diary = "diary";

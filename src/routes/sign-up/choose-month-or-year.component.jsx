@@ -13,7 +13,10 @@ import {
   MonthlyPriceOptionDiv,
   YearPriceOptionDiv,
 } from "../../styles/div/div.styles";
-import { TermsReadButton, ChoosePaymentMethodButton } from "../../styles/buttons/buttons.styles";
+import {
+  TermsReadButton,
+  ChoosePaymentMethodButton,
+} from "../../styles/buttons/buttons.styles";
 
 import { createLoginDetailsPath } from "../../strings/strings";
 
@@ -35,9 +38,7 @@ const ChooseMonthOrYear = () => {
   return (
     <Div>
       {!showSubscriptionOptions && (
-        <TermsReadButton
-          onClick={() => setShowSubscriptionOptions(true)}
-        >
+        <TermsReadButton onClick={() => setShowSubscriptionOptions(true)}>
           I Have Read & Accepted The Terms & Conditions.
         </TermsReadButton>
       )}
@@ -48,14 +49,18 @@ const ChooseMonthOrYear = () => {
 
           <MonthlyPriceOptionDiv>
             <MonthInfo />
-            <ChoosePaymentMethodButton onClick={chooseMonthAndPushToCreateDetails}>
+            <ChoosePaymentMethodButton
+              onClick={chooseMonthAndPushToCreateDetails}
+            >
               Select Monthly
             </ChoosePaymentMethodButton>
           </MonthlyPriceOptionDiv>
           <hr />
           <YearPriceOptionDiv>
             <YearInfo />
-            <ChoosePaymentMethodButton onClick={chooseYearAndPushToCreateDetails}>
+            <ChoosePaymentMethodButton
+              onClick={chooseYearAndPushToCreateDetails}
+            >
               Select Yearly
             </ChoosePaymentMethodButton>
           </YearPriceOptionDiv>

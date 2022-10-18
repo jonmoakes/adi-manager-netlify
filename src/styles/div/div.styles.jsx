@@ -1,11 +1,17 @@
 import styled, { keyframes } from "styled-components";
-import { bounceInDown, slideInLeft, slideInRight, rotateInUpRight } from "react-animations";
+import {
+  bounceInDown,
+  slideInLeft,
+  slideInRight,
+  rotateInUpRight,
+  fadeInLeftBig,
+} from "react-animations";
 
 const slideInLeftAnimation = keyframes`${slideInLeft}`;
 const slideInRightAnimation = keyframes`${slideInRight}`;
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
 const rotateInUpRightAnimation = keyframes`${rotateInUpRight}`;
-
+const fadeInLeftBigAnimation = keyframes`${fadeInLeftBig}`;
 
 export const Div = styled.div`
   margin: 0px auto 75px auto;
@@ -96,7 +102,6 @@ export const FeaturesDiv = styled(Div)`
   }
 `;
 
-
 export const NoSearchResultDiv = styled.div`
   width: 50%;
   height: auto;
@@ -126,7 +131,7 @@ export const BounceInDiv = styled.div`
 `;
 
 export const WarningDiv = styled(ErrorDiv)`
-  background-color: orange;
+  background-color: #3085d6;
 `;
 
 export const TableErrorDiv = styled(ErrorDiv)`
@@ -532,10 +537,6 @@ export const ConfirmDiv = styled.div`
 
   @media screen and (max-width: 600px) {
     width: 100%;
-
-    p {
-      font-size: 14px;
-    }
   }
 `;
 
@@ -786,7 +787,7 @@ export const InstructionsDiv = styled.div`
   border: 2px solid black;
   border-radius: 15px;
   margin: 20px auto 20px auto;
-  background-color: #2099EF;
+  background-color: #2099ef;
 
   @media screen and (max-width: 1024px) {
     padding: 20px 20px;
@@ -822,10 +823,6 @@ export const Nav = styled.div`
   height: 80px;
   border-bottom: 5px solid black;
 `;
-
-
-
-
 
 export const HeaderNavigationItems = styled.div`
   li {
@@ -915,7 +912,7 @@ export const RotateDiv = styled(Div)`
 `;
 
 export const LoaderDiv = styled.div`
- position: fixed;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -925,6 +922,26 @@ export const LoaderDiv = styled.div`
   opacity: 0.8;
 `;
 
+export const FadeInLeftBigDiv = styled.div`
+  animation: 1s ${fadeInLeftBigAnimation};
+`;
 
+export const StripeDiv = styled.div`
+  margin: 30px auto;
+  padding: 15px 10px 10px 10px;
+  background-color: whitesmoke;
+  width: 50%;
+  border-radius: 15px;
+  border: 2px solid black;
 
+  @media screen and (max-width: 1024px) {
+    width: 80%;
+  }
+`;
 
+export const CardInputErrorDiv = styled.div`
+  background-color: black;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 40px;
+`;

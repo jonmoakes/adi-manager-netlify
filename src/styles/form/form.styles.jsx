@@ -1,7 +1,4 @@
-import styled, { keyframes } from "styled-components";
-import { bounceInDown } from "react-animations";
-
-const bounceInDownAnimation = keyframes`${bounceInDown}`;
+import styled from "styled-components";
 
 export const Form = styled.form`
   width: 90%;
@@ -15,6 +12,10 @@ export const Form = styled.form`
   @media screen and (max-width: 450px) {
     padding: 20px 10px;
   }
+`;
+
+export const PaymentFormInput = styled(Form)`
+  padding: 5px 15px;
 `;
 
 export const CreateDetailsForm = styled(Form)`
@@ -39,7 +40,7 @@ export const StyledTextArea = styled.textarea`
 
   &:focus {
     box-shadow: 4px 4px 4px black;
-    border-color: salmon;
+    border-color: #3085d6;
   }
 
   @media screen and (max-width: 450px) {
@@ -120,7 +121,7 @@ export const StyledInput = styled.input`
 
   &:focus {
     box-shadow: 4px 4px 4px black;
-    border-color: salmon;
+    border-color: #3085d6;
   }
 
   ::-webkit-input-placeholder {
@@ -203,7 +204,7 @@ export const SearchInput = styled.input`
 
   &:focus {
     box-shadow: 4px 4px 4px black;
-    border-color: salmon;
+    border-color: #3085d6;
   }
 
   /* clears the ‘X’ from Internet Explorer */
@@ -273,44 +274,10 @@ export const QuantityInput = styled.input`
 
   &:focus {
     box-shadow: 4px 4px 4px black;
-    border-color: salmon;
+    border-color: #3085d6;
   }
 
   @media screen and (max-width: 450px) {
     font-size: 16px;
-  }
-`;
-
-export const OptionsForm = styled.form`
-  width: 30%;
-  height: auto;
-  background-color: #b9d1e5;
-  margin: 50px auto;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: 1s ${bounceInDownAnimation};
-  border: 2px solid black;
-
-
-  input[type="number"] {
-    font-size: 25px;
-  }
-
-  @media screen and (max-width: 1366px) {
-    width: 60%;
-  }
-
-  @media screen and (max-width: 850px) {
-    width: 70%;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 80%;
-  }
-
-  @media screen and (max-width: 280px) {
-    width: 90%;
   }
 `;

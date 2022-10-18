@@ -13,21 +13,21 @@ import {
 
 const FormElement = ({
   userCredentials,
-  handleCreateLoginDetailsSubmit,
-  handleCreateLoginDetailsChange,
+  handleCreateDetailsSubmit,
+  handleCreateDetailsChange,
 }) => {
   const { displayName, email, confirmEmail, password, confirmPassword } =
     userCredentials;
 
   return (
-    <CreateDetailsForm onSubmit={handleCreateLoginDetailsSubmit}>
+    <CreateDetailsForm onSubmit={handleCreateDetailsSubmit}>
       <Label>Name:</Label>
 
       <StyledInput
         type="text"
         name="displayName"
         value={displayName || ""}
-        onChange={handleCreateLoginDetailsChange}
+        onChange={handleCreateDetailsChange}
         required
       />
 
@@ -37,7 +37,7 @@ const FormElement = ({
         type="email"
         name="email"
         value={email || ""}
-        onChange={handleCreateLoginDetailsChange}
+        onChange={handleCreateDetailsChange}
         required
       />
 
@@ -47,7 +47,7 @@ const FormElement = ({
         type="email"
         name="confirmEmail"
         value={confirmEmail || ""}
-        onChange={handleCreateLoginDetailsChange}
+        onChange={handleCreateDetailsChange}
         required
       />
       <Label>Password:</Label>
@@ -56,7 +56,7 @@ const FormElement = ({
         type="password"
         name="password"
         value={password || ""}
-        onChange={handleCreateLoginDetailsChange}
+        onChange={handleCreateDetailsChange}
         placeholder={passwordLengthPlaceholder}
         required
       />
@@ -66,7 +66,7 @@ const FormElement = ({
         type="password"
         name="confirmPassword"
         value={confirmPassword || ""}
-        onChange={handleCreateLoginDetailsChange}
+        onChange={handleCreateDetailsChange}
         placeholder={confirmPasswordPlaceholder}
         required
       />

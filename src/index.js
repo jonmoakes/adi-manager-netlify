@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-// import { Elements } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 import App from "./App";
 import { store } from "./store/store";
@@ -11,7 +11,7 @@ import "./index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 
-// import { stripePromise } from "./utils/stripe/stripe.utils";
+import { stripePromise } from "./utils/stripe/stripe.utils";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -20,9 +20,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        {/* <Elements stripe={stripePromise}> */}
+        <Elements stripe={stripePromise}>
         <App />
-        {/* </Elements> */}
+        </Elements>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

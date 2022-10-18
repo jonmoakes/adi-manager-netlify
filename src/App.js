@@ -29,9 +29,7 @@ const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"));
 const CreateLoginDetails = lazy(() =>
   import("./routes/create-login-details/create-login-details.component")
 );
-const CreateCustomer = lazy(() =>
-  import("./routes/create-customer/create-customer.component")
-);
+
 const CreateSubscription = lazy(() =>
   import("./routes/create-subscription/create-subscription.component")
 );
@@ -60,7 +58,7 @@ const App = () => {
                   !currentUser ? (
                     <Login />
                   ) : (
-                    <Navigate replace to="dashboard" />
+                    <Navigate replace to="/dashboard" />
                   )
                 }
               />
@@ -70,7 +68,7 @@ const App = () => {
                   !currentUser ? (
                     <SignUp />
                   ) : (
-                    <Navigate replace to="my-account" />
+                    <Navigate replace to="/my-account" />
                   )
                 }
               />
@@ -81,19 +79,20 @@ const App = () => {
                   !currentUser ? (
                     <CreateLoginDetails />
                   ) : (
-                    <Navigate replace to="my-account" />
+                    <Navigate replace to="/my-account" />
                   )
                 }
               />
 
               <Route
-                path="create-customer"
-                element={!currentUser && <CreateCustomer />}
-              />
-
-              <Route
                 path="create-subscription"
-                element={!currentUser && <CreateSubscription />}
+                element={
+                  !currentUser ? (
+                    <CreateSubscription />
+                  ) : (
+                    <Navigate replace to="/my-account" />
+                  )
+                }
               />
             </Route>
           </Routes>

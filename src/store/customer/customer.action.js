@@ -4,12 +4,16 @@ import { createAction } from "../../utils/reducer/reducer.utils";
 export const addSubscriptionPrice = (payload) =>
   createAction(CUSTOMER_ACTION_TYPES.ADD_SUBSCRIPTION_PRICE, payload);
 
-export const addCustomerDetails = (customerDetails) =>
-  createAction(CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_DETAILS, customerDetails);
+export const addCustomerDetails = (payload) =>
+  createAction(CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_DETAILS, payload);
 
 export const addCustomerId = (payload) =>
   createAction(CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_ID, payload);
 
   export const clearCustomerDetails = () =>
   createAction(CUSTOMER_ACTION_TYPES.CLEAR_CUSTOMER_DETAILS);
+
+  export const addSubscriptionData = (payload) =>
+  createAction(CUSTOMER_ACTION_TYPES.ADD_SUBSCRIPTION_DATA, payload);
+
 
