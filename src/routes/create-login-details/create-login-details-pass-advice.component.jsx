@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 import { InfoButton } from "../../styles/buttons/buttons.styles";
-import { BounceInDiv } from "../../styles/div/div.styles";
+import { BounceInDiv, Div } from "../../styles/div/div.styles";
 import { Href } from "../../styles/a/a.styles";
 
-const StrongPasswordAdvice = () => {
+const CreateLoginDetailsPassAdvice = () => {
   const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <>
+    <Div>
       <p>thank you!</p>
       <p>
         Now lets create the details you will use to sign into the app with.
@@ -29,8 +29,8 @@ const StrongPasswordAdvice = () => {
           <p>however the minimum acceptable password length is 6 characters.</p>
           <p>
             I recommend the use of a password manager like{" "}
-            <Href href="https://www.lastpass.com/">LastPass</Href> to safely store
-            long complex passwords without having to remember them.
+            <Href href="https://www.lastpass.com/">LastPass</Href> to safely
+            store long complex passwords without having to remember them.
           </p>
           <p>
             I use LastPass myself and can vouch for how good it is - please Note
@@ -40,8 +40,8 @@ const StrongPasswordAdvice = () => {
           </p>
         </BounceInDiv>
       )}
-    </>
+    </Div>
   );
 };
 
-export default StrongPasswordAdvice;
+export default CreateLoginDetailsPassAdvice;

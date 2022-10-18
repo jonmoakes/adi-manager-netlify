@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { useSelector, useDispatch } from "react-redux";
 
-import useFireSwal from "../swals/use-fire-swal";
+import useFireSwal from "../../hooks/use-fire-swal";
 
 import { signUpStart } from "../../store/user/user.action";
 import {
@@ -39,7 +39,7 @@ const useCreateSubscription = () => {
     }
   }, [subscriptionPrice]);
 
-  const handleError = (response) => {
+  const handleError = () => {
     setIsProcessingPayment(false);
     return fireSwal(
       "error",
@@ -52,7 +52,6 @@ const useCreateSubscription = () => {
   };
 
   const handleAuthenticationError = (confirm) => {
-    console.log(confirm);
     setIsProcessingPayment(false);
     return fireSwal(
       "error",

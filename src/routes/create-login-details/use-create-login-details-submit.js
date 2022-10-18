@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { selectErrorMessage } from "../../store/error/error.selector";
-import { clearErrorMessage } from "../../store/error/error.action";
 import { addCustomerDetails } from "../../store/customer/customer.action";
 
-import useFireSwal from "../swals/use-fire-swal";
+import useFireSwal from "../../hooks/use-fire-swal";
 
 import {
   passwordsDontMatchMessage,
@@ -15,9 +13,8 @@ import {
   createSubscriptionPath,
 } from "../../strings/strings";
 
-const useHandleCreateDetailsSubmit = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [userCredentials, setUserCredentials] = useState({
+const useCreateLoginDetailsSubmit = () => {
+  const [loginDetails, setLoginDetails] = useState({
     displayName: "",
     email: "",
     confirmEmail: "",
@@ -25,12 +22,11 @@ const useHandleCreateDetailsSubmit = () => {
     confirmPassword: "",
   });
   const { fireSwal } = useFireSwal();
-  const errorMessage = useSelector(selectErrorMessage);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { displayName, email, confirmEmail, password, confirmPassword } =
-    userCredentials;
+    loginDetails;
 
   const customerDetails = {
     displayName,
@@ -40,24 +36,17 @@ const useHandleCreateDetailsSubmit = () => {
 
   const handleCreateDetailsChange = (event) => {
     const { name, value } = event.target;
-    setUserCredentials({ ...userCredentials, [name]: value });
+    setLoginDetails({ ...loginDetails, [name]: value });
   };
 
   const handleCreateDetailsSubmit = async (e) => {
     e.preventDefault();
-    if (errorMessage) {
-      dispatch(clearErrorMessage());
-    }
-    setIsLoading(true);
 
     if (password.length < 6) {
-      setIsLoading(false);
       fireSwal("error", passwordLengthError, "", 0, true, false);
     } else if (password !== confirmPassword) {
-      setIsLoading(false);
       fireSwal("error", passwordsDontMatchMessage, "", 0, true, false);
     } else if (email !== confirmEmail) {
-      setIsLoading(false);
       fireSwal("error", emailsDontMatchMessage, "", 0, true, false);
     } else {
       dispatch(addCustomerDetails(customerDetails));
@@ -66,11 +55,10 @@ const useHandleCreateDetailsSubmit = () => {
   };
 
   return {
-    isLoading,
+    loginDetails,
     handleCreateDetailsChange,
     handleCreateDetailsSubmit,
-    userCredentials,
   };
 };
 
-export default useHandleCreateDetailsSubmit;
+export default useCreateLoginDetailsSubmit;

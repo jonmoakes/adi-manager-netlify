@@ -82,7 +82,7 @@ export const currentEmailDoesNotExistMessage =
 export const sameEmailAddressMessage =
   "Sorry - Thats The Same Email Address You Currently Use!\nPlease Try Another Email Address.";
 export const emailsDontMatchMessage =
-  "The New Emails You Entered Don't Match Or Are Badly Formatted.\nPlease Try Again.";
+  "The Emails You Have Entered Don't Match, Or Are Badly Formatted.\nPlease Try Again.";
 export const emailFieldsEmptyMessage =
   "Please Make Sure That All 3 Email Fields Are Filled In Before Submitting.";
 export const passwordResetEmailNotExistErrorMessage =

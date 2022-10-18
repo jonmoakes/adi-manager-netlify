@@ -1,6 +1,6 @@
 import { ErrorDiv, WarningDiv } from "../../styles/div/div.styles";
 
-const Errors = ({ warning, error }) => (
+const CreateSubscriptionInputDynamicInfo = ({ warning, error }) => (
   <>
     {warning ? (
       <WarningDiv>
@@ -16,4 +16,4 @@ const Errors = ({ warning, error }) => (
   </>
 );
 
-export default Errors;
+export default CreateSubscriptionInputDynamicInfo;

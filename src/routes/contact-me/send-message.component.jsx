@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import useHandleIsProcessing from "../../hooks/handlers/use-handle-is-processing.js";
-import useFireSwal from "../../hooks/swals/use-fire-swal";
+import useHandleIsProcessing from "../../hooks/use-handle-is-processing";
+import useFireSwal from "../../hooks/use-fire-swal";
 
 import Loader from "../../components/loader/loader.component";
 

@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-import "../../styles/confirm.css";
+import "../styles/confirm.css";
 
 const useFireSwal = () => {
   const swal = withReactContent(Swal);

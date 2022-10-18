@@ -1,19 +1,20 @@
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+
+import useFireSwal from "../../hooks/use-fire-swal";
+
 import {
   cancelledMessage,
   confirmSubscribeMessage,
   areYouSureYouWishToSubscribeMessage,
 } from "../../strings/strings";
 
-import useFireSwal from "../swals/use-fire-swal";
-
-const useConfirmPaymentSwal = () => {
+const useConfirmPurchaseSubscription = () => {
   const { fireSwal } = useFireSwal();
 
   const swal = withReactContent(Swal);
 
-  const confirmPaymentSwal = (createSubscription) => {
+  const confirmPurchaseSubscription = (createSubscription) => {
     swal
       .fire({
         icon: "question",
@@ -43,7 +44,7 @@ const useConfirmPaymentSwal = () => {
       });
   };
 
-  return { confirmPaymentSwal };
+  return { confirmPurchaseSubscription };
 };
 
-export default useConfirmPaymentSwal;
+export default useConfirmPurchaseSubscription;

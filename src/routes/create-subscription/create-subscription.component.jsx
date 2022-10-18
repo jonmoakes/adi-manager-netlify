@@ -1,18 +1,64 @@
-import ConfirmPayment from "../../components/confirm-payment/confirm-payment.component";
+import { CardElement } from "@stripe/react-stripe-js";
+import { Offline, Online } from "react-detect-offline";
+
+import useConfirmPurchaseSubscription from "./use-confirm-purchase-subscription";
+import useCreateSubscription from "./use-create-subscription";
+import useHandleCardInputChange from "./use-handle-card-input-change";
+
+import CreateSubscriptionInputDynamicInfo from "./create-subscription-input-dynamic-info.component";
+import NoInternetDetected from "../../components/no-internet-detected/no-internet-detected.component";
+import Loader from "../../components/loader/loader.component";
 
 import { Container } from "../../styles/container/container.styles";
-import { Div } from "../../styles/div/div.styles";
+import { PayButton, DisabledButton } from "../../styles/buttons/buttons.styles";
+import { CardInputDiv, Div } from "../../styles/div/div.styles";
 
-const CreateSubscription = () => (
-  <Container>
-    <Div>
-      <h1> subscribe</h1>
-    </Div>
+import { options } from "./card-input-options";
 
-    <Div>
-      <ConfirmPayment />
-    </Div>
-  </Container>
-);
+const CreateSubscription = () => {
+  const { confirmPurchaseSubscription } = useConfirmPurchaseSubscription();
+  const { isProcessingPayment, createSubscription } = useCreateSubscription();
+  const { handleCardInputChange, validateInput } = useHandleCardInputChange();
+
+  const { warning, error, showButton } = validateInput;
+
+  return (
+    <Container>
+      <Div>
+        <h1>confirm & purchase your subscription</h1>
+      </Div>
+
+      <Div>
+        <Online>
+          <CreateSubscriptionInputDynamicInfo {...{ warning, error }} />
+
+          <CardInputDiv>
+            <CardElement {...{ options }} onChange={handleCardInputChange} />
+          </CardInputDiv>
+
+          {showButton && !isProcessingPayment ? (
+            <PayButton
+              type="button"
+              onClick={() => confirmPurchaseSubscription(createSubscription)}
+            >
+              Pay Now
+            </PayButton>
+          ) : (
+            showButton &&
+            isProcessingPayment && (
+              <>
+                <Loader />
+                <DisabledButton>Please Wait...</DisabledButton>
+              </>
+            )
+          )}
+        </Online>
+        <Offline>
+          <NoInternetDetected />
+        </Offline>
+      </Div>
+    </Container>
+  );
+};
 
 export default CreateSubscription;
