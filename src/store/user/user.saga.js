@@ -1,5 +1,4 @@
 import { takeLatest, put, all, call } from "redux-saga/effects";
-import axios from "axios";
 
 import { USER_ACTION_TYPES } from "./user.types";
 
@@ -63,41 +62,8 @@ export function* signUp({ payload: { email, password, displayName } }) {
       email,
       password
     );
-    const emailToSend = `Congratulations - You Have Just Had A New User Sign Up To The ADI MANAGER App! Their Name Is ${displayName} And Their Email Is: ${email}`;
-    const customerEmailToSend = `Thank You For Signing Up To The ADI Manager - Manage Your Driving Instructor Business Online!\n\nPlease Don't Hesitate To Contact Us By Either Replying To This Email, Or Using Our App's Contact Form Should You Need To!\n\nKind Regards\nADI Manager`;
-    const dataToSend = {
-      email,
-      customerEmailToSend,
-    };
+
     yield put(signUpSuccess(user, { displayName }));
-    yield axios
-      .post("/.netlify/functions/send-user-signed-up-message", {
-        message: emailToSend,
-      })
-      .then(
-        (response) => {
-          if (response.status !== 202) {
-            console.log(response);
-          }
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    yield axios
-      .post("/.netlify/functions/send-customer-signed-up-message", {
-        message: dataToSend,
-      })
-      .then(
-        (response) => {
-          if (response.status !== 202) {
-            console.log(response);
-          }
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
   } catch (error) {
     yield put(signUpFailed(error));
   }

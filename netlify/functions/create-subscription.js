@@ -33,7 +33,7 @@ exports.handler = async (event) => {
     };
   } catch (error) {
     return {
-      status: 400,
+      statusCode: 400,
       body: JSON.stringify({ error }),
     };
   }
