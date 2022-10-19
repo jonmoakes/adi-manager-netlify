@@ -133,6 +133,8 @@ export const formNotCompleteWarning =
   "the pay button will show when the form is complete";
 export const errorProcessingPaymentMessage =
   "sorry, there was a problem processing the payment. Your card has not been charged.";
+export const subscriptionDataNotAddedToFirestore =
+  "your subscription data was unable to be added to the database.\nplease contact the app owner using our contact form.";
 
 //strings
 export const diary = "diary";
@@ -208,7 +210,7 @@ export const featuresPath = "/features";
 export const aboutMePath = "/about-me";
 export const pricingPath = "/pricing";
 export const usefulLinksPath = "/useful-links";
-export const loginPath = "/log-in";
+export const loginPath = "/login";
 export const signUpPath = "/sign-up";
 export const myAccountPath = "/my-account";
 export const createLoginDetailsPath = "/create-login-details";

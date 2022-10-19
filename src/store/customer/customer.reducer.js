@@ -4,7 +4,6 @@ const INITIAL_STATE = {
   subscriptionPrice: null,
   customerDetails: {},
   subscriptionData: {},
-  customerId: "",
 };
 
 export const customerReducer = (state = INITIAL_STATE, action) => {
@@ -24,11 +23,6 @@ export const customerReducer = (state = INITIAL_STATE, action) => {
         ...state,
         customerDetails: action.payload,
       };
-    case CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_ID:
-      return {
-        ...state,
-        customerId: action.payload,
-      };
     case CUSTOMER_ACTION_TYPES.CLEAR_CUSTOMER_DETAILS:
       return {
         ...state,
@@ -43,11 +37,6 @@ export const customerReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         subscriptionData: {},
-      };
-    case CUSTOMER_ACTION_TYPES.CLEAR_CUSTOMER_ID:
-      return {
-        ...state,
-        customerId: "",
       };
     case CUSTOMER_ACTION_TYPES.UPDATE_SUBSCRIPTION_DATA:
       return {

@@ -16,9 +16,3 @@ export const selectSubscriptionData = createSelector(
   [selectCustomer],
   (customer) => customer.subscriptionData
 );
-
-export const selectCustomerId = createSelector(
-  [selectCustomer],
-  (customer) => customer.customerId
-);
-

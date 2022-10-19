@@ -10,6 +10,7 @@ import {
   passwordsDontMatchMessage,
   emailsDontMatchMessage,
   passwordLengthError,
+  EmailAlreadyInUseMessage,
   createSubscriptionPath,
 } from "../../strings/strings";
 
@@ -42,7 +43,23 @@ const useCreateLoginDetailsSubmit = () => {
   const handleCreateDetailsSubmit = async (e) => {
     e.preventDefault();
 
-    if (password.length < 6) {
+    const response = await fetch("/.netlify/functions/fetch-customers-list", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+
+    const data = await response.json();
+    const { customers } = data;
+
+    if (customers.data.length > 0) {
+      fireSwal("error", EmailAlreadyInUseMessage, "", 0, true, false);
+      return;
+    } else if (password.length < 6) {
       fireSwal("error", passwordLengthError, "", 0, true, false);
     } else if (password !== confirmPassword) {
       fireSwal("error", passwordsDontMatchMessage, "", 0, true, false);

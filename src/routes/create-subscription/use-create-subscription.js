@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import useFireSwal from "../../hooks/use-fire-swal";
 
 import { signUpStart } from "../../store/user/user.action";
+import { addSubscriptionData } from "../../store/customer/customer.action";
 import {
   selectCustomerDetails,
   selectSubscriptionPrice,
@@ -41,7 +42,7 @@ const useCreateSubscription = () => {
 
   const handleError = () => {
     setIsProcessingPayment(false);
-    return fireSwal(
+    fireSwal(
       "error",
       errorProcessingPaymentMessage,
       pleaseTryAgain,
@@ -51,9 +52,10 @@ const useCreateSubscription = () => {
     );
   };
 
-  const handleAuthenticationError = (confirm) => {
+  const handleAuthenticationError = async (confirm) => {
     setIsProcessingPayment(false);
-    return fireSwal(
+
+    fireSwal(
       "error",
       errorProcessingPaymentMessage,
       confirm.error.message,
@@ -87,11 +89,13 @@ const useCreateSubscription = () => {
       if (!response.ok) return handleError();
       const data = await response.json();
 
-      // const combinedSubscriptionData = {
-      //   customerId: data.customerId,
-      //   subscriptionId: data.subscriptionId,
-      //   status: data.status,
-      // };
+      const combinedSubscriptionData = {
+        customerId: data.customerId,
+        subscriptionId: data.subscriptionId,
+        status: data.status,
+      };
+
+      dispatch(addSubscriptionData(combinedSubscriptionData));
       const confirm = await stripe.confirmCardPayment(data.clientSecret);
 
       if (confirm.error) return handleAuthenticationError(confirm);

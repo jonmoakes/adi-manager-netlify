@@ -7,15 +7,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-import {
-  getFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  collection,
-  query,
-  getDocs,
-} from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC1s14KSIZosY5rHrREbNDWxH2mB3DDPgQ",
@@ -23,21 +15,13 @@ const firebaseConfig = {
   projectId: "ad-manager-pwa",
   storageBucket: "ad-manager-pwa.appspot.com",
   messagingSenderId: "497240375713",
-  appId: "1:497240375713:web:c4bba1898d6a0557a18be0"
+  appId: "1:497240375713:web:c4bba1898d6a0557a18be0",
 };
 
 initializeApp(firebaseConfig);
 
 export const auth = getAuth();
 export const db = getFirestore();
-
-export const getCollectionAndDocuments = async () => {
-  const collectionRef = collection(db, "products");
-  const q = query(collectionRef);
-
-  const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
-};
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -57,7 +41,7 @@ export const createUserDocumentFromAuth = async (
         displayName,
         email,
         createdAt,
-         subscriptionData: {},
+        subscriptionData: {},
         diaryEntries: [
           {
             date: "2022-02-01",

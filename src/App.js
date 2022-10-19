@@ -23,16 +23,17 @@ const AboutMe = lazy(() => import("./routes/about-me/about-me.component"));
 const ContactMe = lazy(() =>
   import("./routes/contact-me/contact-me.component")
 );
-const Account = lazy(() => import("./routes/account/account.component"));
+
 const Login = lazy(() => import("./routes/login/login.component"));
 const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"));
 const CreateLoginDetails = lazy(() =>
   import("./routes/create-login-details/create-login-details.component")
 );
-
 const CreateSubscription = lazy(() =>
   import("./routes/create-subscription/create-subscription.component")
 );
+const Welcome = lazy(() => import("./routes/welcome/welcome.component"));
+const Account = lazy(() => import("./routes/account/account.component"));
 
 const App = () => {
   useCheckUserSession();
@@ -50,8 +51,6 @@ const App = () => {
               <Route path="pricing" element={<Pricing />} />
               <Route path="about-me" element={<AboutMe />} />
               <Route path="contact" element={<ContactMe />} />
-              <Route path="my-account" element={<Account />} />
-
               <Route
                 path="login"
                 element={
@@ -90,10 +89,13 @@ const App = () => {
                   !currentUser ? (
                     <CreateSubscription />
                   ) : (
-                    <Navigate replace to="/my-account" />
+                    <Navigate replace to="/welcome" />
                   )
                 }
               />
+
+              <Route path="welcome" element={currentUser && <Welcome />} />
+              <Route path="my-account" element={<Account />} />
             </Route>
           </Routes>
           <Footer />

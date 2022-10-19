@@ -7,13 +7,14 @@ export const addSubscriptionPrice = (payload) =>
 export const addCustomerDetails = (payload) =>
   createAction(CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_DETAILS, payload);
 
-export const addCustomerId = (payload) =>
-  createAction(CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_ID, payload);
-
-  export const clearCustomerDetails = () =>
+export const clearCustomerDetails = () =>
   createAction(CUSTOMER_ACTION_TYPES.CLEAR_CUSTOMER_DETAILS);
 
-  export const addSubscriptionData = (payload) =>
+export const clearSubscriptionPrice = () =>
+  createAction(CUSTOMER_ACTION_TYPES.CLEAR_SUBSCRIPTION_PRICE);
+
+export const addSubscriptionData = (payload) =>
   createAction(CUSTOMER_ACTION_TYPES.ADD_SUBSCRIPTION_DATA, payload);
 
-
+export const clearSubscriptionData = (payload) =>
+  createAction(CUSTOMER_ACTION_TYPES.CLEAR_SUBSCRIPTION_DATA, payload);
