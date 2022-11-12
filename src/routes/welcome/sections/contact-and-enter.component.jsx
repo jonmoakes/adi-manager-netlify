@@ -8,7 +8,7 @@ import { StyledLink } from "../../../styles/link/link.styles";
 
 import { myAccountPath } from "../../../strings/strings";
 
-const Contact = () => {
+const ContactAndEnter = () => {
   const dispatch = useDispatch();
 
   const clearSubData = () => {
@@ -36,4 +36,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactAndEnter;

@@ -95,7 +95,10 @@ const App = () => {
               />
 
               <Route path="welcome" element={currentUser && <Welcome />} />
-              <Route path="my-account" element={<Account />} />
+              <Route
+                path="my-account"
+                element={currentUser ? <Account /> : null}
+              />
             </Route>
           </Routes>
           <Footer />
