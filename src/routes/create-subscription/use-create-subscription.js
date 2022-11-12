@@ -14,7 +14,6 @@ import {
 import {
   errorProcessingPaymentMessage,
   paymentSuccessfulMessage,
-  pleaseTryAgain,
   youWillReceiveAnEmailMessage,
 } from "../../strings/strings";
 
@@ -40,20 +39,29 @@ const useCreateSubscription = () => {
     }
   }, [subscriptionPrice]);
 
-  const handleError = () => {
+  const handleError = (retrievedError) => {
     setIsProcessingPayment(false);
     fireSwal(
       "error",
       errorProcessingPaymentMessage,
-      pleaseTryAgain,
+      `The Error Code Received Was: "${retrievedError}". Please Try Again.`,
       0,
       true,
       false
     );
   };
 
-  const handleAuthenticationError = async (confirm) => {
+  const handleAuthenticationError = async (confirm, retrievedCustomerId) => {
     setIsProcessingPayment(false);
+    await fetch("/.netlify/functions/delete-customer", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        retrievedCustomerId,
+      }),
+    });
 
     fireSwal(
       "error",
@@ -86,19 +94,23 @@ const useCreateSubscription = () => {
         }),
       });
 
-      if (!response.ok) return handleError();
       const data = await response.json();
+      const retrievedError = data.errorMessage;
+      const retrievedCustomerId = data.customerId;
+
+      if (!response.ok) return handleError(retrievedError);
+
+      const confirm = await stripe.confirmCardPayment(data.clientSecret);
+
+      if (confirm.error)
+        return handleAuthenticationError(confirm, retrievedCustomerId);
 
       const combinedSubscriptionData = {
         customerId: data.customerId,
         subscriptionId: data.subscriptionId,
         status: data.status,
       };
-
       dispatch(addSubscriptionData(combinedSubscriptionData));
-      const confirm = await stripe.confirmCardPayment(data.clientSecret);
-
-      if (confirm.error) return handleAuthenticationError(confirm);
       dispatch(signUpStart(email, password, displayName));
       fireSwal(
         "success",
