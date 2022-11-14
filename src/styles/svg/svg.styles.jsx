@@ -11,7 +11,6 @@ import { ReactComponent as FeaturesSVG } from "../../assets/toolbar/features-ico
 import { ReactComponent as StripeSVG } from "../../assets/stripe-logo.svg";
 import { ReactComponent as LoaderSVG } from "../../assets/tl.svg";
 
-
 export const LoginIcon = styled(LoginSVG)`
   width: 38px;
   height: 38px;
@@ -41,7 +40,7 @@ export const LoggedInContactIcon = styled(ContactSVG)`
   height: 40px;
   margin-top: 15px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     margin-top: 17px;
   }
 
@@ -56,7 +55,6 @@ export const LoggedInContactIcon = styled(ContactSVG)`
     width: 30px;
     margin-top: 18px;
   }
-
 `;
 
 export const LinksIcon = styled(LinksSVG)`
@@ -85,7 +83,7 @@ export const AccountIcon = styled(AccountSVG)`
   &.about-icon {
     margin-top: 15px;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1366px) {
       margin-top: 16px;
     }
 
@@ -114,7 +112,7 @@ export const LogoutIcon = styled(LogoutSVG)`
   height: 40px;
   margin-top: 15px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     margin-top: 16px;
   }
 
@@ -196,7 +194,7 @@ export const Stripe = styled(StripeSVG)`
   &:hover {
     transform: scale(1.1);
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1366px) {
       transition: none;
       transform: none;
     }
@@ -220,7 +218,3 @@ export const LoaderIcon = styled(LoaderSVG)`
   height: 30%;
   width: 30%;
 `;
-
-
-
-

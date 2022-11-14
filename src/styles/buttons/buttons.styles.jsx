@@ -35,7 +35,7 @@ export const Button = styled.button`
     transform: scale(1.05);
     box-shadow: 12px 12px 12px black;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1366px) {
       transform: none;
       transition: none;
       box-shadow: none;
@@ -46,7 +46,7 @@ export const Button = styled.button`
     transform: translate(0, 0.5rem);
     box-shadow: 6px 6px 6px black;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1366px) {
       transform: none;
       box-shadow: none;
     }
@@ -54,6 +54,26 @@ export const Button = styled.button`
 
   &.account-button {
     margin: 20px auto;
+  }
+
+  &.forgot-password {
+    background-color: yellow;
+    color: black;
+    text-shadow: none;
+
+    &:hover {
+      background-color: yellow;
+      color: black;
+      text-shadow: none;
+      transform: scale(1.05);
+      box-shadow: 12px 12px 12px black;
+
+      @media screen and (max-width: 1366px) {
+        transform: none;
+        transition: none;
+        box-shadow: none;
+      }
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -143,7 +163,7 @@ export const InstructionsButton = styled.button`
   &:active {
     transform: translate(0, 0.3rem);
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1366px) {
       transform: none;
     }
   }
@@ -152,7 +172,7 @@ export const InstructionsButton = styled.button`
     transform: scale(1.05);
     box-shadow: 6px 6px 6px black;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1366px) {
       transform: none;
       transition: none;
       box-shadow: none;
@@ -193,6 +213,13 @@ export const SignInButton = styled(CustomButton)`
   @media screen and (max-width: 280px) {
     width: 150px;
   }
+`;
+
+export const DisabledSignInButton = styled(SignInButton)`
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
 `;
 
 export const SignUpButton = styled(CustomButton)`
@@ -249,11 +276,11 @@ export const PaginationPageButton = styled(CustomButton)`
   background-color: #0afe76;
   color: black;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     margin: 0px 5px 20px 5px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     width: 40px;
   }
 `;

@@ -163,7 +163,7 @@ export const AccountIconText = styled.p`
   &.about {
     margin-top: -2px;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1366px) {
       margin-top: -3px;
     }
 

@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
             display: table;
             margin: 0 auto;
             font-size:18px;
-            @media screen and (max-width:1024px) {
+            @media screen and (max-width:1366px) {
                 list-style-type: none;
             }
         }

@@ -6,7 +6,7 @@ export const Heading = styled.h1`
   text-shadow: none;
   word-wrap: break-word;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     padding: 0px 20px;
   }
 
@@ -19,8 +19,8 @@ export const Heading = styled.h1`
   }
 `;
 
-export const CompatibleWith = styled(Heading) ` 
-  text-decoration:none;
+export const CompatibleWith = styled(Heading)`
+  text-decoration: none;
 `;
 
 export const Title = styled.h1`

@@ -22,7 +22,7 @@ export const Div = styled.div`
   box-shadow: 10px 10px 10px black;
   border: 2px solid black;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     box-shadow: none;
     width: 70%;
   }
@@ -46,7 +46,7 @@ export const LoginDiv = styled.div`
   box-shadow: 10px 10px 10px black;
   border: 2px solid black;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     box-shadow: none;
     width: 70%;
   }
@@ -70,7 +70,7 @@ export const FooterDiv = styled.div`
   box-shadow: 10px 10px 10px black;
   border: 2px solid black;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     box-shadow: none;
     width: 70%;
   }
@@ -513,17 +513,6 @@ export const MissingDataDiv = styled.div`
   border-radius: 15px;
 `;
 
-export const ForgotPasswordSelectDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 50px auto;
-
-  @media screen and (max-width: 600px) {
-    width: 90%;
-  }
-`;
-
 export const MonthlyPriceOptionDiv = styled.div`
   border: 2px solid black;
   border-radius: 15px;
@@ -799,7 +788,7 @@ export const InstructionsDiv = styled.div`
   margin: 20px auto 20px auto;
   background-color: #2099ef;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     padding: 20px 20px;
   }
 
@@ -850,7 +839,7 @@ export const HeaderNavigationItems = styled.div`
     &:hover {
       transform: scale(1.2);
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 1366px) {
         transform: unset;
       }
     }
@@ -906,7 +895,7 @@ export const FooterNavigationItems = styled.div`
     &:hover {
       transform: scale(1.2);
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 1366px) {
         transform: unset;
       }
     }
@@ -944,7 +933,7 @@ export const StripeDiv = styled.div`
   border-radius: 15px;
   border: 2px solid black;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     width: 80%;
   }
 `;

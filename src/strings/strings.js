@@ -4,7 +4,9 @@ export const emailChangeSuccessMessage =
 export const passwordResetSuccessMessage =
   "Success! Your Password Has Been Updated.\nNow Logging You Out So You Can Log In With Your New Password.\nPlease Wait...";
 export const passwordResetSuccessMessageSignInPage =
-  "Success! Please Look Out For An Email Where You Will Be Able To Easily Reset Your Password.\nIf You Don't Receive It, Please Check Your Spam Folder Or Wait A Few More Minutes. :)";
+  "Success! Please Look Out For An Email Where You Will Be Able To Easily Reset Your Password.";
+export const passwordResetSuccessText =
+  " If You Don't Receive It, Please Check Your Spam Folder Or Wait A Few More Minutes. :)";
 export const deleteConfirmedMessage = "Entry Deleted!";
 export const entryAddedMessage = "Entry Added!";
 export const addedEntryMessage = "Entry Added!";
@@ -14,8 +16,7 @@ export const cookieThanksMessage = "Thank You For Allowing Cookies! :)";
 export const signOutSuccessMessage =
   "You Have Successfully Signed Out From Your Account!";
 export const successMessage = "success!";
-export const passwordResetSuccessText =
-  " If You Don't Receive It, Please Check Your Spam Folder Or Wait A Few More Minutes. :)";
+
 export const paymentSuccessfulMessage = "payment successful!";
 
 //infos
