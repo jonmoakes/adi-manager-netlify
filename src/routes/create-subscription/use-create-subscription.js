@@ -105,12 +105,11 @@ const useCreateSubscription = () => {
       if (confirm.error)
         return handleAuthenticationError(confirm, retrievedCustomerId);
 
-      const combinedSubscriptionData = {
+      const customerIdAndSubscriptionId = {
         customerId: data.customerId,
         subscriptionId: data.subscriptionId,
-        status: data.status,
       };
-      dispatch(addSubscriptionData(combinedSubscriptionData));
+      dispatch(addSubscriptionData(customerIdAndSubscriptionId));
       dispatch(signUpStart(email, password, displayName));
       fireSwal(
         "success",

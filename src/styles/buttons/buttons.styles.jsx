@@ -1,5 +1,10 @@
 import styled, { keyframes } from "styled-components";
-import { slideInLeft, slideInRight, bounceInDown, pulse } from "react-animations";
+import {
+  slideInLeft,
+  slideInRight,
+  bounceInDown,
+  pulse,
+} from "react-animations";
 
 import { ReactComponent as SearchInfoSVG } from "../../assets/info.svg";
 
@@ -47,6 +52,10 @@ export const Button = styled.button`
     }
   }
 
+  &.account-button {
+    margin: 20px auto;
+  }
+
   @media screen and (max-width: 600px) {
     width: 300px;
   }
@@ -63,18 +72,18 @@ export const Button = styled.button`
   }
 `;
 
-export const TermsReadButton = styled(CustomButton) ` 
-  font-size:16px;
+export const TermsReadButton = styled(CustomButton)`
+  font-size: 16px;
 `;
 
-export const ChoosePaymentMethodButton = styled(CustomButton) ` 
-    background-color: #fe46a5;
-    text-shadow:none;
-    color:black;
+export const ChoosePaymentMethodButton = styled(CustomButton)`
+  background-color: #fe46a5;
+  text-shadow: none;
+  color: black;
 
-    &:hover {
-      background-color: yellow;
-    }
+  &:hover {
+    background-color: yellow;
+  }
 `;
 
 export const FeaturesButton = styled(CustomButton)`
@@ -128,7 +137,7 @@ export const InstructionsButton = styled.button`
   font-family: inherit;
   text-transform: capitalize;
   color: whitesmoke;
-  text-shadow:0.5px 0.5px 0.5px black;
+  text-shadow: 0.5px 0.5px 0.5px black;
   font-size: 18px;
 
   &:active {
@@ -165,8 +174,8 @@ export const InstructionsButton = styled.button`
 
 export const CloseInstructionsButton = styled(InstructionsButton)`
   background-color: yellow;
-  color:black;
-  text-shadow:none;
+  color: black;
+  text-shadow: none;
 `;
 
 export const SignInButton = styled(CustomButton)`
@@ -211,7 +220,7 @@ export const ForgotPasswordButton = styled(CustomButton)`
   margin: 0 auto;
 
   &:hover {
-    background-color:red;
+    background-color: red;
   }
 `;
 
@@ -358,4 +367,3 @@ export const BackButton = styled.button`
     width: 60px;
   }
 `;
-

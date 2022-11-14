@@ -18,8 +18,10 @@ const useAddSubscriptionDataToFirestore = () => {
   const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
+  // gets custimerId & subscriptionId
   const subscriptionData = useSelector(selectSubscriptionData);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(clearCustomerDetails());
     dispatch(clearSubscriptionPrice());
@@ -30,7 +32,7 @@ const useAddSubscriptionDataToFirestore = () => {
 
       try {
         if (!userSnapshot) return;
-
+        //adds customerId & subscriptionId to firestore
         await updateDoc(userRef, {
           subscriptionData: subscriptionData,
         });

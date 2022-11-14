@@ -13,10 +13,10 @@ export const customerReducer = (state = INITIAL_STATE, action) => {
         ...state,
         subscriptionPrice: action.payload,
       };
-    case CUSTOMER_ACTION_TYPES.ADD_SUBSCRIPTION_DATA:
+    case CUSTOMER_ACTION_TYPES.CLEAR_SUBSCRIPTION_PRICE:
       return {
         ...state,
-        subscriptionData: action.payload,
+        subscriptionPrice: null,
       };
     case CUSTOMER_ACTION_TYPES.ADD_CUSTOMER_DETAILS:
       return {
@@ -28,20 +28,16 @@ export const customerReducer = (state = INITIAL_STATE, action) => {
         ...state,
         customerDetails: {},
       };
-    case CUSTOMER_ACTION_TYPES.CLEAR_SUBSCRIPTION_PRICE:
+    case CUSTOMER_ACTION_TYPES.ADD_SUBSCRIPTION_DATA:
       return {
         ...state,
-        subscriptionPrice: null,
+        subscriptionData: action.payload,
       };
+
     case CUSTOMER_ACTION_TYPES.CLEAR_SUBSCRIPTION_DATA:
       return {
         ...state,
         subscriptionData: {},
-      };
-    case CUSTOMER_ACTION_TYPES.UPDATE_SUBSCRIPTION_DATA:
-      return {
-        ...state,
-        subscriptionData: action.payload,
       };
     default:
       return state;

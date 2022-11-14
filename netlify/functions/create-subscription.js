@@ -28,7 +28,6 @@ exports.handler = async (event) => {
         clientSecret: subscription.latest_invoice.payment_intent.client_secret,
         subscriptionId: subscription.id,
         customerId: subscription.customer,
-        status: subscription.status,
       }),
     };
   } catch (error) {

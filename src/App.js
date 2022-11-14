@@ -34,6 +34,9 @@ const CreateSubscription = lazy(() =>
 );
 const Welcome = lazy(() => import("./routes/welcome/welcome.component"));
 const Account = lazy(() => import("./routes/account/account.component"));
+const SubscriptionDetailsPage = lazy(() =>
+  import("./routes/subscription-details/subscription-details.component")
+);
 
 const App = () => {
   useCheckUserSession();
@@ -98,6 +101,11 @@ const App = () => {
               <Route
                 path="my-account"
                 element={currentUser ? <Account /> : null}
+              />
+
+              <Route
+                path="subscription-details"
+                element={currentUser && <SubscriptionDetailsPage />}
               />
             </Route>
           </Routes>

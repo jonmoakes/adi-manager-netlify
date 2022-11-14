@@ -102,6 +102,16 @@ export const FeaturesDiv = styled(Div)`
   }
 `;
 
+export const ButtonsDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .button {
+    margin: 20px auto;
+  }
+`;
+
 export const NoSearchResultDiv = styled.div`
   width: 50%;
   height: auto;
