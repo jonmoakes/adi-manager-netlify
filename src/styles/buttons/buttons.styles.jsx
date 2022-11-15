@@ -92,6 +92,17 @@ export const Button = styled.button`
   }
 `;
 
+export const PortalButton = styled(CustomButton)`
+  background-color: #fe46a5;
+  color: black;
+  text-shadow: none;
+  margin: 30px;
+
+  @media screen and (max-width: 450px) {
+    margin-top: 20px;
+  }
+`;
+
 export const TermsReadButton = styled(CustomButton)`
   font-size: 16px;
 `;

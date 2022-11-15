@@ -108,7 +108,7 @@ export const leavingCheckoutPageConfirmMessage =
 export const leavingLoginFormMessage =
   "Are You Sure You Want To Leave The Page? You Will Lose Any Details You Have Entered Into The Form.";
 export const couldntGetCustomerPortalLinkMessage =
-  "We Couldn't find your customer portal link.";
+  "sorry, We Couldn't get your customer portal link. Please try again or contact the app owner using the contact form on the app if the problem persists.";
 export const errorSendingMessage = "error sending message.";
 export const invalidEmailErrorMessage =
   "you entered and invalid email address. please try again.";

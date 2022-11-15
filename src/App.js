@@ -34,6 +34,9 @@ const CreateSubscription = lazy(() =>
 );
 const Welcome = lazy(() => import("./routes/welcome/welcome.component"));
 const Account = lazy(() => import("./routes/account/account.component"));
+const CustomerPortal = lazy(() =>
+  import("./routes/customer-portal/customer-portal.component")
+);
 const SubscriptionDetailsPage = lazy(() =>
   import("./routes/subscription-details/subscription-details.component")
 );
@@ -101,6 +104,11 @@ const App = () => {
               <Route
                 path="my-account"
                 element={currentUser ? <Account /> : null}
+              />
+
+              <Route
+                path="customer-portal"
+                element={currentUser && <CustomerPortal />}
               />
 
               <Route

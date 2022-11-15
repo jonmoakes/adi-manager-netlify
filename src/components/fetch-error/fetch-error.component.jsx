@@ -34,7 +34,9 @@ const FetchError = () => {
             <p>please Contact Me if the error persists.</p>
           )}
           <p>please tap the ok button to continue</p>
-          <CustomButton onClick={() => dispatch(clearErrorMessage)}>ok</CustomButton>
+          <CustomButton onClick={() => dispatch(clearErrorMessage())}>
+            ok
+          </CustomButton>
         </ErrorDiv>
       )}
     </>
