@@ -5,7 +5,7 @@ exports.handler = async (event) => {
   try {
     const { customerId } = JSON.parse(event.body);
 
-    const customer = await stripe.subscriptions.retrieve(customerId);
+    const customer = await stripe.customers.retrieve(customerId);
     return {
       statusCode: 200,
       body: JSON.stringify({

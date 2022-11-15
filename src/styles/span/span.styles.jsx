@@ -13,6 +13,11 @@ export const MonthlyPriceSpan = styled.span`
   color: yellow;
 `;
 
+export const LowercasedSpan = styled.span`
+  text-transform: lowercase;
+  color: #cc1616;
+`;
+
 export const OptionsDetail = styled.span`
   color: #d62424;
 `;

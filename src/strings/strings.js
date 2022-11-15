@@ -121,7 +121,7 @@ export const noNetworkDetected =
   "internet connection not detected. Please check your connection";
 export const errorSigningInTitle = "error signing in.";
 export const errorSigningInText =
-  "please check your login details and try again.\nif you have forgot your password, tap the forgot password button at the bottom of the page. if you have forgot your sign in email, please contact us using the contact form link in the header so we can help!";
+  "please check your login details and try again.\nif you have forgot your password, tap the forgot password button at the bottom of the page. if you have forgot your sign in email, please contact us using the contact form link in the footer so we can help!";
 export const displayNameTooLongMessage =
   "please make sure your display name is a maximum of 8 characters in length.";
 export const emailAlreadyInUse =

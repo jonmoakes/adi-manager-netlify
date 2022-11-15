@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
-// import SubscriptionEndsOn from "./sections/subscription-ends-on.component";
 import CustomerId from "./sections/customer-id.component";
 import SubscriptionId from "./sections/subscription-id.component";
 import UserId from "./sections/user-id.component";
 import CurrentPeriodStart from "./sections/current-period-start.component";
 import CurrentPeriodEnds from "./sections/current-period-ends.component";
 import SubscriptionStatus from "./sections/subscription-status.component";
-// import Emails from "./sections/emails.component";
+import Emails from "./sections/emails.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
 import { Container } from "../../styles/container/container.styles";
@@ -38,9 +37,7 @@ const SubscriptionDetailsPage = () => (
         <CurrentPeriodStart />
         <CurrentPeriodEnds />
         <SubscriptionStatus />
-        {/* <SubscriptionEndsOn /> */}
-
-        {/* <Emails /> */}
+        <Emails />
       </>
     </Div>
 
