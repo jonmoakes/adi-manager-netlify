@@ -9,6 +9,10 @@ import { ReactComponent as PricingSVG } from "../../assets/toolbar/bank-card-ico
 import { ReactComponent as ContactSVG } from "../../assets/toolbar/message-icon.svg";
 import { ReactComponent as FeaturesSVG } from "../../assets/toolbar/features-icon.svg";
 import { ReactComponent as StripeSVG } from "../../assets/stripe-logo.svg";
+import { ReactComponent as DiarySVG } from "../../assets/header/diary-icon.svg";
+import { ReactComponent as LessonsSVG } from "../../assets/header/hands.svg";
+import { ReactComponent as ExpensesSVG } from "../../assets/header/pound.svg";
+import { ReactComponent as PupilsSVG } from "../../assets/header/pupils-icon.svg";
 import { ReactComponent as LoaderSVG } from "../../assets/tl.svg";
 
 export const LoginIcon = styled(LoginSVG)`
@@ -206,6 +210,169 @@ export const Stripe = styled(StripeSVG)`
 
   @media screen and (max-width: 280px) {
     width: 150px;
+  }
+`;
+
+export const DiaryIcon = styled(DiarySVG)`
+  width: 35px;
+  height: 35px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 320px) {
+    height: 25px;
+    width: 25px;
+    margin-top: 25px;
+  }
+
+  @media screen and (max-width: 280px) {
+    margin-top: 28px;
+  }
+`;
+
+export const DiaryIconText = styled.p`
+  text-align: center;
+  font-size: 10px;
+  width: 35px;
+  color: black;
+  margin-top: -2px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: -4px;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: -3px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 25px;
+    font-size: 8px;
+  }
+`;
+
+export const LessonsIcon = styled(LessonsSVG)`
+  width: 40px;
+  height: 40px;
+  margin-top: 18px;
+
+  @media screen and (max-width: 320px) {
+    height: 30px;
+    width: 30px;
+    margin-top: 23px;
+  }
+
+  @media screen and (max-width: 280px) {
+    margin-top: 25px;
+  }
+`;
+
+export const LessonsIconText = styled.p`
+  text-align: center;
+  font-size: 10px;
+  width: 40px;
+  color: black;
+  margin-top: -5px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: -7px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -6px;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: -5.5px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 25px;
+    font-size: 8px;
+    margin-top: -4.5px;
+  }
+`;
+
+export const ExpensesIcon = styled(ExpensesSVG)`
+  width: 38px;
+  height: 38px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 320px) {
+    height: 30px;
+    width: 30px;
+    margin-top: 25px;
+  }
+
+  @media screen and (max-width: 280px) {
+    margin-top: 26px;
+  }
+`;
+
+export const ExpensesIconText = styled.p`
+  text-align: center;
+  font-size: 10px;
+  width: 40px;
+  margin-top: -5px;
+  color: black;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: -6.5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -5.5px;
+  }
+
+  @media screen and (max-width: 320px) {
+    margin-top: -6px;
+    width: 25px;
+  }
+
+  @media screen and (max-width: 280px) {
+    font-size: 8px;
+    margin-top: -4.5px;
+  }
+`;
+
+export const PupilsIcon = styled(PupilsSVG)`
+  width: 40px;
+  height: 40px;
+  margin-top: 18px;
+
+  @media screen and (max-width: 320px) {
+    height: 30px;
+    width: 30px;
+    margin-top: 25px;
+  }
+
+  @media screen and (max-width: 280px) {
+    margin-top: 26px;
+  }
+`;
+
+export const PupilsIconText = styled.p`
+  text-align: center;
+  font-size: 10px;
+  width: 40px;
+  color: black;
+  margin-top: -5px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: -6.5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -5.5px;
+  }
+
+  @media screen and (max-width: 320px) {
+    margin-top: -5.5px;
+    width: 25px;
+  }
+
+  @media screen and (max-width: 280px) {
+    font-size: 8px;
+    margin-top: -4px;
   }
 `;
 
