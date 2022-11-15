@@ -1,24 +1,17 @@
 import { useState } from "react";
 
-const defaultFormFields = {
-  email: "",
-  password: "",
-  emailForPasswordReset: "",
-};
-
 const useHandleSignInFormChange = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
-
-  const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
+  const [signInCredentials, setSignInCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleSignInFormChange = (event) => {
     const { value, name } = event.target;
-    setFormFields({ ...formFields, [name]: value });
+    setSignInCredentials({ ...signInCredentials, [name]: value });
   };
 
-  return { formFields, resetFormFields, handleSignInFormChange };
+  return { signInCredentials, handleSignInFormChange };
 };
 
 export default useHandleSignInFormChange;

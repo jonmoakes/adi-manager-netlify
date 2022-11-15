@@ -7,7 +7,9 @@ import useHandleCardInputChange from "./use-handle-card-input-change";
 
 import CreateSubscriptionInputDynamicInfo from "./create-subscription-input-dynamic-info.component";
 import NoInternetDetected from "../../components/no-internet-detected/no-internet-detected.component";
+
 import Loader from "../../components/loader/loader.component";
+import ConfirmInfo from "./confirm-info.component";
 
 import { Container } from "../../styles/container/container.styles";
 import { PayButton, DisabledButton } from "../../styles/buttons/buttons.styles";
@@ -24,9 +26,7 @@ const CreateSubscription = () => {
 
   return (
     <Container>
-      <Div>
-        <h1>confirm & purchase your subscription</h1>
-      </Div>
+      <ConfirmInfo />
 
       <Div>
         <Online>
@@ -37,12 +37,20 @@ const CreateSubscription = () => {
           </CardInputDiv>
 
           {showButton && !isProcessingPayment ? (
-            <PayButton
-              type="button"
-              onClick={() => confirmPurchaseSubscription(createSubscription)}
-            >
-              Pay Now
-            </PayButton>
+            <>
+              <PayButton
+                type="button"
+                onClick={() => confirmPurchaseSubscription(createSubscription)}
+              >
+                complete purchase
+              </PayButton>
+              <button
+                type="button"
+                onClick={() => confirmPurchaseSubscription(createSubscription)}
+              >
+                complete purchase
+              </button>
+            </>
           ) : (
             showButton &&
             isProcessingPayment && (
@@ -53,6 +61,7 @@ const CreateSubscription = () => {
             )
           )}
         </Online>
+
         <Offline>
           <NoInternetDetected />
         </Offline>

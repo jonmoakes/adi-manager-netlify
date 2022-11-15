@@ -48,7 +48,6 @@ const Account = () => {
         );
         const data = await response.json();
         const { subscription } = data;
-        console.log(subscription);
 
         // get everything needed from stripe subscription object
         const {

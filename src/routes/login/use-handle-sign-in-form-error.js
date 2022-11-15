@@ -13,7 +13,7 @@ import {
   noNetworkDetected,
 } from "../../strings/strings";
 
-const useHandleSignInFormError = (resetFormFields) => {
+const useHandleSignInFormError = () => {
   const { fireSwal } = useFireSwal();
 
   const error = useSelector(selectUserError);
@@ -24,7 +24,6 @@ const useHandleSignInFormError = (resetFormFields) => {
       fireSwal("error", noNetworkDetected, "", 0, true, false);
       dispatch(resetErrorMessage());
     } else if (error && !error.code.includes(networkRequestFailedError)) {
-      resetFormFields();
       fireSwal(
         "error",
         errorSigningInTitle,
@@ -35,7 +34,7 @@ const useHandleSignInFormError = (resetFormFields) => {
       );
       dispatch(resetErrorMessage());
     }
-  }, [error, fireSwal, dispatch, resetFormFields]);
+  }, [error, fireSwal, dispatch]);
 };
 
 export default useHandleSignInFormError;

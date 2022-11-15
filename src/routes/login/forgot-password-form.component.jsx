@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../utils/firebase/firebase.utils";
 import { sendPasswordResetEmail } from "firebase/auth";
 
 import useFireSwal from "../../hooks/use-fire-swal";
+
+import { startLoader, stopLoader } from "../../store/loader/loader.action";
+import { selectIsLoading } from "../../store/loader/loader.selector";
 
 import Loader from "../../components/loader/loader.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
@@ -11,56 +15,55 @@ import { Form, Label, StyledInput } from "../../styles/form/form.styles";
 
 import {
   emailAddressNotFound,
-  passwordResetSuccessMessageSignInPage,
+  passwordResetSuccessTitle,
   passwordResetSuccessText,
 } from "../../strings/strings";
 
-const ForgotPasswordForm = ({
-  emailForPasswordReset,
-  resetFormFields,
-  handleSignInFormChange,
-}) => {
+const ForgotPasswordForm = () => {
   const { fireSwal } = useFireSwal();
-
-  const [passwordResetLoader, setPasswordResetLoader] = useState(false);
   const [showForgotPasswordField, setShowForgotPasswordField] = useState(false);
+  const [resetPasswordField, setResetPasswordField] = useState("");
+
+  const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
+
+  const handleResetPasswordFieldChange = (event) => {
+    setResetPasswordField(event.target.value);
+  };
 
   const handlePasswordResetSubmit = async (event) => {
     event.preventDefault();
+    dispatch(startLoader());
 
-    setPasswordResetLoader(true);
-
-    sendPasswordResetEmail(auth, emailForPasswordReset)
+    sendPasswordResetEmail(auth, resetPasswordField)
       .then(() => {
         return [
-          setPasswordResetLoader(false),
+          dispatch(stopLoader()),
           fireSwal(
             "success",
-            passwordResetSuccessMessageSignInPage,
+            passwordResetSuccessTitle,
             passwordResetSuccessText,
             4000,
             false,
             true
           ),
-          resetFormFields(),
+          setResetPasswordField(""),
           setShowForgotPasswordField(false),
         ];
       })
       .catch((error) => {
-        setPasswordResetLoader(false);
+        dispatch(stopLoader());
         if (error.code.includes("auth/user-not-found")) {
           fireSwal("error", emailAddressNotFound, "", 0, true, false);
-          resetFormFields();
         } else {
           fireSwal("error", error.message, "", 0, true, false);
-          resetFormFields();
         }
       });
   };
 
   return (
     <>
-      {passwordResetLoader && <Loader />}
+      {isLoading && <Loader />}
 
       {!showForgotPasswordField && (
         <CustomButton
@@ -75,14 +78,15 @@ const ForgotPasswordForm = ({
         <>
           <hr />
           <Form onSubmit={handlePasswordResetSubmit}>
-            <Label>enter your email & then click "reset password."</Label>
+            <Label>
+              enter your email & then tap the "reset password" button
+            </Label>
             <StyledInput
-              className="reset-pass-input email"
               name="emailForPasswordReset"
               type="email"
-              onChange={handleSignInFormChange}
+              onChange={handleResetPasswordFieldChange}
               placeholder="Please Enter Your Email"
-              value={emailForPasswordReset || ""}
+              value={resetPasswordField || ""}
               required
             />
             <CustomButton className="forgot-password" type="submit">
