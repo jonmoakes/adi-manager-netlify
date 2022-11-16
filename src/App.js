@@ -37,6 +37,9 @@ const Account = lazy(() => import("./routes/account/account.component"));
 const CustomerPortal = lazy(() =>
   import("./routes/customer-portal/customer-portal.component")
 );
+const UpdateLoginEmail = lazy(() =>
+  import("./routes/update-login-email/update-login-email.component")
+);
 const SubscriptionDetailsPage = lazy(() =>
   import("./routes/subscription-details/subscription-details.component")
 );
@@ -109,6 +112,17 @@ const App = () => {
               <Route
                 path="customer-portal"
                 element={currentUser && <CustomerPortal />}
+              />
+
+              <Route
+                path="update-login-email"
+                element={
+                  currentUser ? (
+                    <UpdateLoginEmail />
+                  ) : (
+                    <Navigate replace to="/login" />
+                  )
+                }
               />
 
               <Route

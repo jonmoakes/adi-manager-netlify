@@ -35,7 +35,7 @@ const useLogout = () => {
     ];
   };
 
-  function logoutConfirmBox() {
+  const logoutConfirmBox = () => {
     swal
       .fire({
         title: confirmLogoutMessage,
@@ -57,7 +57,7 @@ const useLogout = () => {
           logout();
         }
       });
-  }
+  };
 
   return { logoutConfirmBox };
 };

@@ -7,7 +7,7 @@ import { SmallHighlightText } from "../../styles/span/span.styles";
 
 import {
   customerPortalPath,
-  updateEmailPath,
+  updateLoginEmailPath,
   updatePasswordPath,
   subscriptionDetailsPath,
 } from "../../strings/strings";
@@ -34,7 +34,7 @@ const Links = () => (
         <hr />
 
         <p>need to update your login email?</p>
-        <Link to={updateEmailPath}>
+        <Link to={updateLoginEmailPath}>
           <CustomButton className="account-button">
             Update Login Email
           </CustomButton>
