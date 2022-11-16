@@ -23,7 +23,7 @@ export const loggingInMessage = "Logging You In - Please Wait...";
 export const sameEntriesMessage =
   "The Entries Are The Same As Before.\nPlease Edit A Field In Order To Update An Entry.";
 export const needToLogOutMessage =
-  "This Session Has Been Logged In For A While.\nFor Security Reasons, We Need To Refresh Your Session.\nPlease Log In Again And Try Again.\nNow Logging You Out, Please Wait...";
+  "This Session Has Been Logged In For A While.\nFor Security Reasons, We Need To Refresh Your Session.\nPlease Log back in And Try Again.\nNow Logging You Out, Please Wait...";
 export const placeholderInfiniteSpaceMessage =
   "Type Here - You Have Infinite Space...";
 export const enterEmailMessage = "Enter Email then tap button below";

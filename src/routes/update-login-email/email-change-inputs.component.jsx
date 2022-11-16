@@ -87,7 +87,7 @@ const EmailChangeInputs = () => {
           update login Email
         </CustomButton>
       ) : (
-        <DisabledButton>please wait</DisabledButton>
+        <DisabledButton>please wait...</DisabledButton>
       )}
     </Div>
   );

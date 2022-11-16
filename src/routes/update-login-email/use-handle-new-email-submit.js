@@ -59,7 +59,7 @@ const useHandleNewEmailSubmit = () => {
         .catch(() => {
           setIsDisabled(false);
           dispatch(stopLoader());
-          fireSwal("success", needToLogOutMessage, "", 6500, false, false);
+          fireSwal("info", needToLogOutMessage, "", 6500, false, false);
           auth.signOut();
           longReload();
         });
