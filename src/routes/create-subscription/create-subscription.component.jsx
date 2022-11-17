@@ -44,12 +44,6 @@ const CreateSubscription = () => {
               >
                 complete purchase
               </PayButton>
-              <button
-                type="button"
-                onClick={() => confirmPurchaseSubscription(createSubscription)}
-              >
-                complete purchase
-              </button>
             </>
           ) : (
             showButton &&

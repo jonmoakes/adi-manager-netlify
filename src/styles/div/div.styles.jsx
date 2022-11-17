@@ -61,6 +61,53 @@ export const LoginDiv = styled.div`
   }
 `;
 
+export const TableContainerDiv = styled.div`
+  width: 100%;
+`;
+
+export const TableDiv = styled.div`
+  width: 100%;
+  margin: 0px auto 100px auto;
+`;
+
+export const PaginationDiv = styled(Div)`
+  margin: -250px auto 300px auto;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+
+  @media screen and (max-width: 450px) {
+    margin: -300px auto 200px auto;
+  }
+`;
+
+export const PaginationTextDiv = styled.div`
+  margin-bottom: 40px;
+`;
+
+export const SearchDiv = styled.div`
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+  animation: 1s ${slideInLeftAnimation};
+
+  @media screen and (max-width: 1366px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 80%;
+  }
+`;
+
+export const TableSearchDiv = styled(SearchDiv)`
+  margin: 40px auto 0px auto;
+
+  @media screen and (max-width: 450px) {
+    margin: 25px auto 0px auto;
+  }
+`;
+
 export const FooterDiv = styled.div`
   margin: -100px auto 150px auto;
   background-color: #ffab0f;
@@ -112,13 +159,46 @@ export const ButtonsDiv = styled.div`
   }
 `;
 
+export const NoEntriesFoundDiv = styled(Div)`
+  background-color: #cc1616;
+  p,
+  h2 {
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+    text-decoration: none;
+  }
+`;
+
+// from original adi manager
+// export const SearchDiv = styled(Div)`
+//   p {
+//     margin-top: 20px;
+//     margin-bottom: -5px;
+
+//     @media screen and (max-width: 600px) {
+//       font-size: 16px;
+//     }
+//   }
+//   @media screen and (max-width: 450px) {
+//     padding: 20px 5px 20px 10px;
+//   }
+// `;
+
+export const UsefulLinksDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const NoSearchResultDiv = styled.div`
   width: 50%;
   height: auto;
   margin: 50px auto;
-  background-color: #b9d1e5;
+  background-color: #ffab0f;
   padding: 20px;
   border-radius: 15px;
+  border: 2px solid black;
   animation: 1s ${bounceInDownAnimation};
 
   @media screen and (max-width: 600px) {
@@ -228,23 +308,24 @@ export const TableContainer = styled.div`
   }
 `;
 
-export const TableDiv = styled.div`
-  margin: 0px auto 100px auto;
-  width: 100%;
-  background-color: black;
-  height: auto;
+// from jblueco
+// export const TableDiv = styled.div`
+//   margin: 0px auto 100px auto;
+//   width: 100%;
+//   background-color: black;
+//   height: auto;
 
-  @media screen and (max-width: 1366px) {
-    width: 95%;
-    overflow: auto;
-    border: 4px solid black;
-    box-shadow: none;
-  }
+//   @media screen and (max-width: 1366px) {
+//     width: 95%;
+//     overflow: auto;
+//     border: 4px solid black;
+//     box-shadow: none;
+//   }
 
-  @media screen and (max-width: 850px) {
-    margin: 30px auto 100px auto;
-  }
-`;
+//   @media screen and (max-width: 850px) {
+//     margin: 30px auto 100px auto;
+//   }
+// `;
 
 export const UserOrdersTableDiv = styled.div`
   margin: 25px auto 100px auto;
@@ -264,21 +345,18 @@ export const UserOrdersTableDiv = styled.div`
   }
 `;
 
-export const PaginationDiv = styled(Div)`
-  margin: -150px auto 0px auto;
-  border: none;
-  box-shadow: none;
-  background-color: #b9d1e5;
-  padding-bottom: 50px;
+// from jblueco
+// export const PaginationDiv = styled(Div)`
+//   margin: -150px auto 0px auto;
+//   border: none;
+//   box-shadow: none;
+//   background-color: #b9d1e5;
+//   padding-bottom: 50px;
 
-  @media screen and (max-width: 1366px) {
-    margin: -50px auto 0px auto;
-  }
-`;
-
-export const PaginationTextDiv = styled.div`
-  margin-bottom: 20px;
-`;
+//   @media screen and (max-width: 1366px) {
+//     margin: -50px auto 0px auto;
+//   }
+// `;
 
 export const OrdersTableHelpDiv = styled.div`
   animation: 1s ${bounceInDownAnimation};
@@ -288,29 +366,6 @@ export const OrdersTableHelpDiv = styled.div`
   border-radius: 15px;
   margin: 20px auto 20px auto;
   width: 80%;
-`;
-
-export const SearchDiv = styled.div`
-  width: 50%;
-  position: relative;
-  margin: 0 auto;
-  animation: 1s ${slideInLeftAnimation};
-
-  @media screen and (max-width: 1366px) {
-    width: 70%;
-  }
-
-  @media screen and (max-width: 450px) {
-    width: 80%;
-  }
-`;
-
-export const TableSearchDiv = styled(SearchDiv)`
-  margin: 40px auto 0px auto;
-
-  @media screen and (max-width: 450px) {
-    margin: 25px auto 0px auto;
-  }
 `;
 
 export const CategoryContainer = styled.div`
@@ -386,7 +441,7 @@ export const Content = styled.div`
     width: 35%;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 850px) {
     height: 150px;
   }
 
@@ -652,6 +707,18 @@ export const OverlayContent = styled.div`
 
 export const ButtonDiv = styled.div`
   padding-bottom: 100px;
+`;
+
+export const TableEditsButtonDiv = styled.div`
+  width: 100%;
+  margin: 20px auto;
+
+  @media screen and (max-width: 1024px) {
+    margin: -20px auto 0px auto;
+  }
+  @media screen and (max-width: 450px) {
+    margin: 0px auto 0px auto;
+  }
 `;
 
 export const PriceWarningDiv = styled.div`

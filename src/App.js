@@ -46,6 +46,13 @@ const UpdatePassword = lazy(() =>
 const SubscriptionDetailsPage = lazy(() =>
   import("./routes/subscription-details/subscription-details.component")
 );
+const UsefulLinks = lazy(() =>
+  import("./routes/useful-links/useful-links.component")
+);
+
+const DiaryTable = lazy(() =>
+  import("./routes/diary/diary-table/diary-table.component")
+);
 
 const App = () => {
   useCheckUserSession();
@@ -143,6 +150,12 @@ const App = () => {
                 path="subscription-details"
                 element={currentUser && <SubscriptionDetailsPage />}
               />
+              <Route
+                path="useful-links"
+                element={currentUser && <UsefulLinks />}
+              />
+
+              <Route path="diary" element={currentUser && <DiaryTable />} />
             </Route>
           </Routes>
           <Footer />

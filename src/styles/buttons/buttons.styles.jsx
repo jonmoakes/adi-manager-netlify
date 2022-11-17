@@ -4,16 +4,18 @@ import {
   slideInRight,
   bounceInDown,
   pulse,
+  zoomInLeft,
+  zoomInRight,
 } from "react-animations";
 
 import { ReactComponent as SearchInfoSVG } from "../../assets/info.svg";
-
-import CustomButton from "../../components/custom-button/custom-button.component";
 
 const slideInLeftAnimation = keyframes`${slideInLeft}`;
 const slideInRightAnimation = keyframes`${slideInRight}`;
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
 const PulseAnimation = keyframes`${pulse}`;
+const zoomInLeftAnimation = keyframes`${zoomInLeft}`;
+const zoomInRightAnimation = keyframes`${zoomInRight}`;
 
 export const Button = styled.button`
   width: 400px;
@@ -92,7 +94,7 @@ export const Button = styled.button`
   }
 `;
 
-export const PortalButton = styled(CustomButton)`
+export const PortalButton = styled(Button)`
   background-color: #fe46a5;
   color: black;
   text-shadow: none;
@@ -103,11 +105,222 @@ export const PortalButton = styled(CustomButton)`
   }
 `;
 
-export const TermsReadButton = styled(CustomButton)`
+export const DvsaButton = styled(Button)`
+  background-color: #016c56;
+  animation: 1s ${zoomInLeftAnimation};
+  margin: 0px auto 20px auto;
+
+  &:hover {
+    background-color: #016c56;
+  }
+`;
+
+export const HighwayCodeButton = styled(Button)`
+  background-color: #1f6fb8;
+  margin: 0px auto 20px auto;
+  animation: 1s ${zoomInRightAnimation};
+
+  &:hover {
+    background-color: #1f6fb8;
+  }
+`;
+
+export const GovUkButton = styled(Button)`
+  background-color: blue;
+  margin: 0px auto 20px auto;
+  animation: 1s ${zoomInLeftAnimation};
+
+  &:hover {
+    background-color: blue;
+  }
+`;
+
+export const DvlaButton = styled(Button)`
+  background-color: #ff0c81;
+  margin: 0px auto 20px auto;
+  animation: 1s ${zoomInRightAnimation};
+
+  &:hover {
+    background-color: #ff0c81;
+  }
+`;
+
+export const TermsReadButton = styled(Button)`
   font-size: 16px;
 `;
 
-export const ChoosePaymentMethodButton = styled(CustomButton)`
+export const AddButton = styled.button`
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  right: 30px;
+  top: 110px;
+  background-color: transparent;
+  border: none;
+  z-index: 10;
+  outline: none;
+  cursor: pointer;
+  animation: infinite 1s ${PulseAnimation};
+
+  @media screen and (max-width: 850px) {
+    right: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    right: -10px;
+  }
+
+  @media screen and (max-width: 450px) {
+    right: 5px;
+    top: 100px;
+  }
+`;
+
+export const EditEntryButton = styled(Button)`
+  background-color: #ffab0f;
+  animation: 1s ${zoomInLeftAnimation};
+  margin: 10px;
+  color: black;
+  text-shadow: none;
+
+  &:hover {
+    background-color: #ffab0f;
+  }
+
+  @media screen and (max-width: 850px) {
+    font-size: 16px;
+  }
+`;
+
+export const RemoveEntryButton = styled(Button)`
+  background-color: red;
+  animation: 1s ${zoomInRightAnimation};
+  margin: 10px;
+  color: black;
+  text-shadow: none;
+
+  &:hover {
+    background-color: red;
+  }
+
+  @media screen and (max-width: 850px) {
+    font-size: 16px;
+  }
+`;
+
+export const ReturnToTableButton = styled(Button)`
+  background-color: #247afd;
+  animation: 1s ${zoomInLeftAnimation};
+  margin: 10px;
+  color: black;
+  text-shadow: none;
+
+  &:hover {
+    background-color: #247afd;
+  }
+
+  @media screen and (max-width: 850px) {
+    font-size: 16px;
+  }
+`;
+
+export const SaveButton = styled.button`
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  right: 30px;
+  top: 50px;
+  background-color: #00ff0c;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50px;
+  font-weight: bold;
+  z-index: 10;
+  outline: none;
+  cursor: pointer;
+  animation: infinite 1s ${PulseAnimation};
+
+  @media screen and (max-width: 850px) {
+    right: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 10px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 40px;
+    height: 40px;
+  }
+`;
+
+export const ReturnButton = styled.button`
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  right: 30px;
+  top: 170px;
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 50px;
+  color: whitesmoke;
+  font-weight: bold;
+  z-index: 10;
+  outline: none;
+  cursor: pointer;
+  animation: infinite 1s ${PulseAnimation};
+  text-align: center;
+
+  @media screen and (max-width: 850px) {
+    right: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    right: 10px;
+    top: 130px;
+    width: 50px;
+    height: 50px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 10px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 40px;
+    height: 40px;
+    top: 170px;
+  }
+`;
+
+export const PageButton = styled(Button)`
+  min-width: unset;
+  width: 50px;
+  height: 10px;
+  margin: 0px 10px;
+  line-height: 0px;
+  font-size: 16px;
+  text-shadow: none;
+  padding: 10px 5px;
+  background-color: #ffab0f;
+  color: black;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0px 5px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 40px;
+  }
+`;
+
+export const ChoosePaymentMethodButton = styled(Button)`
   background-color: #fe46a5;
   text-shadow: none;
   color: black;
@@ -117,16 +330,16 @@ export const ChoosePaymentMethodButton = styled(CustomButton)`
   }
 `;
 
-export const FeaturesButton = styled(CustomButton)`
+export const FeaturesButton = styled(Button)`
   margin-top: 20px;
   animation: 2s ${slideInLeftAnimation};
 `;
 
-export const SignUpLinkButton = styled(CustomButton)`
+export const SignUpLinkButton = styled(Button)`
   animation: 2s ${slideInRightAnimation};
 `;
 
-export const ContactFormButton = styled(CustomButton)`
+export const ContactFormButton = styled(Button)`
   margin-bottom: 50px;
 
   @media screen and (max-width: 850px) {
@@ -149,7 +362,7 @@ export const DisabledContactButton = styled(ContactFormButton)`
   pointer-events: none;
 `;
 
-export const ErrorBoundaryReloadPageButton = styled(CustomButton)`
+export const ErrorBoundaryReloadPageButton = styled(Button)`
   background-color: yellow;
 `;
 
@@ -209,7 +422,7 @@ export const CloseInstructionsButton = styled(InstructionsButton)`
   text-shadow: none;
 `;
 
-export const SignInButton = styled(CustomButton)`
+export const SignInButton = styled(Button)`
   margin: 30px auto 0px auto;
   height: 75px;
 
@@ -233,7 +446,7 @@ export const DisabledSignInButton = styled(SignInButton)`
   pointer-events: none;
 `;
 
-export const SignUpButton = styled(CustomButton)`
+export const SignUpButton = styled(Button)`
   margin: 50px auto 50px auto;
   background-color: #2099ef;
   height: 75px;
@@ -251,7 +464,7 @@ export const SignUpButton = styled(CustomButton)`
   }
 `;
 
-export const ForgotPasswordButton = styled(CustomButton)`
+export const ForgotPasswordButton = styled(Button)`
   background-color: red;
   color: whitesmoke;
   text-shadow: 1px 1px 1px black;
@@ -275,7 +488,7 @@ export const InfoButton = styled(SearchInfoSVG)`
   }
 `;
 
-export const PaginationPageButton = styled(CustomButton)`
+export const PaginationPageButton = styled(Button)`
   min-width: unset;
   width: 50px;
   height: 10px;
@@ -311,8 +524,8 @@ export const ClearSearchButton = styled.button`
   border-bottom-left-radius: 0px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-left: 1px solid black;
-  background-color: #b9d1e5;
+  border: 1px solid black;
+  background-color: #3085d6;
   transform: translateX(2px);
   text-transform: capitalize;
   font-family: inherit;
@@ -329,7 +542,7 @@ export const ClearSearchButton = styled.button`
   }
 `;
 
-export const PayButton = styled(CustomButton)`
+export const PayButton = styled(Button)`
   min-width: 165px;
   width: 400px;
   height: 70px;

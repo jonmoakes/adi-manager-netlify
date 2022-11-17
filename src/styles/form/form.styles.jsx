@@ -83,13 +83,28 @@ export const ForgotPasswordLabel = styled(Label)`
   float: unset;
 `;
 
-export const PaginationInput = styled.input`
+export const PaginationSelect = styled.select`
   width: 200px;
-  height: 40px;
-  border-radius: 15px;
+  padding: 10px;
+  border-radius: 10px;
   border: 2px solid black;
-  text-align: center;
+  outline: none;
+  margin-top: -25px;
+
+  &:focus {
+    border-color: #247afd;
+    box-shadow: 6px 6px 6px black;
+  }
 `;
+
+//from jblueco
+// export const PaginationInput = styled.input`
+//   width: 200px;
+//   height: 40px;
+//   border-radius: 15px;
+//   border: 2px solid black;
+//   text-align: center;
+// `;
 
 export const AddNewProductSelect = styled.select`
   width: 100%;
@@ -188,6 +203,22 @@ export const ResetPasswordInput = styled(StyledInput)`
   margin-bottom: 50px;
 `;
 
+//from original adi manager
+// export const SearchInput = styled.input`
+//   width: 90%;
+//   padding: 10px;
+
+//   border-radius: 10px;
+//   border: 2px solid black;
+//   outline: none;
+//   font-size: 16px;
+//   color: #cc1616;
+//   &:focus {
+//     border-color: #247afd;
+//     box-shadow: 6px 6px 6px black;
+//   }
+// `;
+
 export const SearchInput = styled.input`
   margin: 0px;
   padding: 0px;
@@ -197,14 +228,13 @@ export const SearchInput = styled.input`
   border-radius: 5px;
   background-color: whitesmoke;
   outline: none;
-  border: none;
+  border: 2px solid black;
   padding-left: 20px;
   font-family: inherit;
   font-size: 20px;
 
   &:focus {
     box-shadow: 4px 4px 4px black;
-    border-color: #3085d6;
   }
 
   /* clears the ‘X’ from Internet Explorer */
@@ -260,6 +290,18 @@ export const SearchInput = styled.input`
     padding-left: 5px;
   }
 `;
+
+export const PaginationInput = styled(SearchInput)`
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+`;
+
+// from original adi manager
+// export const PaginationInput = styled.input`
+//   width: 50px;
+//   outline: none;
+// `;
 
 export const QuantityInput = styled.input`
   color: black;

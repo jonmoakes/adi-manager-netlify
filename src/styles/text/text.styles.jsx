@@ -271,3 +271,7 @@ export const LoggedOutContactIconText = styled.p`
     margin-top: -5px;
   }
 `;
+
+export const PaginationText = styled.p`
+  font-size: 16px;
+`;

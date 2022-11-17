@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Div  } from "../div/div.styles";
+import { Div } from "../div/div.styles";
 
 export const ImageDiv = styled(Div)`
   background-color: #247afd;
@@ -82,5 +82,19 @@ export const MeImage = styled.img`
   @media screen and (max-width: 600px) {
     width: 100px;
     height: 100px;
+  }
+`;
+
+export const AddIcon = styled.img`
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  position: relative;
+  right: 6px;
+  top: -1px;
+
+  @media screen and (max-width: 600px) {
+    width: 60px;
+    height: 60px;
   }
 `;

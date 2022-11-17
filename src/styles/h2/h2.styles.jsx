@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const H2 = styled.h2 `
-  color:black;
-  text-decoration:underline;
+export const H2 = styled.h2`
+  color: black;
+  text-decoration: underline;
 `;
 
 export const SubHeading = styled.h2`
@@ -29,7 +29,7 @@ export const Heading = styled.h2`
 
 export const RedHeading = styled.h2`
   color: #d62424;
-  text-shadow:none;
+  text-shadow: none;
 `;
 
 export const ProductsHelpH2 = styled.h2`

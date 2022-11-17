@@ -18,6 +18,23 @@ export const LowercasedSpan = styled.span`
   color: #cc1616;
 `;
 
+export const GreenSpan = styled.span`
+  color: #0eeb1e;
+  text-shadow: 1px 1px 1px black;
+`;
+
+export const TableHeaderRemoveText = styled.span`
+  font-size: 20px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
+`;
+
 export const OptionsDetail = styled.span`
   color: #d62424;
 `;
@@ -93,7 +110,7 @@ export const ViewInfo = styled.span`
   margin-bottom: 6px;
   text-transform: capitalize;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 850px) {
     font-size: 24px;
   }
 
