@@ -44,6 +44,7 @@ export const createUserDocumentFromAuth = async (
         subscriptionData: {},
         diaryEntries: [
           {
+            //yyyy/mm/dd
             date: "2022-11-01",
             entry: "John Doe - 10am-12pm, Roundabouts.",
             id: 1,
