@@ -25,7 +25,6 @@ const useDiaryEntriesSnapshotListener = () => {
         doc(db, "users", currentUser.id),
         (doc) => {
           const { diaryEntries } = doc.data();
-
           if (doc.exists) {
             dispatch(updateDiaryEntries(diaryEntries));
           }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HighlightText = styled.span`
   color: #cc1616;
+  font-size: 20px;
 `;
 
 export const SmallHighlightText = styled.span`

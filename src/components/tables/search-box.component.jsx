@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAsyncDebounce } from "react-table";
-// import { format } from "date-fns";
 
 import Loader from "../loader/loader.component";
 import NoSearchResult from "./no-search-result.component";
@@ -19,9 +18,6 @@ const SearchBox = ({
   const [value, setValue] = useState(globalFilter);
   const [isSearching, setIsSearching] = useState(false);
 
-  // const dates = data.map((entries) => entries.date);
-  // const formattedDate = format(new Date(dates), "dd MMMM yyyy");
-  // console.log(formattedDate);
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter(value || undefined);
     setIsSearching(false);
@@ -55,7 +51,7 @@ const SearchBox = ({
       )}
 
       {value !== "" && rows.length === 0 && data.length !== 0 && (
-        <NoSearchResult />
+        <NoSearchResult {...{ value }} />
       )}
     </>
   );

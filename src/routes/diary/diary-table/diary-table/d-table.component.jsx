@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-
 import {
   useTable,
   useSortBy,
@@ -45,7 +44,15 @@ const DTable = () => {
   const isLoading = useSelector(selectIsLoading);
 
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => diaryEntries, [diaryEntries]);
+  const data = useMemo(
+    () =>
+      diaryEntries.map((obj) => {
+        const { date } = obj;
+        return { ...obj, date: new Date(date) };
+      }),
+    [diaryEntries]
+  );
+
   const initialState = useMemo(
     () => ({ sortBy: [{ id: "date", desc: true }], pageSize: 25 }),
     []
@@ -103,7 +110,7 @@ const DTable = () => {
 
   const { globalFilter, pageIndex, pageSize } = state;
   const chosenEntry = selectedFlatRows.map((row) => row.original);
-  // so only one edit and remove button appears.
+  // next line is so only one edit and remove button appears.
   diaryEntries = chosenEntry;
   const dataLength = data.length;
   const rowsLength = rows.length;
