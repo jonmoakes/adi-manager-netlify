@@ -25,8 +25,8 @@ const PasswordChangeInputs = () => {
 
   const swal = withReactContent(Swal);
 
-  const updatePasswordConfirmBox = async () => {
-    const { newPassword, confirmNewPassword } = await userCredentials;
+  const updatePasswordConfirmBox = () => {
+    const { newPassword, confirmNewPassword } = userCredentials;
     if (!newPassword || !confirmNewPassword) {
       fireSwal("error", passwordFieldsEmptyMessage, "", 0, true, false);
     } else if (newPassword !== confirmNewPassword) {
@@ -70,7 +70,7 @@ const PasswordChangeInputs = () => {
         onChange={handleChange}
       />
 
-      {isDisabled === false ? (
+      {!isDisabled ? (
         <CustomButton type="submit" onClick={updatePasswordConfirmBox}>
           Update Password
         </CustomButton>
