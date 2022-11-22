@@ -59,10 +59,9 @@ const HelpText = () => {
 
           <RedH2Underline>Searching Entries:</RedH2Underline>
           <p>
-            You can search for a date ( "February", or "06" for example ), a
-            pupil's name, or any word from an entry like "fuel" or "44" if you
-            wanted to search for a receipt that you know cost £44 for example (
-            you don't need to enter the "£" ).
+            You can search for a pupil's name, or any word from an entry like
+            "fuel" or "44" if you wanted to search for a receipt that you know
+            cost £44 for example ( you don't need to enter the "£" ).
           </p>
           <p>
             please note that you can only search for things that are from the
@@ -80,6 +79,20 @@ const HelpText = () => {
             the search text ( or press the small cross on the far right of the
             search field on compatible browsers ) to show the full table again.
             this will reload the table.
+          </p>
+          <RedH2Underline>a note about searching dates:</RedH2Underline>
+          <p>
+            please note, if you're searching for a month, please use just the
+            first 3 characters, for example "Nov" for november or "Jan" for
+            january.
+          </p>
+          <p>
+            if you're searching for a date and month, please enter it as for
+            example "jun 16" NOT "16 jun.
+          </p>
+          <p>
+            this is because of the way the data is received & formatted from the
+            database.
           </p>
 
           <RedH2Underline>Table Row Colours:</RedH2Underline>

@@ -5,6 +5,7 @@ import { customerReducer } from "./customer/customer.reducer";
 import { errorReducer } from "./error/error.reducer";
 import { loaderReducer } from "./loader/loader.reducer";
 import { tableReducer } from "./table/table.reducer";
+import entryReducer from "./entry/entry.reducer";
 import { diaryReducer } from "./diary/diary.reducer";
 
 export const rootReducer = combineReducers({
@@ -13,5 +14,6 @@ export const rootReducer = combineReducers({
   error: errorReducer,
   loader: loaderReducer,
   table: tableReducer,
+  entry: entryReducer,
   diary: diaryReducer,
 });

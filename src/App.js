@@ -49,9 +49,11 @@ const SubscriptionDetailsPage = lazy(() =>
 const UsefulLinks = lazy(() =>
   import("./routes/useful-links/useful-links.component")
 );
-
 const DiaryTable = lazy(() =>
   import("./routes/diary/diary-table/diary-table.component")
+);
+const AddDiaryEntry = lazy(() =>
+  import("./routes/diary/add-diary-entry/add-diary-entry.component")
 );
 
 const App = () => {
@@ -156,6 +158,10 @@ const App = () => {
               />
 
               <Route path="diary" element={currentUser && <DiaryTable />} />
+              <Route
+                path="add-diary-entry"
+                element={currentUser && <AddDiaryEntry />}
+              />
             </Route>
           </Routes>
           <Footer />

@@ -134,6 +134,11 @@ export const StyledInput = styled.input`
   outline: none;
   background-color: whitesmoke;
 
+  &.date-picker {
+    -webkit-appearance: none;
+    color: black;
+  }
+
   &:focus {
     box-shadow: 4px 4px 4px black;
     border-color: #3085d6;

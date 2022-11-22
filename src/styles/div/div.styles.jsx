@@ -37,6 +37,10 @@ export const Div = styled.div`
   }
 `;
 
+export const AddEntryDiv = styled(Div)`
+  margin: 0px auto 200px auto;
+`;
+
 export const LoginDiv = styled.div`
   margin: 0px auto 75px auto;
   background-color: #ffab0f;
