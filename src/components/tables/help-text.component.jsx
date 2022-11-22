@@ -82,13 +82,12 @@ const HelpText = () => {
           </p>
           <RedH2Underline>a note about searching dates:</RedH2Underline>
           <p>
-            please note, if you're searching for a month, please use just the
-            first 3 characters, for example "Nov" for november or "Jan" for
-            january.
+            please note, if you're searching for a month, please search for it's
+            numerical value - for example "11" for november or "04" for april
           </p>
           <p>
-            if you're searching for a date and month, please enter it as for
-            example "jun 16" NOT "16 jun.
+            if you're searching for a date and month, for example June 16th
+            please search for 06-16.
           </p>
           <p>
             this is because of the way the data is received & formatted from the

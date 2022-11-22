@@ -9,8 +9,7 @@ export const passwordResetSuccessText =
   " If You Don't Receive It, Please Check Your Spam Folder Or Wait A Few More Minutes. :)";
 export const deleteConfirmedMessage = "Entry Deleted!";
 export const entryAddedMessage = "Entry Added!";
-export const addedEntryMessage = "Entry Added!";
-export const entryUpdatedMessage = "Entry Updated!";
+export const entrySavedMessage = "Entry Saved!";
 export const messageSent = "Thank you! Your Message Has Been Sent!";
 export const cookieThanksMessage = "Thank You For Allowing Cookies! :)";
 export const signOutSuccessMessage =

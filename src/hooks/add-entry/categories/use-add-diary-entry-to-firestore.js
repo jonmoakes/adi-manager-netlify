@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../../utils/firebase/firebase.utils";
 
-import useEntryAddedSuccessSwal from "../use-entry-added-success-swal";
+import useFireSwal from "../../use-fire-swal";
 
 import { clearEntry } from "../../../store/entry/entry.action";
 import { setErrorMessage } from "../../../store/error/error.action";
@@ -11,16 +11,16 @@ import { selectCurrentUser } from "../../../store/user/user.selector";
 import { selectDiaryEntries } from "../../../store/diary/diary.selector";
 import { selectEntry } from "../../../store/entry/entry.selector";
 
-import { addDiaryEntryPath } from "../../../strings/strings";
+import { addDiaryEntryPath, entrySavedMessage } from "../../../strings/strings";
 
 const useAddDiaryEntryToFirestore = () => {
-  const { entryAddedSuccessSwal } = useEntryAddedSuccessSwal();
+  const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
   const diaryEntries = useSelector(selectDiaryEntries);
   const entry = useSelector(selectEntry);
   const location = useLocation();
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const addDiaryEntryToFirestore = async () => {
@@ -33,11 +33,12 @@ const useAddDiaryEntryToFirestore = () => {
         await updateDoc(userRef, {
           diaryEntries: [...diaryEntries, entry],
         });
-        entryAddedSuccessSwal();
+        fireSwal("success", entrySavedMessage, "", 1500, false, true);
         dispatch(clearEntry());
+        navigate(-1);
       }
     } catch (error) {
-      setErrorMessage(error.message);
+      dispatch(setErrorMessage(error.message));
     }
   };
   return { addDiaryEntryToFirestore };

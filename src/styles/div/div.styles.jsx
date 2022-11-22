@@ -41,6 +41,32 @@ export const AddEntryDiv = styled(Div)`
   margin: 0px auto 200px auto;
 `;
 
+export const DataDiv = styled.div`
+  width: 50%;
+  margin: 0px auto 300px auto;
+  background-color: #ffab0f;
+  padding: 20px 20px 100px 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+
+  &.edit {
+    background-color: lightgrey;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 90%;
+    padding: 20px 10px 100px 10px;
+  }
+
+  @media screen and (max-width: 320px) {
+    padding: 10px 5px 50px 5px;
+  }
+`;
+
 export const LoginDiv = styled.div`
   margin: 0px auto 75px auto;
   background-color: #ffab0f;

@@ -26,7 +26,7 @@ const AddDiaryEntry = () => {
         ) : (
           <>
             <AddEntryHeading />
-            <AddDiarySaveReturnButtons entry={entry} />
+            <AddDiarySaveReturnButtons {...{ entry }} />
             <AddEntryDiv>
               <AddDiaryEntryInstructions />
               <AddDiaryEntryForm id={id} handleChange={handleChange} />

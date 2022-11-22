@@ -44,14 +44,7 @@ const DTable = () => {
   const isLoading = useSelector(selectIsLoading);
 
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(
-    () =>
-      diaryEntries.map((obj) => {
-        const { date } = obj;
-        return { ...obj, date: new Date(date) };
-      }),
-    [diaryEntries]
-  );
+  const data = useMemo(() => diaryEntries, [diaryEntries]);
 
   const initialState = useMemo(
     () => ({ sortBy: [{ id: "date", desc: true }], pageSize: 25 }),
@@ -142,7 +135,13 @@ const DTable = () => {
               />
 
               <EditRemoveButtons
-                {...{ chosenEntryLength, entries, editPath, deletePath }}
+                {...{
+                  chosenEntryLength,
+                  chosenEntry,
+                  entries,
+                  editPath,
+                  deletePath,
+                }}
               />
 
               <DefaultTable

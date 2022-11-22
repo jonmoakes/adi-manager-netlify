@@ -55,6 +55,9 @@ const DiaryTable = lazy(() =>
 const AddDiaryEntry = lazy(() =>
   import("./routes/diary/add-diary-entry/add-diary-entry.component")
 );
+const EditDiaryEntry = lazy(() =>
+  import("./routes/diary/edit-diary-entry/edit-diary-entry.component")
+);
 
 const App = () => {
   useCheckUserSession();
@@ -161,6 +164,10 @@ const App = () => {
               <Route
                 path="add-diary-entry"
                 element={currentUser && <AddDiaryEntry />}
+              />
+              <Route
+                path="edit-diary-entry"
+                element={currentUser && <EditDiaryEntry />}
               />
             </Route>
           </Routes>
