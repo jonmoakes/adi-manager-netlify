@@ -1,6 +1,8 @@
+import { useDispatch } from "react-redux";
 import { useLocation, Link } from "react-router-dom";
 import { format } from "date-fns";
 
+import { addEntry } from "../../store/entry/entry.action";
 import { TableEditsButtonDiv } from "../../styles/div/div.styles";
 import {
   EditEntryButton,
@@ -19,6 +21,7 @@ const EditRemoveButtons = ({
   deletePath,
 }) => {
   const location = useLocation();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -27,8 +30,8 @@ const EditRemoveButtons = ({
           {entries.map((entry) => (
             <TableEditsButtonDiv key={entry.id}>
               <>
-                <Link to={editPath} state={{ entry: entry }}>
-                  <EditEntryButton>
+                <Link to={editPath}>
+                  <EditEntryButton onClick={() => dispatch(addEntry(entry))}>
                     {entry.date && location.pathname === totalExpensesMonthPath
                       ? `Edit Entry For ${format(
                           new Date(entry.date),
@@ -46,8 +49,8 @@ const EditRemoveButtons = ({
                   </EditEntryButton>
                 </Link>
 
-                <Link to={deletePath} state={{ entry: entry }}>
-                  <RemoveEntryButton>
+                <Link to={deletePath}>
+                  <RemoveEntryButton onClick={() => dispatch(addEntry(entry))}>
                     {entry.date && location.pathname === totalExpensesMonthPath
                       ? `Remove Entry For ${format(
                           new Date(entry.date),

@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { selectErrorMessage } from "../../store/error/error.selector";
 import { clearErrorMessage } from "../../store/error/error.action";
+import { clearEntry } from "../../store/entry/entry.action";
+import { selectEntry } from "../../store/entry/entry.selector";
 import CustomButton from "../custom-button/custom-button.component";
 
 import { ErrorDiv } from "../../styles/div/div.styles";
@@ -12,6 +14,19 @@ const FetchError = () => {
   const errorMessage = useSelector(selectErrorMessage);
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
+  const entry = useSelector(selectEntry);
+
+  const clearErrorAndEntry = () => {
+    if (entry) {
+      navigate(-1);
+      dispatch(clearErrorMessage());
+      dispatch(clearEntry());
+    } else {
+      navigate(-1);
+      dispatch(clearErrorMessage());
+    }
+  };
 
   return (
     <>
@@ -34,9 +49,7 @@ const FetchError = () => {
             <p>please Contact Me if the error persists.</p>
           )}
           <p>please tap the ok button to continue</p>
-          <CustomButton onClick={() => dispatch(clearErrorMessage())}>
-            ok
-          </CustomButton>
+          <CustomButton onClick={clearErrorAndEntry}>ok</CustomButton>
         </ErrorDiv>
       )}
     </>

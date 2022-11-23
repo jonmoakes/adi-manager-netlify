@@ -12,7 +12,8 @@ const useShouldDisplayHeaderAndToolbar = () => {
     if (
       location.pathname === welcomePath ||
       location.pathname.includes("/add") ||
-      location.pathname.includes("/edit")
+      location.pathname.includes("/edit") ||
+      location.pathname.includes("delete-entry")
     ) {
       setShouldDisplayHeaderAndToolbar(false);
     } else {

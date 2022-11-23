@@ -37,7 +37,7 @@ const useAddEntrySwal = () => {
 
   const swal = withReactContent(Swal);
 
-  const addEntry = async () => {
+  const addEntry = () => {
     addDiaryEntryToFirestore();
     // addLessonEntryToFirestore();
     // addIncomeEntryToFirestore();

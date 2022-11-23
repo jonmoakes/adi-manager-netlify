@@ -172,6 +172,8 @@ export const newEmailPlaceholder = "Enter New Email";
 export const confirmNewEmailPlaceholder = "Confirm New Email";
 export const newPasswordPlaceholder = "Enter New Password";
 export const confirmNewPasswordPlaceholder = "Confirm New Password";
+export const goBackMessage = "Yes, Go Back";
+export const stayHereMessage = "stay here";
 
 // payment form strings
 export const addEntryText = "Yes, Add Entry!";

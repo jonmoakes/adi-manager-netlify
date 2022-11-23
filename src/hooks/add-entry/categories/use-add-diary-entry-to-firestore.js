@@ -34,8 +34,8 @@ const useAddDiaryEntryToFirestore = () => {
           diaryEntries: [...diaryEntries, entry],
         });
         fireSwal("success", entrySavedMessage, "", 1500, false, true);
-        dispatch(clearEntry());
         navigate(-1);
+        dispatch(clearEntry());
       }
     } catch (error) {
       dispatch(setErrorMessage(error.message));

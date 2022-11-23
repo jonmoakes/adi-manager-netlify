@@ -10,31 +10,28 @@ import {
 
 import useDiaryEntriesSnapshotListener from "./use-diary-entries-snapshot-listener";
 
-import { selectDiaryEntries } from "../../../../store/diary/diary.selector";
-import { selectErrorMessage } from "../../../../store/error/error.selector";
-import { selectIsLoading } from "../../../../store/loader/loader.selector";
+import { selectDiaryEntries } from "../../../store/diary/diary.selector";
+import { selectErrorMessage } from "../../../store/error/error.selector";
+import { selectIsLoading } from "../../../store/loader/loader.selector";
 
 import { COLUMNS } from "./columns";
-import CheckBox from "../../../../components/tables/checkbox";
-import Loader from "../../../../components/loader/loader.component";
-import FetchError from "../../../../components/fetch-error/fetch-error.component";
-import NoEntriesInfo from "../../../../components/tables/no-entries-info.component";
-import TooManyEntriesSelectedHelp from "../../../../components/tables/too-many-entries-selected-help.component";
-import SearchBox from "../../../../components/tables/search-box.component";
+import CheckBox from "../../../components/tables/checkbox";
+import Loader from "../../../components/loader/loader.component";
+import FetchError from "../../../components/fetch-error/fetch-error.component";
+import NoEntriesInfo from "../../../components/tables/no-entries-info.component";
+import TooManyEntriesSelectedHelp from "../../../components/tables/too-many-entries-selected-help.component";
+import SearchBox from "../../../components/tables/search-box.component";
 
-import EditRemoveButtons from "../../../../components/tables/edit-remove-buttons.component";
-import DefaultTable from "../../../../components/tables/rendered-tables/default-table.component";
-import Pagination from "../../../../components/tables/pagination.component";
+import EditRemoveButtons from "../../../components/tables/edit-remove-buttons.component";
+import DefaultTable from "../../../components/tables/rendered-tables/default-table.component";
+import Pagination from "../../../components/tables/pagination.component";
 
-import { TableContainerDiv } from "../../../../styles/div/div.styles";
-import { TableHeaderRemoveText } from "../../../../styles/span/span.styles";
+import { TableContainerDiv } from "../../../styles/div/div.styles";
+import { TableHeaderRemoveText } from "../../../styles/span/span.styles";
 
-import { scrollToTop } from "../../../../reusable-functions/scroll-to-top";
+import { scrollToTop } from "../../../reusable-functions/scroll-to-top";
 
-import {
-  deleteEntryPath,
-  editDiaryEntryPath,
-} from "../../../../strings/strings";
+import { deleteEntryPath, editDiaryEntryPath } from "../../../strings/strings";
 
 const DTable = () => {
   useDiaryEntriesSnapshotListener();

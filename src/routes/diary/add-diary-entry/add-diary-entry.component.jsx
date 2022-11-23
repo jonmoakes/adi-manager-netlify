@@ -10,16 +10,15 @@ import AddDiarySaveReturnButtons from "./add-diary-save-return-buttons.component
 import AddDiaryEntryInstructions from "./add-diary-entry-instructions.component";
 import AddDiaryEntryForm from "./add-diary-entry-form.component";
 
-import { Container } from "../../../styles/container/container.styles";
+import { NoHeaderFooterContainer } from "../../../styles/container/container.styles";
 import { AddEntryDiv } from "../../../styles/div/div.styles";
 
 const AddDiaryEntry = () => {
   const { entry, handleChange } = useHandleAddDiaryEntryChange();
   const errorMessage = useSelector(selectErrorMessage);
-  const { id } = entry;
 
   return (
-    <Container>
+    <NoHeaderFooterContainer>
       <>
         {errorMessage ? (
           <FetchError />
@@ -29,12 +28,12 @@ const AddDiaryEntry = () => {
             <AddDiarySaveReturnButtons {...{ entry }} />
             <AddEntryDiv>
               <AddDiaryEntryInstructions />
-              <AddDiaryEntryForm id={id} handleChange={handleChange} />
+              <AddDiaryEntryForm {...{ handleChange }} />
             </AddEntryDiv>
           </>
         )}
       </>
-    </Container>
+    </NoHeaderFooterContainer>
   );
 };
 

@@ -1,7 +1,11 @@
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import useFireSwal from "../use-fire-swal";
+
+import { clearEntry } from "../../store/entry/entry.action";
 
 import {
   confirmUpdateEntryMessage,
@@ -13,6 +17,7 @@ const useUpdateEntriesSwal = () => {
   const { fireSwal } = useFireSwal();
   const swal = withReactContent(Swal);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const updateEntriesSwal = () => {
     swal
@@ -32,8 +37,9 @@ const useUpdateEntriesSwal = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fireSwal("success", entrySavedMessage, "", 1500, false, true);
           navigate(-1);
+          fireSwal("success", entrySavedMessage, "", 1500, false, true);
+          dispatch(clearEntry());
         }
       });
   };

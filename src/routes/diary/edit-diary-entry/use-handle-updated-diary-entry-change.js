@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { selectEntry } from "../../../store/entry/entry.selector";
 
 const useHandleUpdatedDiaryEntryChange = () => {
   const [entry, setEntry] = useState({});
@@ -9,12 +11,12 @@ const useHandleUpdatedDiaryEntryChange = () => {
     entry: entry.entry,
   });
 
-  const location = useLocation();
+  const reduxEntry = useSelector(selectEntry);
 
   useEffect(() => {
-    setEntry(location.state.entry);
-    setUpdatedEntry(location.state.entry);
-  }, [location.state.entry]);
+    setEntry(reduxEntry);
+    setUpdatedEntry(reduxEntry);
+  }, [reduxEntry]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;

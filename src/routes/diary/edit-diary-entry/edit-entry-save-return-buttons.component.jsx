@@ -20,11 +20,6 @@ import {
   sameEntriesMessage,
 } from "../../../strings/strings";
 
-// gets the original entry and the updated entry for comparing differences and shows related swals depending on errors.
-// after checking the required fields are entered, and the two objects are not the same, we match the id from the original entry to the firestore entry.
-// we remove that entry from the array in firestore and replace it with the updated entry.
-// then show the updateEntriesSwal and return to the table.
-
 const EditEntrySaveReturnButtons = ({ entry, updatedEntry }) => {
   const { updateEntriesSwal } = useUpdateEntriesSwal();
   const { fireSwal } = useFireSwal();

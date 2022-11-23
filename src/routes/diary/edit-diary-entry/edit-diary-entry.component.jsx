@@ -9,7 +9,7 @@ import EditEntrySaveReturnButtons from "./edit-entry-save-return-buttons.compone
 import UpdateEntryInfo from "../../../components/tables/update-entry-info.component";
 import EditDiaryEntryForm from "./edit-diary-entry-form.component";
 
-import { Container } from "../../../styles/container/container.styles";
+import { NoHeaderFooterContainer } from "../../../styles/container/container.styles";
 import { DataDiv } from "../../../styles/div/div.styles";
 
 const EditDiaryEntry = () => {
@@ -19,7 +19,7 @@ const EditDiaryEntry = () => {
   const errorMessage = useSelector(selectErrorMessage);
 
   return (
-    <Container>
+    <NoHeaderFooterContainer>
       {errorMessage ? (
         <FetchError />
       ) : (
@@ -33,7 +33,7 @@ const EditDiaryEntry = () => {
           </DataDiv>
         </>
       )}
-    </Container>
+    </NoHeaderFooterContainer>
   );
 };
 

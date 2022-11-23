@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import FloatingAddButton from "../../../components/floating-add-button/floating-add-button.component";
 import HelpText from "../../../components/tables/help-text.component";
-import DTable from "./diary-table/d-table.component";
+import DTable from "./d-table.component";
 
 import { Container } from "../../../styles/container/container.styles";
 import { Div } from "../../../styles/div/div.styles";

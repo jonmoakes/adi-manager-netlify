@@ -8,14 +8,13 @@ import { HighlightText } from "../../../styles/span/span.styles";
 
 import { placeholderInfiniteSpaceMessage } from "../../../strings/strings";
 
-const AddDiaryEntryForm = ({ id, handleChange }) => (
+const AddDiaryEntryForm = ({ handleChange }) => (
   <Form>
     <Label>
       <HighlightText>*</HighlightText> Choose Date:
     </Label>
     <StyledInput
       className="date-picker"
-      id={id}
       type="date"
       name="date"
       onChange={handleChange}
@@ -23,7 +22,6 @@ const AddDiaryEntryForm = ({ id, handleChange }) => (
 
     <Label>Entry:</Label>
     <StyledTextArea
-      id={id}
       type="text"
       name="entry"
       onChange={handleChange}

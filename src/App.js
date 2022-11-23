@@ -58,6 +58,9 @@ const AddDiaryEntry = lazy(() =>
 const EditDiaryEntry = lazy(() =>
   import("./routes/diary/edit-diary-entry/edit-diary-entry.component")
 );
+const DeleteEntry = lazy(() =>
+  import("./routes/delete-entry/delete-entry.component")
+);
 
 const App = () => {
   useCheckUserSession();
@@ -168,6 +171,10 @@ const App = () => {
               <Route
                 path="edit-diary-entry"
                 element={currentUser && <EditDiaryEntry />}
+              />
+              <Route
+                path="delete-entry"
+                element={currentUser && <DeleteEntry />}
               />
             </Route>
           </Routes>
