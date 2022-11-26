@@ -48,6 +48,19 @@ export const StyledTextArea = styled.textarea`
   }
 `;
 
+export const StyledSelect = styled.select`
+  width: 100%;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 15px;
+  border: 2px solid black;
+  text-align: center;
+  color: black;
+  text-transform: capitalize;
+  text-align: left;
+  padding-left: 10px;
+`;
+
 export const CustomerDetailsInputs = styled(Form)`
   margin-top: 20px;
   width: 90%;
@@ -240,6 +253,7 @@ export const SearchInput = styled.input`
 
   &:focus {
     box-shadow: 4px 4px 4px black;
+    border-color: #3085d6;
   }
 
   /* clears the ‘X’ from Internet Explorer */

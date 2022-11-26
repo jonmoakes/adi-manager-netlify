@@ -149,6 +149,23 @@ export const TermsReadButton = styled(Button)`
   font-size: 16px;
 `;
 
+export const EmailSelfButton = styled(Button)`
+  margin: 20px;
+  background-color: whitesmoke;
+  color: black;
+  text-shadow: none;
+
+  &.pupil-progress {
+    background-color: #247afd;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+  }
+`;
+
+export const EmailPupilButton = styled(EmailSelfButton)`
+  background-color: #df95f6;
+`;
+
 export const AddButton = styled.button`
   width: 70px;
   height: 70px;

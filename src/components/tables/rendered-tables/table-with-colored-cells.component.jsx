@@ -20,10 +20,7 @@ import {
   BlockBookingCell,
 } from "../../../styles/table/table.styles";
 
-import {
-  lessonsPath,
-  incomePath,
-} from "../../../resuable-messages/reusable-messages";
+import { lessonsPath, incomePath } from "../../../strings/strings";
 
 const TableWithColoredCells = ({
   initialState,

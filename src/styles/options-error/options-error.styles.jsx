@@ -5,7 +5,7 @@ const bounceInDownAnimation = keyframes`${bounceInDown}`;
 
 export const Div = styled.div`
   animation: 1s ${bounceInDownAnimation};
-  background-color: salmon;
+  background-color: #3085d6;
   padding: 0px 5px;
   border-radius: 15px;
   width: 50%;

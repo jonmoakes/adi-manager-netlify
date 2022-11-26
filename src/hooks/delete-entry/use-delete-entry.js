@@ -1,5 +1,5 @@
 import useDeleteDiaryEntry from "./categories/use-delete-diary-entry";
-// import useDeleteLessonEntry from "./categories/use-delete-lesson-entry";
+import useDeleteLessonEntry from "./categories/use-delete-lesson-entry";
 // import useDeleteIncomeEntry from "./categories/use-delete-income-entry";
 // import useDeleteExpenseEntry from "./categories/use-delete-expense-entry";
 // import useDeleteTotalExpensesWeekEntry from "./categories/use-delete-total-expenses-week";
@@ -14,7 +14,7 @@ import useDeleteDiaryEntry from "./categories/use-delete-diary-entry";
 
 const useDeleteEntry = () => {
   const { deleteDiaryEntry } = useDeleteDiaryEntry();
-  // const { deleteLessonEntry } = useDeleteLessonEntry();
+  const { deleteLessonEntry } = useDeleteLessonEntry();
   // const { deleteIncomeEntry } = useDeleteIncomeEntry();
   // const { deleteExpenseEntry } = useDeleteExpenseEntry();
   // const { deleteTotalExpensesWeekEntry } = useDeleteTotalExpensesWeekEntry();
@@ -26,7 +26,7 @@ const useDeleteEntry = () => {
 
   const deleteEntry = () => {
     deleteDiaryEntry();
-    // deleteLessonEntry();
+    deleteLessonEntry();
     // deleteIncomeEntry();
     // deleteExpenseEntry();
     // deleteTotalExpensesWeekEntry();

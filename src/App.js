@@ -58,6 +58,15 @@ const AddDiaryEntry = lazy(() =>
 const EditDiaryEntry = lazy(() =>
   import("./routes/diary/edit-diary-entry/edit-diary-entry.component")
 );
+const LessonsTable = lazy(() =>
+  import("./routes/lessons/lessons-table/lessons-table.component")
+);
+const AddLessonEntry = lazy(() =>
+  import("./routes/lessons/add-lesson-entry/add-lesson-entry.component")
+);
+const EditLessonEntry = lazy(() =>
+  import("./routes/lessons/edit-lesson-entry/edit-lesson-entry.component")
+);
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
@@ -171,6 +180,15 @@ const App = () => {
               <Route
                 path="edit-diary-entry"
                 element={currentUser && <EditDiaryEntry />}
+              />
+              <Route path="lessons" element={currentUser && <LessonsTable />} />
+              <Route
+                path="add-lesson-entry"
+                element={currentUser && <AddLessonEntry />}
+              />
+              <Route
+                path="edit-lesson-entry"
+                element={currentUser && <EditLessonEntry />}
               />
               <Route
                 path="delete-entry"

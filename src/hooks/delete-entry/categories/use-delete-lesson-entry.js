@@ -1,40 +1,47 @@
 import { useSelector, useDispatch } from "react-redux";
-import firebase from "firebase/compat/app";
+import { useNavigate } from "react-router-dom";
+import { doc, getDoc, updateDoc, arrayRemove } from "firebase/firestore";
+import { db } from "../../../utils/firebase/firebase.utils";
 
-import { firestore } from "../../../../firebase/firebase.utils";
+import useFireSwal from "../../use-fire-swal";
 
-import { selectCurrentUser } from "../../../../redux/user/user.selectors";
-import { selectEntry } from "../../../../redux/entry/entry.selectors";
+import { selectCurrentUser } from "../../../store/user/user.selector";
+import { selectEntry } from "../../../store/entry/entry.selector";
+import { clearEntry } from "../../../store/entry/entry.action";
 
-import useShowDeleteConfirmedSwal from "../use-show-delete-confirmed-swal";
+import useCategoryCheck from "../../use-category-check";
 
-import { categoryCheck } from "../../../../reusable-functions/reusable-functions";
-
-import { lessons } from "../../../../resuable-messages/reusable-messages";
+import { lessons, deleteConfirmedMessage } from "../../../strings/strings";
+import { setErrorMessage } from "../../../store/error/error.action";
 
 const useDeleteLessonEntry = () => {
-  const { showDeleteConfirmedSwal } = useShowDeleteConfirmedSwal();
+  const { category } = useCategoryCheck();
+  const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
   const entry = useSelector(selectEntry);
   const dispatch = useDispatch();
-  const category = categoryCheck(entry);
+  const navigate = useNavigate();
 
   const deleteLessonEntry = async () => {
     if (!currentUser) return;
-    const userRef = await firestore.doc(`users/${currentUser.id}`);
+    const userRef = doc(db, "users", currentUser.id);
+    const userSnapshot = await getDoc(userRef);
+
     try {
-      if (entry && category === lessons) {
-        userRef
-          .update({
-            lessonEntries: firebase.firestore.FieldValue.arrayRemove(entry),
-          })
-          .then(showDeleteConfirmedSwal());
-      } else {
-        return;
-      }
+      if (!userSnapshot.exists || !entry || category !== lessons) return;
+      const data = userSnapshot.data();
+      const { lessonEntries } = data;
+      const entryToRemove = lessonEntries.find(
+        (firestoreEntry) => firestoreEntry.id === entry.id
+      );
+
+      await updateDoc(userRef, { lessonEntries: arrayRemove(entryToRemove) });
+      fireSwal("success", deleteConfirmedMessage, "", 1500, false, true);
+      navigate(-1);
+      dispatch(clearEntry());
     } catch (error) {
-      dispatch({ type: "SET_ERROR_MESSAGE", payload: error.message });
+      setErrorMessage(error.message);
     }
   };
   return { deleteLessonEntry };

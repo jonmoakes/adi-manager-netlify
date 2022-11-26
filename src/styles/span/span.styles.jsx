@@ -62,7 +62,7 @@ export const UpArrow = styled.span`
 export const SelectProductSpan = styled.span`
   padding: 2px 5px;
   border-radius: 5px;
-  background-color: salmon;
+  background-color: #3085d6;
   color: black;
   border: 1px solid black;
 `;

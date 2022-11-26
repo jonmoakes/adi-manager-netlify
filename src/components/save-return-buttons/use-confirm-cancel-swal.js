@@ -36,11 +36,11 @@ const useConfirmCancelSwal = () => {
         customClass: "confirm",
       })
       .then((result) => {
-        if (result.isConfirmed && !entry) {
-          navigate(-1);
-        } else {
+        if (result.isConfirmed && entry) {
           navigate(-1);
           dispatch(clearEntry());
+        } else if (result.isConfirmed && !entry) {
+          navigate(-1);
         }
       });
   };
