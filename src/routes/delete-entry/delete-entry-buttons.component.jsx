@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
 import useDeleteEntry from "../../hooks/delete-entry/use-delete-entry";
-
-import { clearEntry } from "../../store/entry/entry.action";
 
 import DeleteEntryInstructions from "./delete-entry-instructions.component";
 
@@ -16,11 +13,9 @@ import {
 const DeleteEntryButtons = () => {
   const { deleteEntry } = useDeleteEntry();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const returnToTable = () => {
     navigate(-1);
-    dispatch(clearEntry());
   };
 
   return (

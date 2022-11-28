@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-
-import { clearEntry } from "../../store/entry/entry.action";
-import { selectEntry } from "../../store/entry/entry.selector";
 
 import {
   cancelAndReturnMessage,
@@ -15,8 +11,6 @@ import {
 const useConfirmCancelSwal = () => {
   const swal = withReactContent(Swal);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const entry = useSelector(selectEntry);
 
   const confirmCancelSwal = async () => {
     swal
@@ -36,10 +30,7 @@ const useConfirmCancelSwal = () => {
         customClass: "confirm",
       })
       .then((result) => {
-        if (result.isConfirmed && entry) {
-          navigate(-1);
-          dispatch(clearEntry());
-        } else if (result.isConfirmed && !entry) {
+        if (result.isConfirmed) {
           navigate(-1);
         }
       });

@@ -42,12 +42,6 @@ export const TableWithStyle = styled.table`
     }
   }
 
-  &.lessons {
-    th {
-      background-color: lightgrey;
-    }
-  }
-
   @media screen and (max-width: 1024px) {
     width: 95%;
     box-shadow: none;

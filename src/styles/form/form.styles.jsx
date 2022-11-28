@@ -59,6 +59,7 @@ export const StyledSelect = styled.select`
   text-transform: capitalize;
   text-align: left;
   padding-left: 10px;
+  outline: none;
 `;
 
 export const CustomerDetailsInputs = styled(Form)`

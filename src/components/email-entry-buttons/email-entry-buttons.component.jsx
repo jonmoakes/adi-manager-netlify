@@ -9,11 +9,11 @@ import { setErrorMessage } from "../../store/error/error.action";
 import { startLoader, stopLoader } from "../../store/loader/loader.action";
 
 import LessonEntryEmailButton from "./pupil-email-buttons/lesson-entry-email-button.component";
-// import IncomeEntryEmailButton from "./pupil-email-buttons/income-entry-email-button.component";
+import IncomeEntryEmailButton from "./pupil-email-buttons/income-entry-email-button.component";
 // import BlockBookingEntryEmailButton from "./pupil-email-buttons/block-booking-email-button.component";
 // import PupilProgressEntryEmailButton from "./pupil-email-buttons/pupil-progress-entry-email-button.component";
 import InstructorLessonEmailEntryButton from "./instructor-email-buttons/instructor-lesson-entry-email-button.component";
-// import InstructorIncomeEmailEntryButton from "./instructor-email-buttons/instructor-income-email-button.component";
+import InstructorIncomeEmailEntryButton from "./instructor-email-buttons/instructor-income-email-button.component";
 // import InstructorExpenseEmailEntryButton from "./instructor-email-buttons/instructor-expenses-email-button.component";
 // import InstructorTotalExpensesWeekEmailEntryButton from "./instructor-email-buttons/instructor-total-expenses-week-email-button.component";
 // import InstructorTotalExpensesMonthEmailEntryButton from "./instructor-email-buttons/instructor-total-expenses-month-email-button.component";
@@ -30,6 +30,8 @@ const EmailEntryButtons = ({ entry, emailBody }) => {
   const dispatch = useDispatch();
   const location = useLocation();
   const path = location.pathname;
+
+  console.log(emailBody);
 
   useEffect(() => {
     if (!currentUser) return;
@@ -67,16 +69,18 @@ const EmailEntryButtons = ({ entry, emailBody }) => {
   return (
     <>
       <LessonEntryEmailButton {...{ path, pupilEmail, emailBody }} />
-      {/* <IncomeEntryEmailButton {...{ path, pupilEmail, emailBody }} />
+      <IncomeEntryEmailButton {...{ path, pupilEmail, emailBody }} />
+      {/* 
       <BlockBookingEntryEmailButton {...{ path, pupilEmail, emailBody }} />
       <PupilProgressEntryEmailButton {...{ path, pupilEmail, emailBody }} /> */}
       <NoEmailFound {...{ path, pupilEmail }} />
       <InstructorLessonEmailEntryButton
         {...{ path, instructorEmail, emailBody }}
       />
-      {/* <InstructorIncomeEmailEntryButton
+      <InstructorIncomeEmailEntryButton
         {...{ path, instructorEmail, emailBody }}
       />
+      {/* 
       <InstructorExpenseEmailEntryButton
         {...{ path, instructorEmail, emailBody }}
       />

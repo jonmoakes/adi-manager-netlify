@@ -67,6 +67,15 @@ const AddLessonEntry = lazy(() =>
 const EditLessonEntry = lazy(() =>
   import("./routes/lessons/edit-lesson-entry/edit-lesson-entry.component")
 );
+const IncomeTable = lazy(() =>
+  import("./routes/income/income-table/income-table.component")
+);
+const AddIncomeEntry = lazy(() =>
+  import("./routes/income/add-income/add-income-entry.component")
+);
+const EditIncomeEntry = lazy(() =>
+  import("./routes/income/edit-income-entry/edit-income-entry.component")
+);
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
@@ -189,6 +198,15 @@ const App = () => {
               <Route
                 path="edit-lesson-entry"
                 element={currentUser && <EditLessonEntry />}
+              />
+              <Route path="income" element={currentUser && <IncomeTable />} />
+              <Route
+                path="add-income-entry"
+                element={currentUser && <AddIncomeEntry />}
+              />
+              <Route
+                path="edit-income-entry"
+                element={currentUser && <EditIncomeEntry />}
               />
               <Route
                 path="delete-entry"

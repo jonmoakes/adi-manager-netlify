@@ -8,11 +8,11 @@ import useFireSwal from "../../use-fire-swal";
 import { selectCurrentUser } from "../../../store/user/user.selector";
 import { selectEntry } from "../../../store/entry/entry.selector";
 import { clearEntry } from "../../../store/entry/entry.action";
+import { setErrorMessage } from "../../../store/error/error.action";
 
 import useCategoryCheck from "../../use-category-check";
 
 import { diary, deleteConfirmedMessage } from "../../../strings/strings";
-import { setErrorMessage } from "../../../store/error/error.action";
 
 const useDeleteDiaryEntry = () => {
   const { category } = useCategoryCheck();

@@ -500,8 +500,50 @@ export const InfoButton = styled(SearchInfoSVG)`
   border-radius: 50px;
   animation: infinite 1s ${PulseAnimation};
 
+  &.combined {
+    animation: 1s ${slideInLeftAnimation};
+  }
+
   &:hover {
     cursor: pointer;
+  }
+`;
+
+export const ClearAndReloadButton = styled.button`
+  border-radius: 10px;
+  border: 2px solid black;
+  margin-top: 20px;
+  width: 50%;
+  height: 40px;
+  font-size: 18px;
+  background-color: lightgray;
+  cursor: pointer;
+  animation: 1s ${zoomInRightAnimation};
+  outline: none;
+  color: black;
+  text-transform: capitalize;
+  font-family: inherit;
+
+  :active {
+    transform: translate(0, 0.5rem);
+    box-shadow: 6px 6px 6px black;
+
+    @media screen and (max-width: 1024px) {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 450px) {
+    width: 90%;
+    font-size: 16px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 90%;
+    font-size: 14px;
   }
 `;
 

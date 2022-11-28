@@ -24,6 +24,11 @@ export const GreenSpan = styled.span`
   text-shadow: 1px 1px 1px black;
 `;
 
+export const Amount = styled.span`
+  color: #cc1616;
+  font-size: 30px;
+`;
+
 export const TableHeaderRemoveText = styled.span`
   font-size: 20px;
 
