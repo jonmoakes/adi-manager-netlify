@@ -11,7 +11,7 @@ const UserId = () => {
       <p>
         Your User Id is:
         <br />
-        <HighlightText>{currentUser.id}</HighlightText>
+        <HighlightText className="truncate">{currentUser.id}</HighlightText>
       </p>
       <hr />
     </>

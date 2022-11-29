@@ -3,6 +3,14 @@ import styled from "styled-components";
 export const HighlightText = styled.span`
   color: #cc1616;
   font-size: 20px;
+
+  &.truncate {
+    word-wrap: break-word;
+
+    @media screen and (max-width: 450px) {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const SmallHighlightText = styled.span`

@@ -13,7 +13,7 @@ const SubscriptionId = () => {
       <p>
         Your Subscription Id is:
         <br />
-        <HighlightText>{subscriptionId}</HighlightText>
+        <HighlightText className="truncate">{subscriptionId}</HighlightText>
       </p>
       <hr />
     </>
