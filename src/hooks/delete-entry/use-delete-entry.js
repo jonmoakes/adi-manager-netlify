@@ -3,7 +3,7 @@ import useDeleteLessonEntry from "./categories/use-delete-lesson-entry";
 import useDeleteIncomeEntry from "./categories/use-delete-income-entry";
 import useDeleteExpenseEntry from "./categories/use-delete-expense-entry";
 import useDeleteTotalExpensesWeekEntry from "./categories/use-delete-total-expenses-week";
-// import useDeleteTotalExpensesMonthEntry from "./categories/use-delete-total-expenses-month";
+import useDeleteTotalExpensesMonthEntry from "./categories/use-delete-total-expenses-month";
 // import useDeleteTotalExpensesYearEntry from "./categories/use-delete-total-expenses-year";
 // import useDeletePupilEntry from "./categories/use-delete-pupil-entry";
 // import useDeleteBlockBookingEntry from "./categories/use-delete-block-booking-entry";
@@ -18,7 +18,7 @@ const useDeleteEntry = () => {
   const { deleteIncomeEntry } = useDeleteIncomeEntry();
   const { deleteExpenseEntry } = useDeleteExpenseEntry();
   const { deleteTotalExpensesWeekEntry } = useDeleteTotalExpensesWeekEntry();
-  // const { deleteTotalExpensesMonthEntry } = useDeleteTotalExpensesMonthEntry();
+  const { deleteTotalExpensesMonthEntry } = useDeleteTotalExpensesMonthEntry();
   // const { deleteTotalExpensesYearEntry } = useDeleteTotalExpensesYearEntry();
   // const { deletePupilEntry } = useDeletePupilEntry();
   // const { deleteBlockBookingEntry } = useDeleteBlockBookingEntry();
@@ -30,7 +30,7 @@ const useDeleteEntry = () => {
     deleteIncomeEntry();
     deleteExpenseEntry();
     deleteTotalExpensesWeekEntry();
-    // deleteTotalExpensesMonthEntry();
+    deleteTotalExpensesMonthEntry();
     // deleteTotalExpensesYearEntry();
     // deletePupilEntry();
     // deleteBlockBookingEntry();

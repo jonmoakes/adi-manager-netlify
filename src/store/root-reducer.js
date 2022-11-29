@@ -11,6 +11,7 @@ import { lessonReducer } from "./lesson/lesson.reducer";
 import { incomeReducer } from "./income/income.reducer";
 import { expensesReducer } from "./expenses/expenses.reducer";
 import { totalExpensesWeekReducer } from "./total-expenses-week/total-expenses-week.reducer";
+import { totalExpensesMonthReducer } from "./total-expenses-month/total-expenses-month.reducer";
 
 export const rootReducer = combineReducers({
   user: userReducer,
@@ -24,4 +25,5 @@ export const rootReducer = combineReducers({
   income: incomeReducer,
   expenses: expensesReducer,
   totalExpensesWeek: totalExpensesWeekReducer,
+  totalExpensesMonth: totalExpensesMonthReducer,
 });

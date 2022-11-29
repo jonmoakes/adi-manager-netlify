@@ -103,6 +103,21 @@ const EditTotalExpensesWeekEntry = lazy(() =>
     "./routes/total-expenses-week/edit-total-expenses-week/edit-total-expenses-week.component"
   )
 );
+const TotalExpensesMonthTable = lazy(() =>
+  import(
+    "./routes/total-expenses-month/total-expenses-month-table/total-expenses-month-table.component"
+  )
+);
+const AddTotalExpensesMonthEntry = lazy(() =>
+  import(
+    "./routes/total-expenses-month/add-total-expenses-month/add-total-expenses-month.component"
+  )
+);
+const EditTotalExpensesMonthEntry = lazy(() =>
+  import(
+    "./routes/total-expenses-month/edit-total-expenses-month/edit-total-expenses-month-entry.component"
+  )
+);
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
@@ -259,6 +274,18 @@ const App = () => {
               <Route
                 path="edit-total-expenses-week-entry"
                 element={currentUser && <EditTotalExpensesWeekEntry />}
+              />
+              <Route
+                path="total-expenses-month"
+                element={currentUser && <TotalExpensesMonthTable />}
+              />
+              <Route
+                path="add-total-expenses-month-entry"
+                element={currentUser && <AddTotalExpensesMonthEntry />}
+              />
+              <Route
+                path="edit-total-expenses-month-entry"
+                element={currentUser && <EditTotalExpensesMonthEntry />}
               />
               <Route
                 path="delete-entry"
