@@ -1,9 +1,10 @@
 import { Div } from "../../../styles/div/div.styles";
+import { RedH2Underline } from "../../../styles/h2/h2.styles";
 
 const InstructionsForUse = () => (
   <>
     <Div>
-      <h2>instructions for use:</h2>
+      <RedH2Underline>instructions for use:</RedH2Underline>
       <p>there is no right or wrong way to use the app.</p>
       <p>
         you can store whatever data you need. so if you don't want to store your

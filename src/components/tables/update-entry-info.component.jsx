@@ -24,9 +24,11 @@ const UpdateEntryInfo = ({ primaryPhoneNumber, emailAddress }) => {
 
   return (
     <>
-      <p>Tap to toggle help.</p>
-      <InfoButton onClick={toggleShowInfo} />
-      <hr />
+      <div>
+        <p>Tap to toggle help.</p>
+        <InfoButton onClick={toggleShowInfo} />
+        <hr />
+      </div>
 
       {showInfo && (
         <BounceInDiv>

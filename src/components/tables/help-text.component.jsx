@@ -9,8 +9,10 @@ const HelpText = () => {
   const { toggleShowInfo, showInfo } = useToggleShowInfo();
   return (
     <>
-      <p>Tap to toggle help.</p>
-      <InfoButton onClick={toggleShowInfo} />
+      <div>
+        <p>Tap to toggle help.</p>
+        <InfoButton onClick={toggleShowInfo} />
+      </div>
 
       {showInfo && (
         <BounceInDiv>

@@ -250,7 +250,7 @@ export const ErrorDiv = styled.div`
   width: 80%;
   margin: 0 auto;
   height: auto;
-  padding: 0px 10px 20px 10px;
+  padding: 20px 10px 20px 10px;
   border-radius: 15px;
 `;
 

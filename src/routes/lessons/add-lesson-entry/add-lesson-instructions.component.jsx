@@ -15,8 +15,10 @@ const AddLessonInstructions = () => {
 
   return (
     <>
-      <p>tap to toggle help.</p>
-      <InfoButton onClick={toggleShowInfo} />
+      <div>
+        <p>tap to toggle help.</p>
+        <InfoButton onClick={toggleShowInfo} />
+      </div>
 
       {showInfo && path === addLessonEntryPath && (
         <BounceInDiv>
