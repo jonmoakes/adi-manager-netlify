@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 
+import { DateDiv } from "../../../styles/div/div.styles";
 import {
   CapitalizedInput,
   Form,
@@ -11,15 +12,18 @@ import { HighlightText } from "../../../styles/span/span.styles";
 
 const EditIncomeEntryForm = ({ handleChange, entry }) => (
   <>
-    <p>date of entry:</p>
+    <DateDiv>
+      <p>date of entry:</p>
 
-    {entry.date && (
-      <p>
-        <HighlightText>
-          {format(new Date(entry.date), "dd MMMM yyyy")}
-        </HighlightText>
-      </p>
-    )}
+      {entry.date && (
+        <p>
+          <HighlightText>
+            {format(new Date(entry.date), "dd MMMM yyyy")}
+          </HighlightText>
+        </p>
+      )}
+    </DateDiv>
+
     <Form>
       <Label>Edit Date:</Label>
       <StyledInput

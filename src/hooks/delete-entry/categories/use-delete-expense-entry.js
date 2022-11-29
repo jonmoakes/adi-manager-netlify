@@ -1,42 +1,50 @@
 import { useSelector, useDispatch } from "react-redux";
-import firebase from "firebase/compat/app";
+import { useNavigate } from "react-router-dom";
+import { doc, getDoc, updateDoc, arrayRemove } from "firebase/firestore";
+import { db } from "../../../utils/firebase/firebase.utils";
 
-import { firestore } from "../../../../firebase/firebase.utils";
+import useFireSwal from "../../use-fire-swal";
 
-import { selectCurrentUser } from "../../../../redux/user/user.selectors";
-import { selectEntry } from "../../../../redux/entry/entry.selectors";
+import { selectCurrentUser } from "../../../store/user/user.selector";
+import { selectEntry } from "../../../store/entry/entry.selector";
+import { clearEntry } from "../../../store/entry/entry.action";
+import { setErrorMessage } from "../../../store/error/error.action";
 
-import useShowDeleteConfirmedSwal from "../use-show-delete-confirmed-swal";
+import useCategoryCheck from "../../use-category-check";
 
-import { categoryCheck } from "../../../../reusable-functions/reusable-functions";
-
-import { expenses } from "../../../../resuable-messages/reusable-messages";
+import { expenses, deleteConfirmedMessage } from "../../../strings/strings";
 
 const useDeleteExpenseEntry = () => {
-  const { showDeleteConfirmedSwal } = useShowDeleteConfirmedSwal();
+  const { category } = useCategoryCheck();
+  const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
   const entry = useSelector(selectEntry);
   const dispatch = useDispatch();
-  const category = categoryCheck(entry);
+  const navigate = useNavigate();
 
   const deleteExpenseEntry = async () => {
     if (!currentUser) return;
-    const userRef = await firestore.doc(`users/${currentUser.id}`);
+    const userRef = doc(db, "users", currentUser.id);
+    const userSnapshot = await getDoc(userRef);
+
     try {
-      if (entry && category === expenses) {
-        userRef
-          .update({
-            expensesEntries: firebase.firestore.FieldValue.arrayRemove(entry),
-          })
-          .then(showDeleteConfirmedSwal());
-      } else {
-        return;
-      }
+      if (!userSnapshot.exists || !entry || category !== expenses) return;
+      const data = userSnapshot.data();
+      const { expensesEntries } = data;
+      const entryToRemove = expensesEntries.find(
+        (firestoreEntry) => firestoreEntry.id === entry.id
+      );
+
+      await updateDoc(userRef, { expensesEntries: arrayRemove(entryToRemove) });
+      fireSwal("success", deleteConfirmedMessage, "", 1500, false, true);
+      navigate(-1);
+      dispatch(clearEntry());
     } catch (error) {
-      dispatch({ type: "SET_ERROR_MESSAGE", payload: error.message });
+      setErrorMessage(error.message);
     }
   };
+
   return { deleteExpenseEntry };
 };
 

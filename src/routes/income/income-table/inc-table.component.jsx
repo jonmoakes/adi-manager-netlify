@@ -35,7 +35,7 @@ import { scrollToTop } from "../../../reusable-functions/scroll-to-top";
 
 import { deleteEntryPath, editIncomeEntryPath } from "../../../strings/strings";
 
-const IncomeTable = () => {
+const IncTable = () => {
   useIncomeEntriesSnapshotListener();
 
   const errorMessage = useSelector(selectErrorMessage);
@@ -190,4 +190,4 @@ const IncomeTable = () => {
   );
 };
 
-export default IncomeTable;
+export default IncTable;

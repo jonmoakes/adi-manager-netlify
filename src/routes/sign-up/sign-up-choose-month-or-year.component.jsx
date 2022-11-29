@@ -1,6 +1,5 @@
-import { useState } from "react";
-
-import useSignUpFunctions from "./use-sign-up-functions.js";
+import useSignUpFunctions from "./use-sign-up-functions";
+import useShowHide from "../../hooks/use-show-hide";
 
 import {
   Div,
@@ -18,17 +17,17 @@ const SignUpChooseMonthOrYear = () => {
     chooseMonthAndPushToCreateDetails,
     chooseYearAndPushToCreateDetails,
   } = useSignUpFunctions();
-  const [showSubscriptionOptions, setShowSubscriptionOptions] = useState(false);
+  const { showComponent, showData, hideData } = useShowHide();
 
   return (
     <Div>
-      {!showSubscriptionOptions && (
-        <TermsReadButton onClick={() => setShowSubscriptionOptions(true)}>
+      {hideData && (
+        <TermsReadButton onClick={showComponent}>
           I Have Read & Accepted The Terms & Conditions.
         </TermsReadButton>
       )}
 
-      {showSubscriptionOptions && (
+      {showData && (
         <>
           <p>thanks!</p>
           <p>

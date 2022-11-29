@@ -1,4 +1,7 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { zoomInLeft } from "react-animations";
+
+const zoomInLeftAnimation = keyframes`${zoomInLeft}`;
 
 export const WhitesmokeText = styled.p`
   color: whitesmoke;
@@ -39,6 +42,13 @@ export const EmailLink = styled.p`
       text-decoration: none;
     }
   }
+`;
+
+export const MoneyOptionsText = styled.p`
+  animation: 1s ${zoomInLeftAnimation};
+  text-decoration: underline;
+  margin: 25px auto 15px auto;
+  font-size: 20px;
 `;
 
 export const OrderRefInfo = styled.p`

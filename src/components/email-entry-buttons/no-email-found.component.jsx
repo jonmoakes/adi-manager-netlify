@@ -1,8 +1,10 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { InfoButton } from "../../styles/buttons/buttons.styles";
 
+import useToggleShowInfo from "../../hooks/use-toggle-show-info.component";
+
+import { InfoButton } from "../../styles/buttons/buttons.styles";
 import { BounceInDiv } from "../../styles/div/div.styles";
+import { RedH2Underline } from "../../styles/h2/h2.styles";
 import { HighlightText } from "../../styles/span/span.styles";
 
 import {
@@ -13,13 +15,9 @@ import {
 } from "../../strings/strings";
 
 const NoEmailFound = ({ pupilEmail }) => {
-  const [showNoEmailInfo, setShowNoEmailInfo] = useState(false);
+  const { toggleShowInfo, showInfo } = useToggleShowInfo();
   const location = useLocation();
   const path = location.pathname;
-
-  const toggleInfo = () => {
-    setShowNoEmailInfo(!showNoEmailInfo);
-  };
 
   return (
     <>
@@ -30,12 +28,12 @@ const NoEmailFound = ({ pupilEmail }) => {
           path === editPupilProgressEntryPath) && (
           <>
             <div>
-              <InfoButton onClick={toggleInfo} />
+              <InfoButton onClick={toggleShowInfo} />
             </div>
 
-            {showNoEmailInfo && (
+            {showInfo && (
               <BounceInDiv>
-                <h2>emailing entry:</h2>
+                <RedH2Underline>emailing entry:</RedH2Underline>
 
                 <p>
                   tap the "email data to myself" button below to populate an

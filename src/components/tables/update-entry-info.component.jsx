@@ -1,5 +1,6 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
+
+import useToggleShowInfo from "../../hooks/use-toggle-show-info.component";
 
 import { InfoButton } from "../../styles/buttons/buttons.styles";
 import { BounceInDiv } from "../../styles/div/div.styles";
@@ -12,21 +13,20 @@ import {
   editTotalExpensesYearEntryPath,
   editLessonEntryPath,
   editIncomeEntryPath,
-  editExpenseEntry,
+  editExpenseEntryPath,
   editTotalExpensesWeekEntryPath,
   editBlockBookingEntryPath,
 } from "../../strings/strings";
 
 const UpdateEntryInfo = ({ primaryPhoneNumber, emailAddress }) => {
-  const [showInfo, setShowInfo] = useState(false);
+  const { toggleShowInfo, showInfo } = useToggleShowInfo();
   const location = useLocation();
 
-  const toggleInfo = () => {
-    setShowInfo(!showInfo);
-  };
   return (
     <>
-      <InfoButton onClick={toggleInfo} />
+      <p>Tap to toggle help.</p>
+      <InfoButton onClick={toggleShowInfo} />
+      <hr />
 
       {showInfo && (
         <BounceInDiv>
@@ -93,7 +93,7 @@ const UpdateEntryInfo = ({ primaryPhoneNumber, emailAddress }) => {
 
           {(location.pathname === editLessonEntryPath ||
             location.pathname === editIncomeEntryPath ||
-            location.pathname === editExpenseEntry ||
+            location.pathname === editExpenseEntryPath ||
             location.pathname === editTotalExpensesWeekEntryPath ||
             location.pathname === editTotalExpensesMonthEntryPath ||
             location.pathname === editTotalExpensesYearEntryPath ||

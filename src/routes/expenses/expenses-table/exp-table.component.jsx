@@ -9,9 +9,9 @@ import {
   useRowSelect,
 } from "react-table";
 
-import useLessonEntriesSnapshotListener from "./use-lesson-entries-snapshot-listener";
+import useExpensesEntriesSnapshotListener from "./use-expenses-entries-snapshot-listener";
 
-import { selectLessonEntries } from "../../../store/lesson/lesson.selector";
+import { selectExpensesEntries } from "../../../store/expenses/expenses.selector";
 import { selectErrorMessage } from "../../../store/error/error.selector";
 import { selectIsLoading } from "../../../store/loader/loader.selector";
 
@@ -20,7 +20,8 @@ import CheckBox from "../../../components/tables/checkbox";
 import Loader from "../../../components/loader/loader.component";
 import FetchError from "../../../components/fetch-error/fetch-error.component";
 import NoEntriesInfo from "../../../components/tables/no-entries-info.component";
-import TooManyEntriesSelectedHelp from "../../../components/tables/too-many-entries-selected-help.component";
+import MultipleEntriesInfo from "../../../components/tables/multiple-entries-info.component";
+import CombinedTotal from "../../../components/tables/combined-total.component";
 import SearchBox from "../../../components/tables/search-box.component";
 
 import EditRemoveButtons from "../../../components/tables/edit-remove-buttons.component";
@@ -32,17 +33,20 @@ import { TableHeaderRemoveText } from "../../../styles/span/span.styles";
 
 import { scrollToTop } from "../../../reusable-functions/scroll-to-top";
 
-import { deleteEntryPath, editLessonEntryPath } from "../../../strings/strings";
+import {
+  deleteEntryPath,
+  editExpenseEntryPath,
+} from "../../../strings/strings";
 
-const LessTable = () => {
-  useLessonEntriesSnapshotListener();
+const ExpTable = () => {
+  useExpensesEntriesSnapshotListener();
 
   const errorMessage = useSelector(selectErrorMessage);
-  let lessonEntries = useSelector(selectLessonEntries);
+  let expensesEntries = useSelector(selectExpensesEntries);
   const isLoading = useSelector(selectIsLoading);
 
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => lessonEntries, [lessonEntries]);
+  const data = useMemo(() => expensesEntries, [expensesEntries]);
 
   const initialState = useMemo(
     () => ({ sortBy: [{ id: "date", desc: true }], pageSize: 25 }),
@@ -102,13 +106,23 @@ const LessTable = () => {
   const { globalFilter, pageIndex, pageSize } = state;
   const chosenEntry = selectedFlatRows.map((row) => row.original);
   // next line is so only one edit and remove button appears.
-  lessonEntries = chosenEntry;
+  expensesEntries = chosenEntry;
   const dataLength = data.length;
   const rowsLength = rows.length;
   const chosenEntryLength = chosenEntry.length;
-  const entries = lessonEntries;
-  const editPath = editLessonEntryPath;
+  const entries = expensesEntries;
+  const editPath = editExpenseEntryPath;
   const deletePath = deleteEntryPath;
+
+  const getSelectedAmounts = expensesEntries.map((entry) => {
+    return Number(entry.amount);
+  });
+
+  const sum = getSelectedAmounts.reduce(
+    (firstSelectedEntry, subsequentEntries) =>
+      firstSelectedEntry + subsequentEntries,
+    0
+  );
 
   return (
     <TableContainerDiv>
@@ -118,10 +132,10 @@ const LessTable = () => {
       ) : (
         <>
           <NoEntriesInfo {...{ dataLength }} />
+          <MultipleEntriesInfo {...{ dataLength, chosenEntryLength }} />
 
           {!!data.length && (
             <>
-              <TooManyEntriesSelectedHelp {...{ chosenEntryLength }} />
               <SearchBox
                 {...{
                   chosenEntry,
@@ -141,6 +155,8 @@ const LessTable = () => {
                   deletePath,
                 }}
               />
+
+              <CombinedTotal {...{ chosenEntryLength, sum }} />
 
               <TableWithColoredCells
                 {...{
@@ -177,4 +193,4 @@ const LessTable = () => {
   );
 };
 
-export default LessTable;
+export default ExpTable;

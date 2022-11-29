@@ -1,39 +1,47 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../utils/firebase/firebase.utils";
 
-import { firestore } from "../../../../firebase/firebase.utils";
+import useFireSwal from "../../use-fire-swal";
 
-import { selectCurrentUser } from "../../../../redux/user/user.selectors";
-import { selectExpensesEntries } from "../../../../redux/expenses/expenses.selectors";
-import { selectEntry } from "../../../../redux/entry/entry.selectors";
+import { clearEntry } from "../../../store/entry/entry.action";
+import { setErrorMessage } from "../../../store/error/error.action";
+import { selectCurrentUser } from "../../../store/user/user.selector";
+import { selectExpensesEntries } from "../../../store/expenses/expenses.selector";
+import { selectEntry } from "../../../store/entry/entry.selector";
 
-import useEntryAddedSuccessSwal from "../use-entry-added-success-swal";
-
-import { addExpensesEntryPath } from "../../../../resuable-messages/reusable-messages";
+import {
+  addExpensesEntryPath,
+  entrySavedMessage,
+} from "../../../strings/strings";
 
 const useAddExpensesEntryToFirestore = () => {
-  const { entryAddedSuccessSwal } = useEntryAddedSuccessSwal();
+  const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
   const expensesEntries = useSelector(selectExpensesEntries);
   const entry = useSelector(selectEntry);
-
   const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const addExpensesEntryToFirestore = async () => {
-    const userRef = await firestore.doc(`users/${currentUser.id}`);
+    const userRef = doc(db, "users", currentUser.id);
+    const userSnapshot = await getDoc(userRef);
+
     try {
       if (location.pathname === addExpensesEntryPath && userRef) {
-        await userRef
-          .update({
-            expensesEntries: [...expensesEntries, entry],
-          })
-          .then(entryAddedSuccessSwal())
-          .then(dispatch({ type: "CLEAR_ENTRY" }));
+        if (!userSnapshot.exists) return;
+        await updateDoc(userRef, {
+          expensesEntries: [...expensesEntries, entry],
+        });
+        fireSwal("success", entrySavedMessage, "", 1500, false, true);
+        navigate(-1);
+        dispatch(clearEntry());
       }
     } catch (error) {
-      dispatch({ type: "SET_ERROR_MESSAGE", payload: error.message });
+      dispatch(setErrorMessage(error.message));
     }
   };
 

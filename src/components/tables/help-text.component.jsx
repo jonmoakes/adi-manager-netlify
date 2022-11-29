@@ -1,4 +1,4 @@
-import { useState } from "react";
+import useToggleShowInfo from "../../hooks/use-toggle-show-info.component";
 
 import { InfoButton } from "../../styles/buttons/buttons.styles";
 import { BounceInDiv } from "../../styles/div/div.styles";
@@ -6,11 +6,11 @@ import { HighlightText, GreenSpan } from "../../styles/span/span.styles";
 import { RedH2Underline } from "../../styles/h2/h2.styles";
 
 const HelpText = () => {
-  const [showInfo, setShowInfo] = useState(false);
+  const { toggleShowInfo, showInfo } = useToggleShowInfo();
   return (
     <>
       <p>Tap to toggle help.</p>
-      <InfoButton onClick={() => setShowInfo(!showInfo)} />
+      <InfoButton onClick={toggleShowInfo} />
 
       {showInfo && (
         <BounceInDiv>

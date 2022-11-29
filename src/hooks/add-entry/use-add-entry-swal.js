@@ -4,7 +4,7 @@ import withReactContent from "sweetalert2-react-content";
 import useAddDiaryEntryToFirestore from "./categories/use-add-diary-entry-to-firestore";
 import useAddLessonEntryToFirestore from "./categories/use-add-lesson-entry-to-firestore";
 import useAddIncomeEntryToFirestore from "./categories/use-add-income-entry-to-firestore";
-// import useAddExpensesEntryToFirestore from "./categories/use-add-expenses-entry-to-firestore";
+import useAddExpensesEntryToFirestore from "./categories/use-add-expenses-entry-to-firestore";
 // import useAddTotalExpensesWeekEntryToFirestore from "./categories/use-add-total-expenses-week-entry-to-firestore";
 // import useAddTotalExpensesMonthEntryToFirestore from "./categories/use-add-total-expenses-month-entry-to-firestore";
 // import useAddTotalExpensesYearEntryToFirestore from "./categories/use-add-total-expenses-year-entry-to-firestore";
@@ -22,7 +22,7 @@ const useAddEntrySwal = () => {
   const { addDiaryEntryToFirestore } = useAddDiaryEntryToFirestore();
   const { addLessonEntryToFirestore } = useAddLessonEntryToFirestore();
   const { addIncomeEntryToFirestore } = useAddIncomeEntryToFirestore();
-  // const { addExpensesEntryToFirestore } = useAddExpensesEntryToFirestore();
+  const { addExpensesEntryToFirestore } = useAddExpensesEntryToFirestore();
   // const { addTotalExpensesWeekEntryToFirestore } =
   //   useAddTotalExpensesWeekEntryToFirestore();
   // const { addTotalExpensesMonthEntryToFirestore } =
@@ -41,7 +41,7 @@ const useAddEntrySwal = () => {
     addDiaryEntryToFirestore();
     addLessonEntryToFirestore();
     addIncomeEntryToFirestore();
-    // addExpensesEntryToFirestore();
+    addExpensesEntryToFirestore();
     // addTotalExpensesWeekEntryToFirestore();
     // addTotalExpensesMonthEntryToFirestore();
     // addTotalExpensesYearEntryToFirestore();

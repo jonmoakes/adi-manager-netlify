@@ -7,7 +7,7 @@ import {
   editDiaryEntryPath,
   editLessonEntryPath,
   editIncomeEntryPath,
-  editExpenseEntry,
+  editExpenseEntryPath,
   editTotalExpensesWeekEntryPath,
   editTotalExpensesMonthEntryPath,
   editTotalExpensesYearEntryPath,
@@ -38,7 +38,7 @@ const EditEntryHeading = () => {
       setCategoryName(lesson);
     } else if (path === editIncomeEntryPath) {
       setCategoryName(income);
-    } else if (path === editExpenseEntry) {
+    } else if (path === editExpenseEntryPath) {
       setCategoryName(expense);
     } else if (path === editTotalExpensesWeekEntryPath) {
       setCategoryName(totalExpensesWeek);

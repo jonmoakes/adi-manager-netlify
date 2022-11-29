@@ -18,7 +18,7 @@ const useAddSubscriptionDataToFirestore = () => {
   const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
-  // gets custimerId & subscriptionId
+  // gets customerId & subscriptionId
   const subscriptionData = useSelector(selectSubscriptionData);
   const dispatch = useDispatch();
 

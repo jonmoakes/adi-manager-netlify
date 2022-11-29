@@ -493,7 +493,7 @@ export const ForgotPasswordButton = styled(Button)`
 `;
 
 export const InfoButton = styled(SearchInfoSVG)`
-  margin: 10px 0px 0px 0px;
+  margin: 10px 0px 10px 0px;
   width: 35px;
   height: 35px;
   border: 2px solid black;
@@ -599,6 +599,48 @@ export const ClearSearchButton = styled.button`
   @media screen and (max-width: 450px) {
     height: 40px;
   }
+`;
+
+export const MoneyOptionsIncomeButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInLeftAnimation};
+  background-color: #ff0e80;
+`;
+
+export const MoneyOptionsBlockBookingsButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInRightAnimation};
+  background-color: red;
+`;
+
+export const MoneyOptionsExpensesButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInRightAnimation};
+  background-color: #0802ff;
+`;
+
+export const MoneyOptionsExpensesWeekButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInRightAnimation};
+  background-color: whitesmoke;
+  color: black;
+  text-shadow: none;
+`;
+
+export const MoneyOptionsExpensesMonthButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInLeftAnimation};
+  background-color: yellow;
+  color: black;
+  text-shadow: none;
+`;
+
+export const MoneyOptionsExpensesYearButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInRightAnimation};
+  background-color: #00985f;
+  color: black;
+  text-shadow: none;
 `;
 
 export const PayButton = styled(Button)`

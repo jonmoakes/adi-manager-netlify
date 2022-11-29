@@ -67,6 +67,9 @@ const AddLessonEntry = lazy(() =>
 const EditLessonEntry = lazy(() =>
   import("./routes/lessons/edit-lesson-entry/edit-lesson-entry.component")
 );
+export const MoneyOptions = lazy(() =>
+  import("./routes/money-options/money-options.component")
+);
 const IncomeTable = lazy(() =>
   import("./routes/income/income-table/income-table.component")
 );
@@ -75,6 +78,15 @@ const AddIncomeEntry = lazy(() =>
 );
 const EditIncomeEntry = lazy(() =>
   import("./routes/income/edit-income-entry/edit-income-entry.component")
+);
+const ExpensesTable = lazy(() =>
+  import("./routes/expenses/expenses-table/expenses-table.component")
+);
+const AddExpensesEntry = lazy(() =>
+  import("./routes/expenses/add-expenses/add-expenses-entry.component")
+);
+const EditExpenseEntry = lazy(() =>
+  import("./routes/expenses/edit-expense-entry/edit-expense-entry.component")
 );
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
@@ -199,6 +211,7 @@ const App = () => {
                 path="edit-lesson-entry"
                 element={currentUser && <EditLessonEntry />}
               />
+              <Route path="money" element={currentUser && <MoneyOptions />} />
               <Route path="income" element={currentUser && <IncomeTable />} />
               <Route
                 path="add-income-entry"
@@ -207,6 +220,18 @@ const App = () => {
               <Route
                 path="edit-income-entry"
                 element={currentUser && <EditIncomeEntry />}
+              />
+              <Route
+                path="expenses"
+                element={currentUser && <ExpensesTable />}
+              />
+              <Route
+                path="add-expenses-entry"
+                element={currentUser && <AddExpensesEntry />}
+              />
+              <Route
+                path="edit-expense-entry"
+                element={currentUser && <EditExpenseEntry />}
               />
               <Route
                 path="delete-entry"

@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { DateDiv } from "../../../styles/div/div.styles";
 
 import {
   Form,
@@ -12,15 +13,18 @@ import { HighlightText } from "../../../styles/span/span.styles";
 
 const EditLessonEntryForm = ({ entry, handleChange }) => (
   <>
-    <p>date of entry:</p>
+    <DateDiv>
+      <p>date of entry:</p>
 
-    {entry.date && (
-      <p>
-        <HighlightText>
-          {format(new Date(entry.date), "dd MMMM yyyy")}
-        </HighlightText>
-      </p>
-    )}
+      {entry.date && (
+        <p>
+          <HighlightText>
+            {format(new Date(entry.date), "dd MMMM yyyy")}
+          </HighlightText>
+        </p>
+      )}
+    </DateDiv>
+
     <Form>
       <Label>Edit Date:</Label>
       <StyledInput

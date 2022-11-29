@@ -1,15 +1,10 @@
 import { format } from "date-fns";
 
 import { DateDiv } from "../../../styles/div/div.styles";
-import {
-  Form,
-  Label,
-  StyledInput,
-  StyledTextArea,
-} from "../../../styles/form/form.styles";
+import { Form, Label, StyledInput } from "../../../styles/form/form.styles";
 import { HighlightText } from "../../../styles/span/span.styles";
 
-const EditDiaryEntryForm = ({ handleChange, entry }) => (
+const EditExpenseEntryForm = ({ handleChange, entry }) => (
   <>
     <DateDiv>
       <p>date of entry:</p>
@@ -22,6 +17,7 @@ const EditDiaryEntryForm = ({ handleChange, entry }) => (
         </p>
       )}
     </DateDiv>
+
     <Form>
       <Label>Edit Date:</Label>
       <StyledInput
@@ -31,15 +27,23 @@ const EditDiaryEntryForm = ({ handleChange, entry }) => (
         onChange={handleChange}
       />
 
-      <Label>Edit Diary:</Label>
-      <StyledTextArea
+      <Label>Edit Receipt Description:</Label>
+      <StyledInput
         type="text"
-        name="entry"
+        name="description"
         onChange={handleChange}
-        defaultValue={entry.entry}
+        defaultValue={entry.description}
+      />
+
+      <Label>Edit Receipt Amount ( £ ):</Label>
+      <StyledInput
+        type="number"
+        name="amount"
+        onChange={handleChange}
+        defaultValue={entry.amount}
       />
     </Form>
   </>
 );
 
-export default EditDiaryEntryForm;
+export default EditExpenseEntryForm;

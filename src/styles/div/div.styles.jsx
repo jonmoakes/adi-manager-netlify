@@ -100,7 +100,7 @@ export const TableDiv = styled.div`
   margin: 0px auto 100px auto;
 `;
 
-export const SelectedEntriesInfoDiv = styled.div`
+export const FlexColumnCenteredDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -256,6 +256,23 @@ export const ErrorDiv = styled.div`
 
 export const BounceInDiv = styled.div`
   animation: 1s ${bounceInDownAnimation};
+`;
+
+export const DateDiv = styled.div`
+  width: 100%;
+  margin: 40px auto -40px auto;
+
+  @media screen and (max-width: 850px) {
+    margin: 30px auto -30px auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 30px auto -20px auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 30px auto -10px auto;
+  }
 `;
 
 export const WarningDiv = styled(ErrorDiv)`

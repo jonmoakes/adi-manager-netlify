@@ -1,4 +1,4 @@
-import { useState } from "react";
+import useToggleShowInfo from "../../hooks/use-toggle-show-info.component";
 
 import Intro from "./help/intro.component";
 import DeleteAccountInfo from "./help/delete-account-info.component";
@@ -11,7 +11,7 @@ import { InfoButton } from "../../styles/buttons/buttons.styles";
 import { BounceInDiv } from "../../styles/div/div.styles";
 
 const PortalHelp = () => {
-  const [showInfo, setShowInfo] = useState(false);
+  const { toggleShowInfo, showInfo } = useToggleShowInfo();
 
   return (
     <>
@@ -21,7 +21,7 @@ const PortalHelp = () => {
         cancelling your subscription or requesting a refund.
       </p>
 
-      <InfoButton onClick={() => setShowInfo(!showInfo)} />
+      <InfoButton onClick={toggleShowInfo} />
 
       {showInfo && (
         <BounceInDiv>

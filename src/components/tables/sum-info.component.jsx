@@ -1,7 +1,8 @@
-import { useState } from "react";
+import useToggleShowInfo from "../../hooks/use-toggle-show-info.component";
+
 import {
   BounceInDiv,
-  SelectedEntriesInfoDiv,
+  FlexColumnCenteredDiv,
 } from "../../styles/div/div.styles";
 import {
   InfoButton,
@@ -9,13 +10,20 @@ import {
 } from "../../styles/buttons/buttons.styles";
 
 const SumInfo = () => {
-  const [showInfo, setShowInfo] = useState(false);
+  const { toggleShowInfo, showInfo } = useToggleShowInfo();
+
+  const reload = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <hr />
-      <SelectedEntriesInfoDiv>
-        <InfoButton onClick={() => setShowInfo(!showInfo)} />
-        {showInfo === true && (
+      <FlexColumnCenteredDiv>
+        <p>Tap to toggle help.</p>
+        <InfoButton onClick={toggleShowInfo} />
+
+        {showInfo && (
           <BounceInDiv>
             <p>
               if you have multiple entries selected and you want to clear them,
@@ -26,10 +34,10 @@ const SumInfo = () => {
             </p>
           </BounceInDiv>
         )}
-        <ClearAndReloadButton onClick={() => window.location.reload()}>
+        <ClearAndReloadButton onClick={reload}>
           clear selected entries
         </ClearAndReloadButton>
-      </SelectedEntriesInfoDiv>
+      </FlexColumnCenteredDiv>
     </>
   );
 };

@@ -5,9 +5,10 @@ import LessonEntryEmailButton from "./pupil-email-buttons/lesson-entry-email-but
 import InstructorLessonEntryEmailButton from "./instructor-email-buttons/instructor-lesson-entry-email-button.component";
 import IncomeEntryEmailButton from "./pupil-email-buttons/income-entry-email-button.component";
 import InstructorIncomeEmailEntryButton from "./instructor-email-buttons/instructor-income-email-button.component";
+import InstructorExpenseEmailEntryButton from "./instructor-email-buttons/instructor-expenses-email-button.component";
 // import BlockBookingEntryEmailButton from "./pupil-email-buttons/block-booking-email-button.component";
 // import PupilProgressEntryEmailButton from "./pupil-email-buttons/pupil-progress-entry-email-button.component";
-// import InstructorExpenseEmailEntryButton from "./instructor-email-buttons/instructor-expenses-email-button.component";
+
 // import InstructorTotalExpensesWeekEmailEntryButton from "./instructor-email-buttons/instructor-total-expenses-week-email-button.component";
 // import InstructorTotalExpensesMonthEmailEntryButton from "./instructor-email-buttons/instructor-total-expenses-month-email-button.component";
 // import InstructorTotalExpensesYearEmailEntryButton from "./instructor-email-buttons/instructor-total-expenses-year-email-button.component";
@@ -26,12 +27,12 @@ const EmailEntryButtons = ({ emailBody }) => {
       <IncomeEntryEmailButton {...{ pupilEmail, emailBody }} />
       <InstructorIncomeEmailEntryButton {...{ instructorEmail, emailBody }} />
 
+      <InstructorExpenseEmailEntryButton {...{ instructorEmail, emailBody }} />
+
       {/*  
        <BlockBookingEntryEmailButton {...{ path, pupilEmail, emailBody }} />
       <PupilProgressEntryEmailButton {...{ path, pupilEmail, emailBody }} /> 
-      <InstructorExpenseEmailEntryButton
-        {...{ path, instructorEmail, emailBody }}
-      />
+      
       <InstructorTotalExpensesWeekEmailEntryButton
         {...{ path, instructorEmail, emailBody }}
       />

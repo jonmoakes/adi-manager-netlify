@@ -4,6 +4,7 @@ import { auth } from "../../utils/firebase/firebase.utils";
 import { sendPasswordResetEmail } from "firebase/auth";
 
 import useFireSwal from "../../hooks/use-fire-swal";
+import useShowHide from "../../hooks/use-show-hide";
 
 import { startLoader, stopLoader } from "../../store/loader/loader.action";
 import { selectIsLoading } from "../../store/loader/loader.selector";
@@ -21,7 +22,7 @@ import {
 
 const ForgotPasswordForm = () => {
   const { fireSwal } = useFireSwal();
-  const [showForgotPasswordField, setShowForgotPasswordField] = useState(false);
+  const { showData, hideData, showComponent, hideComponent } = useShowHide();
   const [resetPasswordField, setResetPasswordField] = useState("");
 
   const isLoading = useSelector(selectIsLoading);
@@ -48,7 +49,7 @@ const ForgotPasswordForm = () => {
             true
           ),
           setResetPasswordField(""),
-          setShowForgotPasswordField(false),
+          hideComponent(),
         ];
       })
       .catch((error) => {
@@ -65,16 +66,13 @@ const ForgotPasswordForm = () => {
     <>
       {isLoading && <Loader />}
 
-      {!showForgotPasswordField && (
-        <CustomButton
-          className="forgot-password"
-          onClick={() => setShowForgotPasswordField(true)}
-        >
+      {hideData && (
+        <CustomButton className="forgot-password" onClick={showComponent}>
           Forgot Password?
         </CustomButton>
       )}
 
-      {showForgotPasswordField && (
+      {showData && (
         <>
           <hr />
           <Form onSubmit={handlePasswordResetSubmit}>

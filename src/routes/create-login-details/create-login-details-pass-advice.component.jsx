@@ -1,11 +1,11 @@
-import { useState } from "react";
+import useToggleShowInfo from "../../hooks/use-toggle-show-info.component";
 
 import { InfoButton } from "../../styles/buttons/buttons.styles";
 import { BounceInDiv, Div } from "../../styles/div/div.styles";
 import { Href } from "../../styles/a/a.styles";
 
 const CreateLoginDetailsPassAdvice = () => {
-  const [showInfo, setShowInfo] = useState(false);
+  const { toggleShowInfo, showInfo } = useToggleShowInfo();
 
   return (
     <Div>
@@ -18,7 +18,7 @@ const CreateLoginDetailsPassAdvice = () => {
         you can tap the info button below for suggestions on good security
         practices.
       </p>
-      <InfoButton onClick={() => setShowInfo(!showInfo)} />
+      <InfoButton onClick={toggleShowInfo} />
       {showInfo && (
         <BounceInDiv>
           <p>
