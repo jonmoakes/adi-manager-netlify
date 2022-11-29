@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import { selectEntry } from "../../../store/entry/entry.selector";
-import { format } from "date-fns";
 
 const useHandleUpdatedIncomeEntryChange = () => {
-  const [entry, setEntry] = useState({});
+  const entry = useSelector(selectEntry);
+
   const [updatedEntry, setUpdatedEntry] = useState({
     id: entry.id,
     date: entry.date,
@@ -14,27 +14,13 @@ const useHandleUpdatedIncomeEntryChange = () => {
     blockBooking: entry.blockBooking,
     paymentMethod: entry.paymentMethod,
   });
-  const [formattedIncomeDate, setFormattedIncomeDate] = useState("");
-
-  const reduxEntry = useSelector(selectEntry);
-
-  useEffect(() => {
-    setEntry(reduxEntry);
-    setUpdatedEntry(reduxEntry);
-  }, [reduxEntry]);
-
-  useEffect(() => {
-    if (entry.date) {
-      setFormattedIncomeDate(format(new Date(entry.date), "dd MMMM yyyy"));
-    }
-  }, [entry.date]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setUpdatedEntry({ ...updatedEntry, [name]: value });
   };
 
-  return { entry, updatedEntry, formattedIncomeDate, handleChange };
+  return { entry, updatedEntry, handleChange };
 };
 
 export default useHandleUpdatedIncomeEntryChange;

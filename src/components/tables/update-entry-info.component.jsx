@@ -20,18 +20,19 @@ import {
 const UpdateEntryInfo = ({ primaryPhoneNumber, emailAddress }) => {
   const [showInfo, setShowInfo] = useState(false);
   const location = useLocation();
+
+  const toggleInfo = () => {
+    setShowInfo(!showInfo);
+  };
   return (
     <>
-      <InfoButton onClick={() => setShowInfo(!showInfo)} />
+      <InfoButton onClick={toggleInfo} />
 
       {showInfo && (
         <BounceInDiv>
           <p>
-            edit any data you require below and then tap the <span>save</span>{" "}
-            button to update your entry.
-          </p>
-          <p>
-            the save button will only appear if you make changes to the entry.
+            edit any data you require below and then tap the{" "}
+            <HighlightText>Save</HighlightText> button to update your entry.
           </p>
 
           <p>

@@ -1,16 +1,23 @@
-// import { EmailPupilButton } from "../../style-templates/add-edit-entries/add-edit-entries.styles";
-// import { editIncomeEntryPath } from "../../../resuable-messages/reusable-messages";
+import { useLocation } from "react-router-dom";
 
-// const IncomeEntryEmailButton = ({ path, pupilEmail, emailBody }) => (
-//   <>
-//     {pupilEmail && path === editIncomeEntryPath && (
-//       <a
-//         href={`mailto:${pupilEmail}?subject=Driving%20Lesson%20Receipt&body=${emailBody}`}
-//       >
-//         <EmailPupilButton type="button">Email data To Pupil</EmailPupilButton>
-//       </a>
-//     )}
-//   </>
-// );
+import { EmailPupilButton } from "../../../styles/buttons/buttons.styles";
+import { editIncomeEntryPath } from "../../../strings/strings";
 
-// export default IncomeEntryEmailButton;
+const IncomeEntryEmailButton = ({ pupilEmail, emailBody }) => {
+  const location = useLocation();
+  const path = location.pathname;
+
+  return (
+    <>
+      {pupilEmail && path === editIncomeEntryPath && (
+        <a
+          href={`mailto:${pupilEmail}?subject=Driving%20Lesson%20Receipt&body=${emailBody}`}
+        >
+          <EmailPupilButton type="button">Email data To Pupil</EmailPupilButton>
+        </a>
+      )}
+    </>
+  );
+};
+
+export default IncomeEntryEmailButton;

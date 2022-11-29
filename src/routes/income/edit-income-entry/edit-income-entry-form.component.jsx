@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 
 import {
+  CapitalizedInput,
   Form,
   Label,
   StyledInput,
@@ -29,7 +30,7 @@ const EditIncomeEntryForm = ({ handleChange, entry }) => (
       />
 
       <Label>Edit Pupil Name:</Label>
-      <StyledInput
+      <CapitalizedInput
         type="text"
         name="name"
         onChange={handleChange}

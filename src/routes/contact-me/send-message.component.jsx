@@ -73,7 +73,6 @@ const SendMessage = ({ formDetails }) => {
           }
         },
         (error) => {
-          console.log(error.message);
           startIsNotProcessing();
           handleError(errorSendingMessage, error.message);
         }

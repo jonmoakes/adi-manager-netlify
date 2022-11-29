@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { InfoButton } from "../../styles/buttons/buttons.styles";
 
 import { BounceInDiv } from "../../styles/div/div.styles";
@@ -11,8 +12,15 @@ import {
   editPupilProgressEntryPath,
 } from "../../strings/strings";
 
-const NoEmailFound = ({ pupilEmail, path }) => {
+const NoEmailFound = ({ pupilEmail }) => {
   const [showNoEmailInfo, setShowNoEmailInfo] = useState(false);
+  const location = useLocation();
+  const path = location.pathname;
+
+  const toggleInfo = () => {
+    setShowNoEmailInfo(!showNoEmailInfo);
+  };
+
   return (
     <>
       {!pupilEmail &&
@@ -21,13 +29,9 @@ const NoEmailFound = ({ pupilEmail, path }) => {
           path === editBlockBookingEntryPath ||
           path === editPupilProgressEntryPath) && (
           <>
-            {!showNoEmailInfo && (
-              <div>
-                <InfoButton
-                  onClick={() => setShowNoEmailInfo(!showNoEmailInfo)}
-                />
-              </div>
-            )}
+            <div>
+              <InfoButton onClick={toggleInfo} />
+            </div>
 
             {showNoEmailInfo && (
               <BounceInDiv>

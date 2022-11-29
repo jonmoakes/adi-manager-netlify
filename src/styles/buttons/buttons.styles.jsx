@@ -584,7 +584,7 @@ export const ClearSearchButton = styled.button`
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border: 1px solid black;
-  background-color: #3085d6;
+  background-color: red;
   transform: translateX(2px);
   text-transform: capitalize;
   font-family: inherit;

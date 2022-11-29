@@ -6,6 +6,7 @@ import {
   StyledInput,
   StyledTextArea,
   StyledSelect,
+  CapitalizedInput,
 } from "../../../styles/form/form.styles";
 import { HighlightText } from "../../../styles/span/span.styles";
 
@@ -30,7 +31,7 @@ const EditLessonEntryForm = ({ entry, handleChange }) => (
       />
 
       <Label>Edit Pupil Name:</Label>
-      <StyledInput
+      <CapitalizedInput
         type="text"
         name="name"
         onChange={handleChange}
