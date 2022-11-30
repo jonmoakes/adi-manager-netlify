@@ -6,13 +6,11 @@ import { db } from "../../../utils/firebase/firebase.utils";
 import { selectCurrentUser } from "../../../store/user/user.selector";
 import { updatePupilsEntries } from "../../../store/pupils/pupils.action";
 import { setErrorMessage } from "../../../store/error/error.action";
-import { selectEntry } from "../../../store/entry/entry.selector";
 import { startLoader, stopLoader } from "../../../store/loader/loader.action";
 
 const usePupilsEntriesSnapshotListener = () => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
-  const entry = useSelector(selectEntry);
 
   useEffect(() => {
     if (!currentUser) return;
@@ -38,7 +36,7 @@ const usePupilsEntriesSnapshotListener = () => {
     return () => {
       unsubscribeFromSnapshot();
     };
-  }, [currentUser, dispatch, entry]);
+  }, [currentUser, dispatch]);
 };
 
 export default usePupilsEntriesSnapshotListener;
