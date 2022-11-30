@@ -3,7 +3,7 @@ import { format } from "date-fns";
 
 import { selectEntry } from "../../../store/entry/entry.selector";
 
-const useIncomeEmailBody = () => {
+const useExpensesWeekEmailBody = () => {
   const entry = useSelector(selectEntry);
 
   const emailBody = `Here%20Is%20Your%20Weekly%20Expense%20Invoice%20For%20The%20Week%20Ending%20On%20${format(
@@ -14,4 +14,4 @@ const useIncomeEmailBody = () => {
   return { emailBody };
 };
 
-export default useIncomeEmailBody;
+export default useExpensesWeekEmailBody;

@@ -1,39 +1,47 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../utils/firebase/firebase.utils";
 
-import { firestore } from "../../../../firebase/firebase.utils";
+import useFireSwal from "../../use-fire-swal";
 
-import { selectCurrentUser } from "../../../../redux/user/user.selectors";
-import { selectTotalExpensesYearEntries } from "../../../../redux/total-expenses-year/total-expenses-year.selectors";
-import { selectEntry } from "../../../../redux/entry/entry.selectors";
+import { clearEntry } from "../../../store/entry/entry.action";
+import { setErrorMessage } from "../../../store/error/error.action";
+import { selectCurrentUser } from "../../../store/user/user.selector";
+import { selectTotalExpensesYearEntries } from "../../../store/total-expenses-year/total-expenses-year.selector";
+import { selectEntry } from "../../../store/entry/entry.selector";
 
-import useEntryAddedSuccessSwal from "../use-entry-added-success-swal";
-
-import { addTotalExpensesYearEntryPath } from "../../../../resuable-messages/reusable-messages";
+import {
+  addTotalExpensesYearEntryPath,
+  entrySavedMessage,
+} from "../../../strings/strings";
 
 const useAddTotalExpensesYearEntryToFirestore = () => {
-  const { entryAddedSuccessSwal } = useEntryAddedSuccessSwal();
+  const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
   const totalExpensesYearEntries = useSelector(selectTotalExpensesYearEntries);
   const entry = useSelector(selectEntry);
-
   const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const addTotalExpensesYearEntryToFirestore = async () => {
-    const userRef = await firestore.doc(`users/${currentUser.id}`);
+    const userRef = doc(db, "users", currentUser.id);
+    const userSnapshot = await getDoc(userRef);
+
     try {
       if (location.pathname === addTotalExpensesYearEntryPath && userRef) {
-        await userRef
-          .update({
-            totalExpensesYearEntries: [...totalExpensesYearEntries, entry],
-          })
-          .then(entryAddedSuccessSwal())
-          .then(dispatch({ type: "CLEAR_ENTRY" }));
+        if (!userSnapshot.exists) return;
+        await updateDoc(userRef, {
+          totalExpensesYearEntries: [...totalExpensesYearEntries, entry],
+        });
+        fireSwal("success", entrySavedMessage, "", 1500, false, true);
+        navigate(-1);
+        dispatch(clearEntry());
       }
     } catch (error) {
-      dispatch({ type: "SET_ERROR_MESSAGE", payload: error.message });
+      dispatch(setErrorMessage(error.message));
     }
   };
 

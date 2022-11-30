@@ -118,6 +118,21 @@ const EditTotalExpensesMonthEntry = lazy(() =>
     "./routes/total-expenses-month/edit-total-expenses-month/edit-total-expenses-month-entry.component"
   )
 );
+const TotalExpensesYearTable = lazy(() =>
+  import(
+    "./routes/total-expenses-year/total-expenses-year-table/total-expenses-year-table.component"
+  )
+);
+const AddTotalExpensesYearEntry = lazy(() =>
+  import(
+    "./routes/total-expenses-year/add-total-expenses-year/add-total-expenses-year.component"
+  )
+);
+const EditTotalExpensesYearEntry = lazy(() =>
+  import(
+    "./routes/total-expenses-year/edit-total-expenses-year/edit-total-expenses-year.component"
+  )
+);
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
@@ -286,6 +301,18 @@ const App = () => {
               <Route
                 path="edit-total-expenses-month-entry"
                 element={currentUser && <EditTotalExpensesMonthEntry />}
+              />
+              <Route
+                path="total-expenses-year"
+                element={currentUser && <TotalExpensesYearTable />}
+              />
+              <Route
+                path="add-total-expenses-year-entry"
+                element={currentUser && <AddTotalExpensesYearEntry />}
+              />
+              <Route
+                path="edit-total-expenses-year-entry"
+                element={currentUser && <EditTotalExpensesYearEntry />}
               />
               <Route
                 path="delete-entry"

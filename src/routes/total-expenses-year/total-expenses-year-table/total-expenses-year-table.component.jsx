@@ -2,27 +2,27 @@ import { Link } from "react-router-dom";
 
 import FloatingAddButton from "../../../components/floating-add-button/floating-add-button.component";
 import HelpText from "../../../components/tables/help-text.component";
-import ExpensesMonthTable from "./expenses-month-table.component";
+import ExpensesYearTable from "./expenses-year-table.component";
 
 import { Container } from "../../../styles/container/container.styles";
 import { Div } from "../../../styles/div/div.styles";
 import { Heading } from "../../../styles/h1/h1.styles";
 
-import { addTotalExpensesMonthEntryPath } from "../../../strings/strings";
+import { addTotalExpensesYearEntryPath } from "../../../strings/strings";
 
-const TotalExpensesMonthTableViewPage = () => (
+const TotalExpensesYearTableViewPage = () => (
   <Container>
-    <Link to={addTotalExpensesMonthEntryPath}>
+    <Link to={addTotalExpensesYearEntryPath}>
       <FloatingAddButton />
     </Link>
 
     <Div>
-      <Heading>Total Expenses For The Month of:</Heading>
+      <Heading>Total Expenses For The Year:</Heading>
       <HelpText />
     </Div>
 
-    <ExpensesMonthTable />
+    <ExpensesYearTable />
   </Container>
 );
 
-export default TotalExpensesMonthTableViewPage;
+export default TotalExpensesYearTableViewPage;

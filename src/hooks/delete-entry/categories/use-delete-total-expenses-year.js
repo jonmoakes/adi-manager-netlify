@@ -1,41 +1,53 @@
 import { useSelector, useDispatch } from "react-redux";
-import firebase from "firebase/compat/app";
+import { useNavigate } from "react-router-dom";
+import { doc, getDoc, updateDoc, arrayRemove } from "firebase/firestore";
+import { db } from "../../../utils/firebase/firebase.utils";
 
-import { firestore } from "../../../../firebase/firebase.utils";
+import useFireSwal from "../../use-fire-swal";
 
-import { selectCurrentUser } from "../../../../redux/user/user.selectors";
-import { selectEntry } from "../../../../redux/entry/entry.selectors";
+import { selectCurrentUser } from "../../../store/user/user.selector";
+import { selectEntry } from "../../../store/entry/entry.selector";
+import { clearEntry } from "../../../store/entry/entry.action";
+import { setErrorMessage } from "../../../store/error/error.action";
 
-import useShowDeleteConfirmedSwal from "../use-show-delete-confirmed-swal";
+import useCategoryCheck from "../../use-category-check";
 
-import { categoryCheck } from "../../../../reusable-functions/reusable-functions";
-
-import { totalExpensesYear } from "../../../../resuable-messages/reusable-messages";
+import {
+  totalExpensesYear,
+  deleteConfirmedMessage,
+} from "../../../strings/strings";
 
 const useDeleteTotalExpensesYearEntry = () => {
-  const { showDeleteConfirmedSwal } = useShowDeleteConfirmedSwal();
+  const { category } = useCategoryCheck();
+  const { fireSwal } = useFireSwal();
 
   const currentUser = useSelector(selectCurrentUser);
   const entry = useSelector(selectEntry);
   const dispatch = useDispatch();
-  const category = categoryCheck(entry);
+  const navigate = useNavigate();
 
   const deleteTotalExpensesYearEntry = async () => {
     if (!currentUser) return;
-    const userRef = await firestore.doc(`users/${currentUser.id}`);
+    const userRef = doc(db, "users", currentUser.id);
+    const userSnapshot = await getDoc(userRef);
+
     try {
-      if (entry && category === totalExpensesYear) {
-        userRef
-          .update({
-            totalExpensesYearEntries:
-              firebase.firestore.FieldValue.arrayRemove(entry),
-          })
-          .then(showDeleteConfirmedSwal());
-      } else {
+      if (!userSnapshot.exists || !entry || category !== totalExpensesYear)
         return;
-      }
+      const data = userSnapshot.data();
+      const { totalExpensesYearEntries } = data;
+      const entryToRemove = totalExpensesYearEntries.find(
+        (firestoreEntry) => firestoreEntry.id === entry.id
+      );
+
+      await updateDoc(userRef, {
+        totalExpensesYearEntries: arrayRemove(entryToRemove),
+      });
+      fireSwal("success", deleteConfirmedMessage, "", 1500, false, true);
+      navigate(-1);
+      dispatch(clearEntry());
     } catch (error) {
-      dispatch({ type: "SET_ERROR_MESSAGE", payload: error.message });
+      setErrorMessage(error.message);
     }
   };
   return { deleteTotalExpensesYearEntry };

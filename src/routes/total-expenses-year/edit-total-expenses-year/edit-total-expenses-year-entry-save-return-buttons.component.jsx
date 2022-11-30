@@ -22,7 +22,7 @@ import {
   sameEntriesMessage,
 } from "../../../strings/strings";
 
-const EditTotalExpensesMonthEntrySaveReturnButtons = ({
+const EditTotalExpensesYearEntrySaveReturnButtons = ({
   entry,
   updatedEntry,
 }) => {
@@ -32,7 +32,7 @@ const EditTotalExpensesMonthEntrySaveReturnButtons = ({
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
-  const updateTotalExpensesMonthEntry = async () => {
+  const updateTotalExpensesYearEntry = async () => {
     if (!currentUser) return;
     const userRef = doc(db, "users", currentUser.id);
     const userSnapshot = await getDoc(userRef);
@@ -41,17 +41,17 @@ const EditTotalExpensesMonthEntrySaveReturnButtons = ({
     try {
       if (!userSnapshot.exists) return;
       const data = userSnapshot.data();
-      const { totalExpensesMonthEntries } = data;
+      const { totalExpensesYearEntries } = data;
 
-      const entryToRemove = totalExpensesMonthEntries.find(
+      const entryToRemove = totalExpensesYearEntries.find(
         (firestoreEntry) => firestoreEntry.id === entry.id
       );
 
       batch.update(userRef, {
-        totalExpensesMonthEntries: arrayUnion(updatedEntry),
+        totalExpensesYearEntries: arrayUnion(updatedEntry),
       });
       batch.update(userRef, {
-        totalExpensesMonthEntries: arrayRemove(entryToRemove),
+        totalExpensesYearEntries: arrayRemove(entryToRemove),
       });
 
       await batch
@@ -66,19 +66,19 @@ const EditTotalExpensesMonthEntrySaveReturnButtons = ({
   const confirmBox = () => {
     if (updatedEntry.date === "") {
       fireSwal("error", needDateErrorMessage, "", 0, true, false);
-    } else if (updatedEntry.monthlyAmount === "") {
+    } else if (updatedEntry.yearlyAmount === "") {
       fireSwal("error", needAmountMessage, "", 0, true, false);
     } else if (
       updatedEntry.date === entry.date &&
-      updatedEntry.monthlyAmount === entry.monthlyAmount
+      updatedEntry.yearlyAmount === entry.yearlyAmount
     ) {
       fireSwal("error", sameEntriesMessage, "", 0, true, false);
     } else {
-      updateTotalExpensesMonthEntry();
+      updateTotalExpensesYearEntry();
     }
   };
 
   return <SaveReturnButtons {...{ confirmBox }} />;
 };
 
-export default EditTotalExpensesMonthEntrySaveReturnButtons;
+export default EditTotalExpensesYearEntrySaveReturnButtons;
