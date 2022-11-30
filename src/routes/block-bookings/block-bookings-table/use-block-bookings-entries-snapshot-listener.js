@@ -4,11 +4,11 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../../utils/firebase/firebase.utils";
 
 import { selectCurrentUser } from "../../../store/user/user.selector";
-import { updateIncomeEntries } from "../../../store/income/income.action";
+import { updateBlockBookingEntries } from "../../../store/block-booking/block-booking.action";
 import { setErrorMessage } from "../../../store/error/error.action";
 import { startLoader, stopLoader } from "../../../store/loader/loader.action";
 
-const useIncomeEntriesSnapshotListener = () => {
+const useBlockBookingsEntriesSnapshotListener = () => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
@@ -21,9 +21,9 @@ const useIncomeEntriesSnapshotListener = () => {
       unsubscribeFromSnapshot = onSnapshot(
         doc(db, "users", currentUser.id),
         (doc) => {
-          const { incomeEntries } = doc.data();
+          const { blockBookingEntries } = doc.data();
           if (doc.exists) {
-            dispatch(updateIncomeEntries(incomeEntries));
+            dispatch(updateBlockBookingEntries(blockBookingEntries));
           }
           dispatch(stopLoader());
         }
@@ -39,4 +39,4 @@ const useIncomeEntriesSnapshotListener = () => {
   }, [currentUser, dispatch]);
 };
 
-export default useIncomeEntriesSnapshotListener;
+export default useBlockBookingsEntriesSnapshotListener;

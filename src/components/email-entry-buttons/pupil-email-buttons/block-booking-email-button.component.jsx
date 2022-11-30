@@ -1,16 +1,23 @@
-// import { EmailPupilButton } from "../../style-templates/add-edit-entries/add-edit-entries.styles";
-// import { editBlockBookingEntryPath } from "../../../resuable-messages/reusable-messages";
+import { useLocation } from "react-router-dom";
 
-// const BlockBookingEntryEmailButton = ({ path, pupilEmail, emailBody }) => (
-//   <>
-//     {pupilEmail && path === editBlockBookingEntryPath && (
-//       <a
-//         href={`mailto:${pupilEmail}?subject=Driving%20Lesson%20Block%20Booking%20Information&body=${emailBody}`}
-//       >
-//         <EmailPupilButton type="button">Email data To Pupil</EmailPupilButton>
-//       </a>
-//     )}
-//   </>
-// );
+import { EmailPupilButton } from "../../../styles/buttons/buttons.styles";
+import { editBlockBookingEntryPath } from "../../../strings/strings";
 
-// export default BlockBookingEntryEmailButton;
+const BlockBookingEntryEmailButton = ({ pupilEmail, emailBody }) => {
+  const location = useLocation();
+  const path = location.pathname;
+
+  return (
+    <>
+      {pupilEmail && path === editBlockBookingEntryPath && (
+        <a
+          href={`mailto:${pupilEmail}?subject=Driving%20Lesson%20Block%20Booking%20Information&body=${emailBody}`}
+        >
+          <EmailPupilButton type="button">Email data To Pupil</EmailPupilButton>
+        </a>
+      )}
+    </>
+  );
+};
+
+export default BlockBookingEntryEmailButton;

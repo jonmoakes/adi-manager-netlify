@@ -9,7 +9,7 @@ import useAddTotalExpensesWeekEntryToFirestore from "./categories/use-add-total-
 import useAddTotalExpensesMonthEntryToFirestore from "./categories/use-add-total-expenses-month-entry-to-firestore";
 import useAddTotalExpensesYearEntryToFirestore from "./categories/use-add-total-expenses-year-entry-to-firestore";
 import useAddPupilEntryToFirestore from "./categories/use-add-pupil-entry-to-firestore";
-// import useAddBlockBookingEntryToFirestore from "./categories/use-add-block-booking-entry-to-firestore";
+import useAddBlockBookingEntryToFirestore from "./categories/use-add-block-booking-entry-to-firestore";
 // import useAddPupilProgressEntryToFirestore from "./categories/use-add-pupil-progress-entry-to-firestore";
 
 import { addEntryText, confirmAddEntryMessage } from "../../strings/strings";
@@ -30,8 +30,8 @@ const useAddEntrySwal = () => {
   const { addTotalExpensesYearEntryToFirestore } =
     useAddTotalExpensesYearEntryToFirestore();
   const { addPupilEntryToFirestore } = useAddPupilEntryToFirestore();
-  // const { addBlockBookingEntryToFirestore } =
-  //   useAddBlockBookingEntryToFirestore();
+  const { addBlockBookingEntryToFirestore } =
+    useAddBlockBookingEntryToFirestore();
   // const { addPupilProgressEntryToFirestore } =
   //   useAddPupilProgressEntryToFirestore();
 
@@ -46,7 +46,7 @@ const useAddEntrySwal = () => {
     addTotalExpensesMonthEntryToFirestore();
     addTotalExpensesYearEntryToFirestore();
     addPupilEntryToFirestore();
-    // addBlockBookingEntryToFirestore();
+    addBlockBookingEntryToFirestore();
     // addPupilProgressEntryToFirestore();
   };
 

@@ -6,7 +6,7 @@ import useDeleteTotalExpensesWeekEntry from "./categories/use-delete-total-expen
 import useDeleteTotalExpensesMonthEntry from "./categories/use-delete-total-expenses-month";
 import useDeleteTotalExpensesYearEntry from "./categories/use-delete-total-expenses-year";
 import useDeletePupilEntry from "./categories/use-delete-pupil-entry";
-// import useDeleteBlockBookingEntry from "./categories/use-delete-block-booking-entry";
+import useDeleteBlockBookingEntry from "./categories/use-delete-block-booking-entry";
 // import useDeleteProgressEntry from "./categories/use-delete-progress-entry";
 
 // receives the entry that was added in the respective deleteEntryPage component.
@@ -21,7 +21,7 @@ const useDeleteEntry = () => {
   const { deleteTotalExpensesMonthEntry } = useDeleteTotalExpensesMonthEntry();
   const { deleteTotalExpensesYearEntry } = useDeleteTotalExpensesYearEntry();
   const { deletePupilEntry } = useDeletePupilEntry();
-  // const { deleteBlockBookingEntry } = useDeleteBlockBookingEntry();
+  const { deleteBlockBookingEntry } = useDeleteBlockBookingEntry();
   // const { deleteProgressEntry } = useDeleteProgressEntry();
 
   const deleteEntry = () => {
@@ -33,7 +33,7 @@ const useDeleteEntry = () => {
     deleteTotalExpensesMonthEntry();
     deleteTotalExpensesYearEntry();
     deletePupilEntry();
-    // deleteBlockBookingEntry();
+    deleteBlockBookingEntry();
     // deleteProgressEntry();
   };
 

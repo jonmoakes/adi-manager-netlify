@@ -10,7 +10,7 @@ import {
   addTotalExpensesMonthEntryPath,
   addTotalExpensesYearEntryPath,
   addPupilEntryPath,
-  addBlockBookingsEntryPath,
+  addBlockBookingEntryPath,
   addPupilProgressEntryPath,
   aDiary,
   aLesson,
@@ -46,7 +46,7 @@ const useDisplayEntryHeading = () => {
       setCategoryName(aYearlyTotalExpenses);
     } else if (path === addPupilEntryPath) {
       setCategoryName(aPupil);
-    } else if (path === addBlockBookingsEntryPath) {
+    } else if (path === addBlockBookingEntryPath) {
       setCategoryName(aBlockBooking);
     } else if (path === addPupilProgressEntryPath) {
       setCategoryName(aProgress);

@@ -145,6 +145,21 @@ const AddPupilEntry = lazy(() =>
 const EditPupilEntry = lazy(() =>
   import("./routes/pupils/edit-pupil-entry/edit-pupil-entry.component")
 );
+const BlockBookingsTable = lazy(() =>
+  import(
+    "./routes/block-bookings/block-bookings-table/block-bookings-table.component"
+  )
+);
+const AddBlockBookingEntry = lazy(() =>
+  import(
+    "./routes/block-bookings/add-block-booking/add-block-booking-entry.component"
+  )
+);
+const EditBlockBookingEntry = lazy(() =>
+  import(
+    "./routes/block-bookings/edit-block-booking/edit-block-booking-entry.component"
+  )
+);
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
@@ -338,6 +353,18 @@ const App = () => {
               <Route
                 path="edit-pupil-entry"
                 element={currentUser && <EditPupilEntry />}
+              />
+              <Route
+                path="block-bookings"
+                element={currentUser && <BlockBookingsTable />}
+              />
+              <Route
+                path="add-block-booking-entry"
+                element={currentUser && <AddBlockBookingEntry />}
+              />
+              <Route
+                path="edit-block-booking-entry"
+                element={currentUser && <EditBlockBookingEntry />}
               />
               <Route
                 path="delete-entry"

@@ -14,6 +14,7 @@ import { totalExpensesWeekReducer } from "./total-expenses-week/total-expenses-w
 import { totalExpensesMonthReducer } from "./total-expenses-month/total-expenses-month.reducer";
 import { totalExpensesYearReducer } from "./total-expenses-year/total-expenses-year.reducer";
 import { pupilsReducer } from "./pupils/pupils.reducer";
+import { blockBookingReducer } from "./block-booking/block-booking.reducer";
 
 export const rootReducer = combineReducers({
   user: userReducer,
@@ -30,4 +31,5 @@ export const rootReducer = combineReducers({
   totalExpensesMonth: totalExpensesMonthReducer,
   totalExpensesYear: totalExpensesYearReducer,
   pupils: pupilsReducer,
+  blockBooking: blockBookingReducer,
 });

@@ -67,7 +67,7 @@ export const needAmountMessage = "Please Enter Your Amount.";
 export const phoneNumberError =
   "Phone Number Must Be 11 Digits Long Or Empty In Order To Add An Entry.";
 export const needInitialBookingDateMessage =
-  "Please enter the date that you took the inital block booking";
+  "Please enter the date that you took the initial block booking";
 export const needHoursPurchasedMessage =
   "Please Enter The Amount Of Hours The Pupil's Block Booking Has Purchased.";
 export const needLatestLessonDateMessage =
@@ -239,7 +239,7 @@ export const addTotalExpensesYearEntryPath = "/add-total-expenses-year-entry";
 export const editTotalExpensesYearEntryPath = "/edit-total-expenses-year-entry";
 export const addPupilEntryPath = "/add-pupil-entry";
 export const editPupilEntryPath = "/edit-pupil-entry";
-export const addBlockBookingsEntryPath = "/add-block-bookings";
+export const addBlockBookingEntryPath = "/add-block-booking-entry";
 export const editBlockBookingEntryPath = "/edit-block-booking-entry";
 export const addPupilProgressEntryPath = "/add-pupil-progress";
 export const editPupilProgressEntryPath = "/edit-pupil-progress-entry";

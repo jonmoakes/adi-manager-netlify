@@ -1,19 +1,24 @@
-// import { EmailSelfButton } from "../../style-templates/add-edit-entries/add-edit-entries.styles";
-// import { editBlockBookingEntryPath } from "../../../resuable-messages/reusable-messages";
+import { useLocation } from "react-router-dom";
 
-// const InstructorBlockBookingEntryEmailButton = ({
-//   path,
-//   instructorEmail,
-//   emailBody,
-// }) => (
-//   <>
-//     {path === editBlockBookingEntryPath && (
-//       <a
-//         href={`mailto:${instructorEmail}?subject=Driving%20Lesson%20Block%20Booking%20Information&body=${emailBody}`}
-//       >
-//         <EmailSelfButton type="button">Email data To Myself</EmailSelfButton>
-//       </a>
-//     )}
-//   </>
-// );
-// export default InstructorBlockBookingEntryEmailButton;
+import { EmailSelfButton } from "../../../styles/buttons/buttons.styles";
+import { editBlockBookingEntryPath } from "../../../strings/strings";
+
+const InstructorBlockBookingEntryEmailButton = ({
+  instructorEmail,
+  emailBody,
+}) => {
+  const location = useLocation();
+  const path = location.pathname;
+  return (
+    <>
+      {path === editBlockBookingEntryPath && (
+        <a
+          href={`mailto:${instructorEmail}?subject=Driving%20Lesson%20Block%20Booking%20Information&body=${emailBody}`}
+        >
+          <EmailSelfButton type="button">Email data To Myself</EmailSelfButton>
+        </a>
+      )}
+    </>
+  );
+};
+export default InstructorBlockBookingEntryEmailButton;
