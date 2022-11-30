@@ -19,7 +19,6 @@ const EditBlockBookingEntry = () => {
     useHandleUpdatedBlockBookingEntryChange();
   const { emailBody } = useBlockBookingEmailBody();
 
-  console.log(entry);
   const errorMessage = useSelector(selectErrorMessage);
 
   return (
