@@ -643,6 +643,29 @@ export const MoneyOptionsExpensesYearButton = styled(Button)`
   text-shadow: none;
 `;
 
+export const PupilOptionsPupilButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInLeftAnimation};
+  background-color: #ff0e80;
+  color: black;
+  text-shadow: none;
+`;
+
+export const PupilOptionsBlockBookingButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInRightAnimation};
+  background-color: red;
+  color: black;
+  text-shadow: none;
+`;
+export const PupilOptionsProgressButton = styled(Button)`
+  margin: 15px auto;
+  animation: 1s ${zoomInLeftAnimation};
+  background-color: #0802ff;
+  color: black;
+  text-shadow: none;
+`;
+
 export const PayButton = styled(Button)`
   min-width: 165px;
   width: 400px;

@@ -8,7 +8,7 @@ import useAddExpensesEntryToFirestore from "./categories/use-add-expenses-entry-
 import useAddTotalExpensesWeekEntryToFirestore from "./categories/use-add-total-expenses-week-entry-to-firestore";
 import useAddTotalExpensesMonthEntryToFirestore from "./categories/use-add-total-expenses-month-entry-to-firestore";
 import useAddTotalExpensesYearEntryToFirestore from "./categories/use-add-total-expenses-year-entry-to-firestore";
-// import useAddPupilEntryToFirestore from "./categories/use-add-pupil-entry-to-firestore";
+import useAddPupilEntryToFirestore from "./categories/use-add-pupil-entry-to-firestore";
 // import useAddBlockBookingEntryToFirestore from "./categories/use-add-block-booking-entry-to-firestore";
 // import useAddPupilProgressEntryToFirestore from "./categories/use-add-pupil-progress-entry-to-firestore";
 
@@ -29,7 +29,7 @@ const useAddEntrySwal = () => {
     useAddTotalExpensesMonthEntryToFirestore();
   const { addTotalExpensesYearEntryToFirestore } =
     useAddTotalExpensesYearEntryToFirestore();
-  // const { addPupilEntryToFirestore } = useAddPupilEntryToFirestore();
+  const { addPupilEntryToFirestore } = useAddPupilEntryToFirestore();
   // const { addBlockBookingEntryToFirestore } =
   //   useAddBlockBookingEntryToFirestore();
   // const { addPupilProgressEntryToFirestore } =
@@ -45,7 +45,7 @@ const useAddEntrySwal = () => {
     addTotalExpensesWeekEntryToFirestore();
     addTotalExpensesMonthEntryToFirestore();
     addTotalExpensesYearEntryToFirestore();
-    // addPupilEntryToFirestore();
+    addPupilEntryToFirestore();
     // addBlockBookingEntryToFirestore();
     // addPupilProgressEntryToFirestore();
   };

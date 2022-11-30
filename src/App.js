@@ -133,6 +133,18 @@ const EditTotalExpensesYearEntry = lazy(() =>
     "./routes/total-expenses-year/edit-total-expenses-year/edit-total-expenses-year.component"
   )
 );
+const PupilOptions = lazy(() =>
+  import("./routes/pupil-options/pupil-options.component")
+);
+const PupilsTable = lazy(() =>
+  import("./routes/pupils/pupils-table/pupils-table.component")
+);
+const AddPupilEntry = lazy(() =>
+  import("./routes/pupils/add-pupil/add-pupil-entry.component")
+);
+const EditPupilEntry = lazy(() =>
+  import("./routes/pupils/edit-pupil-entry/edit-pupil-entry.component")
+);
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
@@ -313,6 +325,19 @@ const App = () => {
               <Route
                 path="edit-total-expenses-year-entry"
                 element={currentUser && <EditTotalExpensesYearEntry />}
+              />
+              <Route
+                path="pupil-options"
+                element={currentUser && <PupilOptions />}
+              />
+              <Route path="pupils" element={currentUser && <PupilsTable />} />
+              <Route
+                path="add-pupil-entry"
+                element={currentUser && <AddPupilEntry />}
+              />
+              <Route
+                path="edit-pupil-entry"
+                element={currentUser && <EditPupilEntry />}
               />
               <Route
                 path="delete-entry"

@@ -170,6 +170,24 @@ export const FooterDiv = styled.div`
   }
 `;
 
+export const PhoneDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  figure {
+    width: 100%;
+    text-shadow: none;
+    margin: 10px 20px 0px 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    figure {
+      font-size: 14px;
+    }
+  }
+`;
+
 export const SlideInDiv = styled.div`
   animation: 2s ${slideInLeftAnimation};
 `;

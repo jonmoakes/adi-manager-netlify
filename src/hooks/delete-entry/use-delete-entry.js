@@ -5,7 +5,7 @@ import useDeleteExpenseEntry from "./categories/use-delete-expense-entry";
 import useDeleteTotalExpensesWeekEntry from "./categories/use-delete-total-expenses-week";
 import useDeleteTotalExpensesMonthEntry from "./categories/use-delete-total-expenses-month";
 import useDeleteTotalExpensesYearEntry from "./categories/use-delete-total-expenses-year";
-// import useDeletePupilEntry from "./categories/use-delete-pupil-entry";
+import useDeletePupilEntry from "./categories/use-delete-pupil-entry";
 // import useDeleteBlockBookingEntry from "./categories/use-delete-block-booking-entry";
 // import useDeleteProgressEntry from "./categories/use-delete-progress-entry";
 
@@ -20,7 +20,7 @@ const useDeleteEntry = () => {
   const { deleteTotalExpensesWeekEntry } = useDeleteTotalExpensesWeekEntry();
   const { deleteTotalExpensesMonthEntry } = useDeleteTotalExpensesMonthEntry();
   const { deleteTotalExpensesYearEntry } = useDeleteTotalExpensesYearEntry();
-  // const { deletePupilEntry } = useDeletePupilEntry();
+  const { deletePupilEntry } = useDeletePupilEntry();
   // const { deleteBlockBookingEntry } = useDeleteBlockBookingEntry();
   // const { deleteProgressEntry } = useDeleteProgressEntry();
 
@@ -32,7 +32,7 @@ const useDeleteEntry = () => {
     deleteTotalExpensesWeekEntry();
     deleteTotalExpensesMonthEntry();
     deleteTotalExpensesYearEntry();
-    // deletePupilEntry();
+    deletePupilEntry();
     // deleteBlockBookingEntry();
     // deleteProgressEntry();
   };

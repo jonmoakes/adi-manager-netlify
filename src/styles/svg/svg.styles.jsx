@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { pulse } from "react-animations";
 
 import { ReactComponent as SignUpSVG } from "../../assets/header/sign-up.svg";
 import { ReactComponent as LoginSVG } from "../../assets/header/login.svg";
@@ -14,6 +15,11 @@ import { ReactComponent as LessonsSVG } from "../../assets/header/hands.svg";
 import { ReactComponent as ExpensesSVG } from "../../assets/header/pound.svg";
 import { ReactComponent as PupilsSVG } from "../../assets/header/pupils-icon.svg";
 import { ReactComponent as LoaderSVG } from "../../assets/tl.svg";
+import { ReactComponent as PhoneIconSVG } from "../../assets/phone.svg";
+import { ReactComponent as TextIconSVG } from "../../assets/text-icon.svg";
+import { ReactComponent as EmailIconSVG } from "../../assets/toolbar/message-icon.svg";
+
+const PulseAnimation = keyframes`${pulse}`;
 
 export const LoginIcon = styled(LoginSVG)`
   width: 38px;
@@ -384,4 +390,37 @@ export const LoaderIcon = styled(LoaderSVG)`
   transform: translate(-50%, -50%);
   height: 30%;
   width: 30%;
+`;
+
+export const PhoneIcon = styled(PhoneIconSVG)`
+  height: 50px;
+  width: 50px;
+  margin-top: 15px;
+  border-radius: 50px;
+  border: 2px solid black;
+  transition: all 0.5s ease-in-out;
+  background-color: #247afd;
+  animation: infinite 1s ${PulseAnimation};
+`;
+
+export const TextIcon = styled(TextIconSVG)`
+  height: 50px;
+  width: 50px;
+  margin-top: 15px;
+  border-radius: 50px;
+  border: 2px solid black;
+  transition: all 0.5s ease-in-out;
+  background-color: lightgray;
+  animation: infinite 1s ${PulseAnimation};
+`;
+
+export const EmailIcon = styled(EmailIconSVG)`
+  height: 50px;
+  width: 50px;
+  margin-top: 15px;
+  border-radius: 50px;
+  border: 2px solid black;
+  transition: all 0.5s ease-in-out;
+  background-color: lightgray;
+  animation: infinite 1s ${PulseAnimation};
 `;
