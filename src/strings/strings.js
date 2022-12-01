@@ -260,3 +260,11 @@ export const aYearlyTotalExpenses = "a yearly total expenses";
 export const aPupil = "a pupil";
 export const aBlockBooking = "a block booking";
 export const aProgress = "a progress";
+
+// progress button category texts
+export const crossroads = "junctions - crossroads";
+export const adequateClearance = "adequate clearance";
+export const boxJunctions = "box junctions";
+export const countryLanes = "country lanes";
+export const cockpitDrill = "cockpit drill";
+export const dualCarriageways = "dual carriageways";

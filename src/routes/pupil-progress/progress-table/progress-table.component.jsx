@@ -17,7 +17,7 @@ const ProgressTable = () => (
     </Link>
 
     <Div>
-      <Heading>Pupils</Heading>
+      <Heading>pupil progress</Heading>
       <HelpText />
     </Div>
 

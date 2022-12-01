@@ -677,7 +677,7 @@ export const MoneyOptionsExpensesYearButton = styled(Button)`
 export const PupilOptionsPupilButton = styled(Button)`
   margin: 15px auto;
   animation: 1s ${zoomInLeftAnimation};
-  background-color: #ff0e80;
+  background-color: #ff00e1;
   color: black;
   text-shadow: none;
 `;
@@ -685,14 +685,14 @@ export const PupilOptionsPupilButton = styled(Button)`
 export const PupilOptionsBlockBookingButton = styled(Button)`
   margin: 15px auto;
   animation: 1s ${zoomInRightAnimation};
-  background-color: red;
+  background-color: #00ff2a;
   color: black;
   text-shadow: none;
 `;
 export const PupilOptionsProgressButton = styled(Button)`
   margin: 15px auto;
   animation: 1s ${zoomInLeftAnimation};
-  background-color: #0802ff;
+  background-color: #00e5ff;
   color: black;
   text-shadow: none;
 `;

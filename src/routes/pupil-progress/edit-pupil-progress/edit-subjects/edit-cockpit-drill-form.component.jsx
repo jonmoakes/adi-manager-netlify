@@ -1,6 +1,7 @@
 import useShowSubject from "../../../../hooks/use-show-subject";
 
 import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
 import Stars from "../../stars/stars.component";
 import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
@@ -16,9 +17,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
-
-import { isGradeOne, isGradeTwoToFour, isGradeFive } from "./grade-check";
+import {
+  placeholderInfiniteSpaceMessage,
+  cockpitDrill,
+} from "../../../../strings/strings";
 
 const EditCockpitDrillForm = ({ updatedEntry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -29,28 +31,16 @@ const EditCockpitDrillForm = ({ updatedEntry, handleChange }) => {
       <SubjectsHr />
 
       <SubjectsDiv>
-        {isGradeOne(showSubject, cockpitDrillGrade) && (
-          <SubjectButton isGrade1 onClick={handleClick}>
-            Show cockpit Drill
-          </SubjectButton>
-        )}
-
-        {isGradeTwoToFour(showSubject, cockpitDrillGrade) && (
-          <SubjectButton isGrade2To4 onClick={handleClick}>
-            Show cockpit Drill
-          </SubjectButton>
-        )}
-
-        {isGradeFive(showSubject, cockpitDrillGrade) && (
-          <SubjectButton isGrade5 onClick={handleClick}>
-            Show cockpit Drill
-          </SubjectButton>
-        )}
+        <GradeButtons
+          subjectGrade={cockpitDrillGrade}
+          buttonText={cockpitDrill}
+          {...{ showSubject, handleClick }}
+        />
 
         {showSubject && (
           <>
-            <SubjectButton isHide onClick={handleClick}>
-              Hide Cockpit Drill
+            <SubjectButton onClick={handleClick}>
+              Hide {cockpitDrill}
             </SubjectButton>
 
             <SubjectsInputsDiv>

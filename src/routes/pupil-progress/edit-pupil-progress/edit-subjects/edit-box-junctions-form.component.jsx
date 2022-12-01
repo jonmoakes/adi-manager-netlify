@@ -1,6 +1,7 @@
 import useShowSubject from "../../../../hooks/use-show-subject";
 
 import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
 import Stars from "../../stars/stars.component";
 import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
@@ -16,9 +17,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
-
-import { isGradeOne, isGradeTwoToFour, isGradeFive } from "./grade-check";
+import {
+  placeholderInfiniteSpaceMessage,
+  boxJunctions,
+} from "../../../../strings/strings";
 
 const EditBoxJunctionsForm = ({ updatedEntry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -28,28 +30,16 @@ const EditBoxJunctionsForm = ({ updatedEntry, handleChange }) => {
       <SubjectsHr />
 
       <SubjectsDiv>
-        {isGradeOne(showSubject, boxJunctionsGrade) && (
-          <SubjectButton isGrade1 onClick={handleClick}>
-            Show box junctions
-          </SubjectButton>
-        )}
-
-        {isGradeTwoToFour(showSubject, boxJunctionsGrade) && (
-          <SubjectButton isGrade2To4 onClick={handleClick}>
-            Show box junctions
-          </SubjectButton>
-        )}
-
-        {isGradeFive(showSubject, boxJunctionsGrade) && (
-          <SubjectButton isGrade5 onClick={handleClick}>
-            Show box junctions
-          </SubjectButton>
-        )}
+        <GradeButtons
+          subjectGrade={boxJunctionsGrade}
+          buttonText={boxJunctions}
+          {...{ showSubject, handleClick }}
+        />
 
         {showSubject && (
           <>
             <SubjectButton onClick={handleClick}>
-              Hide box junctions
+              Hide {boxJunctions}
             </SubjectButton>
 
             <SubjectsInputsDiv>

@@ -1,6 +1,7 @@
 import useShowSubject from "../../../../hooks/use-show-subject";
 
 import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
 import Stars from "../../stars/stars.component";
 import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
@@ -16,9 +17,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
-
-import { isGradeOne, isGradeTwoToFour, isGradeFive } from "./grade-check";
+import {
+  placeholderInfiniteSpaceMessage,
+  adequateClearance,
+} from "../../../../strings/strings";
 
 const EditAdequateClearanceForm = ({ updatedEntry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -29,28 +31,16 @@ const EditAdequateClearanceForm = ({ updatedEntry, handleChange }) => {
       <SubjectsHr />
 
       <SubjectsDiv>
-        {isGradeOne(showSubject, adequateGrade) && (
-          <SubjectButton isGrade1 onClick={handleClick}>
-            Show adequate clearance
-          </SubjectButton>
-        )}
-
-        {isGradeTwoToFour(showSubject, adequateGrade) && (
-          <SubjectButton isGrade2To4 onClick={handleClick}>
-            Show adequate clearance
-          </SubjectButton>
-        )}
-
-        {isGradeFive(showSubject, adequateGrade) && (
-          <SubjectButton isGrade5 onClick={handleClick}>
-            Show adequate clearance
-          </SubjectButton>
-        )}
+        <GradeButtons
+          subjectGrade={adequateGrade}
+          buttonText={adequateClearance}
+          {...{ showSubject, handleClick }}
+        />
 
         {showSubject && (
           <>
             <SubjectButton onClick={handleClick}>
-              hide adequate clearance
+              hide {adequateClearance}
             </SubjectButton>
 
             <SubjectsInputsDiv>

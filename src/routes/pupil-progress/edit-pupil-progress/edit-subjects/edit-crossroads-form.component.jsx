@@ -1,98 +1,79 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  crossroads,
+} from "../../../../strings/strings";
 
-// const EditCrossroadsForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, crossroadsGrade, crossroadsNotes } = updatedEntry;
-//   return (
-//     <AnimatedForm>
-//       <Hr />
+const EditCrossroadsForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { crossroadsGrade, crossroadsNotes } = updatedEntry;
 
-//       <SubjectsDiv>
-//         {!showSubject && crossroadsGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show Junctions - crossroads
-//           </SubjectButton>
-//         )}
+  return (
+    <>
+      <SubjectsHr />
 
-//         {((!showSubject && crossroadsGrade === "2") ||
-//           (!showSubject && crossroadsGrade === "3") ||
-//           (!showSubject && crossroadsGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show Junctions - crossroads
-//           </SubjectButton>
-//         )}
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={crossroadsGrade}
+          buttonText={crossroads}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {!showSubject && crossroadsGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show Junctions - crossroads
-//           </SubjectButton>
-//         )}
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>
+              Hide {crossroads}
+            </SubjectButton>
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide Junctions - crossroads
-//             </SubjectButton>
+            <SubjectsInputsDiv>
+              <h2>Junctions - Crossroads:</h2>
 
-//             <SubjectsInputsDiv>
-//               <h2>Junctions - Crossroads:</h2>
+              <Stars grade={crossroadsGrade} />
 
-//               <StarsDiv>
-//                 {crossroadsGrade === "1" && <OneStar />}
-//                 {crossroadsGrade === "2" && <TwoStars />}
-//                 {crossroadsGrade === "3" && <ThreeStars />}
-//                 {crossroadsGrade === "4" && <FourStars />}
-//                 {crossroadsGrade === "5" && <FiveStars />}
-//               </StarsDiv>
+              <SliderDiv>
+                <CurrentGradingInfo />
+                <StyledInput
+                  type="range"
+                  name="crossroadsGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={crossroadsGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="crossroadsGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={crossroadsGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
+              <Label>Junctions - Crossroads Notes:</Label>
+              <StyledTextArea
+                defaultValue={crossroadsNotes}
+                type="text"
+                name="crossroadsNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//               <label>Junctions - Crossroads Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={crossroadsNotes}
-//                 type="text"
-//                 name="crossroadsNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditCrossroadsForm;
+export default EditCrossroadsForm;
