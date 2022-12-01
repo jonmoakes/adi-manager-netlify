@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const SubjectsHr = styled.hr`
+  margin: 50px auto;
+`;
+
 export const BlackHr = styled.hr`
   border-color: black;
   width: 90%;

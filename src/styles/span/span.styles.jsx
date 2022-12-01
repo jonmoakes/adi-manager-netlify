@@ -13,6 +13,12 @@ export const HighlightText = styled.span`
   }
 `;
 
+export const SliderInstructions = styled.span`
+  font-size: 14px;
+  color: black;
+  text-shadow: none;
+`;
+
 export const SmallHighlightText = styled.span`
   font-size: 14px;
   color: #cc1616;

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import {
   slideInLeft,
   slideInRight,
@@ -16,6 +16,37 @@ const bounceInDownAnimation = keyframes`${bounceInDown}`;
 const PulseAnimation = keyframes`${pulse}`;
 const zoomInLeftAnimation = keyframes`${zoomInLeft}`;
 const zoomInRightAnimation = keyframes`${zoomInRight}`;
+const buttonStyles = css`
+  background-color: #247afd;
+`;
+
+const isGrade1ButtonStyles = css`
+  background-color: red;
+`;
+
+const isGradeTwoToFourButtonStyles = css`
+  background-color: #ffe61b;
+  color: black;
+  text-shadow: none;
+`;
+
+const isGradeFiveButtonStyles = css`
+  background-color: #36bb50;
+  color: black;
+  text-shadow: none;
+`;
+
+const getButtonStyles = (props) => {
+  if (props.isGrade1) {
+    return isGrade1ButtonStyles;
+  } else if (props.isGrade2To4) {
+    return isGradeTwoToFourButtonStyles;
+  } else if (props.isGrade5) {
+    return isGradeFiveButtonStyles;
+  } else {
+    return buttonStyles;
+  }
+};
 
 export const Button = styled.button`
   width: 400px;
@@ -740,5 +771,58 @@ export const BackButton = styled.button`
   @media screen and (max-width: 768px) {
     height: 60px;
     width: 60px;
+  }
+`;
+
+export const SubjectButtonElement = styled.button`
+  min-width: 165px;
+  width: 60%;
+  height: 70px;
+  line-height: 5px;
+  padding: 25px 25px;
+  font-size: 16px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px black;
+  color: whitesmoke;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 2px solid black;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+
+  ${getButtonStyles}
+
+  @media screen and (max-width: 800px) {
+    width: 70%;
+    padding: 5px 5px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 95%;
+  }
+
+  @media screen and (max-width: 280px) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 12px 12px 12px black;
+
+    @media screen and (max-width: 1024px) {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  :active {
+    transform: translate(0, 0.5rem);
+    box-shadow: 6px 6px 6px black;
+
+    @media screen and (max-width: 1024px) {
+      transform: none;
+      box-shadow: none;
+    }
   }
 `;

@@ -160,6 +160,19 @@ const EditBlockBookingEntry = lazy(() =>
     "./routes/block-bookings/edit-block-booking/edit-block-booking-entry.component"
   )
 );
+const ProgressTable = lazy(() =>
+  import("./routes/pupil-progress/progress-table/progress-table.component")
+);
+const AddPupilProgress = lazy(() =>
+  import(
+    "./routes/pupil-progress/add-pupil-progress/add-pupil-progress.component"
+  )
+);
+const EditPupilProgress = lazy(() =>
+  import(
+    "./routes/pupil-progress/edit-pupil-progress/edit-pupil-progress.component"
+  )
+);
 const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
@@ -365,6 +378,18 @@ const App = () => {
               <Route
                 path="edit-block-booking-entry"
                 element={currentUser && <EditBlockBookingEntry />}
+              />
+              <Route
+                path="pupil-progress"
+                element={currentUser && <ProgressTable />}
+              />
+              <Route
+                path="add-pupil-progress"
+                element={currentUser && <AddPupilProgress />}
+              />
+              <Route
+                path="edit-pupil-progress"
+                element={currentUser && <EditPupilProgress />}
               />
               <Route
                 path="delete-entry"

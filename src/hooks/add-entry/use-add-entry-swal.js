@@ -10,7 +10,7 @@ import useAddTotalExpensesMonthEntryToFirestore from "./categories/use-add-total
 import useAddTotalExpensesYearEntryToFirestore from "./categories/use-add-total-expenses-year-entry-to-firestore";
 import useAddPupilEntryToFirestore from "./categories/use-add-pupil-entry-to-firestore";
 import useAddBlockBookingEntryToFirestore from "./categories/use-add-block-booking-entry-to-firestore";
-// import useAddPupilProgressEntryToFirestore from "./categories/use-add-pupil-progress-entry-to-firestore";
+import useAddPupilProgressEntryToFirestore from "./categories/use-add-pupil-progress-entry-to-firestore";
 
 import { addEntryText, confirmAddEntryMessage } from "../../strings/strings";
 
@@ -32,8 +32,8 @@ const useAddEntrySwal = () => {
   const { addPupilEntryToFirestore } = useAddPupilEntryToFirestore();
   const { addBlockBookingEntryToFirestore } =
     useAddBlockBookingEntryToFirestore();
-  // const { addPupilProgressEntryToFirestore } =
-  //   useAddPupilProgressEntryToFirestore();
+  const { addPupilProgressEntryToFirestore } =
+    useAddPupilProgressEntryToFirestore();
 
   const swal = withReactContent(Swal);
 
@@ -47,7 +47,7 @@ const useAddEntrySwal = () => {
     addTotalExpensesYearEntryToFirestore();
     addPupilEntryToFirestore();
     addBlockBookingEntryToFirestore();
-    // addPupilProgressEntryToFirestore();
+    addPupilProgressEntryToFirestore();
   };
 
   const addEntrySwal = () => {

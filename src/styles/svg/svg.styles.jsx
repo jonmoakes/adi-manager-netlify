@@ -19,6 +19,8 @@ import { ReactComponent as PhoneIconSVG } from "../../assets/phone.svg";
 import { ReactComponent as TextIconSVG } from "../../assets/text-icon.svg";
 import { ReactComponent as EmailIconSVG } from "../../assets/toolbar/message-icon.svg";
 
+import { ReactComponent as StarSVG } from "../../assets/star.svg";
+
 const PulseAnimation = keyframes`${pulse}`;
 
 export const LoginIcon = styled(LoginSVG)`
@@ -423,4 +425,9 @@ export const EmailIcon = styled(EmailIconSVG)`
   transition: all 0.5s ease-in-out;
   background-color: lightgray;
   animation: infinite 1s ${PulseAnimation};
+`;
+
+export const StarIcon = styled(StarSVG)`
+  width: 35px;
+  height: 35px;
 `;

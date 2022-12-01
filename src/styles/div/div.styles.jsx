@@ -1084,3 +1084,55 @@ export const CardInputErrorDiv = styled.div`
   padding: 10px;
   margin-bottom: 40px;
 `;
+
+export const SubjectsDiv = styled.div`
+  margin: 25px auto 0px auto;
+  width: 100%;
+
+  h2 {
+    color: black;
+    text-shadow: none;
+  }
+`;
+
+export const SubjectsInputsDiv = styled.div`
+  background-color: plum;
+  padding: 20px 10px 30px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 40px auto 0px auto;
+  width: 90%;
+  text-transform: capitalize;
+
+  h2 {
+    animation: 0.5s ${slideInRightAnimation};
+  }
+
+  label {
+    color: black;
+    text-shadow: none;
+    animation: 0.5s ${slideInLeftAnimation};
+  }
+
+  textarea {
+    animation: 0.5s ${slideInLeftAnimation};
+  }
+`;
+
+export const StarsDiv = styled.div`
+  background-color: lightgrey;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 20px auto 0px auto;
+  width: 60%;
+  animation: 0.5s ${slideInLeftAnimation};
+
+  @media screen and (max-width: 450px) {
+    width: 90%;
+  }
+`;
+
+export const SliderDiv = styled.div`
+  margin: 20px auto;
+  width: 100%;
+`;
