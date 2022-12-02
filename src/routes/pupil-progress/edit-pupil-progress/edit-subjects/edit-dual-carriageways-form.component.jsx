@@ -39,12 +39,12 @@ const EditDualCarriagewaysForm = ({ updatedEntry, handleChange }) => {
 
         {showSubject && (
           <>
-            <SubjectButton isHide onClick={handleClick}>
+            <SubjectButton onClick={handleClick}>
               Hide {dualCarriageways}
             </SubjectButton>
 
             <SubjectsInputsDiv>
-              <h2>Dual Carriageways:</h2>
+              <h2>{dualCarriageways}:</h2>
               <Stars grade={dcGrade} />
 
               <SliderDiv>

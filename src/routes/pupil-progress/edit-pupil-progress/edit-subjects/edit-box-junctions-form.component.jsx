@@ -43,7 +43,7 @@ const EditBoxJunctionsForm = ({ updatedEntry, handleChange }) => {
             </SubjectButton>
 
             <SubjectsInputsDiv>
-              <h2>Box Junctions:</h2>
+              <h2>{boxJunctions}:</h2>
               <Stars grade={boxJunctionsGrade} />
 
               <SliderDiv>

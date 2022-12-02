@@ -44,7 +44,7 @@ const EditCrossroadsForm = ({ updatedEntry, handleChange }) => {
             </SubjectButton>
 
             <SubjectsInputsDiv>
-              <h2>Junctions - Crossroads:</h2>
+              <h2>{crossroads}:</h2>
 
               <Stars grade={crossroadsGrade} />
 

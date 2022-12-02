@@ -268,3 +268,5 @@ export const boxJunctions = "box junctions";
 export const countryLanes = "country lanes";
 export const cockpitDrill = "cockpit drill";
 export const dualCarriageways = "dual carriageways";
+export const emergencyStop = "emergency stop";
+export const emerging = "junctions - emerging";

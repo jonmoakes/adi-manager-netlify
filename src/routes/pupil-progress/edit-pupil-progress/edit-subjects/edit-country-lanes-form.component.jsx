@@ -44,7 +44,7 @@ const EditCountryLanesForm = ({ updatedEntry, handleChange }) => {
             </SubjectButton>
 
             <SubjectsInputsDiv>
-              <h2>Country Lanes:</h2>
+              <h2>{countryLanes}:</h2>
               <Stars grade={lanesGrade} />
 
               <SliderDiv>

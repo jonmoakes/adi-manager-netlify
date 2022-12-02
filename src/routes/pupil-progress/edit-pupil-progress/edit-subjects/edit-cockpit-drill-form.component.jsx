@@ -44,7 +44,7 @@ const EditCockpitDrillForm = ({ updatedEntry, handleChange }) => {
             </SubjectButton>
 
             <SubjectsInputsDiv>
-              <h2>Cockpit Drill:</h2>
+              <h2>{cockpitDrill}:</h2>
 
               <Stars grade={cockpitDrillGrade} />
 

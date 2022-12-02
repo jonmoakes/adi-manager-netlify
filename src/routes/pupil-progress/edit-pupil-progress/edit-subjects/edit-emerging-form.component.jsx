@@ -1,98 +1,76 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  emerging,
+} from "../../../../strings/strings";
 
-// const EditEmergingForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, emergingGrade, emergingNotes } = updatedEntry;
-//   return (
-//     <AnimatedForm>
-//       <Hr />
-//       <SubjectsDiv>
-//         {!showSubject && emergingGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show Junctions - Emerging
-//           </SubjectButton>
-//         )}
+const EditEmergingForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { emergingGrade, emergingNotes } = updatedEntry;
 
-//         {((!showSubject && emergingGrade === "2") ||
-//           (!showSubject && emergingGrade === "3") ||
-//           (!showSubject && emergingGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show Junctions - Emerging
-//           </SubjectButton>
-//         )}
+  return (
+    <>
+      <SubjectsHr />
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={emergingGrade}
+          buttonText={emerging}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {!showSubject && emergingGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show Junctions - Emerging
-//           </SubjectButton>
-//         )}
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>Hide {emerging}</SubjectButton>
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide Junctions - Emerging
-//             </SubjectButton>
+            <SubjectsInputsDiv>
+              <h2>{emerging}:</h2>
+              <Stars grade={emergingGrade} />
 
-//             <SubjectsInputsDiv>
-//               <h2>Junctions - Emerging:</h2>
+              <SliderDiv>
+                <CurrentGradingInfo />
 
-//               <StarsDiv>
-//                 {emergingGrade === "1" && <OneStar />}
-//                 {emergingGrade === "2" && <TwoStars />}
-//                 {emergingGrade === "3" && <ThreeStars />}
-//                 {emergingGrade === "4" && <FourStars />}
-//                 {emergingGrade === "5" && <FiveStars />}
-//               </StarsDiv>
+                <StyledInput
+                  type="range"
+                  name="emergingGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={emergingGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
+              <Label>{emerging} Notes:</Label>
+              <StyledTextArea
+                defaultValue={emergingNotes}
+                type="text"
+                name="emergingNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="emergingGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={emergingGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
-
-//               <label>Junctions - Emerging Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={emergingNotes}
-//                 type="text"
-//                 name="emergingNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditEmergingForm;
+export default EditEmergingForm;

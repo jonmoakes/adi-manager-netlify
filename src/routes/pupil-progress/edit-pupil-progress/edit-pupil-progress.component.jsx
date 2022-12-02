@@ -12,7 +12,7 @@ import EditCockpitDrillForm from "./edit-subjects/edit-cockpit-drill-form.compon
 // import EditMovingOffForm from "./edit-subjects/edit-moving-off-form.component";
 // import EditTurningLeftForm from "./edit-subjects/edit-turning-left-form.component";
 // import EditTurningRightForm from "./edit-subjects/edit-turning-right-form.component";
-// import EditEmergingForm from "./edit-subjects/edit-emerging-form.component";
+import EditEmergingForm from "./edit-subjects/edit-emerging-form.component";
 import EditCrossroadsForm from "./edit-subjects/edit-crossroads-form.component";
 import EditBoxJunctionsForm from "./edit-subjects/edit-box-junctions-form.component";
 // import EditRoundaboutsForm from "./edit-subjects/edit-roundabouts-form.component";
@@ -29,7 +29,7 @@ import EditDualCarriagewaysForm from "./edit-subjects/edit-dual-carriageways-for
 // import EditIndependentDrivingForm from "./edit-subjects/edit-independent-driving-form.component";
 // import EditSatNavForm from "./edit-subjects/edit-sat-nav-form.component";
 // import EditPullUpRightForm from "./edit-subjects/edit-pull-up-right-form.component";
-// import EditEmergencyStopForm from "./edit-subjects/edit-emergency-stop-form.component";
+import EditEmergencyStopForm from "./edit-subjects/edit-emergency-stop-form.component";
 // import EditTirForm from "./edit-subjects/edit-tir-form.component";
 // import EditParallelParkForm from "./edit-subjects/edit-parallel-park-form.component";
 // import EditForwardBayParkForm from "./edit-subjects/edit-forward-bay-park-form.component";
@@ -60,8 +60,8 @@ const EditPupilProgressEntryPage = () => {
               <EditCockpitDrillForm {...{ handleChange, updatedEntry }} />
               {/* <EditMovingOffForm {...{ handleChange, updatedEntry }} />
               <EditTurningLeftForm {...{ handleChange, updatedEntry }} />
-              <EditTurningRightForm {...{ handleChange, updatedEntry }} />
-      <EditEmergingForm {...{ handleChange, updatedEntry }} />*/}
+              <EditTurningRightForm {...{ handleChange, updatedEntry }} /> */}
+              <EditEmergingForm {...{ handleChange, updatedEntry }} />
               <EditCrossroadsForm {...{ handleChange, updatedEntry }} />
               <EditBoxJunctionsForm {...{ handleChange, updatedEntry }} />
               {/* <EditRoundaboutsForm {...{ handleChange, updatedEntry }} />
@@ -76,13 +76,13 @@ const EditPupilProgressEntryPage = () => {
               <EditOneWayForm {...{ handleChange, updatedEntry }} /> */}
               <EditCountryLanesForm {...{ handleChange, updatedEntry }} />
               <EditDualCarriagewaysForm {...{ handleChange, updatedEntry }} />
-              {/* 
-              <EditMotorwaysForm {...{ handleChange, updatedEntry }} />
+
+              {/* <EditMotorwaysForm {...{ handleChange, updatedEntry }} />
               <EditIndependentDrivingForm {...{ handleChange, updatedEntry }} />
               <EditSatNavForm {...{ handleChange, updatedEntry }} />
-              <EditPullUpRightForm {...{ handleChange, updatedEntry }} />
+              <EditPullUpRightForm {...{ handleChange, updatedEntry }} /> */}
               <EditEmergencyStopForm {...{ handleChange, updatedEntry }} />
-              <EditTirForm {...{ handleChange, updatedEntry }} />
+              {/* <EditTirForm {...{ handleChange, updatedEntry }} />
               <EditParallelParkForm {...{ handleChange, updatedEntry }} />
               <EditForwardBayParkForm {...{ handleChange, updatedEntry }} />
               <EditReverseBayParkForm {...{ handleChange, updatedEntry }} /> */}

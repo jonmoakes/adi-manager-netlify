@@ -44,7 +44,7 @@ const EditAdequateClearanceForm = ({ updatedEntry, handleChange }) => {
             </SubjectButton>
 
             <SubjectsInputsDiv>
-              <h2>Adequate Clearance:</h2>
+              <h2>{adequateClearance}:</h2>
               <Stars grade={adequateGrade} />
 
               <SliderDiv>
