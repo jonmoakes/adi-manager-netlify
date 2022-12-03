@@ -1,99 +1,78 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  makingProgress,
+} from "../../../../strings/strings";
 
-// const EditMakingProgressForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, makingProgressGrade, makingProgressNotes } = updatedEntry;
+const EditMakingProgressForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { makingProgressGrade, makingProgressNotes } = updatedEntry;
 
-//   return (
-//     <AnimatedForm>
-//       <Hr />
+  return (
+    <>
+      <SubjectsHr />
 
-//       <SubjectsDiv>
-//         {!showSubject && makingProgressGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show making progress
-//           </SubjectButton>
-//         )}
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={makingProgressGrade}
+          buttonText={makingProgress}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {((!showSubject && makingProgressGrade === "2") ||
-//           (!showSubject && makingProgressGrade === "3") ||
-//           (!showSubject && makingProgressGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show making progress
-//           </SubjectButton>
-//         )}
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>
+              Hide {makingProgress}
+            </SubjectButton>
 
-//         {!showSubject && makingProgressGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show making progress
-//           </SubjectButton>
-//         )}
+            <SubjectsInputsDiv>
+              <h2>{makingProgress}:</h2>
+              <Stars grade={makingProgressGrade} />
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide making progress
-//             </SubjectButton>
+              <SliderDiv>
+                <CurrentGradingInfo />
+                <StyledInput
+                  type="range"
+                  name="makingProgressGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={makingProgressGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//             <SubjectsInputsDiv>
-//               <h2>Making Progress:</h2>
+              <Label>{makingProgress} Notes:</Label>
+              <StyledTextArea
+                defaultValue={makingProgressNotes}
+                type="text"
+                name="makingProgressNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//               <StarsDiv>
-//                 {makingProgressGrade === "1" && <OneStar />}
-//                 {makingProgressGrade === "2" && <TwoStars />}
-//                 {makingProgressGrade === "3" && <ThreeStars />}
-//                 {makingProgressGrade === "4" && <FourStars />}
-//                 {makingProgressGrade === "5" && <FiveStars />}
-//               </StarsDiv>
-
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="makingProgressGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={makingProgressGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
-
-//               <label>Making Progress Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={makingProgressNotes}
-//                 type="text"
-//                 name="makingProgressNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditMakingProgressForm;
+export default EditMakingProgressForm;

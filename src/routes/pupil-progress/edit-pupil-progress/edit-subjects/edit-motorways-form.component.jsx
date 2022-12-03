@@ -1,98 +1,78 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  motorways,
+} from "../../../../strings/strings";
 
-// const EditMotorwaysForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, mwaysGrade, mwaysNotes } = updatedEntry;
+const EditMotorwaysForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { mwaysGrade, mwaysNotes } = updatedEntry;
 
-//   return (
-//     <AnimatedForm>
-//       <Hr />
-//       <SubjectsDiv>
-//         {!showSubject && mwaysGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show Motorways
-//           </SubjectButton>
-//         )}
+  return (
+    <>
+      <SubjectsHr />
 
-//         {((!showSubject && mwaysGrade === "2") ||
-//           (!showSubject && mwaysGrade === "3") ||
-//           (!showSubject && mwaysGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show Motorways
-//           </SubjectButton>
-//         )}
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={mwaysGrade}
+          buttonText={motorways}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {!showSubject && mwaysGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show Motorways
-//           </SubjectButton>
-//         )}
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>
+              Hide {motorways}
+            </SubjectButton>
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide Motorways
-//             </SubjectButton>
+            <SubjectsInputsDiv>
+              <h2>{motorways}:</h2>
+              <Stars grade={mwaysGrade} />
 
-//             <SubjectsInputsDiv>
-//               <h2>Motorways:</h2>
+              <SliderDiv>
+                <CurrentGradingInfo />
+                <StyledInput
+                  type="range"
+                  name="mwaysGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={mwaysGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//               <StarsDiv>
-//                 {mwaysGrade === "1" && <OneStar />}
-//                 {mwaysGrade === "2" && <TwoStars />}
-//                 {mwaysGrade === "3" && <ThreeStars />}
-//                 {mwaysGrade === "4" && <FourStars />}
-//                 {mwaysGrade === "5" && <FiveStars />}
-//               </StarsDiv>
+              <Label>{motorways} Notes:</Label>
+              <StyledTextArea
+                defaultValue={mwaysNotes}
+                type="text"
+                name="mwaysNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="mwaysGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={mwaysGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
-
-//               <label>Motorways Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={mwaysNotes}
-//                 type="text"
-//                 name="mwaysNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditMotorwaysForm;
+export default EditMotorwaysForm;
