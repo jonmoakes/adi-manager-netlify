@@ -60,7 +60,7 @@ const EditCrossroadsForm = ({ updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>Junctions - Crossroads Notes:</Label>
+              <Label>{crossroads} Notes:</Label>
               <StyledTextArea
                 defaultValue={crossroadsNotes}
                 type="text"

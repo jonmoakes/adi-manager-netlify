@@ -11,8 +11,8 @@ import InstructorTotalExpensesMonthEmailEntryButton from "./instructor-email-but
 import InstructorTotalExpensesYearEmailEntryButton from "./instructor-email-buttons/instructor-total-expenses-year-email-button.component";
 import BlockBookingEntryEmailButton from "./pupil-email-buttons/block-booking-email-button.component";
 import InstructorBlockBookingEntryEmailButton from "./instructor-email-buttons/instructor-block-booking-entry-email-button.component";
-// import PupilProgressEntryEmailButton from "./pupil-email-buttons/pupil-progress-entry-email-button.component";
-// import InstructorPupilProgressEntryEmailButton from "./instructor-email-buttons/instructor-pupil-progress-entry-email-button.component";
+import PupilProgressEntryEmailButton from "./pupil-email-buttons/pupil-progress-entry-email-button.component";
+import InstructorPupilProgressEntryEmailButton from "./instructor-email-buttons/instructor-pupil-progress-entry-email-button.component";
 
 const EmailEntryButtons = ({ emailBody }) => {
   const { pupilEmail, instructorEmail } = useFindPupilEmail();
@@ -44,11 +44,10 @@ const EmailEntryButtons = ({ emailBody }) => {
         {...{ instructorEmail, emailBody }}
       />
 
-      {/*  
-      <PupilProgressEntryEmailButton {...{ path, pupilEmail, emailBody }} /> 
+      <PupilProgressEntryEmailButton {...{ pupilEmail, emailBody }} />
       <InstructorPupilProgressEntryEmailButton
-        {...{ path, instructorEmail, emailBody }}
-      /> */}
+        {...{ instructorEmail, emailBody }}
+      />
     </>
   );
 };

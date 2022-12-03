@@ -191,6 +191,10 @@ export const EmailSelfButton = styled(Button)`
     color: whitesmoke;
     text-shadow: 1px 1px 1px black;
   }
+
+  &.instructor-pupil-progress {
+    background-color: yellow;
+  }
 `;
 
 export const EmailPupilButton = styled(EmailSelfButton)`

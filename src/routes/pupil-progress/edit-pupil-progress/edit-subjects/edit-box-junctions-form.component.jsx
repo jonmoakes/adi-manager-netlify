@@ -59,7 +59,7 @@ const EditBoxJunctionsForm = ({ updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>Box Junctions Notes:</Label>
+              <Label>{boxJunctions} Notes:</Label>
               <StyledTextArea
                 defaultValue={boxJunctionsNotes}
                 type="text"

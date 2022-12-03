@@ -7,7 +7,7 @@ import FetchError from "../../../components/fetch-error/fetch-error.component";
 import EditEntryHeading from "../../../components/edit-entry-heading/edit-entry-heading.component";
 import EditPupilProgressSaveReturnButtons from "./edit-pupil-progress-save-return-buttons.component";
 import UpdateEntryInfo from "../../../components/tables/update-entry-info.component";
-// import EditLatestLessonForm from "./edit-subjects/edit-latest-lesson-form.component";
+import EditLatestLessonForm from "./edit-subjects/edit-latest-lesson-form.component";
 import EditCockpitDrillForm from "./edit-subjects/edit-cockpit-drill-form.component";
 // import EditMovingOffForm from "./edit-subjects/edit-moving-off-form.component";
 // import EditTurningLeftForm from "./edit-subjects/edit-turning-left-form.component";
@@ -26,13 +26,13 @@ import EditAdequateClearanceForm from "./edit-subjects/edit-adequate-clearance-f
 import EditCountryLanesForm from "./edit-subjects/edit-country-lanes-form.component";
 import EditDualCarriagewaysForm from "./edit-subjects/edit-dual-carriageways-form.component";
 // import EditMotorwaysForm from "./edit-subjects/edit-motorways-form.component";
-// import EditIndependentDrivingForm from "./edit-subjects/edit-independent-driving-form.component";
+import EditIndependentDrivingForm from "./edit-subjects/edit-independent-driving-form.component";
 // import EditSatNavForm from "./edit-subjects/edit-sat-nav-form.component";
 // import EditPullUpRightForm from "./edit-subjects/edit-pull-up-right-form.component";
 import EditEmergencyStopForm from "./edit-subjects/edit-emergency-stop-form.component";
 // import EditTirForm from "./edit-subjects/edit-tir-form.component";
 // import EditParallelParkForm from "./edit-subjects/edit-parallel-park-form.component";
-// import EditForwardBayParkForm from "./edit-subjects/edit-forward-bay-park-form.component";
+import EditForwardBayParkForm from "./edit-subjects/edit-forward-bay-park-form.component";
 // import EditReverseBayParkForm from "./edit-subjects/edit-reverse-bay-park-form.component";
 
 import { NoHeaderFooterContainer } from "../../../styles/container/container.styles";
@@ -40,7 +40,7 @@ import { DataDiv } from "../../../styles/div/div.styles";
 import { AnimatedForm } from "../../../styles/form/form.styles";
 
 const EditPupilProgressEntryPage = () => {
-  const { handleChange, updatedEntry } =
+  const { handleChange, entry, updatedEntry } =
     useHandleUpdatedPupilProgressEntryChange();
 
   const errorMessage = useSelector(selectErrorMessage);
@@ -56,7 +56,9 @@ const EditPupilProgressEntryPage = () => {
           <DataDiv className="edit">
             <UpdateEntryInfo />
             <AnimatedForm>
-              {/* <EditLatestLessonForm {...{ handleChange, updatedEntry }} /> */}
+              <EditLatestLessonForm
+                {...{ handleChange, entry, updatedEntry }}
+              />
               <EditCockpitDrillForm {...{ handleChange, updatedEntry }} />
               {/* <EditMovingOffForm {...{ handleChange, updatedEntry }} />
               <EditTurningLeftForm {...{ handleChange, updatedEntry }} />
@@ -77,15 +79,15 @@ const EditPupilProgressEntryPage = () => {
               <EditCountryLanesForm {...{ handleChange, updatedEntry }} />
               <EditDualCarriagewaysForm {...{ handleChange, updatedEntry }} />
 
-              {/* <EditMotorwaysForm {...{ handleChange, updatedEntry }} />
+              {/* <EditMotorwaysForm {...{ handleChange, updatedEntry }} /> */}
               <EditIndependentDrivingForm {...{ handleChange, updatedEntry }} />
-              <EditSatNavForm {...{ handleChange, updatedEntry }} />
+              {/* <EditSatNavForm {...{ handleChange, updatedEntry }} />
               <EditPullUpRightForm {...{ handleChange, updatedEntry }} /> */}
               <EditEmergencyStopForm {...{ handleChange, updatedEntry }} />
               {/* <EditTirForm {...{ handleChange, updatedEntry }} />
-              <EditParallelParkForm {...{ handleChange, updatedEntry }} />
+              <EditParallelParkForm {...{ handleChange, updatedEntry }} /> */}
               <EditForwardBayParkForm {...{ handleChange, updatedEntry }} />
-              <EditReverseBayParkForm {...{ handleChange, updatedEntry }} /> */}
+              {/* <EditReverseBayParkForm {...{ handleChange, updatedEntry }} /> */}
             </AnimatedForm>
           </DataDiv>
         </>

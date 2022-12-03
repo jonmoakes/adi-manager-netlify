@@ -59,7 +59,7 @@ const EditAdequateClearanceForm = ({ updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>Adequate Clearance Notes:</Label>
+              <Label>{adequateClearance} Notes:</Label>
               <StyledTextArea
                 value={adequateNotes}
                 type="text"

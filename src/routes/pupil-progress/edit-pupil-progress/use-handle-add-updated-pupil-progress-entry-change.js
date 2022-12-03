@@ -72,6 +72,7 @@ const useHandleUpdatedPupilProgressEntryChange = () => {
   };
 
   return {
+    entry,
     updatedEntry,
     handleChange,
   };

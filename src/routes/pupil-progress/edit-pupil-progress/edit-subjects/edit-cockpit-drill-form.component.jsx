@@ -60,7 +60,7 @@ const EditCockpitDrillForm = ({ updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>Cockpit Drill Notes</Label>
+              <Label>{cockpitDrill} Notes</Label>
               <StyledTextArea
                 defaultValue={cockpitDrillNotes}
                 type="text"

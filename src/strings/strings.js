@@ -270,3 +270,6 @@ export const cockpitDrill = "cockpit drill";
 export const dualCarriageways = "dual carriageways";
 export const emergencyStop = "emergency stop";
 export const emerging = "junctions - emerging";
+export const forwardBayPark = "forward bay park";
+export const independentDriving = "independent driving";
+export const latestLessonPerformance = "latest lesson performance";

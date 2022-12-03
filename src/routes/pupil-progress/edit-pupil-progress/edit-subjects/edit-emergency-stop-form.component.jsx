@@ -59,7 +59,7 @@ const EditEmergencyStopForm = ({ updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>Emergency Stop Notes:</Label>
+              <Label>{emergencyStop} Notes:</Label>
               <StyledTextArea
                 defaultValue={stopNotes}
                 type="text"

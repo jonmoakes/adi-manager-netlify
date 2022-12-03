@@ -59,7 +59,7 @@ const EditCountryLanesForm = ({ updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>Country Lanes Notes:</Label>
+              <Label>{countryLanes} Notes:</Label>
               <StyledTextArea
                 defaultValue={lanesNotes}
                 type="text"

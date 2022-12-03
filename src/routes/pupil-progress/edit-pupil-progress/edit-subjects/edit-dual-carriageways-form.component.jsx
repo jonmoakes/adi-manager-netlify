@@ -59,7 +59,7 @@ const EditDualCarriagewaysForm = ({ updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>Dual Carriageways Notes:</Label>
+              <Label>{dualCarriageways} Notes:</Label>
               <StyledTextArea
                 defaultValue={dcNotes}
                 type="text"

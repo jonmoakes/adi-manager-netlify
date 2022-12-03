@@ -140,6 +140,8 @@ const UpdateEntryInfo = ({ primaryPhoneNumber, emailAddress }) => {
                   please note only the latest lesson date, grading and summary
                   is available to email in this section. you will find the email
                   buttons within the "Show Latest Lesson Performance" section.
+                  there must be at least a date entered and saved in order for
+                  the email buttons to appear.
                 </p>
               )}
               <hr />
