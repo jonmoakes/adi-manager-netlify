@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  meetingTraffic,
+} from "../../../../strings/strings";
 
 const MeetingTrafficForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const MeetingTrafficForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Meeting Traffic
+          {!showSubject ? "Show" : "Hide"} {meetingTraffic}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Meeting Traffic:</h2>
+            <h2>{meetingTraffic}:</h2>
             <Stars grade={meetingGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const MeetingTrafficForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Meeting Traffic Notes:</Label>
+            <Label>{meetingTraffic} Notes:</Label>
             <StyledTextArea
               value={meetingNotes || ""}
               type="text"

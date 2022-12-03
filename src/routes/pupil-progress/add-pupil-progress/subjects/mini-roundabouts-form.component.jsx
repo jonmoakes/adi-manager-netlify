@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  miniRoundabouts,
+} from "../../../../strings/strings";
 
 const MiniRoundaboutsForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -26,12 +29,12 @@ const MiniRoundaboutsForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Mini Roundabouts
+          {!showSubject ? "Show" : "Hide"} {miniRoundabouts}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Mini Roundabouts:</h2>
+            <h2>{miniRoundabouts}:</h2>
             <Stars grade={miniRbGrade} />
 
             <SliderDiv>
@@ -46,7 +49,7 @@ const MiniRoundaboutsForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Mini Roundabouts Notes:</Label>
+            <Label>{miniRoundabouts} Notes:</Label>
             <StyledTextArea
               value={miniRbNotes || ""}
               type="text"

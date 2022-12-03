@@ -1,99 +1,78 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  roundabouts,
+} from "../../../../strings/strings";
 
-// const EditRoundaboutsForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, roundaboutsGrade, roundaboutsNotes } = updatedEntry;
+const EditRoundaboutsForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { roundaboutsGrade, roundaboutsNotes } = updatedEntry;
 
-//   return (
-//     <AnimatedForm>
-//       <Hr />
+  return (
+    <>
+      <SubjectsHr />
 
-//       <SubjectsDiv>
-//         {!showSubject && roundaboutsGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show Roundabouts
-//           </SubjectButton>
-//         )}
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={roundaboutsGrade}
+          buttonText={roundabouts}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {((!showSubject && roundaboutsGrade === "2") ||
-//           (!showSubject && roundaboutsGrade === "3") ||
-//           (!showSubject && roundaboutsGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show roundabouts
-//           </SubjectButton>
-//         )}
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>
+              Hide {roundabouts}
+            </SubjectButton>
 
-//         {!showSubject && roundaboutsGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show roundabouts
-//           </SubjectButton>
-//         )}
+            <SubjectsInputsDiv>
+              <h2>{roundabouts}:</h2>
+              <Stars grade={roundaboutsGrade} />
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide roundabouts
-//             </SubjectButton>
+              <SliderDiv>
+                <CurrentGradingInfo />
+                <StyledInput
+                  type="range"
+                  name="roundaboutsGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={roundaboutsGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//             <SubjectsInputsDiv>
-//               <h2>Roundabouts:</h2>
+              <Label>{roundabouts} Notes:</Label>
+              <StyledTextArea
+                defaultValue={roundaboutsNotes}
+                type="text"
+                name="roundaboutsNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//               <StarsDiv>
-//                 {roundaboutsGrade === "1" && <OneStar />}
-//                 {roundaboutsGrade === "2" && <TwoStars />}
-//                 {roundaboutsGrade === "3" && <ThreeStars />}
-//                 {roundaboutsGrade === "4" && <FourStars />}
-//                 {roundaboutsGrade === "5" && <FiveStars />}
-//               </StarsDiv>
-
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="roundaboutsGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={roundaboutsGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
-
-//               <label>Roundabouts Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={roundaboutsNotes}
-//                 type="text"
-//                 name="roundaboutsNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditRoundaboutsForm;
+export default EditRoundaboutsForm;

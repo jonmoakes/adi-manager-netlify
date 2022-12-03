@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  oneWayStreets,
+} from "../../../../strings/strings";
 
 const OneWayForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const OneWayForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} One Way Streets
+          {!showSubject ? "Show" : "Hide"} {oneWayStreets}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>One Way Streets:</h2>
+            <h2>{oneWayStreets}:</h2>
             <Stars grade={oneWayGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const OneWayForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>One Way Streets Notes:</Label>
+            <Label>{oneWayStreets} Notes:</Label>
             <StyledTextArea
               value={oneWayNotes || ""}
               type="text"

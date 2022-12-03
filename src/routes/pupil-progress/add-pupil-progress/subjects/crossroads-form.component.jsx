@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  crossroads,
+} from "../../../../strings/strings";
 
 const CrossroadsForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const CrossroadsForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Junctions - crossroads
+          {!showSubject ? "Show" : "Hide"} {crossroads}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Junctions - Crossroads:</h2>
+            <h2>{crossroads}:</h2>
             <Stars grade={crossroadsGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const CrossroadsForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Junctions - Crossroads Notes:</Label>
+            <Label>{crossroads} Notes:</Label>
             <StyledTextArea
               value={crossroadsNotes || ""}
               type="text"

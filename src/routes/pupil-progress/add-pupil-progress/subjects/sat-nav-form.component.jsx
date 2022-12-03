@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  satNav,
+} from "../../../../strings/strings";
 
 const SatNavForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const SatNavForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Sat-Nav
+          {!showSubject ? "Show" : "Hide"} {satNav}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Sat-Nav:</h2>
+            <h2>{satNav}:</h2>
             <Stars grade={satGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const SatNavForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Sat-Nav Notes:</Label>
+            <Label>{satNav} Notes:</Label>
             <StyledTextArea
               value={satNotes || ""}
               type="text"

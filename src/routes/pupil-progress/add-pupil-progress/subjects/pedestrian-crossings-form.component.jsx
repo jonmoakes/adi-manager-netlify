@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  pedestrianCrossings,
+} from "../../../../strings/strings";
 
 const PedestrianCrossingsForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const PedestrianCrossingsForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Pedestrian Crossings
+          {!showSubject ? "Show" : "Hide"} {pedestrianCrossings}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Pedestrian Crossings:</h2>
+            <h2>{pedestrianCrossings}:</h2>
             <Stars grade={pedXGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const PedestrianCrossingsForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Pedestrian Crossings Notes:</Label>
+            <Label>{pedestrianCrossings} Notes:</Label>
             <StyledTextArea
               value={pedXNotes || ""}
               type="text"

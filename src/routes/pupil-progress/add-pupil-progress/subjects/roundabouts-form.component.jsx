@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  roundabouts,
+} from "../../../../strings/strings";
 
 const RoundaboutsForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -26,12 +29,12 @@ const RoundaboutsForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Roundabouts
+          {!showSubject ? "Show" : "Hide"} {roundabouts}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Roundabouts:</h2>
+            <h2>{roundabouts}:</h2>
             <Stars grade={roundaboutsGrade} />
 
             <SliderDiv>
@@ -46,7 +49,7 @@ const RoundaboutsForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Roundabouts Notes:</Label>
+            <Label>{roundabouts} notes:</Label>
             <StyledTextArea
               value={roundaboutsNotes || ""}
               type="text"

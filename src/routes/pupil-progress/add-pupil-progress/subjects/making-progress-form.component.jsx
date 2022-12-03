@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  makingProgress,
+} from "../../../../strings/strings";
 
 const MakingProgressForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const MakingProgressForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Making Progress
+          {!showSubject ? "Show" : "Hide"} {makingProgress}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Making Progress:</h2>
+            <h2>{makingProgress}:</h2>
             <Stars grade={makingProgressGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const MakingProgressForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Making Progress Notes:</Label>
+            <Label>{makingProgress} Notes:</Label>
             <StyledTextArea
               value={makingProgressNotes || ""}
               type="text"

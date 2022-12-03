@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  pullUpRight,
+} from "../../../../strings/strings";
 
 const PullUpRightForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -26,7 +29,7 @@ const PullUpRightForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Pull Up Right
+          {!showSubject ? "Show" : "Hide"} {pullUpRight}
         </SubjectButton>
 
         {showSubject && (

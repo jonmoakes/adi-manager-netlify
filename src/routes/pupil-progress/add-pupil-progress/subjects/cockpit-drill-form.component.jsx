@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  cockpitDrill,
+} from "../../../../strings/strings";
 
 const CockpitDrillForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const CockpitDrillForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Cockpit Drill
+          {!showSubject ? "Show" : "Hide"} {cockpitDrill}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Cockpit Drill:</h2>
+            <h2>{cockpitDrill}:</h2>
             <Stars grade={cockpitDrillGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const CockpitDrillForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Cockpit Drill Notes</Label>
+            <Label>{cockpitDrill} Notes</Label>
             <StyledTextArea
               value={cockpitDrillNotes || ""}
               type="text"

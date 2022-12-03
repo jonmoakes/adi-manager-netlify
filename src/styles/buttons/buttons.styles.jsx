@@ -110,18 +110,20 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 600px) {
-    width: 300px;
+    width: 250px;
   }
 
   @media screen and (max-width: 450px) {
-    width: 250px;
     height: 65px;
   }
 
   @media screen and (max-width: 320px) {
     font-size: 16px;
-    width: 200px;
+    width: 180px;
     height: 60px;
+  }
+  @media screen and (max-width: 280px) {
+    width: 160px;
   }
 `;
 

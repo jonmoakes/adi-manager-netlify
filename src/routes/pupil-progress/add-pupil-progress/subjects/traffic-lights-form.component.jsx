@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  trafficLights,
+} from "../../../../strings/strings";
 
 const TrafficLightsForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -26,12 +29,12 @@ const TrafficLightsForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Traffic Lights
+          {!showSubject ? "Show" : "Hide"} {trafficLights}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Traffic Lights:</h2>
+            <h2>{trafficLights}:</h2>
             <Stars grade={tlGrade} />
 
             <SliderDiv>
@@ -46,7 +49,7 @@ const TrafficLightsForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Traffic Lights Notes:</Label>
+            <Label>{trafficLights} Notes:</Label>
             <StyledTextArea
               value={tlNotes || ""}
               type="text"

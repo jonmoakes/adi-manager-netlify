@@ -1,99 +1,78 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  pullUpRight,
+} from "../../../../strings/strings";
 
-// const EditPullUpRightForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, pullGrade, pullNotes } = updatedEntry;
+const EditPullUpRightForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { pullGrade, pullNotes } = updatedEntry;
 
-//   return (
-//     <AnimatedForm>
-//       <Hr />
+  return (
+    <>
+      <SubjectsHr />
 
-//       <SubjectsDiv>
-//         {!showSubject && pullGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show Pull Up On The Right
-//           </SubjectButton>
-//         )}
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={pullGrade}
+          buttonText={pullUpRight}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {((!showSubject && pullGrade === "2") ||
-//           (!showSubject && pullGrade === "3") ||
-//           (!showSubject && pullGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show Pull Up On The Right
-//           </SubjectButton>
-//         )}
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>
+              Hide {pullUpRight}
+            </SubjectButton>
 
-//         {!showSubject && pullGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show Pull Up On The Right
-//           </SubjectButton>
-//         )}
+            <SubjectsInputsDiv>
+              <h2>{pullUpRight}:</h2>
+              <Stars grade={pullGrade} />
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide Pull Up On The Right
-//             </SubjectButton>
+              <SliderDiv>
+                <CurrentGradingInfo />
+                <StyledInput
+                  type="range"
+                  name="pullGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={pullGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//             <SubjectsInputsDiv>
-//               <h2>Pull Up On The Right:</h2>
+              <Label>Pull Up On The Right Notes:</Label>
+              <StyledTextArea
+                defaultValue={pullNotes}
+                type="text"
+                name="pullNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//               <StarsDiv>
-//                 {pullGrade === "1" && <OneStar />}
-//                 {pullGrade === "2" && <TwoStars />}
-//                 {pullGrade === "3" && <ThreeStars />}
-//                 {pullGrade === "4" && <FourStars />}
-//                 {pullGrade === "5" && <FiveStars />}
-//               </StarsDiv>
-
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="pullGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={pullGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
-
-//               <label>Pull Up On The Right Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={pullNotes}
-//                 type="text"
-//                 name="pullNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditPullUpRightForm;
+export default EditPullUpRightForm;

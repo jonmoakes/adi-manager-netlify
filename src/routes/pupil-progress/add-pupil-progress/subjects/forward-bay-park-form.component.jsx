@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  forwardBayPark,
+} from "../../../../strings/strings";
 
 const ForwardBayParkForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const ForwardBayParkForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Forward Bay Park
+          {!showSubject ? "Show" : "Hide"} {forwardBayPark}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Forward Bay Park:</h2>
+            <h2>{forwardBayPark}:</h2>
             <Stars grade={fBayGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const ForwardBayParkForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Forward Bay Park Notes:</Label>
+            <Label>{forwardBayPark} Notes:</Label>
             <StyledTextArea
               value={fBayNotes || ""}
               type="text"

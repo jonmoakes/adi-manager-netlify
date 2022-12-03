@@ -16,7 +16,11 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  parallelPark,
+} from "../../../../strings/strings";
+
 const ParallelParkForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
   const { pParkGrade, pParkNotes } = entry;
@@ -26,12 +30,12 @@ const ParallelParkForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Parallel Park
+          {!showSubject ? "Show" : "Hide"} {parallelPark}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Parallel Park:</h2>
+            <h2>{parallelPark}:</h2>
             <Stars grade={pParkGrade} />
 
             <SliderDiv>
@@ -46,7 +50,7 @@ const ParallelParkForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Parallel Park Notes:</Label>
+            <Label>{parallelPark} Notes:</Label>
             <StyledTextArea
               value={pParkNotes || ""}
               type="text"

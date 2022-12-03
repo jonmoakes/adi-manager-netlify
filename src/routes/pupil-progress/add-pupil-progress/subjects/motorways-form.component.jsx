@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  motorways,
+} from "../../../../strings/strings";
 
 const MotorwaysForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -26,12 +29,12 @@ const MotorwaysForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Motorways
+          {!showSubject ? "Show" : "Hide"} {motorways}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Motorways:</h2>
+            <h2>{motorways}:</h2>
             <Stars grade={mwaysGrade} />
 
             <SliderDiv>
@@ -46,7 +49,7 @@ const MotorwaysForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Motorways Notes:</Label>
+            <Label>{motorways} Notes:</Label>
             <StyledTextArea
               value={mwaysNotes || ""}
               type="text"

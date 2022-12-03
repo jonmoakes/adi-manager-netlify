@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  movingOffandStopping,
+} from "../../../../strings/strings";
 
 const MovingOffForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const MovingOffForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} M/Off & Stopping
+          {!showSubject ? "Show" : "Hide"} {movingOffandStopping}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Moving Off and stopping:</h2>
+            <h2>{movingOffandStopping}:</h2>
             <Stars grade={movingOffGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const MovingOffForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Moving Off And Stopping Notes:</Label>
+            <Label>{movingOffandStopping} Notes:</Label>
             <StyledTextArea
               value={movingOffNotes || ""}
               type="text"

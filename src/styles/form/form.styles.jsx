@@ -48,6 +48,10 @@ export const StyledTextArea = styled.textarea`
     border-color: #3085d6;
   }
 
+  @media screen and (max-width: 1366px) {
+    box-shadow: none;
+  }
+
   @media screen and (max-width: 450px) {
     font-size: 16px;
   }
@@ -116,15 +120,6 @@ export const PaginationSelect = styled.select`
   }
 `;
 
-//from jblueco
-// export const PaginationInput = styled.input`
-//   width: 200px;
-//   height: 40px;
-//   border-radius: 15px;
-//   border: 2px solid black;
-//   text-align: center;
-// `;
-
 export const AddNewProductSelect = styled.select`
   width: 100%;
   height: 50px;
@@ -174,6 +169,10 @@ export const StyledInput = styled.input`
   }
   ::placeholder {
     text-transform: capitalize;
+  }
+
+  @media screen and (max-width: 1366px) {
+    box-shadow: none;
   }
 
   @media screen and (max-width: 450px) {

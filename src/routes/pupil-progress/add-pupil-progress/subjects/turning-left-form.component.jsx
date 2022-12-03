@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  turningLeft,
+} from "../../../../strings/strings";
 
 const TurningLeftForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const TurningLeftForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Junctions - Left
+          {!showSubject ? "Show" : "Hide"} {turningLeft}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Junctions - Turning Left:</h2>
+            <h2>{turningLeft}:</h2>
             <Stars grade={turningLeftGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const TurningLeftForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Junctions - Turning Left Notes:</Label>
+            <Label>{turningLeft} Notes:</Label>
             <StyledTextArea
               value={turningLeftNotes || ""}
               type="text"

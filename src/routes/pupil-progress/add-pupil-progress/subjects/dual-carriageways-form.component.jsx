@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  dualCarriageways,
+} from "../../../../strings/strings";
 
 const DualCarriagewaysForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const DualCarriagewaysForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Dual Carriageways
+          {!showSubject ? "Show" : "Hide"} {dualCarriageways}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Dual Carriageways:</h2>
+            <h2>{dualCarriageways}:</h2>
             <Stars grade={dcGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const DualCarriagewaysForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Dual Carriageways Notes:</Label>
+            <Label>{dualCarriageways} Notes:</Label>
             <StyledTextArea
               value={dcNotes || ""}
               type="text"

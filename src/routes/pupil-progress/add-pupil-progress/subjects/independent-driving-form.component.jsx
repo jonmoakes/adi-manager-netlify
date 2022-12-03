@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  independentDriving,
+} from "../../../../strings/strings";
 
 const IndependentDrivingForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const IndependentDrivingForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Indy Driving
+          {!showSubject ? "Show" : "Hide"} {independentDriving}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Independent Driving:</h2>
+            <h2>{independentDriving}:</h2>
             <Stars grade={indyGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const IndependentDrivingForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Independent Driving Notes:</Label>
+            <Label>{independentDriving} Notes:</Label>
             <StyledTextArea
               value={indyNotes || ""}
               type="text"

@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  emerging,
+} from "../../../../strings/strings";
 
 const EmergingForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const EmergingForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Juncs - Emerging
+          {!showSubject ? "Show" : "Hide"} {emerging}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Junctions - Emerging:</h2>
+            <h2>{emerging}:</h2>
             <Stars grade={emergingGrade} />
 
             <SliderDiv>
@@ -48,7 +51,7 @@ const EmergingForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Junctions - Emerging Notes:</Label>
+            <Label>{emerging} Notes:</Label>
             <StyledTextArea
               value={emergingNotes || ""}
               type="text"

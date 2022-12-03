@@ -1,98 +1,77 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  parallelPark,
+} from "../../../../strings/strings";
 
-// const EditParallelParkForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, pParkGrade, pParkNotes } = updatedEntry;
-//   return (
-//     <AnimatedForm>
-//       <Hr />
+const EditParallelParkForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { pParkGrade, pParkNotes } = updatedEntry;
+  return (
+    <>
+      <SubjectsHr />
 
-//       <SubjectsDiv>
-//         {!showSubject && pParkGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show Parallel Park
-//           </SubjectButton>
-//         )}
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={pParkGrade}
+          buttonText={parallelPark}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {((!showSubject && pParkGrade === "2") ||
-//           (!showSubject && pParkGrade === "3") ||
-//           (!showSubject && pParkGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show Parallel Park
-//           </SubjectButton>
-//         )}
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>
+              Hide {parallelPark}
+            </SubjectButton>
 
-//         {!showSubject && pParkGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show Parallel Park
-//           </SubjectButton>
-//         )}
+            <SubjectsInputsDiv>
+              <h2>{parallelPark}:</h2>
+              <Stars grade={pParkGrade} />
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide Parallel Park
-//             </SubjectButton>
+              <SliderDiv>
+                <CurrentGradingInfo />
+                <StyledInput
+                  type="range"
+                  name="pParkGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={pParkGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//             <SubjectsInputsDiv>
-//               <h2>Parallel Park:</h2>
+              <Label>{parallelPark} Notes:</Label>
+              <StyledTextArea
+                defaultValue={pParkNotes}
+                type="text"
+                name="pParkNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//               <StarsDiv>
-//                 {pParkGrade === "1" && <OneStar />}
-//                 {pParkGrade === "2" && <TwoStars />}
-//                 {pParkGrade === "3" && <ThreeStars />}
-//                 {pParkGrade === "4" && <FourStars />}
-//                 {pParkGrade === "5" && <FiveStars />}
-//               </StarsDiv>
-
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="pParkGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={pParkGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
-
-//               <label>Parallel Park Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={pParkNotes}
-//                 type="text"
-//                 name="pParkNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditParallelParkForm;
+export default EditParallelParkForm;

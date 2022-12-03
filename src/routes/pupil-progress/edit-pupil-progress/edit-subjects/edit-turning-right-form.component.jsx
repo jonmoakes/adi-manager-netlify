@@ -1,97 +1,78 @@
-// import useShowSubject from "../../../../custom-hooks/what-to-render-logic/use-show-subject";
+import useShowSubject from "../../../../hooks/use-show-subject";
 
-// import SubjectButton from "../../../../components/subject-button/subject-button.component";
-// import OneStar from "../../add-pupil-progress-page/stars/one-star.component";
-// import TwoStars from "../../add-pupil-progress-page/stars/two-stars.component";
-// import ThreeStars from "../../add-pupil-progress-page/stars/three-stars.component";
-// import FourStars from "../../add-pupil-progress-page/stars/four-stars.component";
-// import FiveStars from "../../add-pupil-progress-page/stars/five-stars.component";
-// import CurrentGradingInfo from "../../add-pupil-progress-page/current-grading-info.component";
+import SubjectButton from "../../../../components/subject-button/subject-button.component";
+import GradeButtons from "./grade-buttons.component";
+import Stars from "../../stars/stars.component";
+import CurrentGradingInfo from "../../add-pupil-progress/current-grading-info.component";
 
-// import {
-//   SubjectsDiv,
-//   SubjectsInputsDiv,
-//   StarsDiv,
-//   Hr,
-//   SliderDiv,
-//   AnimatedForm,
-// } from "../../pupil-progress.styles";
+import {
+  SubjectsDiv,
+  SubjectsInputsDiv,
+  SliderDiv,
+} from "../../../../styles/div/div.styles";
+import {
+  Label,
+  StyledInput,
+  StyledTextArea,
+} from "../../../../styles/form/form.styles";
+import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-// import { placeholderInfiniteSpaceMessage } from "../../../../resuable-messages/reusable-messages";
+import {
+  placeholderInfiniteSpaceMessage,
+  turningRight,
+} from "../../../../strings/strings";
 
-// const EditTurningRightForm = ({ updatedEntry, handleChange }) => {
-//   const { showSubject, handleClick } = useShowSubject();
-//   const { id, turningRightGrade, turningRightNotes } = updatedEntry;
-//   return (
-//     <AnimatedForm>
-//       <Hr />
-//       <SubjectsDiv>
-//         {!showSubject && turningRightGrade === "1" && (
-//           <SubjectButton isGrade1 onClick={handleClick}>
-//             Show Junctions - Right
-//           </SubjectButton>
-//         )}
+const EditTurningRightForm = ({ updatedEntry, handleChange }) => {
+  const { showSubject, handleClick } = useShowSubject();
+  const { turningRightGrade, turningRightNotes } = updatedEntry;
 
-//         {((!showSubject && turningRightGrade === "2") ||
-//           (!showSubject && turningRightGrade === "3") ||
-//           (!showSubject && turningRightGrade === "4")) && (
-//           <SubjectButton isGrade2To4 onClick={handleClick}>
-//             Show Junctions - Right
-//           </SubjectButton>
-//         )}
+  return (
+    <>
+      <SubjectsHr />
 
-//         {!showSubject && turningRightGrade === "5" && (
-//           <SubjectButton isGrade5 onClick={handleClick}>
-//             Show Junctions - Right
-//           </SubjectButton>
-//         )}
+      <SubjectsDiv>
+        <GradeButtons
+          subjectGrade={turningRightGrade}
+          buttonText={turningRight}
+          {...{ showSubject, handleClick }}
+        />
 
-//         {showSubject && (
-//           <>
-//             <SubjectButton isHide onClick={handleClick}>
-//               Hide Junctions - Right
-//             </SubjectButton>
+        {showSubject && (
+          <>
+            <SubjectButton onClick={handleClick}>
+              Hide {turningRight}
+            </SubjectButton>
 
-//             <SubjectsInputsDiv>
-//               <h2>Junctions - Turning Right:</h2>
+            <SubjectsInputsDiv>
+              <h2>{turningRight}:</h2>
+              <Stars grade={turningRightGrade} />
 
-//               <StarsDiv>
-//                 {turningRightGrade === "1" && <OneStar />}
-//                 {turningRightGrade === "2" && <TwoStars />}
-//                 {turningRightGrade === "3" && <ThreeStars />}
-//                 {turningRightGrade === "4" && <FourStars />}
-//                 {turningRightGrade === "5" && <FiveStars />}
-//               </StarsDiv>
+              <SliderDiv>
+                <CurrentGradingInfo />
+                <StyledInput
+                  type="range"
+                  name="turningRightGrade"
+                  min="1"
+                  max="5"
+                  defaultValue={turningRightGrade}
+                  onChange={handleChange}
+                />
+              </SliderDiv>
 
-//               <SliderDiv>
-//                 <CurrentGradingInfo />
-//                 <input
-//                   className="slider"
-//                   id={id}
-//                   type="range"
-//                   name="turningRightGrade"
-//                   min="1"
-//                   max="5"
-//                   defaultValue={turningRightGrade}
-//                   onChange={handleChange}
-//                 />
-//               </SliderDiv>
+              <Label>Junctions - Turning Right Notes:</Label>
+              <StyledTextArea
+                defaultValue={turningRightNotes}
+                type="text"
+                name="turningRightNotes"
+                onChange={handleChange}
+                placeholder={placeholderInfiniteSpaceMessage}
+              />
+            </SubjectsInputsDiv>
+          </>
+        )}
+      </SubjectsDiv>
+    </>
+  );
+};
 
-//               <label>Junctions - Turning Right Notes:</label>
-//               <textarea
-//                 id={id}
-//                 defaultValue={turningRightNotes}
-//                 type="text"
-//                 name="turningRightNotes"
-//                 onChange={handleChange}
-//                 placeholder={placeholderInfiniteSpaceMessage}
-//               />
-//             </SubjectsInputsDiv>
-//           </>
-//         )}
-//       </SubjectsDiv>
-//     </AnimatedForm>
-//   );
-// };
-
-// export default EditTurningRightForm;
+export default EditTurningRightForm;

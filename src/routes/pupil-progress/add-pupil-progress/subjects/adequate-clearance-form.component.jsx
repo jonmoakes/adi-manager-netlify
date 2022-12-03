@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  adequateClearance,
+} from "../../../../strings/strings";
 
 const AdequateClearanceForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const AdequateClearanceForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Adequate Clearance
+          {!showSubject ? "Show" : "Hide"} {adequateClearance}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Adequate Clearance:</h2>
+            <h2>{adequateClearance}:</h2>
             <Stars grade={adequateGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const AdequateClearanceForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Adequate Clearance Notes:</Label>
+            <Label>{adequateClearance} Notes:</Label>
             <StyledTextArea
               value={adequateNotes || ""}
               type="text"

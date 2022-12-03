@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  reverseBayPark,
+} from "../../../../strings/strings";
 
 const ReverseBayParkForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const ReverseBayParkForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Reverse Bay Park
+          {!showSubject ? "Show" : "Hide"} {reverseBayPark}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Reverse Bay Park:</h2>
+            <h2>{reverseBayPark}:</h2>
             <Stars grade={reverseBayGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const ReverseBayParkForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Reverse Bay Park Notes:</Label>
+            <Label>{reverseBayPark} Notes:</Label>
             <StyledTextArea
               value={reverseBayNotes || ""}
               type="text"

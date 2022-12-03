@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  emergencyStop,
+} from "../../../../strings/strings";
 
 const EmergencyStopForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const EmergencyStopForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Emergency Stop
+          {!showSubject ? "Show" : "Hide"} {emergencyStop}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Emergency Stop:</h2>
+            <h2>{emergencyStop}:</h2>
             <Stars grade={stopGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const EmergencyStopForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Emergency Stop Notes:</Label>
+            <Label>{emergencyStop} Notes:</Label>
             <StyledTextArea
               value={stopNotes || ""}
               type="text"

@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  boxJunctions,
+} from "../../../../strings/strings";
 
 const BoxJunctionsForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -26,12 +29,12 @@ const BoxJunctionsForm = ({ entry, handleChange }) => {
       <SubjectsHr />
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Box Junctions
+          {!showSubject ? "Show" : "Hide"} {boxJunctions}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Box Junctions:</h2>
+            <h2>{boxJunctions}:</h2>
             <Stars grade={boxJunctionsGrade} />
 
             <SliderDiv>
@@ -46,7 +49,7 @@ const BoxJunctionsForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Box Junctions Notes:</Label>
+            <Label>{boxJunctions} Notes:</Label>
             <StyledTextArea
               value={boxJunctionsNotes || ""}
               type="text"

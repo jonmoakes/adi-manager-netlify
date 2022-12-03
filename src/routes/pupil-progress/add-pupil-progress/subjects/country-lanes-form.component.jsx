@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  countryLanes,
+} from "../../../../strings/strings";
 
 const CountryLanesForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const CountryLanesForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Country Lanes
+          {!showSubject ? "Show" : "Hide"} {countryLanes}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Country Lanes:</h2>
+            <h2>{countryLanes}:</h2>
             <Stars grade={lanesGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const CountryLanesForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Country Lanes Notes:</Label>
+            <Label>{countryLanes} Notes:</Label>
             <StyledTextArea
               value={lanesNotes || ""}
               type="text"

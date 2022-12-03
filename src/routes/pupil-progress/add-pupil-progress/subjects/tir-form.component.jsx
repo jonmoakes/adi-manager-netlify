@@ -16,7 +16,10 @@ import {
 } from "../../../../styles/form/form.styles";
 import { SubjectsHr } from "../../../../styles/hr/hr.styles";
 
-import { placeholderInfiniteSpaceMessage } from "../../../../strings/strings";
+import {
+  placeholderInfiniteSpaceMessage,
+  turnInTheRoad,
+} from "../../../../strings/strings";
 
 const TirForm = ({ entry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -27,12 +30,12 @@ const TirForm = ({ entry, handleChange }) => {
 
       <SubjectsDiv>
         <SubjectButton onClick={handleClick}>
-          {!showSubject ? "Show" : "Hide"} Turn In The Road
+          {!showSubject ? "Show" : "Hide"} {turnInTheRoad}
         </SubjectButton>
 
         {showSubject && (
           <SubjectsInputsDiv>
-            <h2>Turn In The Road:</h2>
+            <h2>{turnInTheRoad}:</h2>
             <Stars grade={tirGrade} />
 
             <SliderDiv>
@@ -47,7 +50,7 @@ const TirForm = ({ entry, handleChange }) => {
               />
             </SliderDiv>
 
-            <Label>Turn In The Road Notes:</Label>
+            <Label>{turnInTheRoad} Notes:</Label>
             <StyledTextArea
               value={tirNotes || ""}
               type="text"
