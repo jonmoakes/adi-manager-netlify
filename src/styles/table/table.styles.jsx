@@ -28,7 +28,6 @@ export const TableWithStyle = styled.table`
 
   td {
     border: 3px solid black;
-    padding: 20px 5px;
     padding: 20px 0px;
     width: auto;
 

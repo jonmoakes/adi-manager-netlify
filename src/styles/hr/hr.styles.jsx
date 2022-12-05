@@ -4,22 +4,7 @@ export const SubjectsHr = styled.hr`
   margin: 50px auto;
 `;
 
-export const BlackHr = styled.hr`
-  border-color: black;
-  width: 90%;
-`;
-
-export const SignInUpHr = styled.hr`
-  border-color: black;
-  width: 90%;
-  margin-bottom: 20px;
-`;
-
-export const PwaTopHr = styled.hr`
-  /* border-color: #b9d1e5; */
-`;
-
-export const PwaBottomHr = styled(PwaTopHr)`
+export const PwaBottomHr = styled.hr`
   margin-top: 30px;
 
   @media screen and (max-width: 450px) {

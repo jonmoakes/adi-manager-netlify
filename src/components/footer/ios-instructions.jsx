@@ -1,7 +1,7 @@
 import { InstructionsDiv } from "../../styles/div/div.styles";
 import { LowercaseA } from "../../styles/a/a.styles";
 import { CloseInstructionsButton } from "../../styles/buttons/buttons.styles";
-import { Li } from "../../styles/li/li.styles";
+import { PwaLi, PwaUl } from "../../styles/li/li.styles";
 
 const IosInstructions = ({ setShowIos }) => (
   <InstructionsDiv>
@@ -11,30 +11,32 @@ const IosInstructions = ({ setShowIos }) => (
       launch it and navigate to the app's page:
     </p>
     <p>
-      <LowercaseA href="https://www.adi-manager.co.uk">https://www.adi-manager.co.uk</LowercaseA>
+      <LowercaseA href="https://www.adi-manager.co.uk">
+        https://www.adi-manager.co.uk
+      </LowercaseA>
     </p>
 
-    <ul>
-      <Li>
+    <PwaUl>
+      <PwaLi>
         Tap the Bookmark icon at the bottom of the screen ( iPhones ) or top
         right of the screen ( iPads )
         <br />
         <span>( it resembles a box with an upward-pointing arrow ).</span>
-      </Li>
-      <Li>tap "Add to Home Screen".</Li>
+      </PwaLi>
+      <PwaLi>tap "Add to Home Screen".</PwaLi>
 
-      <Li>Wait a second for the app's logo to load.</Li>
-      <Li>
+      <PwaLi>Wait a second for the app's logo to load.</PwaLi>
+      <PwaLi>
         Accept the ADI Manager name for the shortcut
         <br />
         <span>( or enter one you like better ).</span>
-      </Li>
-      <Li>tap "Add" to save the new shortcut icon to the home screen</Li>
+      </PwaLi>
+      <PwaLi>tap "Add" to save the new shortcut icon to the home screen</PwaLi>
       <p>
         you can then access it as you would access an app downloaded from the
         apple app store!
       </p>
-    </ul>
+    </PwaUl>
 
     <CloseInstructionsButton onClick={() => setShowIos(false)}>
       ok, close

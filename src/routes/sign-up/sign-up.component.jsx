@@ -3,14 +3,14 @@ import SignUpChooseMonthOrYear from "./sign-up-choose-month-or-year.component";
 import { Container } from "../../styles/container/container.styles";
 import { Div } from "../../styles/div/div.styles";
 import { StyledLink } from "../../styles/link/link.styles";
-import { H2, RedH2Underline } from "../../styles/h2/h2.styles";
+import { H2Underline, RedH2Underline } from "../../styles/h2/h2.styles";
 
 import { refundsPath, termsPath } from "../../strings/strings";
 
 const SignUp = () => (
   <Container>
     <Div>
-      <H2>Do Not have an account?</H2>
+      <H2Underline>Do Not have an account?</H2Underline>
       <p>please follow the instructions below to sign up!</p>
       <RedH2Underline>100% money back guarantee for 30 days!</RedH2Underline>
       <p>

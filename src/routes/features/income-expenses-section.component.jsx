@@ -4,21 +4,23 @@ import ImagePlaceHolder from "../../assets/image-placeholder.jpeg";
 
 import { Div } from "../../styles/div/div.styles";
 import { ImageDiv } from "../../styles/image/image.styles";
+import { H2Underline } from "../../styles/h2/h2.styles";
+import { RedLi } from "../../styles/li/li.styles";
+
 import { incomeTable, ExpensesTable } from "../../image-links/image-links";
-import { H2 } from "../../styles/h2/h2.styles";
 
 const IncomeExpensesSection = () => (
   <Div>
-    <H2>Income / Expenses:</H2>
+    <H2Underline>Income / Expenses:</H2Underline>
     <p>
       in this section, you will find easy ways of keeping track of your income
       and expenditure.
     </p>
     <p>for income, you input:</p>
     <ul>
-      <li>the pupils name</li>
-      <li>the date of the income</li>
-      <li>how much income you received</li>
+      <RedLi>the pupils name</RedLi>
+      <RedLi>the date of the income</RedLi>
+      <RedLi>how much income you received</RedLi>
     </ul>
     <p>the data will be displayed in a table for you to view.</p>
     <ImageDiv>
@@ -31,13 +33,13 @@ const IncomeExpensesSection = () => (
       </a>
     </ImageDiv>
 
-    <H2>expenses:</H2>
+    <H2Underline>expenses:</H2Underline>
     <p>in this section, you can keep track of your business expenditure.</p>
     <p>enter in the:</p>
     <ul>
-      <li>date of the receipt</li>
-      <li>description of the receipt ( fuel etc )</li>
-      <li>the amount of the receipt</li>
+      <RedLi>date of the receipt</RedLi>
+      <RedLi>description of the receipt ( fuel etc )</RedLi>
+      <RedLi>the amount of the receipt</RedLi>
     </ul>
     <p>
       if you were a user of the original IOS ADI Manager app, you may wonder
@@ -74,7 +76,7 @@ const IncomeExpensesSection = () => (
       which will automatically add their amounts together, making it easy for
       you to use that data in the next step which is:
     </p>
-    <H2>total expenses</H2>
+    <H2Underline>total expenses</H2Underline>
     <p>
       you can also add the results of your expenses to a weekly, monthly or even
       yearly table for you to easily see your data.

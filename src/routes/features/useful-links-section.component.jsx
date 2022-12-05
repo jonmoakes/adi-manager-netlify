@@ -1,9 +1,9 @@
 import { Div } from "../../styles/div/div.styles";
-import { H2 } from "../../styles/h2/h2.styles";
+import { H2Underline } from "../../styles/h2/h2.styles";
 
 const UsefulLinkSection = () => (
   <Div>
-    <H2>Useful Links</H2>
+    <H2Underline>Useful Links</H2Underline>
     <p>
       in this section, you can see a list of useful website links pointing
       towards the:

@@ -1,14 +1,14 @@
+import CustomButton from "../custom-button/custom-button.component";
 import {
   ErrorImageOverlay,
   ErrorImageContainer,
 } from "../../styles/div/div.styles";
 import { ErrorImageText } from "../../styles/text/text.styles";
 import { StyledLink } from "../../styles/link/link.styles";
-import { ErrorBoundaryReloadPageButton } from "../../styles/buttons/buttons.styles";
 
 const ErrorFallback = () => (
   <ErrorImageOverlay>
-    <ErrorImageContainer imageUrl="https://cdn.pixabay.com/photo/2015/11/13/14/44/candle-1042087_1280.jpg" />
+    <ErrorImageContainer imageUrl="https://lh3.googleusercontent.com/pw/ACtC-3cVmKb5eOxQzVrCjYY0taZqvLD-mC6LjQxCSpO2S1pgeXEg9TVMJ6HOwte5YU6YZfb_kjl9BnnKm8c01Aj3Bu7QwDRslPQynZbYZsedMsQXIhLRjUnZRTOUIwHce4i4cNy3EDb1jUm2csDYV2HzF39X=s800-no" />
     <ErrorImageText>
       Sorry, Something Has Broken! Please Try Checking Your internet Connection.
     </ErrorImageText>
@@ -21,9 +21,9 @@ const ErrorFallback = () => (
     <ErrorImageText>
       if that doesn't work, click the button below to try reloading the page.
     </ErrorImageText>
-    <ErrorBoundaryReloadPageButton onClick={() => window.location.reload()}>
+    <CustomButton onClick={() => window.location.reload()}>
       reload the page
-    </ErrorBoundaryReloadPageButton>
+    </CustomButton>
 
     <ErrorImageText>
       and if that doesn't work, please{" "}

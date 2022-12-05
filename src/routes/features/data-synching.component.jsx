@@ -1,9 +1,9 @@
 import { Div } from "../../styles/div/div.styles";
-import { H2 } from "../../styles/h2/h2.styles";
+import { H2Underline } from "../../styles/h2/h2.styles";
 
 const DataSynching = () => (
   <Div>
-    <H2>Data syncing</H2>
+    <H2Underline>Data syncing</H2Underline>
     <p>
       all data is synced to your account, so you can input data on your mobile
       device during the day, then log on to your computer at home and find the
