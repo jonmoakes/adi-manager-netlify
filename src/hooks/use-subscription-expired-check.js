@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
@@ -19,12 +19,14 @@ const useSubscriptionExpiredCheck = () => {
 
   const swal = withReactContent(Swal);
   const navigate = useNavigate();
+  const location = useLocation();
+  const path = location.pathname;
 
   const { subscriptionId } = subscriptionData;
 
   useEffect(() => {
     const subscriptionExpiredCheck = async () => {
-      if (!currentUser || !subscriptionId) return;
+      if (!currentUser || !subscriptionId || path !== "/my-account") return;
 
       try {
         const response = await fetch(
@@ -66,7 +68,7 @@ const useSubscriptionExpiredCheck = () => {
       }
     };
     subscriptionExpiredCheck();
-  }, [currentUser, subscriptionId, logoutAndClearRedux, navigate, swal]);
+  }, [currentUser, subscriptionId, logoutAndClearRedux, navigate, swal, path]);
 };
 
 export default useSubscriptionExpiredCheck;
