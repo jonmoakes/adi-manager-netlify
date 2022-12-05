@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 
-import useHandleIsProcessing from "../../hooks/use-handle-is-processing";
 import useFireSwal from "../../hooks/use-fire-swal";
+
+import { startLoader, stopLoader } from "../../store/loader/loader.action";
+import { selectIsLoading } from "../../store/loader/loader.selector";
 
 import Loader from "../../components/loader/loader.component";
 
@@ -22,11 +24,13 @@ import {
   invalidEmailErrorMessage,
   successMessage,
   emailResponseTimeMessage,
+  noNetworkDetected,
 } from "../../strings/strings";
 
 const SendMessage = ({ formDetails }) => {
-  const { isProcessing, startIsProcessing, startIsNotProcessing } =
-    useHandleIsProcessing();
+  const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
+
   const { fireSwal } = useFireSwal();
   const navigate = useNavigate();
 
@@ -34,6 +38,7 @@ const SendMessage = ({ formDetails }) => {
 
   const handleSuccess = () => {
     return [
+      dispatch(stopLoader()),
       fireSwal(
         "success",
         successMessage,
@@ -47,7 +52,17 @@ const SendMessage = ({ formDetails }) => {
   };
 
   const handleError = (titleText, messageText) => {
-    fireSwal("error", titleText, messageText, 0, true, false);
+    if (messageText === "Failed to fetch") {
+      return [
+        dispatch(stopLoader()),
+        fireSwal("error", titleText, noNetworkDetected, 0, true, false),
+      ];
+    } else {
+      return [
+        dispatch(stopLoader()),
+        fireSwal("error", titleText, messageText, 0, true, false),
+      ];
+    }
   };
 
   const sendEmail = async () => {
@@ -58,30 +73,34 @@ const SendMessage = ({ formDetails }) => {
       handleError(errorSendingMessage, invalidEmailErrorMessage);
       return;
     }
-    startIsProcessing();
-    await axios
-      .post("/.netlify/functions/send-contact-form-message", {
-        message: emailToSend(name, email, message),
-      })
-      .then(
-        (response) => {
-          startIsNotProcessing();
-          if (response.status === 202) {
-            handleSuccess();
-          } else {
-            handleError(errorSendingMessage);
-          }
-        },
-        (error) => {
-          startIsNotProcessing();
-          handleError(errorSendingMessage, error.message);
+
+    try {
+      dispatch(startLoader());
+      const response = await fetch(
+        "/.netlify/functions/send-contact-form-message",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: emailToSend(name, email, message),
+          }),
         }
       );
+      if (response.ok) {
+        handleSuccess();
+      } else {
+        handleError(errorSendingMessage);
+      }
+    } catch (error) {
+      handleError(errorSendingMessage, error.message);
+    }
   };
 
   return (
     <div>
-      {!isProcessing ? (
+      {!isLoading ? (
         <ContactFormButton type="submit" onClick={sendEmail}>
           Send Message
         </ContactFormButton>
