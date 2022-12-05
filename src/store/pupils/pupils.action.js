@@ -4,5 +4,5 @@ import { createAction } from "../../utils/reducer/reducer.utils";
 export const updatePupilsEntries = (payload) =>
   createAction(PUPILS_ACTION_TYPES.UPDATE_PUPILS_ENTRIES, payload);
 
-export const clearLessonEntries = () =>
+export const clearPupilsEntries = () =>
   createAction(PUPILS_ACTION_TYPES.CLEAR_PUPILS_ENTRIES);

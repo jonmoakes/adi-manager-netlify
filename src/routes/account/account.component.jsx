@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../utils/firebase/firebase.utils";
 
 import { selectErrorMessage } from "../../store/error/error.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { addSubscriptionData } from "../../store/customer/customer.action";
+import { selectSubscriptionData } from "../../store/customer/customer.selector";
 import { setErrorMessage } from "../../store/error/error.action";
 
 import FetchError from "../../components/fetch-error/fetch-error.component";
@@ -19,7 +19,10 @@ import { Heading } from "../../styles/h1/h1.styles";
 const Account = () => {
   const errorMessage = useSelector(selectErrorMessage);
   const currentUser = useSelector(selectCurrentUser);
+  const subscriptionData = useSelector(selectSubscriptionData);
   const dispatch = useDispatch();
+
+  const { subscriptionId } = subscriptionData;
 
   useEffect(() => {
     if (!currentUser) return;
@@ -74,7 +77,7 @@ const Account = () => {
       }
     };
     getSubscriptionDataFromFirestore();
-  }, [currentUser, dispatch]);
+  }, [currentUser, subscriptionId, dispatch]);
 
   return (
     <Container>

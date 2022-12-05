@@ -4,7 +4,6 @@ import { userReducer } from "./user/user.reducer";
 import { customerReducer } from "./customer/customer.reducer";
 import { errorReducer } from "./error/error.reducer";
 import { loaderReducer } from "./loader/loader.reducer";
-import { tableReducer } from "./table/table.reducer";
 import entryReducer from "./entry/entry.reducer";
 import { diaryReducer } from "./diary/diary.reducer";
 import { lessonReducer } from "./lesson/lesson.reducer";
@@ -22,7 +21,6 @@ export const rootReducer = combineReducers({
   customer: customerReducer,
   error: errorReducer,
   loader: loaderReducer,
-  table: tableReducer,
   entry: entryReducer,
   diary: diaryReducer,
   lesson: lessonReducer,

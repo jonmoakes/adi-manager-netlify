@@ -5,6 +5,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { GlobalStyle } from "./global-styles";
 
 import useCheckUserSession from "./hooks/use-check-user-session";
+import useSubscriptionExpiredCheck from "./hooks/use-subscription-expired-check";
 
 import { selectCurrentUser } from "./store/user/user.selector";
 
@@ -179,7 +180,10 @@ const DeleteEntry = lazy(() =>
 
 const App = () => {
   useCheckUserSession();
+  useSubscriptionExpiredCheck();
+
   const currentUser = useSelector(selectCurrentUser);
+
   return (
     <>
       <GlobalStyle />

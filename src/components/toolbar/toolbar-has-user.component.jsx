@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import useLogout from "./use-logout";
+import useLogout from "../../hooks/use-logout";
 
 import { selectCurrentUser } from "../../store/user/user.selector";
 
