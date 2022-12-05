@@ -280,16 +280,16 @@ export const DateDiv = styled.div`
   width: 100%;
   margin: 40px auto -40px auto;
 
+  &.progress {
+    margin: 0px auto;
+  }
+
   @media screen and (max-width: 850px) {
     margin: 30px auto -30px auto;
   }
 
   @media screen and (max-width: 600px) {
     margin: 30px auto -20px auto;
-  }
-
-  @media screen and (max-width: 600px) {
-    margin: 30px auto -10px auto;
   }
 `;
 

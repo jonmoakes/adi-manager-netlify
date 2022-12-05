@@ -189,13 +189,15 @@ export const EmailSelfButton = styled(Button)`
   text-shadow: none;
 
   &.pupil-progress {
-    background-color: #247afd;
-    color: whitesmoke;
-    text-shadow: 1px 1px 1px black;
+    background-color: orange;
   }
 
   &.instructor-pupil-progress {
     background-color: yellow;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
   }
 `;
 
@@ -808,8 +810,15 @@ export const SubjectButtonElement = styled.button`
     width: 95%;
   }
 
+  @media screen and (max-width: 320px) {
+    height: 80px;
+    line-height: 20px;
+  }
+
   @media screen and (max-width: 280px) {
+    height: 80px;
     font-size: 14px;
+    line-height: 20px;
   }
 
   &:hover {
