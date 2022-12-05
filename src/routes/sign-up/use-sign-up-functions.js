@@ -9,12 +9,12 @@ const useSignUpFunctions = () => {
   const navigate = useNavigate();
 
   const chooseMonthAndPushToCreateDetails = () => {
-    dispatch(addSubscriptionPrice(4000));
+    dispatch(addSubscriptionPrice(2000));
     navigate(createLoginDetailsPath);
   };
 
   const chooseYearAndPushToCreateDetails = () => {
-    dispatch(addSubscriptionPrice(43000));
+    dispatch(addSubscriptionPrice(21600));
     navigate(createLoginDetailsPath);
   };
 

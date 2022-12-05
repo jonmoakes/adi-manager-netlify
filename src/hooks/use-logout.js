@@ -37,8 +37,7 @@ const useLogout = () => {
             logoutAndClearRedux(),
             swal.fire({
               title: signOutSuccessMessage,
-              showCancelButton: true,
-              cancelButtonColor: "red",
+              showCancelButton: false,
               confirmButtonColor: "#3085d6",
               confirmButtonText: "yes, logout!",
               reverseButtons: true,

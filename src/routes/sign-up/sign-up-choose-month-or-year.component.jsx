@@ -40,11 +40,11 @@ const SignUpChooseMonthOrYear = () => {
             <h2>Monthly subscription</h2>
             <p>
               Billed monthly at just{" "}
-              <MonthlyPriceSpan>£4 A Month!</MonthlyPriceSpan>
+              <MonthlyPriceSpan>£2 A Month!</MonthlyPriceSpan>
             </p>
             <p>
               that's Just{" "}
-              <MonthlyPriceSpan>93 pence Per Week!</MonthlyPriceSpan>
+              <MonthlyPriceSpan>46 pence Per Week!</MonthlyPriceSpan>
             </p>
 
             <ChoosePaymentMethodButton
@@ -59,13 +59,14 @@ const SignUpChooseMonthOrYear = () => {
           <YearPriceOptionDiv>
             <h2>yearly subscription</h2>
             <p>
-              billed yearly at just <HighlightText>£43 per year!</HighlightText>
+              billed yearly at just{" "}
+              <HighlightText>£21.60 per year!</HighlightText>
             </p>
             <p>
               <HighlightText>10% off</HighlightText> the monthly price!
             </p>
             <p>
-              that's Just <HighlightText>83 pence Per Week</HighlightText>!
+              that's Just <HighlightText>41 pence Per Week</HighlightText>!
             </p>
 
             <ChoosePaymentMethodButton

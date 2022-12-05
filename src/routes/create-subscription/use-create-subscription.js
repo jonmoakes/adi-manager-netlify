@@ -32,10 +32,10 @@ const useCreateSubscription = () => {
   const elements = useElements();
 
   useEffect(() => {
-    if (subscriptionPrice === 4000) {
-      setPriceId(process.env.REACT_APP_MONTHLY_SUBSCRIPTION_PRICE_ID);
-    } else if (subscriptionPrice === 43000) {
-      setPriceId(process.env.REACT_APP_YEARLY_SUBSCRIPTION_PRICE_ID);
+    if (subscriptionPrice === 2000) {
+      setPriceId(process.env.REACT_APP_SALE_MONTHLY_SUBSCRIPTION_PRICE_ID);
+    } else if (subscriptionPrice === 21600) {
+      setPriceId(process.env.REACT_APP_SALE_YEARLY_SUBSCRIPTION_PRICE_ID);
     }
   }, [subscriptionPrice]);
 

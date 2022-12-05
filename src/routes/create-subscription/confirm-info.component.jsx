@@ -12,20 +12,20 @@ const ConfirmInfo = () => {
         <h1>confirm & purchase your subscription</h1>
       </Div>
       <Div>
-        {subscriptionPrice === 4000 && (
+        {subscriptionPrice === 2000 && (
           <>
             <p>
               you are about to purchase the ADI Manager monthly subscription.
             </p>
-            <p>you will be charged £4 per month.</p>
+            <p>you will be charged £2 per month.</p>
           </>
         )}
-        {subscriptionPrice === 43000 && (
+        {subscriptionPrice === 21600 && (
           <>
             <p>
               you are about to purchase the ADI Manager yearly subscription.
             </p>
-            <p>you will be charged £43 a year.</p>
+            <p>you will be charged £21.60 a year.</p>
           </>
         )}
         <p>
