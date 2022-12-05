@@ -9,7 +9,7 @@ import useLogoutAndClearRedux from "./use-logout-and-clear-redux";
 import { selectCurrentUser } from "../store/user/user.selector";
 import { selectSubscriptionData } from "../store/customer/customer.selector";
 
-import { subscriptionExpiredMessage } from "../strings/strings";
+import { subscriptionExpiredMessage, myAccountPath } from "../strings/strings";
 
 const useSubscriptionExpiredCheck = () => {
   const { logoutAndClearRedux } = useLogoutAndClearRedux();
@@ -26,7 +26,7 @@ const useSubscriptionExpiredCheck = () => {
 
   useEffect(() => {
     const subscriptionExpiredCheck = async () => {
-      if (!currentUser || !subscriptionId || path !== "/my-account") return;
+      if (!currentUser || !subscriptionId || path !== myAccountPath) return;
 
       try {
         const response = await fetch(
