@@ -25,6 +25,7 @@ export const needToLogOutMessage =
   "This Session Has Been Logged In For A While.\nFor Security Reasons, We Need To Refresh Your Session.\nPlease Log back in And Try Again.\nNow Logging You Out, Please Wait...";
 export const placeholderInfiniteSpaceMessage =
   "Type Here - You Have Infinite Space...";
+export const datePlaceholder = "tap to enter date";
 export const enterEmailMessage = "Enter Email then tap button below";
 export const emailResponseTimeMessage =
   "Your Message Has Been Message Sent! We Aim To Respond Within 24 Hours.";

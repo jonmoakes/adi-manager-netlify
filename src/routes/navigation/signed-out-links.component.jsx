@@ -24,7 +24,7 @@ const SignedOutLinks = () => {
             <li>
               <ImageLink to="/sign-up">
                 <SignUpIcon />
-                <SignUpIconText>Sign Up</SignUpIconText>
+                <SignUpIconText>Signup</SignUpIconText>
               </ImageLink>
             </li>
           </ul>
