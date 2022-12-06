@@ -85,7 +85,7 @@ const EditLessonEntryForm = ({ entry, handleChange }) => (
       />
 
       <Label>Edit Next Lesson Plan:</Label>
-      <StyledInput
+      <StyledTextArea
         type="text"
         name="nextLessonPlan"
         onChange={handleChange}
@@ -111,7 +111,7 @@ const EditLessonEntryForm = ({ entry, handleChange }) => (
       />
 
       <Label>Edit Next Lesson Pickup:</Label>
-      <StyledInput
+      <StyledTextArea
         type="text"
         name="nextLessonPickup"
         onChange={handleChange}

@@ -66,7 +66,7 @@ const AddLessonEntryForm = ({ handleChange }) => (
     />
 
     <Label>Next Lesson Plan:</Label>
-    <CapitalizedInput
+    <StyledTextArea
       type="text"
       name="nextLessonPlan"
       onChange={handleChange}
@@ -90,7 +90,7 @@ const AddLessonEntryForm = ({ handleChange }) => (
     />
 
     <Label>Next Lesson Pickup:</Label>
-    <CapitalizedInput
+    <StyledTextArea
       type="text"
       name="nextLessonPickup"
       onChange={handleChange}
