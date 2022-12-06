@@ -17,6 +17,10 @@ export const Heading = styled.h1`
   @media screen and (max-width: 360px) {
     font-size: 25px;
   }
+
+  @media screen and (max-width: 320px) {
+    font-size: 20px;
+  }
 `;
 
 export const CompatibleWith = styled(Heading)`

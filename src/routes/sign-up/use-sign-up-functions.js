@@ -14,7 +14,7 @@ const useSignUpFunctions = () => {
   };
 
   const chooseYearAndPushToCreateDetails = () => {
-    dispatch(addSubscriptionPrice(21600));
+    dispatch(addSubscriptionPrice(21000));
     navigate(createLoginDetailsPath);
   };
 

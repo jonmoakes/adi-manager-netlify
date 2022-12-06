@@ -263,7 +263,7 @@ export const TableContainer = styled.div`
 
 export const CardInputDiv = styled.div`
   background-color: whitesmoke;
-  height: 50px;
+  height: 80px;
   width: 90%;
   margin: 30px auto 30px auto;
   padding: 30px 20px 0px 20px;
@@ -272,15 +272,11 @@ export const CardInputDiv = styled.div`
 
   @media screen and (max-width: 1366px) {
     width: 80%;
-    padding: 25px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
   }
 
   @media screen and (max-width: 600px) {
     width: 95%;
-  }
-
-  @media screen and (max-width: 450px) {
-    height: 40px;
   }
 `;
 

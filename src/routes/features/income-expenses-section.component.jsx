@@ -46,8 +46,8 @@ const IncomeExpensesSection = () => (
       where the option to take an image of your receipt has gone.
     </p>
     <p>
-      due to the new ability to sync data on the app thanks to the Firebase
-      database, i decided to remove this feature.
+      due to the new ability to sync data on the app, i decided to remove this
+      feature.
     </p>
     <p>
       the reason for this being that images take up a huge amount of space on a

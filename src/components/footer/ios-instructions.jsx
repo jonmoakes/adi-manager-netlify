@@ -11,7 +11,7 @@ const IosInstructions = ({ setShowIos }) => (
       launch it and navigate to the app's page:
     </p>
     <p>
-      <LowercaseA href="https://www.adi-manager.co.uk">
+      <LowercaseA className="instructions" href="https://www.adi-manager.co.uk">
         https://www.adi-manager.co.uk
       </LowercaseA>
     </p>

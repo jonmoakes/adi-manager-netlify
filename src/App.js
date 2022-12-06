@@ -15,6 +15,7 @@ import Loader from "./components/loader/loader.component";
 import Footer from "./components/footer/footer.component";
 import Toolbar from "./components/toolbar/toolbar.component";
 import ScrollUpButton from "./components/scroll-up-button/scroll-up-button.component";
+import ScrollToTopAuto from "./components/scroll-to-top-auto/scroll-to-top-auto.component";
 
 const Navigation = lazy(() =>
   import("./routes/navigation/navigation.component")
@@ -188,6 +189,7 @@ const CookiePolicy = lazy(() =>
   import("./routes/cookie-policy/cookie-policy.component")
 );
 const Credits = lazy(() => import("./routes/credits/credits.component"));
+const Terms = lazy(() => import("./routes/terms/terms.component"));
 
 const App = () => {
   useCheckUserSession();
@@ -431,12 +433,14 @@ const App = () => {
                 <Route path="privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="cookie-policy" element={<CookiePolicy />} />
                 <Route path="credits" element={<Credits />} />
+                <Route path="terms" element={<Terms />} />
               </Route>
             </Routes>
             <Footer />
           </Suspense>
         </ErrorBoundary>
         <ScrollUpButton />
+        <ScrollToTopAuto />
       </HelmetProvider>
     </>
   );

@@ -31,19 +31,19 @@ const Pricing = () => (
       </p>
       <hr />
       <p>
-        the ADI Manager app is just <HighlightText>£4 a month!</HighlightText>
+        the ADI Manager app is just <HighlightText>£2 a month!</HighlightText>
       </p>
       <p>
-        ( that's just <HighlightText>93p per week</HighlightText>! )
+        ( that's just <HighlightText>46p per week</HighlightText>! )
       </p>
       <hr />
       <p>
         you can also pay per year with a{" "}
         <HighlightText>10% discount</HighlightText> for just{" "}
-        <HighlightText>£43</HighlightText> a year!
+        <HighlightText>£21</HighlightText> a year!
       </p>
       <p>
-        ( that's just <HighlightText>83p per week</HighlightText>! )
+        ( that's just <HighlightText>40p per week</HighlightText>! )
       </p>
       <hr />
     </Div>

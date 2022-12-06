@@ -5,6 +5,12 @@ export const LowercaseA = styled.a`
   text-transform: lowercase;
   text-shadow: 0.5px 0.5px 0.5px black;
 
+  &.instructions {
+    &:hover {
+      color: white;
+    }
+  }
+
   &:hover {
     color: blue;
 

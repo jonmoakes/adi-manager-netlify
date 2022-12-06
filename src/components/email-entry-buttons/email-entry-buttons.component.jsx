@@ -19,7 +19,12 @@ const EmailEntryButtons = ({ emailBody }) => {
 
   return (
     <>
+      <p>
+        please remeber to save any updated info before tapping the email
+        button(s) to ensure you send the latest data.
+      </p>
       <NoEmailFound {...{ pupilEmail }} />
+
       <LessonEntryEmailButton {...{ pupilEmail, emailBody }} />
       <InstructorLessonEntryEmailButton {...{ instructorEmail, emailBody }} />
 

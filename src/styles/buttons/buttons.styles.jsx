@@ -717,12 +717,22 @@ export const PayButton = styled(Button)`
     }
   }
 
-  @media screen and (max-width: 450px) {
-    width: 85%;
+  @media screen and (max-width: 600px) {
+    width: 300px;
+    font-size: 16px;
   }
 
-  @media screen and (max-width: 360px) {
-    font-size: 15px;
+  @media screen and (max-width: 400px) {
+    width: 270px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 240px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 200px;
+    font-size: 14px;
   }
 `;
 
