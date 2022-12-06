@@ -180,6 +180,8 @@ const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
 
+const Refunds = lazy(() => import("./routes/refunds/refunds.component"));
+
 const App = () => {
   useCheckUserSession();
   const currentUser = useSelector(selectCurrentUser);
@@ -418,6 +420,7 @@ const App = () => {
                   path="delete-entry"
                   element={currentUser && <DeleteEntry />}
                 />
+                <Route path="refunds" element={<Refunds />} />
               </Route>
             </Routes>
             <Footer />
