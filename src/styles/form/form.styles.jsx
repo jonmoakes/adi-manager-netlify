@@ -180,6 +180,8 @@ export const UppercasedInput = styled(StyledInput)`
 
 export const AnimatedForm = styled(Form)`
   padding: 0px;
+  width: 100%;
+
   input[type="range"] {
     -webkit-appearance: none;
     width: 90%;
@@ -273,6 +275,10 @@ export const AnimatedForm = styled(Form)`
 
   & .slider {
     animation: 0.5s ${slideInRightAnimation};
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 20px 0px;
   }
 `;
 

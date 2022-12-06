@@ -490,8 +490,8 @@ export const SubjectsInputsDiv = styled.div`
   border: 2px solid black;
   border-radius: 10px;
   margin: 40px auto 0px auto;
-  width: 90%;
   text-transform: capitalize;
+  width: 100%;
 
   h2 {
     animation: 0.5s ${slideInRightAnimation};
