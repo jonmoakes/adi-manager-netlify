@@ -6,10 +6,7 @@ import {
 } from "../../../styles/form/form.styles";
 import { HighlightText } from "../../../styles/span/span.styles";
 
-import {
-  placeholderInfiniteSpaceMessage,
-  datePlaceholder,
-} from "../../../strings/strings";
+import { placeholderInfiniteSpaceMessage } from "../../../strings/strings";
 
 const AddDiaryEntryForm = ({ handleChange }) => (
   <Form>
@@ -21,7 +18,6 @@ const AddDiaryEntryForm = ({ handleChange }) => (
       type="date"
       name="date"
       onChange={handleChange}
-      placeholder={datePlaceholder}
     />
 
     <Label>Entry:</Label>
