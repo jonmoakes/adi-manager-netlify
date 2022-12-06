@@ -7,6 +7,7 @@ import {
 } from "../../styles/form/form.styles";
 
 import { scrollToTop } from "../../reusable-functions/scroll-to-top";
+import useChooseTablePageSize from "./use-choose-table-page-size";
 
 const Pagination = ({
   dataLength,
@@ -22,9 +23,11 @@ const Pagination = ({
   pageSize,
   setPageSize,
 }) => {
+  const { chooseTablePageSize } = useChooseTablePageSize();
+
   return (
     <>
-      {dataLength > 25 && !!rowsLength && (
+      {dataLength > 10 && !!rowsLength && (
         <PaginationDiv>
           <div>
             <PaginationText>
@@ -78,7 +81,7 @@ const Pagination = ({
             <div>
               <PaginationSelect
                 value={pageSize}
-                onChange={(e) => setPageSize(Number(e.target.value))}
+                onChange={(e) => chooseTablePageSize(setPageSize, e)}
               >
                 {[10, 25, 50].map((pageSize) => (
                   <option key={pageSize} value={pageSize}>

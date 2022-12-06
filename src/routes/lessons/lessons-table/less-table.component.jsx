@@ -14,6 +14,7 @@ import useLessonEntriesSnapshotListener from "./use-lesson-entries-snapshot-list
 import { selectLessonEntries } from "../../../store/lesson/lesson.selector";
 import { selectErrorMessage } from "../../../store/error/error.selector";
 import { selectIsLoading } from "../../../store/loader/loader.selector";
+import { selectTablePageSize } from "../../../store/table/table.selector";
 
 import { COLUMNS } from "./columns";
 import CheckBox from "../../../components/tables/checkbox";
@@ -40,13 +41,14 @@ const LessTable = () => {
   const errorMessage = useSelector(selectErrorMessage);
   let lessonEntries = useSelector(selectLessonEntries);
   const isLoading = useSelector(selectIsLoading);
+  const tablePageSize = useSelector(selectTablePageSize);
 
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => lessonEntries, [lessonEntries]);
 
   const initialState = useMemo(
-    () => ({ sortBy: [{ id: "date", desc: true }], pageSize: 25 }),
-    []
+    () => ({ sortBy: [{ id: "date", desc: true }], pageSize: tablePageSize }),
+    [tablePageSize]
   );
 
   const {

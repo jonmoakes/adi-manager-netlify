@@ -14,6 +14,7 @@ import useTotalExpensesYearEntriesSnapshotListener from "./use-total-expenses-ye
 import { selectTotalExpensesYearEntries } from "../../../store/total-expenses-year/total-expenses-year.selector";
 import { selectErrorMessage } from "../../../store/error/error.selector";
 import { selectIsLoading } from "../../../store/loader/loader.selector";
+import { selectTablePageSize } from "../../../store/table/table.selector";
 
 import { COLUMNS } from "./columns";
 import CheckBox from "../../../components/tables/checkbox";
@@ -44,6 +45,7 @@ const ExpensesYearTable = () => {
   const errorMessage = useSelector(selectErrorMessage);
   let totalExpensesYearEntries = useSelector(selectTotalExpensesYearEntries);
   const isLoading = useSelector(selectIsLoading);
+  const tablePageSize = useSelector(selectTablePageSize);
 
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(
@@ -52,8 +54,8 @@ const ExpensesYearTable = () => {
   );
 
   const initialState = useMemo(
-    () => ({ sortBy: [{ id: "date", desc: true }], pageSize: 25 }),
-    []
+    () => ({ sortBy: [{ id: "date", desc: true }], pageSize: tablePageSize }),
+    [tablePageSize]
   );
 
   const {

@@ -1,0 +1,3 @@
+export const TABLE_ACTION_TYPES = {
+  SET_TABLE_PAGE_SIZE: "SET_TABLE_PAGE_SIZE",
+};

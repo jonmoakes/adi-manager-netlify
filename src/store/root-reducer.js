@@ -15,6 +15,7 @@ import { totalExpensesYearReducer } from "./total-expenses-year/total-expenses-y
 import { pupilsReducer } from "./pupils/pupils.reducer";
 import { blockBookingReducer } from "./block-booking/block-booking.reducer";
 import { pupilProgressReducer } from "./pupil-progress/pupil-progress.reducer";
+import { tableReducer } from "./table/table.reducer";
 
 export const rootReducer = combineReducers({
   user: userReducer,
@@ -32,4 +33,5 @@ export const rootReducer = combineReducers({
   pupils: pupilsReducer,
   blockBooking: blockBookingReducer,
   pupilProgress: pupilProgressReducer,
+  table: tableReducer,
 });
