@@ -37,3 +37,7 @@ export const Href = styled.a`
     }
   }
 `;
+
+export const LowercaseHref = styled(Href)`
+  text-transform: lowercase;
+`;

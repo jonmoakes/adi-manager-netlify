@@ -181,6 +181,13 @@ const DeleteEntry = lazy(() =>
 );
 
 const Refunds = lazy(() => import("./routes/refunds/refunds.component"));
+const PrivacyPolicy = lazy(() =>
+  import("./routes/privacy-policy/privacy-policy.component")
+);
+const CookiePolicy = lazy(() =>
+  import("./routes/cookie-policy/cookie-policy.component")
+);
+const Credits = lazy(() => import("./routes/credits/credits.component"));
 
 const App = () => {
   useCheckUserSession();
@@ -421,6 +428,9 @@ const App = () => {
                   element={currentUser && <DeleteEntry />}
                 />
                 <Route path="refunds" element={<Refunds />} />
+                <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="cookie-policy" element={<CookiePolicy />} />
+                <Route path="credits" element={<Credits />} />
               </Route>
             </Routes>
             <Footer />

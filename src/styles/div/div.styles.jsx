@@ -527,3 +527,7 @@ export const SliderDiv = styled.div`
   margin: 20px auto;
   width: 100%;
 `;
+
+export const CreditsLinkDiv = styled(Div)`
+  margin: 0px auto 40px auto;
+`;

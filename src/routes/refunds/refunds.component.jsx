@@ -9,7 +9,7 @@ import { Container } from "../../styles/container/container.styles";
 import { Div } from "../../styles/div/div.styles";
 import { Heading } from "../../styles/h1/h1.styles";
 
-const RefundsPage = () => (
+const Refunds = () => (
   <Container>
     <Div>
       <Heading>Refunds Policy</Heading>
@@ -24,4 +24,4 @@ const RefundsPage = () => (
   </Container>
 );
 
-export default RefundsPage;
+export default Refunds;
