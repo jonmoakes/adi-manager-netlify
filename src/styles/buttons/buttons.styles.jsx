@@ -204,7 +204,8 @@ export const EmailSelfButton = styled(Button)`
     background-color: yellow;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 450px) {
+    width: 210px;
     font-size: 14px;
   }
 `;
