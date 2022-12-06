@@ -6,10 +6,17 @@ export const GlobalStyle = createGlobalStyle`
         width:100%;
         background-color:#247AFD;
     }
+    
+    * {
+        box-sizing: border-box;
+    }
     body {
-        margin: 0px auto 100px auto;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin: 0px auto 100px auto;
         font-weight:bold;
         width:100%;
         text-align:center;

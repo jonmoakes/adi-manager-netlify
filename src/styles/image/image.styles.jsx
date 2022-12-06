@@ -98,3 +98,8 @@ export const AddIcon = styled.img`
     height: 60px;
   }
 `;
+
+export const UpArrowImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;

@@ -792,3 +792,29 @@ export const SubjectButtonElement = styled.button`
     }
   }
 `;
+
+export const ScrollButton = styled.button`
+  width: 50px;
+  height: 50px;
+  outline: none;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 10;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  border: 2px solid black;
+  animation: 2s ${slideInRightAnimation};
+
+  @media screen and (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    bottom: 90px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 35px;
+    height: 35px;
+  }
+`;
