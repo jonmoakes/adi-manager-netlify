@@ -27,7 +27,7 @@ export const placeholderInfiniteSpaceMessage =
   "Type Here - You Have Infinite Space...";
 export const enterEmailMessage = "Enter Email then tap button below";
 export const emailResponseTimeMessage =
-  "Your Message Has Been Message Sent! We Aim To Respond Within 24 Hours.";
+  "Your Message Has Been Sent! We Aim To Respond Within 24 Hours.";
 export const pleaseTryAgain = "please try again.";
 export const subscriptionNotStartedMessage =
   "Your Subscription Was Not Placed & Your Card Has Not Been Charged.";

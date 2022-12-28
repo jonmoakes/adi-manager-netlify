@@ -21,7 +21,7 @@ import {
   missingEmailFieldsErrorMessage,
   invalidEmailErrorMessage,
   successMessage,
-  emailResponseTimeMessage,
+  messageSent,
 } from "../../strings/strings";
 
 const SendMessage = ({ formDetails }) => {
@@ -34,14 +34,7 @@ const SendMessage = ({ formDetails }) => {
 
   const handleSuccess = () => {
     return [
-      fireSwal(
-        "success",
-        successMessage,
-        emailResponseTimeMessage,
-        4000,
-        false,
-        true
-      ),
+      fireSwal("success", successMessage, messageSent, 4000, false, true),
       navigate("/"),
     ];
   };
