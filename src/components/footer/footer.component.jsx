@@ -1,9 +1,9 @@
 import PwaInstructions from "./pwa-intructions.component";
+import useShouldDisplayFooter from "./use-should-display-footer";
+
 import Links from "./links.component";
 
 import { FooterDiv } from "../../styles/div/div.styles";
-import { PwaTopHr } from "../../styles/hr/hr.styles";
-import useShouldDisplayFooter from "./use-should-display-footer";
 
 const Footer = () => {
   const { shouldDisplayFooter } = useShouldDisplayFooter();
@@ -12,7 +12,7 @@ const Footer = () => {
     <>
       {shouldDisplayFooter && (
         <FooterDiv>
-          <PwaTopHr />
+          <hr />
           <PwaInstructions />
           <Links />
         </FooterDiv>

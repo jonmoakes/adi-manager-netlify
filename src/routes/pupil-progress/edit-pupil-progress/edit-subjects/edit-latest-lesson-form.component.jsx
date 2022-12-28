@@ -17,12 +17,13 @@ import {
 } from "../../../../styles/div/div.styles";
 import {
   Label,
+  CapitalizedInput,
   StyledInput,
   StyledTextArea,
 } from "../../../../styles/form/form.styles";
 import { HighlightText } from "../../../../styles/span/span.styles";
 
-import { latestLessonPerformance } from "../../../../strings/strings";
+import { latestLessonProgress } from "../../../../strings/strings";
 
 const EditLatestLessonForm = ({ entry, updatedEntry, handleChange }) => {
   const { showSubject, handleClick } = useShowSubject();
@@ -39,7 +40,7 @@ const EditLatestLessonForm = ({ entry, updatedEntry, handleChange }) => {
       <Label>
         <HighlightText>*</HighlightText>Pupil Name:
       </Label>
-      <StyledInput
+      <CapitalizedInput
         type="text"
         name="name"
         defaultValue={name}
@@ -49,35 +50,34 @@ const EditLatestLessonForm = ({ entry, updatedEntry, handleChange }) => {
       <SubjectsDiv>
         <GradeButtons
           subjectGrade={latestLessonGrade}
-          buttonText={latestLessonPerformance}
+          buttonText={latestLessonProgress}
           {...{ showSubject, handleClick }}
         />
 
         {showSubject && (
           <>
             <SubjectButton onClick={handleClick}>
-              Hide {latestLessonPerformance}
+              Hide {latestLessonProgress}
             </SubjectButton>
 
-            <DateDiv>
-              <p>date of {latestLessonPerformance} entry:</p>
-
-              {latestLessonDate ? (
-                <p>
-                  <HighlightText>
-                    {format(new Date(latestLessonDate), "dd MMMM yyyy")}
-                  </HighlightText>
-                </p>
-              ) : (
-                <p>
-                  no date given yet.
-                  <br />
-                  choose one below.
-                </p>
-              )}
-            </DateDiv>
-
             <SubjectsInputsDiv>
+              <DateDiv className="progress">
+                <p>date of {latestLessonProgress} entry:</p>
+
+                {latestLessonDate ? (
+                  <p>
+                    <HighlightText>
+                      {format(new Date(latestLessonDate), "dd MMMM yyyy")}
+                    </HighlightText>
+                  </p>
+                ) : (
+                  <p>
+                    no date given yet.
+                    <br />
+                    choose one below.
+                  </p>
+                )}
+              </DateDiv>
               <Label>edit latest lesson date:</Label>
               <StyledInput
                 className="date-picker lessonDate"
@@ -100,7 +100,7 @@ const EditLatestLessonForm = ({ entry, updatedEntry, handleChange }) => {
                 />
               </SliderDiv>
 
-              <Label>{latestLessonPerformance} Summary:</Label>
+              <Label>{latestLessonProgress} Summary:</Label>
               <StyledTextArea
                 type="text"
                 name="latestLessonPerformanceSummary"

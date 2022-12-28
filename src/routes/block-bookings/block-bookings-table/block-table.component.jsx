@@ -14,6 +14,7 @@ import useBlockBookingsEntriesSnapshotListener from "./use-block-bookings-entrie
 import { selectBlockBookingEntries } from "../../../store/block-booking/block-booking.selector";
 import { selectErrorMessage } from "../../../store/error/error.selector";
 import { selectIsLoading } from "../../../store/loader/loader.selector";
+import { selectTablePageSize } from "../../../store/table/table.selector";
 
 import { COLUMNS } from "./columns";
 import CheckBox from "../../../components/tables/checkbox";
@@ -43,12 +44,13 @@ const BlockTable = () => {
   const errorMessage = useSelector(selectErrorMessage);
   let blockBookingEntries = useSelector(selectBlockBookingEntries);
   const isLoading = useSelector(selectIsLoading);
+  const tablePageSize = useSelector(selectTablePageSize);
 
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => blockBookingEntries, [blockBookingEntries]);
   const initialState = useMemo(
-    () => ({ sortBy: [{ id: "name", desc: false }], pageSize: 25 }),
-    []
+    () => ({ sortBy: [{ id: "name", desc: false }], pageSize: tablePageSize }),
+    [tablePageSize]
   );
 
   const {

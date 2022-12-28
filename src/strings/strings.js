@@ -11,7 +11,7 @@ export const deleteConfirmedMessage = "Entry Deleted!";
 export const entryAddedMessage = "Entry Added!";
 export const entrySavedMessage = "Entry Saved!";
 export const messageSent = "Thank you! Your Message Has Been Sent!";
-export const cookieThanksMessage = "Thank You For Allowing Cookies! :)";
+export const cookieThanksMessage = "Thank You For Allowing Cookies!";
 export const signOutSuccessMessage =
   "You Have Successfully Signed Out From Your Account!";
 export const successMessage = "success!";
@@ -272,7 +272,7 @@ export const emergencyStop = "emergency stop";
 export const emerging = "junctions - emerging";
 export const forwardBayPark = "forward bay park";
 export const independentDriving = "independent driving";
-export const latestLessonPerformance = "latest lesson progress";
+export const latestLessonProgress = "latest lesson progress";
 export const makingProgress = "making progress";
 export const meetingTraffic = "meeting traffic";
 export const miniRoundabouts = "mini roundabouts";

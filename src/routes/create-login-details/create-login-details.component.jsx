@@ -10,6 +10,7 @@ import {
   CreateDetailsForm,
   StyledInput,
   Label,
+  CapitalizedInput,
 } from "../../styles/form/form.styles";
 
 import {
@@ -34,7 +35,7 @@ const CreateLoginDetails = () => {
         <CreateDetailsForm onSubmit={handleCreateDetailsSubmit}>
           <Label>Name:</Label>
 
-          <StyledInput
+          <CapitalizedInput
             type="text"
             name="displayName"
             value={displayName || ""}

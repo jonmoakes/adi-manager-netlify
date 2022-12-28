@@ -3,15 +3,19 @@ import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { GlobalStyle } from "./global-styles";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import useCheckUserSession from "./hooks/use-check-user-session";
 
 import { selectCurrentUser } from "./store/user/user.selector";
 
+import CookieBanner from "./components/cookie-banner/cookie-banner.component";
 import ErrorFallback from "./components/error-fallback/error-fallback.component";
 import Loader from "./components/loader/loader.component";
 import Footer from "./components/footer/footer.component";
 import Toolbar from "./components/toolbar/toolbar.component";
+import ScrollUpButton from "./components/scroll-up-button/scroll-up-button.component";
+import ScrollToTopAuto from "./components/scroll-to-top-auto/scroll-to-top-auto.component";
 
 const Navigation = lazy(() =>
   import("./routes/navigation/navigation.component")
@@ -177,229 +181,267 @@ const DeleteEntry = lazy(() =>
   import("./routes/delete-entry/delete-entry.component")
 );
 
+const Refunds = lazy(() => import("./routes/refunds/refunds.component"));
+const PrivacyPolicy = lazy(() =>
+  import("./routes/privacy-policy/privacy-policy.component")
+);
+const CookiePolicy = lazy(() =>
+  import("./routes/cookie-policy/cookie-policy.component")
+);
+const Credits = lazy(() => import("./routes/credits/credits.component"));
+const Terms = lazy(() => import("./routes/terms/terms.component"));
+
 const App = () => {
   useCheckUserSession();
   const currentUser = useSelector(selectCurrentUser);
   return (
     <>
-      <GlobalStyle />
-      <Toolbar />
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<Navigation />}>
-              <Route index element={<Home />} />
-              <Route path="features" element={<Features />} />
-              <Route path="pricing" element={<Pricing />} />
-              <Route path="about-me" element={<AboutMe />} />
-              <Route path="contact" element={<ContactMe />} />
-              <Route
-                path="login"
-                element={
-                  !currentUser ? (
-                    <Login />
-                  ) : (
-                    <Navigate replace to="/my-account" />
-                  )
-                }
-              />
-              <Route
-                path="sign-up"
-                element={
-                  !currentUser ? (
-                    <SignUp />
-                  ) : (
-                    <Navigate replace to="/my-account" />
-                  )
-                }
-              />
+      <HelmetProvider>
+        <Helmet>
+          <title>
+            Driving Instructor App - Software For iPhone, iPad, Android, Windows
+            & Mac!
+          </title>
+          <meta
+            name="description"
+            content="Driving Instructor App For iPad, iPhone, Android. Software For Driving Instructors ( ADI's ) And Potential Driving Instructors ( PDI's ). It Can Be Used As A Diary App To Record Your Appointments, A Progress App To Track Your Pupil's Progress, Along With Driving Lesson Data, Income And Expenditure Data, Pupil Data and Block Booking Data. Also Works On Windows and Mac machines!"
+          />
 
-              <Route
-                path="create-login-details"
-                element={
-                  !currentUser ? (
-                    <CreateLoginDetails />
-                  ) : (
-                    <Navigate replace to="/my-account" />
-                  )
-                }
-              />
+          <meta
+            name="keywords"
+            content="driving, Instructor, app, ipad, iphone, software, admin, android, windows, mac, diary, progress, "
+          />
+        </Helmet>
+        <GlobalStyle />
+        <Toolbar />
+        <CookieBanner />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="/" element={<Navigation />}>
+                <Route index element={<Home />} />
+                <Route path="features" element={<Features />} />
+                <Route path="pricing" element={<Pricing />} />
+                <Route path="about-me" element={<AboutMe />} />
+                <Route path="contact" element={<ContactMe />} />
+                <Route
+                  path="login"
+                  element={
+                    !currentUser ? (
+                      <Login />
+                    ) : (
+                      <Navigate replace to="/my-account" />
+                    )
+                  }
+                />
+                <Route
+                  path="sign-up"
+                  element={
+                    !currentUser ? (
+                      <SignUp />
+                    ) : (
+                      <Navigate replace to="/my-account" />
+                    )
+                  }
+                />
 
-              <Route
-                path="create-subscription"
-                element={
-                  !currentUser ? (
-                    <CreateSubscription />
-                  ) : (
-                    <Navigate replace to="/welcome" />
-                  )
-                }
-              />
+                <Route
+                  path="create-login-details"
+                  element={
+                    !currentUser ? (
+                      <CreateLoginDetails />
+                    ) : (
+                      <Navigate replace to="/my-account" />
+                    )
+                  }
+                />
 
-              <Route path="welcome" element={currentUser && <Welcome />} />
-              <Route
-                path="my-account"
-                element={currentUser ? <Account /> : null}
-              />
+                <Route
+                  path="create-subscription"
+                  element={
+                    !currentUser ? (
+                      <CreateSubscription />
+                    ) : (
+                      <Navigate replace to="/welcome" />
+                    )
+                  }
+                />
 
-              <Route
-                path="customer-portal"
-                element={currentUser && <CustomerPortal />}
-              />
+                <Route path="welcome" element={currentUser && <Welcome />} />
+                <Route
+                  path="my-account"
+                  element={currentUser ? <Account /> : null}
+                />
 
-              <Route
-                path="update-login-email"
-                element={
-                  currentUser ? (
-                    <UpdateLoginEmail />
-                  ) : (
-                    <Navigate replace to="/login" />
-                  )
-                }
-              />
+                <Route
+                  path="customer-portal"
+                  element={currentUser && <CustomerPortal />}
+                />
 
-              <Route
-                path="update-password"
-                element={
-                  currentUser ? (
-                    <UpdatePassword />
-                  ) : (
-                    <Navigate replace to="/login" />
-                  )
-                }
-              />
+                <Route
+                  path="update-login-email"
+                  element={
+                    currentUser ? (
+                      <UpdateLoginEmail />
+                    ) : (
+                      <Navigate replace to="/login" />
+                    )
+                  }
+                />
 
-              <Route
-                path="subscription-details"
-                element={currentUser && <SubscriptionDetailsPage />}
-              />
-              <Route
-                path="useful-links"
-                element={currentUser && <UsefulLinks />}
-              />
+                <Route
+                  path="update-password"
+                  element={
+                    currentUser ? (
+                      <UpdatePassword />
+                    ) : (
+                      <Navigate replace to="/login" />
+                    )
+                  }
+                />
 
-              <Route path="diary" element={currentUser && <DiaryTable />} />
-              <Route
-                path="add-diary-entry"
-                element={currentUser && <AddDiaryEntry />}
-              />
-              <Route
-                path="edit-diary-entry"
-                element={currentUser && <EditDiaryEntry />}
-              />
-              <Route path="lessons" element={currentUser && <LessonsTable />} />
-              <Route
-                path="add-lesson-entry"
-                element={currentUser && <AddLessonEntry />}
-              />
-              <Route
-                path="edit-lesson-entry"
-                element={currentUser && <EditLessonEntry />}
-              />
-              <Route path="money" element={currentUser && <MoneyOptions />} />
-              <Route path="income" element={currentUser && <IncomeTable />} />
-              <Route
-                path="add-income-entry"
-                element={currentUser && <AddIncomeEntry />}
-              />
-              <Route
-                path="edit-income-entry"
-                element={currentUser && <EditIncomeEntry />}
-              />
-              <Route
-                path="expenses"
-                element={currentUser && <ExpensesTable />}
-              />
-              <Route
-                path="add-expenses-entry"
-                element={currentUser && <AddExpensesEntry />}
-              />
-              <Route
-                path="edit-expense-entry"
-                element={currentUser && <EditExpenseEntry />}
-              />
-              <Route
-                path="total-expenses-week"
-                element={currentUser && <TotalExpensesWeekTable />}
-              />
-              <Route
-                path="add-total-expenses-week-entry"
-                element={currentUser && <AddTotalExpensesWeekEntry />}
-              />
-              <Route
-                path="edit-total-expenses-week-entry"
-                element={currentUser && <EditTotalExpensesWeekEntry />}
-              />
-              <Route
-                path="total-expenses-month"
-                element={currentUser && <TotalExpensesMonthTable />}
-              />
-              <Route
-                path="add-total-expenses-month-entry"
-                element={currentUser && <AddTotalExpensesMonthEntry />}
-              />
-              <Route
-                path="edit-total-expenses-month-entry"
-                element={currentUser && <EditTotalExpensesMonthEntry />}
-              />
-              <Route
-                path="total-expenses-year"
-                element={currentUser && <TotalExpensesYearTable />}
-              />
-              <Route
-                path="add-total-expenses-year-entry"
-                element={currentUser && <AddTotalExpensesYearEntry />}
-              />
-              <Route
-                path="edit-total-expenses-year-entry"
-                element={currentUser && <EditTotalExpensesYearEntry />}
-              />
-              <Route
-                path="pupil-options"
-                element={currentUser && <PupilOptions />}
-              />
-              <Route path="pupils" element={currentUser && <PupilsTable />} />
-              <Route
-                path="add-pupil-entry"
-                element={currentUser && <AddPupilEntry />}
-              />
-              <Route
-                path="edit-pupil-entry"
-                element={currentUser && <EditPupilEntry />}
-              />
-              <Route
-                path="block-bookings"
-                element={currentUser && <BlockBookingsTable />}
-              />
-              <Route
-                path="add-block-booking-entry"
-                element={currentUser && <AddBlockBookingEntry />}
-              />
-              <Route
-                path="edit-block-booking-entry"
-                element={currentUser && <EditBlockBookingEntry />}
-              />
-              <Route
-                path="pupil-progress"
-                element={currentUser && <ProgressTable />}
-              />
-              <Route
-                path="add-pupil-progress"
-                element={currentUser && <AddPupilProgress />}
-              />
-              <Route
-                path="edit-pupil-progress"
-                element={currentUser && <EditPupilProgress />}
-              />
-              <Route
-                path="delete-entry"
-                element={currentUser && <DeleteEntry />}
-              />
-            </Route>
-          </Routes>
-          <Footer />
-        </Suspense>
-      </ErrorBoundary>
+                <Route
+                  path="subscription-details"
+                  element={currentUser && <SubscriptionDetailsPage />}
+                />
+                <Route
+                  path="useful-links"
+                  element={currentUser && <UsefulLinks />}
+                />
+
+                <Route path="diary" element={currentUser && <DiaryTable />} />
+                <Route
+                  path="add-diary-entry"
+                  element={currentUser && <AddDiaryEntry />}
+                />
+                <Route
+                  path="edit-diary-entry"
+                  element={currentUser && <EditDiaryEntry />}
+                />
+                <Route
+                  path="lessons"
+                  element={currentUser && <LessonsTable />}
+                />
+                <Route
+                  path="add-lesson-entry"
+                  element={currentUser && <AddLessonEntry />}
+                />
+                <Route
+                  path="edit-lesson-entry"
+                  element={currentUser && <EditLessonEntry />}
+                />
+                <Route path="money" element={currentUser && <MoneyOptions />} />
+                <Route path="income" element={currentUser && <IncomeTable />} />
+                <Route
+                  path="add-income-entry"
+                  element={currentUser && <AddIncomeEntry />}
+                />
+                <Route
+                  path="edit-income-entry"
+                  element={currentUser && <EditIncomeEntry />}
+                />
+                <Route
+                  path="expenses"
+                  element={currentUser && <ExpensesTable />}
+                />
+                <Route
+                  path="add-expenses-entry"
+                  element={currentUser && <AddExpensesEntry />}
+                />
+                <Route
+                  path="edit-expense-entry"
+                  element={currentUser && <EditExpenseEntry />}
+                />
+                <Route
+                  path="total-expenses-week"
+                  element={currentUser && <TotalExpensesWeekTable />}
+                />
+                <Route
+                  path="add-total-expenses-week-entry"
+                  element={currentUser && <AddTotalExpensesWeekEntry />}
+                />
+                <Route
+                  path="edit-total-expenses-week-entry"
+                  element={currentUser && <EditTotalExpensesWeekEntry />}
+                />
+                <Route
+                  path="total-expenses-month"
+                  element={currentUser && <TotalExpensesMonthTable />}
+                />
+                <Route
+                  path="add-total-expenses-month-entry"
+                  element={currentUser && <AddTotalExpensesMonthEntry />}
+                />
+                <Route
+                  path="edit-total-expenses-month-entry"
+                  element={currentUser && <EditTotalExpensesMonthEntry />}
+                />
+                <Route
+                  path="total-expenses-year"
+                  element={currentUser && <TotalExpensesYearTable />}
+                />
+                <Route
+                  path="add-total-expenses-year-entry"
+                  element={currentUser && <AddTotalExpensesYearEntry />}
+                />
+                <Route
+                  path="edit-total-expenses-year-entry"
+                  element={currentUser && <EditTotalExpensesYearEntry />}
+                />
+                <Route
+                  path="pupil-options"
+                  element={currentUser && <PupilOptions />}
+                />
+                <Route path="pupils" element={currentUser && <PupilsTable />} />
+                <Route
+                  path="add-pupil-entry"
+                  element={currentUser && <AddPupilEntry />}
+                />
+                <Route
+                  path="edit-pupil-entry"
+                  element={currentUser && <EditPupilEntry />}
+                />
+                <Route
+                  path="block-bookings"
+                  element={currentUser && <BlockBookingsTable />}
+                />
+                <Route
+                  path="add-block-booking-entry"
+                  element={currentUser && <AddBlockBookingEntry />}
+                />
+                <Route
+                  path="edit-block-booking-entry"
+                  element={currentUser && <EditBlockBookingEntry />}
+                />
+                <Route
+                  path="pupil-progress"
+                  element={currentUser && <ProgressTable />}
+                />
+                <Route
+                  path="add-pupil-progress"
+                  element={currentUser && <AddPupilProgress />}
+                />
+                <Route
+                  path="edit-pupil-progress"
+                  element={currentUser && <EditPupilProgress />}
+                />
+                <Route
+                  path="delete-entry"
+                  element={currentUser && <DeleteEntry />}
+                />
+                <Route path="refunds" element={<Refunds />} />
+                <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="cookie-policy" element={<CookiePolicy />} />
+                <Route path="credits" element={<Credits />} />
+                <Route path="terms" element={<Terms />} />
+              </Route>
+            </Routes>
+            <Footer />
+          </Suspense>
+        </ErrorBoundary>
+        <ScrollUpButton />
+        <ScrollToTopAuto />
+      </HelmetProvider>
     </>
   );
 };

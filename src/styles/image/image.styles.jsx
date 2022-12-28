@@ -38,10 +38,10 @@ export const StyledImage = styled.img`
 `;
 
 export const LogoImage = styled.img`
-  margin-top: 1.5px;
+  margin-top: 2.5px;
   margin-left: 20px;
-  height: 75px;
-  width: 75px;
+  height: 70px;
+  width: 70px;
   border-radius: 5px;
   float: left;
   border: 1px solid black;
@@ -97,4 +97,9 @@ export const AddIcon = styled.img`
     width: 60px;
     height: 60px;
   }
+`;
+
+export const UpArrowImage = styled.img`
+  width: 100%;
+  height: 100%;
 `;

@@ -38,7 +38,7 @@ export const LoginIcon = styled(LoginSVG)`
 export const SignUpIcon = styled(SignUpSVG)`
   width: 40px;
   height: 40px;
-  margin-top: 18px;
+  margin-top: 19px;
 
   @media screen and (max-width: 320px) {
     height: 30px;

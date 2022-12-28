@@ -69,6 +69,7 @@ export const Button = styled.button`
     box-shadow: 12px 12px 12px black;
 
     @media screen and (max-width: 1366px) {
+      background-color: #247afd;
       transform: none;
       transition: none;
       box-shadow: none;
@@ -128,9 +129,6 @@ export const Button = styled.button`
 `;
 
 export const PortalButton = styled(Button)`
-  background-color: #fe46a5;
-  color: black;
-  text-shadow: none;
   margin: 30px;
 
   @media screen and (max-width: 450px) {
@@ -180,6 +178,16 @@ export const DvlaButton = styled(Button)`
 
 export const TermsReadButton = styled(Button)`
   font-size: 16px;
+
+  @media screen and (max-width: 320px) {
+    height: 80px;
+    width: 270px;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 220px;
+  }
 `;
 
 export const EmailSelfButton = styled(Button)`
@@ -189,13 +197,16 @@ export const EmailSelfButton = styled(Button)`
   text-shadow: none;
 
   &.pupil-progress {
-    background-color: #247afd;
-    color: whitesmoke;
-    text-shadow: 1px 1px 1px black;
+    background-color: orange;
   }
 
   &.instructor-pupil-progress {
     background-color: yellow;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 210px;
+    font-size: 14px;
   }
 `;
 
@@ -231,18 +242,22 @@ export const AddButton = styled.button`
 `;
 
 export const EditEntryButton = styled(Button)`
-  background-color: #ffab0f;
+  background-color: yellow;
   animation: 1s ${zoomInLeftAnimation};
   margin: 10px;
   color: black;
   text-shadow: none;
 
   &:hover {
-    background-color: #ffab0f;
+    background-color: yellow;
   }
 
   @media screen and (max-width: 850px) {
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 90%;
   }
 `;
 
@@ -259,6 +274,10 @@ export const RemoveEntryButton = styled(Button)`
 
   @media screen and (max-width: 850px) {
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 90%;
   }
 `;
 
@@ -362,7 +381,7 @@ export const PageButton = styled(Button)`
   font-size: 16px;
   text-shadow: none;
   padding: 10px 5px;
-  background-color: #ffab0f;
+  background-color: #00975f;
   color: black;
 
   @media screen and (max-width: 1024px) {
@@ -414,10 +433,6 @@ export const DisabledContactButton = styled(ContactFormButton)`
   cursor: not-allowed;
   opacity: 0.5;
   pointer-events: none;
-`;
-
-export const ErrorBoundaryReloadPageButton = styled(Button)`
-  background-color: yellow;
 `;
 
 export const InstructionsButton = styled.button`
@@ -518,17 +533,6 @@ export const SignUpButton = styled(Button)`
   }
 `;
 
-export const ForgotPasswordButton = styled(Button)`
-  background-color: red;
-  color: whitesmoke;
-  text-shadow: 1px 1px 1px black;
-  margin: 0 auto;
-
-  &:hover {
-    background-color: red;
-  }
-`;
-
 export const InfoButton = styled(SearchInfoSVG)`
   margin: 10px 0px 10px 0px;
   width: 35px;
@@ -536,10 +540,6 @@ export const InfoButton = styled(SearchInfoSVG)`
   border: 2px solid black;
   border-radius: 50px;
   animation: infinite 1s ${PulseAnimation};
-
-  &.combined {
-    animation: 1s ${slideInLeftAnimation};
-  }
 
   &:hover {
     cursor: pointer;
@@ -581,27 +581,6 @@ export const ClearAndReloadButton = styled.button`
   @media screen and (max-width: 320px) {
     width: 90%;
     font-size: 14px;
-  }
-`;
-
-export const PaginationPageButton = styled(Button)`
-  min-width: unset;
-  width: 50px;
-  height: 10px;
-  margin: 0px 10px 20px 0px;
-  line-height: 0px;
-  font-size: 16px;
-  text-shadow: none;
-  padding: 10px 5px;
-  background-color: #0afe76;
-  color: black;
-
-  @media screen and (max-width: 1366px) {
-    margin: 0px 5px 20px 5px;
-  }
-
-  @media screen and (max-width: 1366px) {
-    width: 40px;
   }
 `;
 
@@ -739,12 +718,22 @@ export const PayButton = styled(Button)`
     }
   }
 
-  @media screen and (max-width: 450px) {
-    width: 85%;
+  @media screen and (max-width: 600px) {
+    width: 300px;
+    font-size: 16px;
   }
 
-  @media screen and (max-width: 360px) {
-    font-size: 15px;
+  @media screen and (max-width: 400px) {
+    width: 270px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 240px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 200px;
+    font-size: 14px;
   }
 `;
 
@@ -753,31 +742,6 @@ export const DisabledButton = styled(PayButton)`
   cursor: not-allowed;
   opacity: 0.5;
   pointer-events: none;
-`;
-
-export const BackButton = styled.button`
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  position: fixed;
-  left: 10px;
-  bottom: 22px;
-  background-color: black;
-  border: 2px solid whitesmoke;
-  color: whitesmoke;
-  z-index: 10;
-  outline: none;
-  cursor: pointer;
-
-  @media screen and (max-width: 1366px) {
-    height: 80px;
-    width: 80px;
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 60px;
-    width: 60px;
-  }
 `;
 
 export const SubjectButtonElement = styled.button`
@@ -808,8 +772,15 @@ export const SubjectButtonElement = styled.button`
     width: 95%;
   }
 
+  @media screen and (max-width: 320px) {
+    height: 80px;
+    line-height: 20px;
+  }
+
   @media screen and (max-width: 280px) {
+    height: 80px;
     font-size: 14px;
+    line-height: 20px;
   }
 
   &:hover {
@@ -830,5 +801,31 @@ export const SubjectButtonElement = styled.button`
       transform: none;
       box-shadow: none;
     }
+  }
+`;
+
+export const ScrollButton = styled.button`
+  width: 50px;
+  height: 50px;
+  outline: none;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 10;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  border: 2px solid black;
+  animation: 2s ${slideInRightAnimation};
+
+  @media screen and (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    bottom: 90px;
+  }
+
+  @media screen and (max-width: 280px) {
+    width: 35px;
+    height: 35px;
   }
 `;

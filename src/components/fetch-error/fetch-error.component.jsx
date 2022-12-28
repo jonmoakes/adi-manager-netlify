@@ -6,7 +6,7 @@ import { clearErrorMessage } from "../../store/error/error.action";
 import CustomButton from "../custom-button/custom-button.component";
 
 import { ErrorDiv } from "../../styles/div/div.styles";
-import { H2 } from "../../styles/h2/h2.styles";
+import { H2Underline } from "../../styles/h2/h2.styles";
 
 const FetchError = () => {
   const errorMessage = useSelector(selectErrorMessage);
@@ -24,7 +24,7 @@ const FetchError = () => {
       {errorMessage && (
         <ErrorDiv>
           <h1> &#128533;</h1>
-          <H2>sorry, there has been an Error</H2>
+          <H2Underline>sorry, there has been an Error</H2Underline>
           {errorMessage && <p>{errorMessage}</p>}
           <p>some things to try:</p>
           <ul>

@@ -7,7 +7,7 @@ exports.handler = async (event) => {
 
     const portalData = await stripe.billingPortal.sessions.create({
       customer,
-      return_url: "http://localhost:8888/my-account",
+      return_url: "https://www.adi-manager.co.uk/my-account",
     });
     return {
       statusCode: 200,

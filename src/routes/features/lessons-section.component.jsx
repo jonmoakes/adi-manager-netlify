@@ -4,24 +4,26 @@ import ImagePlaceHolder from "../../assets/image-placeholder.jpeg";
 
 import { Div } from "../../styles/div/div.styles";
 import { ImageDiv } from "../../styles/image/image.styles";
+import { H2Underline } from "../../styles/h2/h2.styles";
+import { RedLi } from "../../styles/li/li.styles";
+
 import { LessonTable, LessonEntry } from "../../image-links/image-links";
-import { H2 } from "../../styles/h2/h2.styles";
 
 const LessonSection = () => (
   <Div>
-    <H2>Lessons:</H2>
+    <H2Underline>Lessons:</H2Underline>
     <p>store records of your lessons with any of the following details:</p>
     <ul>
-      <li>pupil name</li>
-      <li>lesson date</li>
-      <li>Lesson start / end time</li>
-      <li>has the pupil paid?</li>
-      <li>lesson summary</li>
-      <li>next lesson plan</li>
-      <li>next lesson date</li>
-      <li>next lesson time</li>
-      <li>next lesson pick up</li>
-      <li>driving test details</li>
+      <RedLi>pupil name</RedLi>
+      <RedLi>lesson date</RedLi>
+      <RedLi>Lesson start / end time</RedLi>
+      <RedLi>has the pupil paid?</RedLi>
+      <RedLi>lesson summary</RedLi>
+      <RedLi>next lesson plan</RedLi>
+      <RedLi>next lesson date</RedLi>
+      <RedLi>next lesson time</RedLi>
+      <RedLi>next lesson pick up</RedLi>
+      <RedLi>driving test details</RedLi>
     </ul>
     <p>
       only the name and date are required, all other fields are optional

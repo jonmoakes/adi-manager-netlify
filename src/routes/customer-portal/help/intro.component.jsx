@@ -32,6 +32,13 @@ const Intro = () => (
       </HighlightText>
       <br />
     </ul>
+    <p>
+      please note: if you are using the app as a progressive web app ( where you
+      have added the website to your home screen ), to return to the account
+      page when you have finished in the customer portal, please do not tap on
+      the "return to ADI Manager" link.
+    </p>
+    <p>instead, tap your browser back button or "done" button.</p>
     <hr />
   </>
 );

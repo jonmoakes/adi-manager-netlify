@@ -4,36 +4,37 @@ import ImagePlaceHolder from "../../assets/image-placeholder.jpeg";
 
 import { Div } from "../../styles/div/div.styles";
 import { ImageDiv } from "../../styles/image/image.styles";
-import { H2 } from "../../styles/h2/h2.styles";
+import { H2Underline } from "../../styles/h2/h2.styles";
+import { RedLi } from "../../styles/li/li.styles";
 import { CallText, SubjectsList, Slider } from "../../image-links/image-links";
 
 const PupilsSection = () => (
   <Div>
-    <H2>pupils Section</H2>
+    <H2Underline>pupils Section</H2Underline>
     <p>
       here you can store lots of information about your pupils for easy access.
     </p>
     <p>you can store:</p>
     <ul>
-      <li>Pupil Name</li>
-      <li>address</li>
-      <li>pick up / drop off address</li>
-      <li>email address</li>
-      <li>phone number</li>
-      <li>date of birth</li>
-      <li>driving licence number </li>
-      <li>licence expiry date</li>
-      <li>eyesight checked date</li>
-      <li>glasses required?</li>
-      <li>medical conditions</li>
-      <li>experience level</li>
-      <li>theory test passed?</li>
-      <li>theory test date</li>
-      <li>theory test certificate number</li>
-      <li>driving test date</li>
-      <li>driving test time</li>
-      <li>driving test location</li>
-      <li>driving test result</li>
+      <RedLi>Pupil Name</RedLi>
+      <RedLi>address</RedLi>
+      <RedLi>pick up / drop off address</RedLi>
+      <RedLi>email address</RedLi>
+      <RedLi>phone number</RedLi>
+      <RedLi>date of birth</RedLi>
+      <RedLi>driving licence number </RedLi>
+      <RedLi>licence expiry date</RedLi>
+      <RedLi>eyesight checked date</RedLi>
+      <RedLi>glasses required?</RedLi>
+      <RedLi>medical conditions</RedLi>
+      <RedLi>experience level</RedLi>
+      <RedLi>theory test passed?</RedLi>
+      <RedLi>theory test date</RedLi>
+      <RedLi>theory test certificate number</RedLi>
+      <RedLi>driving test date</RedLi>
+      <RedLi>driving test time</RedLi>
+      <RedLi>driving test location</RedLi>
+      <RedLi>driving test result</RedLi>
     </ul>
     <p>
       you can call, text or email your pupil at the touch of a button from

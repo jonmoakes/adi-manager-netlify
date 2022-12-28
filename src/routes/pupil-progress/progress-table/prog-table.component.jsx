@@ -14,6 +14,7 @@ import usePupilProgressEntriesSnapshotListener from "./use-pupil-progress-entrie
 import { selectPupilProgressEntries } from "../../../store/pupil-progress/pupil-progress.selector";
 import { selectErrorMessage } from "../../../store/error/error.selector";
 import { selectIsLoading } from "../../../store/loader/loader.selector";
+import { selectTablePageSize } from "../../../store/table/table.selector";
 
 import { COLUMNS } from "./columns";
 import CheckBox from "../../../components/tables/checkbox";
@@ -43,13 +44,14 @@ const ProgTable = () => {
   const errorMessage = useSelector(selectErrorMessage);
   let pupilProgressEntries = useSelector(selectPupilProgressEntries);
   const isLoading = useSelector(selectIsLoading);
+  const tablePageSize = useSelector(selectTablePageSize);
 
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => pupilProgressEntries, [pupilProgressEntries]);
 
   const initialState = useMemo(
-    () => ({ sortBy: [{ id: "name", desc: false }], pageSize: 25 }),
-    []
+    () => ({ sortBy: [{ id: "name", desc: false }], pageSize: tablePageSize }),
+    [tablePageSize]
   );
 
   const {

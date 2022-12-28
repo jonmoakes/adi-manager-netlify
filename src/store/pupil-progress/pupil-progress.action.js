@@ -7,5 +7,5 @@ export const updatePupilProgressEntries = (payload) =>
     payload
   );
 
-export const clearLessonEntries = () =>
+export const clearPupilProgressEntries = () =>
   createAction(PUPIL_PROGRESS_ACTION_TYPES.CLEAR_PUPIL_PROGRESS_ENTRIES);

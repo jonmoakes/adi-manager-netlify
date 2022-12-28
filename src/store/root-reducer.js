@@ -4,7 +4,6 @@ import { userReducer } from "./user/user.reducer";
 import { customerReducer } from "./customer/customer.reducer";
 import { errorReducer } from "./error/error.reducer";
 import { loaderReducer } from "./loader/loader.reducer";
-import { tableReducer } from "./table/table.reducer";
 import entryReducer from "./entry/entry.reducer";
 import { diaryReducer } from "./diary/diary.reducer";
 import { lessonReducer } from "./lesson/lesson.reducer";
@@ -16,13 +15,13 @@ import { totalExpensesYearReducer } from "./total-expenses-year/total-expenses-y
 import { pupilsReducer } from "./pupils/pupils.reducer";
 import { blockBookingReducer } from "./block-booking/block-booking.reducer";
 import { pupilProgressReducer } from "./pupil-progress/pupil-progress.reducer";
+import { tableReducer } from "./table/table.reducer";
 
 export const rootReducer = combineReducers({
   user: userReducer,
   customer: customerReducer,
   error: errorReducer,
   loader: loaderReducer,
-  table: tableReducer,
   entry: entryReducer,
   diary: diaryReducer,
   lesson: lessonReducer,
@@ -34,4 +33,5 @@ export const rootReducer = combineReducers({
   pupils: pupilsReducer,
   blockBooking: blockBookingReducer,
   pupilProgress: pupilProgressReducer,
+  table: tableReducer,
 });

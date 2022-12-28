@@ -1,29 +1,17 @@
 import { TABLE_ACTION_TYPES } from "./table.types";
 
 const INITIAL_STATE = {
-  orders: [],
-  userOrders: [],
-  tableErrorMessage: "",
+  tablePageSize: 25,
 };
 
 export const tableReducer = (state = INITIAL_STATE, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case TABLE_ACTION_TYPES.UPDATE_ORDERS:
+  switch (action.type) {
+    case TABLE_ACTION_TYPES.SET_TABLE_PAGE_SIZE:
       return {
         ...state,
-        orders: payload,
+        tablePageSize: action.payload,
       };
-    case TABLE_ACTION_TYPES.UPDATE_USER_ORDERS:
-      return {
-        ...state,
-        userOrders: payload,
-      };
-    case TABLE_ACTION_TYPES.SET_TABLE_ERROR_MESSAGE:
-      return {
-        ...state,
-        tableErrorMessage: payload,
-      };
+
     default:
       return state;
   }

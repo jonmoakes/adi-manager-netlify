@@ -13,6 +13,7 @@ import useDiaryEntriesSnapshotListener from "./use-diary-entries-snapshot-listen
 import { selectDiaryEntries } from "../../../store/diary/diary.selector";
 import { selectErrorMessage } from "../../../store/error/error.selector";
 import { selectIsLoading } from "../../../store/loader/loader.selector";
+import { selectTablePageSize } from "../../../store/table/table.selector";
 
 import { COLUMNS } from "./columns";
 import CheckBox from "../../../components/tables/checkbox";
@@ -39,13 +40,14 @@ const DTable = () => {
   const errorMessage = useSelector(selectErrorMessage);
   let diaryEntries = useSelector(selectDiaryEntries);
   const isLoading = useSelector(selectIsLoading);
+  const tablePageSize = useSelector(selectTablePageSize);
 
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => diaryEntries, [diaryEntries]);
 
   const initialState = useMemo(
-    () => ({ sortBy: [{ id: "date", desc: true }], pageSize: 25 }),
-    []
+    () => ({ sortBy: [{ id: "date", desc: true }], pageSize: tablePageSize }),
+    [tablePageSize]
   );
 
   const {

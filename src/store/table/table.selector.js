@@ -2,14 +2,7 @@ import { createSelector } from "reselect";
 
 const selectTable = (state) => state.table;
 
-export const selectOrders = createSelector(
+export const selectTablePageSize = createSelector(
   [selectTable],
-  (table) => table.orders
+  (table) => table.tablePageSize
 );
-
-export const selectUserOrders = createSelector(
-  [selectTable],
-  (table) => table.userOrders
-);
-
-export const selectTableErrorMessage = (state) => state.table.tableErrorMessage;

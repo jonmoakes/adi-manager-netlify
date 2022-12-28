@@ -10,9 +10,7 @@ const AddEntryHeading = () => {
   return (
     <Div>
       <Heading>Add {categoryName} Entry</Heading>
-      <span>
-        <HighlightText>*</HighlightText> Required
-      </span>
+      <HighlightText>*</HighlightText> Required
     </Div>
   );
 };

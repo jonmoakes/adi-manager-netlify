@@ -8,7 +8,7 @@ import {
   FeaturesDiv,
 } from "../../styles/div/div.styles";
 import { CompatibleWith } from "../../styles/h1/h1.styles";
-import { H2, RedHeading } from "../../styles/h2/h2.styles";
+import { RedH2Underline } from "../../styles/h2/h2.styles";
 import { RedLi } from "../../styles/li/li.styles";
 import { HomePageLogoImage } from "../../styles/image/image.styles";
 import { Href } from "../../styles/a/a.styles";
@@ -42,7 +42,7 @@ const Home = () => (
       </CompatibleWith>
     </Div>
     <Div>
-      <H2>for the UK based ADI</H2>
+      <RedH2Underline>for the UK based ADI</RedH2Underline>
       <p>the new version of the successful ADI Manager iOS app!</p>
       <p>
         now available for all devices and includes data synching between your
@@ -68,7 +68,7 @@ const Home = () => (
         </a>
       </ImageDiv>
 
-      <H2>Syncs All Your Data To Any Device!</H2>
+      <RedH2Underline>Syncs All Your Data To Any Device!</RedH2Underline>
       <p>
         For example, maybe you like to use your phone / tablet device during the
         day, then your PC at night.
@@ -77,7 +77,7 @@ const Home = () => (
         all of your data that you input on your phone / tablet, is immediately
         available on any other device that you log into the app with!
       </p>
-      <H2>PWA Compliant:</H2>
+      <RedH2Underline>PWA Compliant:</RedH2Underline>
       <p>
         the ADI Manager is a Fully{" "}
         <Href href="https://web.dev/what-are-pwas/">Progressive Web App</Href> (
@@ -101,7 +101,7 @@ const Home = () => (
         <SignUpLinkButton>Sign Up</SignUpLinkButton>
       </StyledLink>
 
-      <RedHeading>100% money back guarantee for 30 days!</RedHeading>
+      <RedH2Underline>100% money back guarantee for 30 days!</RedH2Underline>
       <p>
         please see our <StyledLink to={refundsPath}>refunds policy</StyledLink>{" "}
         for full details!

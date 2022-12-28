@@ -5,11 +5,11 @@ import ImagePlaceHolder from "../../assets/image-placeholder.jpeg";
 import { Div } from "../../styles/div/div.styles";
 import { ImageDiv } from "../../styles/image/image.styles";
 import { DiaryTable } from "../../image-links/image-links";
-import { H2 } from "../../styles/h2/h2.styles";
+import { H2Underline } from "../../styles/h2/h2.styles";
 
 const DiarySection = () => (
   <Div>
-    <H2>Diary:</H2>
+    <H2Underline>Diary:</H2Underline>
     <p>select a date and enter your days diary.</p>
     <p>the info will then be stored in a table for you to view at a tap.</p>
 
