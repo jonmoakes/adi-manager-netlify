@@ -19,7 +19,7 @@ const Links = () => (
         <StyledLink to="/credits">Credits</StyledLink>
       </span>
     </PrivacyDiv>
-    <p>Copyright © solaris apps, 2022</p>
+    <p>Copyright © solaris apps, 2023</p>
     <p>
       app design by{" "}
       <SolarisLink href="https://www.solaris-apps.co.uk">
