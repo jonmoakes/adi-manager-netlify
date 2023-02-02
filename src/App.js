@@ -6,6 +6,7 @@ import { GlobalStyle } from "./global-styles";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import useCheckUserSession from "./hooks/use-check-user-session";
+import useSubscriptionExpiredCheck from "./hooks/use-subscription-expired-check";
 
 import { selectCurrentUser } from "./store/user/user.selector";
 
@@ -193,6 +194,7 @@ const Terms = lazy(() => import("./routes/terms/terms.component"));
 
 const App = () => {
   useCheckUserSession();
+  useSubscriptionExpiredCheck();
   const currentUser = useSelector(selectCurrentUser);
   return (
     <>
