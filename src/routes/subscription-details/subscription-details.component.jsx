@@ -23,7 +23,7 @@ const SubscriptionDetailsPage = () => (
     <Div>
       should you need to
       <br />
-      <StyledLink to="/contact-me">contact support</StyledLink>,
+      <StyledLink to="/contact">contact support</StyledLink>,
       <br />
       you may be requested to provide some or all of the details below. You can
       copy and paste them into any message if required.
