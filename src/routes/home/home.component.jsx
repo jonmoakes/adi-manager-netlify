@@ -43,12 +43,31 @@ const Home = () => (
     </Div>
     <Div>
       <RedH2Underline>for the UK based ADI</RedH2Underline>
-      <p>the new version of the successful ADI Manager iOS app!</p>
       <p>
-        now available for all devices and includes data synching between your
-        devices!
+        Looking for a comprehensive and easy to use tool to manage your driving
+        instructor business? Look no further than the ADI Manager!
       </p>
+      <p>
+        Our app is the perfect solution for UK driving instructors who need to
+        keep track of their lesson schedules, pupil information, and financials.
+      </p>
+      <p>
+        With ADI Manager, you can quickly and easily add lessons to your diary,
+        track pupil progress in key subjects, and manage your income and
+        expenses with ease.
+      </p>
+      <p>
+        Plus, our app is available on web and mobile, so you can access it from
+        any device.
+      </p>
+      <p>your data is also synched instantly between your devices!</p>
 
+      <p>
+        Don't let the day to day tasks of running your business slow you down!
+        streamline your operations with the ADI Manager today!
+      </p>
+    </Div>
+    <Div>
       <p>Safely & securely store:</p>
       <ul>
         <RedLi>Appointments</RedLi>
