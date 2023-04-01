@@ -201,17 +201,17 @@ const App = () => {
       <HelmetProvider>
         <Helmet>
           <title>
-            Driving Instructor App - Software For iPhone, iPad, Android, Windows
-            & Mac!
+            Revolutionize Your Driving School Business with Our App: Manage
+            Lessons, Income, and Progress Reports Effortlessly in the UK!
           </title>
           <meta
             name="description"
-            content="Driving Instructor App For iPad, iPhone, Android. Software For Driving Instructors ( ADI's ) And Potential Driving Instructors ( PDI's ). It Can Be Used As A Diary App To Record Your Appointments, A Progress App To Track Your Pupil's Progress, Along With Driving Lesson Data, Income And Expenditure Data, Pupil Data and Block Booking Data. Also Works On Windows and Mac machines!"
+            content="Looking for a comprehensive and easy-to-use tool to manage your driving instructor business? Look no further than ADI Manager! Our app is the perfect solution for UK driving instructors who need to keep track of their lesson schedules, pupil information, and financials. With ADI Manager, you can quickly and easily add lessons to your diary, track pupil progress in key subjects, and manage your income and expenses with ease. Plus, our app is available on web and mobile, so you can access it from any device. Don't let the day-to-day tasks of running your business slow you down – streamline your operations with ADI Manager today!"
           />
 
           <meta
             name="keywords"
-            content="driving, Instructor, app, ipad, iphone, software, admin, android, windows, mac, diary, progress, "
+            content="Driving instructor diary management app UK, Lesson planning and scheduling app for driving instructors, Pupil progress tracking app for driving instructors, Income and expenditure management app for UK driving instructors, All-in-one app for UK driving instructors, Driving instructor software for lesson planning and management, Mobile app for managing driving instructor business, Efficient driving instructor management tool, Driving instructor productivity app for UK-based instructors, Time-saving app for managing driving instructor business in the UK"
           />
         </Helmet>
         <GlobalStyle />
