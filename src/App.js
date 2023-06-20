@@ -201,12 +201,12 @@ const App = () => {
       <HelmetProvider>
         <Helmet>
           <title>
-            Revolutionize Your Driving School Business with Our App: Manage
+            Revolutionise Your Driving School Business with Our App: Manage
             Lessons, Income, and Progress Reports Effortlessly in the UK!
           </title>
           <meta
             name="description"
-            content="Looking for a comprehensive and easy-to-use tool to manage your driving instructor business? Look no further than ADI Manager! Our app is the perfect solution for UK driving instructors who need to keep track of their lesson schedules, pupil information, and financials. With ADI Manager, you can quickly and easily add lessons to your diary, track pupil progress in key subjects, and manage your income and expenses with ease. Plus, our app is available on web and mobile, so you can access it from any device. Don't let the day-to-day tasks of running your business slow you down – streamline your operations with ADI Manager today!"
+            content="Looking for a comprehensive and easy-to-use tool to manage your driving instructor business? Look no further than ADI Manager! Our app is the perfect solution for UK driving instructors who need to keep track of their lesson schedules, pupil information, and financials. With ADI Manager, you can quickly and easily add lessons to your diary, track pupil progress in key subjects, and manage your income and expenses with ease. Plus, our app is available on web and mobile, so you can access it from any device. Don't let the day-to-day tasks of running your business slow you down, streamline your operations with ADI Manager today!"
           />
 
           <meta
