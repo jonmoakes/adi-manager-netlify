@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 import useFireSwal from "../../hooks/use-fire-swal";
 
@@ -13,17 +14,13 @@ import {
   DisabledContactButton,
 } from "../../styles/buttons/buttons.styles";
 
-import {
-  emailToSend,
-  validateEmail,
-} from "../../reusable-functions/email-to-send";
+import { validateEmail } from "../../reusable-functions/email-to-send";
 
 import {
   errorSendingMessage,
   missingEmailFieldsErrorMessage,
   invalidEmailErrorMessage,
   successMessage,
-  noNetworkDetected,
   messageSent,
 } from "../../strings/strings";
 
@@ -36,58 +33,53 @@ const SendMessage = ({ formDetails }) => {
 
   const { name, email, message } = formDetails;
 
-  const handleSuccess = () => {
-    return [
-      dispatch(stopLoader()),
-      fireSwal("success", successMessage, messageSent, 4000, false, true),
-      navigate("/"),
-    ];
-  };
-
-  const handleError = (titleText, messageText) => {
-    if (messageText === "Failed to fetch") {
-      return [
-        dispatch(stopLoader()),
-        fireSwal("error", titleText, noNetworkDetected, 0, true, false),
-      ];
-    } else {
-      return [
-        dispatch(stopLoader()),
-        fireSwal("error", titleText, messageText, 0, true, false),
-      ];
-    }
-  };
-
   const sendEmail = async () => {
     if (!name || !email || !message) {
-      handleError(errorSendingMessage, missingEmailFieldsErrorMessage);
-      return;
+      fireSwal(
+        "error",
+        errorSendingMessage,
+        missingEmailFieldsErrorMessage,
+        0,
+        true,
+        false
+      );
     } else if (!validateEmail(email)) {
-      handleError(errorSendingMessage, invalidEmailErrorMessage);
+      fireSwal(
+        "error",
+        errorSendingMessage,
+        invalidEmailErrorMessage,
+        0,
+        true,
+        false
+      );
       return;
     }
 
     try {
       dispatch(startLoader());
-      const response = await fetch(
-        "/.netlify/functions/send-contact-form-message",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            message: emailToSend(name, email, message),
-          }),
-        }
-      );
-      if (response.ok) {
-        handleSuccess();
-      } else {
-        handleError(errorSendingMessage);
-      }
+      await axios
+        .post("/.netlify/functions/send-contact-form-message-adi-manager", {
+          name,
+          email,
+          message,
+        })
+        .then((response) => {
+          dispatch(stopLoader());
+          if (response.status === 202) {
+            fireSwal("success", successMessage, messageSent, 4000, false, true);
+            navigate("/");
+          }
+        });
     } catch (error) {
-      handleError(errorSendingMessage, error.message);
+      dispatch(stopLoader());
+      fireSwal(
+        "error",
+        `${errorSendingMessage} the message recieved was:`,
+        error.message,
+        0,
+        true,
+        false
+      );
     }
   };
 
