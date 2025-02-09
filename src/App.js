@@ -30,7 +30,7 @@ const ContactMe = lazy(() =>
 );
 
 const Login = lazy(() => import("./routes/login/login.component"));
-const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"));
+// const SignUp = lazy(() => import("./routes/sign-up/sign-up.component"));
 const CreateLoginDetails = lazy(() =>
   import("./routes/create-login-details/create-login-details.component")
 );
@@ -236,7 +236,7 @@ const App = () => {
                     )
                   }
                 />
-                <Route
+                {/* <Route
                   path="sign-up"
                   element={
                     !currentUser ? (
@@ -245,7 +245,7 @@ const App = () => {
                       <Navigate replace to="/my-account" />
                     )
                   }
-                />
+                /> */}
 
                 <Route
                   path="create-login-details"

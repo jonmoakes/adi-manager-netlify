@@ -14,7 +14,7 @@ import { HomePageLogoImage } from "../../styles/image/image.styles";
 import { Href } from "../../styles/a/a.styles";
 import {
   FeaturesButton,
-  SignUpLinkButton,
+  // SignUpLinkButton,
 } from "../../styles/buttons/buttons.styles";
 import { StyledLink } from "../../styles/link/link.styles";
 
@@ -24,7 +24,11 @@ import LogoWebP from "../../assets/header/adi-logo.webp";
 
 import { incomeTable } from "../../image-links/image-links";
 
-import { featuresPath, signUpPath, refundsPath } from "../../strings/strings";
+import {
+  featuresPath,
+  // signUpPath,
+  refundsPath,
+} from "../../strings/strings";
 
 const Home = () => (
   <Container>
@@ -114,11 +118,11 @@ const Home = () => (
         <FeaturesButton>Features</FeaturesButton>
       </StyledLink>
 
-      <p>OR</p>
+      {/* <p>OR</p>
 
       <StyledLink to={signUpPath}>
         <SignUpLinkButton>Sign Up</SignUpLinkButton>
-      </StyledLink>
+      </StyledLink> */}
 
       <RedH2Underline>100% money back guarantee for 30 days!</RedH2Underline>
       <p>
