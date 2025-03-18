@@ -32,7 +32,7 @@ const AddTotalExpensesYearInstructions = () => {
           <p>
             please note: date pickers don't allow just a year option currently,
             so just choose or type in any date within the year you wish to enter
-            ( ie 01-01-2022 for 2022 ). The App will then automatically format
+            ( ie 01-01-2025 for 2025 ). The App will then automatically format
             the date to show just the year in the table.
           </p>
           <RedH2Underline>Adding Your Entry:</RedH2Underline>

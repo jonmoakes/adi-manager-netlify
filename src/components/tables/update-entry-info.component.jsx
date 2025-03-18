@@ -85,7 +85,7 @@ const UpdateEntryInfo = ({ primaryPhoneNumber, emailAddress }) => {
               </p>
               <p>
                 you can do this by either typing in the date manually ( ie
-                01-02-2022 for February 2022 ) or finding any date with the
+                01-02-2025 for February 2025 ) or finding any date with the
                 month or year you want in the date picker. The App will then
                 automatically format the date to show just the month and / or
                 year in the table.
@@ -107,7 +107,7 @@ const UpdateEntryInfo = ({ primaryPhoneNumber, emailAddress }) => {
                 contained within the entry by tapping the "email data to myself"
                 button at the bottom of this entry.
               </p>
-              {location.pathname === { editPupilEntryPath } && (
+              {location.pathname === editPupilEntryPath && (
                 <p>
                   please note that you cannot email yourself the "pupil data"
                   section information to yourself. the reason for this is data

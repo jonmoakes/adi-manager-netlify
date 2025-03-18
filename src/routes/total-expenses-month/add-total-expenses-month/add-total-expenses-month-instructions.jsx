@@ -33,8 +33,8 @@ const AddTotalExpensesMonthInstructions = () => {
           <p>
             please note: some browser date pickers don't allow just a month
             option currently ( firefox mainly ), so just choose or type in any
-            date within the month and year you wish to enter ( ie 01-01-2022 for
-            january 2022 ). The App will then automatically format the date to
+            date within the month and year you wish to enter ( ie 01-01-2025 for
+            january 2025 ). The App will then automatically format the date to
             show just the month and year in the table.
           </p>
           <RedH2Underline>Adding Your Entry:</RedH2Underline>

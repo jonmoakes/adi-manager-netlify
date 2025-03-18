@@ -17,7 +17,7 @@ const PrivacyPolicy = () => (
     </Div>
     <Div>
       <h2>ADI Manager:</h2>
-      <h2>06/12/2022</h2>
+      <h2>18/03/2025</h2>
     </Div>
 
     <SectionOne />

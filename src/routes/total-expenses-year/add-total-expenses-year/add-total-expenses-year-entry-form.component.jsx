@@ -11,7 +11,7 @@ const AddTotalExpensesYearEntryForm = ({ id, handleChange }) => (
       type="date"
       name="date"
       onChange={handleChange}
-      placeholder="Ie 2022"
+      placeholder="Ie 2025"
     />
 
     <Label>

@@ -45,7 +45,7 @@ export const createUserDocumentFromAuth = async (
         diaryEntries: [
           {
             //yyyy/mm/dd
-            date: "2022-11-01",
+            date: "2025-03-18",
             entry: "John Doe - 10am-12pm, Roundabouts.",
             id: 1,
           },
@@ -53,7 +53,7 @@ export const createUserDocumentFromAuth = async (
         lessonEntries: [
           {
             id: 2,
-            date: "2022-11-01",
+            date: "2025-03-18",
             name: "John Doe",
             startTime: "10:00",
             endTime: "12:00",
@@ -61,7 +61,7 @@ export const createUserDocumentFromAuth = async (
             lessonSummary: "We Worked On Roundabout Approach Speed.",
             nextLessonPlan:
               "Busier Roundabouts To Make Use Of Our New Approach Speed Skills",
-            nextLessonDate: "2022-09-01",
+            nextLessonDate: "2025-03-25",
             nextLessonTime: "10:00",
             nextLessonPickup: "Work",
           },
@@ -69,7 +69,7 @@ export const createUserDocumentFromAuth = async (
         incomeEntries: [
           {
             id: 3,
-            date: "2022-11-01",
+            date: "2025-03-18",
             name: "John Doe",
             incomeReceived: "50",
             blockBooking: "No",
@@ -79,7 +79,7 @@ export const createUserDocumentFromAuth = async (
         expensesEntries: [
           {
             id: 4,
-            date: "2022-11-01",
+            date: "2025-03-18",
             description: "Fuel",
             amount: "40",
           },
@@ -87,21 +87,21 @@ export const createUserDocumentFromAuth = async (
         totalExpensesWeekEntries: [
           {
             id: 5,
-            date: "2022-11-01",
+            date: "2025-03-18",
             weeklyAmount: "300",
           },
         ],
         totalExpensesMonthEntries: [
           {
             id: 6,
-            date: "2022-11-01",
+            date: "2025-03-18",
             monthlyAmount: "1000",
           },
         ],
         totalExpensesYearEntries: [
           {
             id: 7,
-            date: "2022-11-01",
+            date: "2025-03-18",
             yearlyAmount: "20000",
           },
         ],
@@ -133,9 +133,9 @@ export const createUserDocumentFromAuth = async (
           {
             id: 9,
             name: "John Doe",
-            initialBlockBookingDate: "2022-11-01",
+            initialBlockBookingDate: "2025-03-18",
             hoursPurchased: "10",
-            latestLessonDate: "2022-11-01",
+            latestLessonDate: "2025-03-18",
             latestLessonLength: "2",
             balanceHoursRemaining: "8",
           },
@@ -144,7 +144,7 @@ export const createUserDocumentFromAuth = async (
           {
             id: 10,
             name: "John Doe",
-            latestLessonDate: "2022-11-01",
+            latestLessonDate: "2025-03-18",
             latestLessonGrade: "1",
             latestLessonPerformanceSummary: "Introduced The Cockpit Drill.",
             cockpitDrillGrade: "1",
